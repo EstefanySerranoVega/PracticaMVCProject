@@ -1,0 +1,36 @@
+{
+    "sites": [{
+
+        "Site": "Home",
+        "access": "public",
+        "role": "gral"
+    }, {
+
+        "Site": "Login",
+        "access": "public",
+        "role": "admin"
+    }, {
+
+        "Site": "Singup",
+        "access": "public",
+        "role": ""
+    }, {
+
+        "Site": "Producto",
+        "access": "public",
+        "role": "admin"
+    }],
+    "default-sites": [{
+        "site": "home",
+        "role": "user"
+    }, {
+        "site": "dashboard",
+        "role": "admin"
+    }, {
+        "site": "dashboard",
+        "role": "cajero"
+
+    }]
+
+
+}
