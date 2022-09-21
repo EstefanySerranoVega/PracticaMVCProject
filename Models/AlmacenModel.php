@@ -1,5 +1,5 @@
 <?php
-//require('Database.php');
+
 Class AlmacenModel Extends Model Implements IModel{
 private $idAlmacen;
 private $nombreAlmacen;

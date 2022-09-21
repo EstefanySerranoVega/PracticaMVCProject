@@ -1,5 +1,4 @@
 <?php
-//include_once('Database.php');
 
 Class AccesosModel Extends Model implements IModel{
     private $idAccesos;

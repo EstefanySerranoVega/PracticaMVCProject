@@ -1,20 +1,32 @@
 <?php
-include('Database.php');
-Class Proveedor{
+Class ProveedorModel Extends Model implements IModel{
     private $idProveedor;
     private $empresaProveedor;
     private $correoProveedor;
-    private $estadoProveedor;
-    private $creacionProveedor;
-    private $conexion;
-    private $db;
+    private $estado;
+    private $creacion;
     
 
     function __construct(){
-$this->conexion= new Database(); 
-$this->db = $this->conexion->Conexion();
-
+        parent::__construct();
     }//fin construct
+
+
+    public function save(){
+        try{
+            $query = $this->prepare(
+                ''
+            );
+        }catch(PDOException $e){
+            return false;
+        }
+    }//fin save
+    public function getAll(){}
+    public function get($id){}
+    public function delete($id){}
+    public function update(){}
+    public function from($array){}
+
 
     public function proveedorExist($a){
 
