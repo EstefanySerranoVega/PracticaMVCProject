@@ -59,9 +59,9 @@ Class AccesosModel Extends Model implements IModel{
                 $item->setEstado($p['estado_accesos']);
 
                 array_push($items,$item);
-
-                return $items;
             }
+            
+            return $items;
         }catch(PDOException $e){
             echo 'Hubo un error al cargar los elementos '.$e;
 
@@ -76,8 +76,7 @@ Class AccesosModel Extends Model implements IModel{
             $query = $this->prepare(
                 'SELECT * FROM `accesos` WHERE id_accesos = :id
                 AND estado_accesos = "AC"');
-            $query->execute([
-                    'id'=>$id]);
+            $query->execute([ 'id'=>$id]);
 
             $accesos = $query->fetchAll(PDO::FETCH_ASSOC);
 
@@ -105,17 +104,19 @@ Class AccesosModel Extends Model implements IModel{
         try{
             $query = $this->prepare(
                 'UPDATE `accesos` SET
-                nombre_accesos = :nombre');
+                nombre_accesos = :nombre
+                WHERE id_accesos =  :id
+                AND estado_accesos = "AC"');
             $query->execute([
-                'nombre' => $this->nombreAccesos
-            ]);
+                'nombre' => $this->nombreAccesos,
+                'id' => $this->getId()  ]);
             
             return true;
         }catch(PDOException $e){
             echo 'Hubo un error '.$e;
             return false;
         }
-    }//fin update
+    }//fin update   
 
 
     public function from($array){

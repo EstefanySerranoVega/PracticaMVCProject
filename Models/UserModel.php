@@ -49,7 +49,7 @@ class UserModel extends Model implements IModel{
         $this->estado = 'AC';
         try{
             $query = $this->query(
-                'SELECT * FROM `usuario` WHERE estado_usuario = :estado');
+                'SELECT * FROM `usuario` WHERE estado_usuario = '.$this->estado);
             while($p = $query->fetch(PDO::FETCH_ASSOC)){
 
                 $item = new UserModel();
@@ -74,11 +74,21 @@ class UserModel extends Model implements IModel{
     public function get($id){
         try{
              $query = $this->prepare(
-                'SELECT * FROM `usuario` WHERE id_usuario = :id ');
-             $query->execute([
-                'id'=>$id]);
+                'SELECT * FROM `usuario` 
+                WHERE id_usuario = :id AND estado_usuario = "AC"');
+             $query->execute([ 'id'=>$id]);
 
-             $cliente = $query->fetchAll(PDO::FETCH_ASSOC);
+             $user = $query->fetchAll(PDO::FETCH_ASSOC);
+                
+             $this->setId($user['id_usuario']);
+             $this->setPersona($user['id_persona']);
+             $this->setRoles($user['id_roles']);
+             $this->setNombre($user['nombre_usuario']);
+             $this->setCreacion($user['creacion_usuario']);
+             $this->setEstado($user['estado_usuario']);
+
+             return $this;
+
             }catch(PDOException $e){
              echo 'Hubo un error'.$e;
             return false;
@@ -94,10 +104,12 @@ class UserModel extends Model implements IModel{
         try{
             $query = $this->prepare(
                 'UPDATE `usuario` SET 
-                nombre_usuario = :nameUser ' );
+                nombre_usuario = :nameUser
+                WHERE estado_usuario = "AC"
+                AND id_usuario = :id ' );
             $query->execute([
-                'nameUser' =>$this->nameUser
-            ]);
+                'nameUser' =>$this->nameUser,
+                'id' => $this->getId()  ]);
 
             return true;
         }catch(PDOException $e){
@@ -115,21 +127,6 @@ class UserModel extends Model implements IModel{
         $this->creacion = $array['creacion_usuario'];
     }
   
-
-//getters 
-
-public function getId(){
-    return $this->idUser;}
-public function getNombre(){
-    return $this->nameUser;}
-public function getEstado(){
-    return $this->estado;}
-public function getCreacion(){
-    return $this->estado;}
-public function getPersona(){
-    return $this->persona;}
-public function getRoles(){
-    return $this->roles;}
 
 //setters
 public function setId($id){
@@ -150,6 +147,21 @@ public function setPersona($persona){
 public function setRoles($roles){
     $this->roles = $roles;
 }
+
+//getters 
+
+public function getId(){
+    return $this->idUser;}
+public function getNombre(){
+    return $this->nameUser;}
+public function getEstado(){
+    return $this->estado;}
+public function getCreacion(){
+    return $this->estado;}
+public function getPersona(){
+    return $this->persona;}
+public function getRoles(){
+    return $this->roles;}
 
 }
 

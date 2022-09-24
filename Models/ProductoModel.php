@@ -110,15 +110,18 @@ public function update(){
              nombre_producto = :nombre,
              codigo_producto = :codigo,
              cantidad_producto = :cantidad,
-             precio_venta_producto = :precio');
+             precio_venta_producto = :precio
+             WHERE estado_producto = "AC"
+             AND id_producto = :id');
         
         $arrayData= array([
             'categoria' => $this->categoriaProducto,
             'nombre' => $this->nombreProducto,
             'codigo' => $this->codigoProducto,
             'cantidad' => $this->cantidadProducto,
-            'precio' => $this->precioProducto
-        ]);
+            'precio' => $this->precioProducto,
+            'id' => $this->getId() ]);
+            
         $query->execute($arrayData);
 
         return true;

@@ -102,11 +102,13 @@ public function update(){
             'UPDATE `categoria` SET
             nombre_categoria = :nombre,
             creacion_categoria = :creacion,
-            estado_categoria = :estado ' );
+            estado_categoria = :estado
+            WHERE id_categoria = :id ' );
         $query->execute([
             'nombre' => $this->nombreCategoria,
             'creacion' => $this->creacionCategoria,
-            'estado' => $this->creacionCategoria
+            'estado' => $this->creacionCategoria,
+            'id' => $this->getId()
         ]);
 
         return true;

@@ -47,7 +47,8 @@ public function save(){
 public function getAll(){
     $items = [];
     try{
-        $query = $this->query('SELECT * FROM `almacen`');
+        $query = $this->query(
+            'SELECT * FROM `almacen` WHERE estado_almacen = "AC"');
         while($p = $query->fetch(PDO::FETCH_ASSOC)){
             $item = new AlmacenModel();
 
@@ -57,9 +58,9 @@ public function getAll(){
             $item->setEstado($p['estado_almacen']);
 
             array_push($items,$item);
-
-            return $items;
         }
+
+        return $items;
     }catch(PDOException $e){
         echo 'Hubo un error al cargar los elementos '.$e;
 
@@ -70,9 +71,9 @@ public function getAll(){
 public function get($id){
     try{
         $query = $this->prepare(
-            'SELECT * FROM `almacen` WHERE id_almacen = :id');
-        $query->execute([
-            'id'=>$id ]);
+            'SELECT * FROM `almacen` WHERE id_almacen = :id
+            AND estado_almacen = "AC"');
+        $query->execute([ 'id'=>$id ]);
 
         $almacen = $query->fetchAll(PDO::FETCH_ASSOC);
 
@@ -100,12 +101,15 @@ public function update(){
             'UPDATE `almacen` SET 
             nombre_almacen = :nombre,
             creacion_almacen = :creacion,
-            estado_almacen = :estado ' );
-            $query->execute([
-                'nombre' => $this->nombreAlmacen,
-                'creacion' => $this->creacionAlmacen,
-                'estado' => $this->estadoAlmacen ]);
-                return true;
+            estado_almacen = :estado
+            WHERE id_almacen = :id ' );
+        $query->execute([
+            'nombre' => $this->nombreAlmacen,
+            'creacion' => $this->creacionAlmacen,
+            'estado' => $this->estadoAlmacen,
+            'id' => $this->getId() ]);
+
+        return true;
     }catch(PDOException $e){
         echo 'Hubo un error'.$e;
         return false;

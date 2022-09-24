@@ -111,14 +111,17 @@ class PersonaModel extends Model implements IModel{
                 paterno_persona = :paterno,
                 materno_persona = :materno,
                 telefono_persona = :telefono,
-                nac_persona = :nacimiento',
+                nac_persona = :nacimiento
+                WHERE id_persona = :id
+                AND estado_persona = "AC" ',
                  );
             $query->execute([
                 'nombre' => $this->nombrePersona,
                 'paterno' => $this->paternoPersona,
                 'materno' => $this->maternoPersona,
                 'telefono' => $this->telefonoPersona,
-                'nacimiento' => $this->nacPersona]);
+                'nacimiento' => $this->nacPersona,
+                'id' => $this->getId()]);
 
             return true;
         }catch(PDOException $e){

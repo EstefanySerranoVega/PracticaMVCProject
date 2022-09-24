@@ -96,9 +96,11 @@ public function update(){
         $query = $this->prepare(
             'UPDATE `contrasenia` SET 
             nombre_contrasenia = :nombre
-            WHERE estado_contrasenia = "AC" ');
+            WHERE id_contrasenia = :id AND estado_contrasenia = "AC" ');
 
-        $query->execute(['nombre' => $this->nombreContrasenia]);
+        $query->execute([
+            'nombre' => $this->nombreContrasenia,
+            'id' => $this->getId()]);
 
         return true;
     }catch(PDOException $e){
