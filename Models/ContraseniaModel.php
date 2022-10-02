@@ -59,9 +59,8 @@ public function getAll(){
             $item->setCreacion($p['creacion_contrasenia']);
 
             array_push($items,$item);
-
-            return $items;
         }
+        return $items;
     }catch(PDOException $e){
         return false;
     }

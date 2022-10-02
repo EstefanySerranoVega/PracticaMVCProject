@@ -56,9 +56,8 @@ public function getAll(){
             $item-> setEstado($p['estado_categoria']);
 
             array_push($items,$item);
-
-            return $items;
         }
+        return $items;
     }catch(PDOException $e){
         echo 'Hubo un error '.$e;
         return false;

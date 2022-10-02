@@ -3,9 +3,7 @@ require_once('View.php');
 
 Class Controllers {
     function __construct(){
-        //$this->loadModel();
         $this->view = new View();
-        //$this->view->render();
     }//fin __construct
 
     public function loadModel($model){
@@ -15,6 +13,8 @@ Class Controllers {
                 require_once($rutaModel);
                 $this->model = new $model();
                 echo 'loadModel funciona';
+            }else{
+                echo 'El modelo no existe';
             }
 
     }//fin load model

@@ -63,8 +63,8 @@ class UserModel extends Model implements IModel{
 
                 array_push($items,$item);
 
-                return $items;
             }
+            return $items;
         }catch(PDOException $e){
            // error_log('ERROR::USER_MODEL->getAll()'.$e);
            return false;

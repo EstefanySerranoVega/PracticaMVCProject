@@ -62,6 +62,8 @@ Class ClienteModel extends Model implements IModel {
 
                 array_push($items, $item);
             }
+
+            return $items;
         }catch(PDOException $e){
             echo 'Hubo un error '.$e;
             return false;

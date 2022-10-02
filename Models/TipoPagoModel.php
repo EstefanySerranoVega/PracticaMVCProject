@@ -50,6 +50,7 @@ public function getAll(){
 
             array_push($items,$item);
         }
+        return $items;
     }catch(PDOException $e){
         return false;
     }

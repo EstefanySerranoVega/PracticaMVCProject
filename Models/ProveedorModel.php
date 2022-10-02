@@ -57,9 +57,8 @@ Class ProveedorModel Extends Model implements IModel{
                 $item->setCreacion('creacion_proveedor');
 
                 array_push($items,$item);
-
-                return $items;
             }
+            return $items;
         }catch(PDOException $e){
             return false;
         }

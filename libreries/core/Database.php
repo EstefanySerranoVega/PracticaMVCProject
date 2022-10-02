@@ -1,5 +1,6 @@
 <?php
     //clase database
+    require_once('config/config.php');
     class Database{
     
         private $host;
@@ -9,18 +10,18 @@
         private $charset;
     
         function __Construct(){
-            $this-> host = 'localhost';
-            $this-> user = 'root';
-            $this-> password = '';
-            $this-> bd = 'bd_proyecto';
-            $this-> charset ='utf8';
+            $this-> host = constant('HOST');
+            $this-> user = constant('USER');
+            $this-> password = constant('PASSWORD');
+            $this-> bd = constant('DB');
+            $this-> charset = constant('CHARSET');
         }
         function Conexion(){
             
             
             try{
               
-                $conexionPDO = new PDO('mysql:host=localhost;dbname=' .$this->bd, $this->user, $this->password);
+                $conexionPDO = new PDO('mysql:host='.$this->host,';dbname=' .$this->bd, $this->user, $this->password);
                // $conexionPDO->query("SET NAMES 'utf8'");
                $conexionPDO->query("SET NAMES".$this->charset);
                 return $conexionPDO;

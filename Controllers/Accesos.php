@@ -1,6 +1,7 @@
 <?php
+require_once('Clases/sessionController.php');
 
-class Accesos Extends Controllers{
+class Accesos Extends SessionController{
 
 function __construct(){
     parent::__construct();
@@ -8,7 +9,7 @@ function __construct(){
 public function render(){
     
     echo ' RENDER Accesos funciona ';
-    $this->view->render('Home/home');
+    $this->view->render('Home/index');
 }
 }
 ?>

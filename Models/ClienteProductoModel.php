@@ -65,8 +65,8 @@ Class ClienteProductoModel Extends Model implements IModel{
                 $item->setCreacion($p['creacion_cp']);
 
                 array_push($items, $item);
-                return $items;
             }
+            return $items;
         }catch(PDOException $e){
             echo 'Ha ocurrido un error '.$e;
             return false;

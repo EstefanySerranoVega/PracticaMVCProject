@@ -67,9 +67,8 @@ class PersonaModel extends Model implements IModel{
                 $item->setCreacion($p['creacion_persona']);
 
                 array_push($items,$item);
-
-                return $items;
             }
+            return $items;
         }catch(PDOException $e){
             return false;
         }
