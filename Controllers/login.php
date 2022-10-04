@@ -1,7 +1,7 @@
 <?php
 require_once('clases/sessionController.php');
 
-Class User Extends SessionController{
+Class Login Extends SessionController{
 
     private $user;
     public function __construct(){

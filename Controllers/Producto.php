@@ -1,6 +1,7 @@
 <?php
-require_once('libreries/core/Controllers.php');
-Class Producto Extends Controllers{
+require_once('Clases/sessionController.php');
+
+Class Producto Extends sessionController{
 
     private $user;
     public function __construct(){

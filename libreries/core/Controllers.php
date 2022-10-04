@@ -23,9 +23,13 @@ Class Controllers {
 
         foreach($params as $param){
             if(isset($_POST[$param])){
+                error_log("ExistPOST: No existe el parametro $param" );
+                
                 return false;
             }
         }
+        error_log("ExistPOST: Existen parametros $param" );
+        
         return true;
     }//fin exist POST
 

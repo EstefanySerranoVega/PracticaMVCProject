@@ -7,7 +7,7 @@ Class View{
     }
     public function render($nombre, $data = []){
         $this->d = $data;
-        require 'Views/'.$nombre.'.php' ;
+        require 'views/' . $nombre . '.php' ;
     }
 }
 

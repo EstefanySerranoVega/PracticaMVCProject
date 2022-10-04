@@ -1,5 +1,5 @@
 <?php
- echo 'este es el login';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +17,7 @@
                 <h2>INICIAR SESION</h2>
                 <input type="text" placeholder="Nombre de usuario">
                 <input type="password" placeholder="Contraseña">
-                <input type="button" value="INGRESAR">
+                <input type="button" value="INGRESAR" id="btn-login">
             </form>
         </div>
     </div>
