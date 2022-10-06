@@ -76,7 +76,21 @@ public function get($id){
     }
 }//fin get
 
-public function delete($id){}//fin delete
+public function delete($id){
+    try{
+        $query = $this->prepare(
+            'UPDATE `tipo_pago` SET 
+            estado_tipo_pago = "DC"
+            WHERE id_tipo_pago = :id
+            AND estado_tipo_pago = "AC"');
+
+        $query->execute(['id' => $this->idTP]);
+
+        return true;
+
+    }catch(PDOException $e){
+        return false;}
+}//fin delete
 
 
 public function update(){

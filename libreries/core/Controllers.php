@@ -62,7 +62,7 @@ Class Controllers {
         if(!empty($params)){
             $params = '?'.$params;
         }
-        header('Location: '.CONSTANT('URL_RAIZ').$ruta.$params);
+        header('Location: '.CONSTANT('URL_RAIZ').'/'.$ruta.$params);
     }
 
 }

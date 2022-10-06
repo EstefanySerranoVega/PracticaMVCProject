@@ -11,18 +11,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <?php $this->showMessage() ?>
     <div class="container-gral">
         <div class="Register">
-            <form action="">
+            <form action="<?php echo constant('URL_RAIZ'); ?> singup/newUser" method="POST">
                 <h2>Registrarse</h2>
+                <h2>¿Tienes una cuenta? <a href="<?php echo constant('URL_RAIZ'); ?> views/login/index.php"  >Iniciar Sesion</a> </h2>
                 <input type="text"  name="nombrePersona" id="nombrePersona" placeholder="Nombre" >
                 <input type="text" name="paternoPersona" id="paternoPersona" placeholder="Apellido Paterno" >
                 <input type="text" name="maternoPersona" id="maternoPersona" placeholder="Apellido Materno" >
                 <input type="text" name="telefonoPersona" id="telefonoPersona" placeholder="Telefono" >
                 <input type="date" name="nacPersona" id="nacPersona" >
-                <input type="text" name="nameUser" id="nameUser" placeholder="Nombre de usuario">
+                <input type="text" name="username" id="nameUser" placeholder="Nombre de usuario">
                 <input type="password" name="password" id="password" placeholder="password">
-                <input type="submit" value="INSERTAR" name="btn-newPersona" id="btn btn-newPersona" class="btn btn-newPersona">
+                <input type="submit" value="Registrar" name="btn-newPersona" id="btn btn-newPersona" class="btn btn-newPersona">
                 <input type="button" value="REGISTRAR" id="btn-login">
             </form>
         </div>

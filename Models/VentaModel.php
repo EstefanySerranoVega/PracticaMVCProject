@@ -119,25 +119,7 @@ public function getEstado(){
     return $this->estado;
 }
 
-    public function ventaExist($a){
-        $this->idVenta =$a;
-        $this->estadoVenta = 'AC';
-        try{
-            $sql = $this->db->prepare(
-                'SELECT * FROM `venta`
-                WHERE id_venta =:venta
-                AND estado_venta = :estado ');
-            $select  = $sql->execute([
-                'venta'=>$this->idVenta,
-                'estado'=>$this->estadoVenta]);
-            if($sql->rowCount()){
-                return true;
-            }else{
-            return false;}
-        }catch(Exception $x){
-        return 'Ha ocurrido un errror '.$x;
-        }
-    }//fin venta exist
+
 
 }
 

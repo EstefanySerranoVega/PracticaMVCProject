@@ -79,7 +79,18 @@ public function get($id){
     }
 }//fin get
 
-public function delete($id){}//fin delete
+public function delete($id){    try{
+    $query = $this->prepare(
+        'UPDATE `roles` SET 
+        estado_roles = "DC"
+        WHERE estado_roles = "AC"
+        AND id_roles = :id');
+    $query->execute([ 'id' => $this->getId()]);
+
+        return true;
+}catch(PDOException $e){
+    return false;
+}}//fin delete
 
 
 public function update(){

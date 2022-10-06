@@ -92,7 +92,21 @@ public function get($id){
 }//fin get
 
 
-public function delete($id){}//fin delete
+public function delete($id){
+    try{
+        $query = $this->prepare(
+            'UPDATE `almacen` SET 
+            estado_almacen = "DC"
+            WHERE id_almacen = :id 
+            AND estado_almacen = "AC" ');
+        $query->execute([ 'id' => $this->getId() ]);
+
+        return true;
+    }catch(PDOException $e){
+        echo 'Hubo un error'.$e;
+        return false;
+    }
+}//fin delete
 
 
 public function update(){
@@ -146,26 +160,26 @@ public function from($array){
 
 
 
-public function almacenExist($a){
+public function exist($a){
     $this->idAlmacen = $a;
     $this->estadoAlmacen  = 'AC ';
     try{
-        $sql = $this->db->prepare(
+        $query = $this->prepare(
             'SELECT * FROM `almacen`
             WHERE id_accesos = :almacen
             AND estado_almacen = :estado'
         );
-        $select = $sql->execute([
+        $query->execute([
             'almacen'=>$this->idAlmacen,
             'estado'=>$this->estadpoAlmacen
         ]);
-        if($sql->rowCount()){
+        if($query->rowCount()){
             return true;
         }else{
             return false;
         }
-    }catch(Exception $x){
-        return 'Ha ocurrido un error '.$x;
+    }catch(Exception $e){
+        return 'Ha ocurrido un error '.$e;
     }
 }//fin almacen exist
 

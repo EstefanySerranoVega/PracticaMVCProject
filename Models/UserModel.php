@@ -16,7 +16,6 @@ class UserModel extends Model implements IModel{
 
     
     public function save(){
-        $this->estadoUser = 'AC';
         try{
             $query = $this->prepare(
                 'INSERT INTO `usuario`
@@ -97,7 +96,20 @@ class UserModel extends Model implements IModel{
 
 
     public function delete($id){
+        try{
+            $query = $this->prepare(
+                'UPDATE `usuario` SET 
+                estado_usuario = "DC"
+                WHERE estado_usuario = "AC"
+                AND id_usuario = :id ' );
+                
+            $query->execute(['id' => $this->getId()  ]);
 
+            return true;
+        }catch(PDOException $e){
+            echo 'Hubo un error '.$e;
+            return false;
+        }
     }//fin delete
 
     public function update(){
@@ -162,6 +174,22 @@ public function getPersona(){
     return $this->persona;}
 public function getRoles(){
     return $this->roles;}
+
+public function exist($name){
+    try{
+        $query = $this->prepare(
+            'SELECT * FROM `usuario` WHERE nombre_usuario = :name');
+        $query->execute(['name' => $name]);
+        if($query->rowCount() > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }catch(PDOException $e){
+        echo $e;
+        return false;
+    }
+}
 
 }
 

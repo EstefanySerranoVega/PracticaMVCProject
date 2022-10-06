@@ -97,7 +97,18 @@ Class ClienteModel extends Model implements IModel {
 
 
     public function delete($id){
+        try{
+            $query = $this->prepare(
+                'UPDATE `cliente` SET
+                estado_cliente = "DC"
+                WHERE  id_cliente = :id
+                AND estado_cliente = "AC"' );
+            $query->execute(['id' => $this->getId()]);
 
+            return true;
+        }catch(PDOException $e){
+            echo 'Ha ocurrido un error '.$e;
+        }
     }//fin delete
     public function update(){
         try{

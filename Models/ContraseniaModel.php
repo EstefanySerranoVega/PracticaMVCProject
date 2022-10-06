@@ -88,7 +88,21 @@ public function get($id){
     }
 }//fin get
 
-public function delete($id){}//fin delete
+public function delete($id){
+    try{
+        $query = $this->prepare(
+            'UPDATE `contrasenia` SET 
+            estado_contrasenia = "DC"
+            WHERE  id_contrasenia = :id
+            AND estado_contrasenia = "AC" ');
+
+        $query->execute(['id' => $this->getId()]);
+
+        return true;
+    }catch(PDOException $e){
+        return false;
+    }
+}//fin delete
 
 public function update(){
     try{
@@ -136,6 +150,10 @@ public function getModificacion(){
 public function getCreacion(){
     return $this->creacion ;
 }
+ private function getHashedPass($pass){
+    return password_hash($pass,PASSWORD_DEFAULT, ['const' => 5]);
+
+ }
 
 //setters
 
@@ -146,7 +164,7 @@ public function setUser($user){
     $this->user = $user;
 }
 public function setNombre($pass){
-    $this->nombreContrasenia = $pass;
+    $this->nombreContrasenia = $this->getHashedPass($pass);
 }
 public function setEstado($estado){
     $this->estado = $estado;

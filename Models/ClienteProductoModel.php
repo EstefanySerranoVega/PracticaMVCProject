@@ -100,7 +100,20 @@ Class ClienteProductoModel Extends Model implements IModel{
     }//fin get
 
 
-    public function delete($id){}//fin delete
+    public function delete($id){
+        try{
+            $query = $this->prepare(
+                'UPDATE `cliente_persona` SET
+                estado_cp = "DC"
+                WHERE id_cliente_producto =:id
+                AND estado_cp = "AC" ' );
+            $query->execute(['id' => $this->getId() ]);
+
+            return true;
+        }catch(PDOException $e){
+            return false;
+        }
+    }//fin delete
 
 
     public function update(){

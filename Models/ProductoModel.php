@@ -6,6 +6,7 @@ Class ProductoModel Extends Model implements IModel {
     private $nombreProducto;
     private $codigoProducto;
     private $cantidadProducto;
+    private $imgProducto;
     private $precioProducto;
     private $estado;
 
@@ -26,6 +27,7 @@ Class ProductoModel Extends Model implements IModel {
                     :nombre,
                     :codigo,
                     :cantidad,
+                    :img,
                     :precio,
                     :estado)');
              $arrayData= array(
@@ -33,6 +35,7 @@ Class ProductoModel Extends Model implements IModel {
                 'nombre' => $this->nombreProducto,
                 'codigo' => $this->codigoProducto,
                 'cantidad' => $this->cantidadProducto,
+                'img' => $this->imgProducto,
                 'precio' => $this->precioVProducto,
                 'estado' =>$this->estado);
 
@@ -61,6 +64,7 @@ public function getAll(){
             $item->setNombre($p['nombre_producto']);
             $item->setCodigo($p['codigo_producto']);
             $item->setCantidad($p['cantidadProducto']);
+            $item->setImg($p['img_producto']);
             $item->setPrecio($p['precio_venta_producto']);
             $item->setEstado($p['estado_producto']);
 
@@ -89,6 +93,7 @@ public function get($id){
             $this->setNombre($producto['nombre_producto']);
             $this->setCodigo($producto['codigo_producto']);
             $this->setCantidad($producto['cantidad_producto']);
+            $this->setImg($producto['img_producto']);
             $this->setPrecio($producto['precio_venta_producto']);
             $this->setEstado($producto['estado_producto']);
 
@@ -98,7 +103,22 @@ public function get($id){
     }
 }//fin get
 
-public function delete($id){}//fin deleteProducto
+public function delete($id){
+    try{
+        $query = $this->prepare(
+            'UPDATE `producto` SET
+             estado_producto = "DC"
+             WHERE estado_producto = "AC"
+             AND id_producto = :id');
+        
+        $arrayData= array(['id' => $this->getId() ]);
+            
+        $query->execute($arrayData);
+
+        return true;
+    }catch(PDOException $e){
+        return false;}
+}//fin deleteProducto
 
 
 public function update(){
@@ -109,6 +129,7 @@ public function update(){
              nombre_producto = :nombre,
              codigo_producto = :codigo,
              cantidad_producto = :cantidad,
+             img_producto = :img,
              precio_venta_producto = :precio
              WHERE estado_producto = "AC"
              AND id_producto = :id');
@@ -118,6 +139,7 @@ public function update(){
             'nombre' => $this->nombreProducto,
             'codigo' => $this->codigoProducto,
             'cantidad' => $this->cantidadProducto,
+            'img' => $this->imgProducto,
             'precio' => $this->precioProducto,
             'id' => $this->getId() ]);
             
@@ -134,6 +156,7 @@ public function from($array){
     $this->nombreProducto = $array['nombre_producto'];
     $this->codigoProducto = $array['codigo_producto'];
     $this->cantidadProducto = $array['cantidad_producto'];
+    $this->imgProducto = $array['img_producto'];
     $this->precioProducto = $array['precio_venta_producto'];
     $this->estado = $array['estado_producto'];
 }//fin from
@@ -153,6 +176,9 @@ public function getCodigo(){
 }
 public function getCantidad(){
     return $this->cantidadProducto;
+}
+public function getImg(){
+    return $this->imgProducto;
 }
 public function getPrecio(){
     return $this->precioProducto;
@@ -177,6 +203,9 @@ public function setCodigo($codigo){
 public function setCantidad($cantidad){
     $this->cantidadProducto = $cantidad;
 }
+public function setImg($img){
+    $this->imgProducto = $img;
+}
 public function setPrecio($precio){
     $this->precioproducto = $precio;
 }
@@ -185,19 +214,18 @@ public function setEstado($estado){
 }
 
 
-public function productoExist($a)
+public function exist($name)
     {
-        $this->idProducto =$a;
         $this->estadoProducto = 'AC';
         try {
             $sql = $this->db->prepare(
                 'SELECT *
                 FROM `producto`
-            WHERE id_producto = :producto
+            WHERE nombre_producto = :name
             AND estado_producto = :estado '
             );
             $select = $sql->execute([
-                'producto' => $this->idProducto,
+                'name' => $name,
             'estado'=>$this->estadoProducto]);
           if($sql->rowCount()){
             return true;

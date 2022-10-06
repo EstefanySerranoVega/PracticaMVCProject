@@ -41,3 +41,243 @@
 [03-Oct-2022 21:24:42 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
 [03-Oct-2022 21:24:42 UTC] sessionController::isPublic(): currentURL => singup
 [03-Oct-2022 21:24:42 UTC] SessionController::validateSession() public page
+[06-Oct-2022 00:40:05 UTC] SessionController::validateSession()
+[06-Oct-2022 00:40:05 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 00:40:05 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 00:40:05 UTC] SessionController::validateSession() public page
+[06-Oct-2022 04:37:05 UTC] SessionController::validateSession()
+[06-Oct-2022 04:37:05 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 04:37:05 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 04:37:05 UTC] SessionController::validateSession() public page
+[06-Oct-2022 06:09:30 UTC] SessionController::validateSession()
+[06-Oct-2022 06:09:30 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 06:09:30 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 06:09:30 UTC] SessionController::validateSession() public page
+[06-Oct-2022 06:57:53 UTC] SessionController::validateSession()
+[06-Oct-2022 06:57:53 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 06:57:53 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 06:57:53 UTC] SessionController::validateSession() public page
+[06-Oct-2022 17:37:00 UTC] SessionController::validateSession()
+[06-Oct-2022 17:37:00 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 17:37:00 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 17:37:00 UTC] SessionController::validateSession() public page
+[06-Oct-2022 17:37:02 UTC] SessionController::validateSession()
+[06-Oct-2022 17:37:02 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 17:37:02 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 17:37:02 UTC] SessionController::validateSession() public page
+[06-Oct-2022 17:38:25 UTC] SessionController::validateSession()
+[06-Oct-2022 17:38:25 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 17:38:25 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 17:38:25 UTC] SessionController::validateSession() public page
+[06-Oct-2022 17:38:27 UTC] SessionController::validateSession()
+[06-Oct-2022 17:38:27 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 17:38:27 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 17:38:27 UTC] SessionController::validateSession() public page
+[06-Oct-2022 17:38:51 UTC] SessionController::validateSession()
+[06-Oct-2022 17:38:51 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 17:38:51 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 17:38:51 UTC] SessionController::validateSession() public page
+[06-Oct-2022 17:38:52 UTC] SessionController::validateSession()
+[06-Oct-2022 17:38:52 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 17:38:52 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 17:38:52 UTC] SessionController::validateSession() public page
+[06-Oct-2022 17:41:46 UTC] SessionController::validateSession()
+[06-Oct-2022 17:41:46 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 17:41:46 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 17:41:46 UTC] SessionController::validateSession() public page
+[06-Oct-2022 17:41:51 UTC] SessionController::validateSession()
+[06-Oct-2022 17:41:51 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 17:41:51 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 17:41:51 UTC] SessionController::validateSession() public page
+[06-Oct-2022 17:46:16 UTC] SessionController::validateSession()
+[06-Oct-2022 17:46:16 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 17:46:16 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 17:46:16 UTC] SessionController::validateSession() public page
+[06-Oct-2022 17:46:17 UTC] SessionController::validateSession()
+[06-Oct-2022 17:46:17 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 17:46:17 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 17:46:17 UTC] SessionController::validateSession() public page
+[06-Oct-2022 17:46:26 UTC] SessionController::validateSession()
+[06-Oct-2022 17:46:26 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 17:46:26 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 17:46:26 UTC] SessionController::validateSession() public page
+[06-Oct-2022 17:46:28 UTC] SessionController::validateSession()
+[06-Oct-2022 17:46:28 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 17:46:28 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 17:46:28 UTC] SessionController::validateSession() public page
+[06-Oct-2022 17:48:18 UTC] SessionController::validateSession()
+[06-Oct-2022 17:48:18 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 17:48:18 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 17:48:18 UTC] SessionController::validateSession() public page
+[06-Oct-2022 17:48:25 UTC] SessionController::validateSession()
+[06-Oct-2022 17:48:25 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 17:48:25 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 17:48:25 UTC] SessionController::validateSession() public page
+[06-Oct-2022 17:48:58 UTC] SessionController::validateSession()
+[06-Oct-2022 17:48:58 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 17:48:58 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 17:48:58 UTC] SessionController::validateSession() public page
+[06-Oct-2022 17:49:04 UTC] SessionController::validateSession()
+[06-Oct-2022 17:49:04 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 17:49:04 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 17:49:04 UTC] SessionController::validateSession() public page
+[06-Oct-2022 17:49:26 UTC] SessionController::validateSession()
+[06-Oct-2022 17:49:26 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 17:49:26 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 17:49:26 UTC] SessionController::validateSession() public page
+[06-Oct-2022 17:50:10 UTC] SessionController::validateSession()
+[06-Oct-2022 17:50:10 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 17:50:10 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 17:50:10 UTC] SessionController::validateSession() public page
+[06-Oct-2022 17:50:16 UTC] SessionController::validateSession()
+[06-Oct-2022 17:50:16 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 17:50:16 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 17:50:16 UTC] SessionController::validateSession() public page
+[06-Oct-2022 17:52:25 UTC] SessionController::validateSession()
+[06-Oct-2022 17:52:25 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 17:52:25 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 17:52:25 UTC] SessionController::validateSession() public page
+[06-Oct-2022 17:52:26 UTC] SessionController::validateSession()
+[06-Oct-2022 17:52:26 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 17:52:26 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 17:52:26 UTC] SessionController::validateSession() public page
+[06-Oct-2022 17:52:27 UTC] SessionController::validateSession()
+[06-Oct-2022 17:52:27 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 17:52:27 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 17:52:27 UTC] SessionController::validateSession() public page
+[06-Oct-2022 17:52:31 UTC] SessionController::validateSession()
+[06-Oct-2022 17:52:31 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 17:52:31 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 17:52:31 UTC] SessionController::validateSession() public page
+[06-Oct-2022 17:53:58 UTC] SessionController::validateSession()
+[06-Oct-2022 17:53:58 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 17:53:58 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 17:53:58 UTC] SessionController::validateSession() public page
+[06-Oct-2022 17:53:59 UTC] SessionController::validateSession()
+[06-Oct-2022 17:53:59 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 17:53:59 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 17:53:59 UTC] SessionController::validateSession() public page
+[06-Oct-2022 17:53:59 UTC] SessionController::validateSession()
+[06-Oct-2022 17:53:59 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 17:53:59 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 17:53:59 UTC] SessionController::validateSession() public page
+[06-Oct-2022 17:54:06 UTC] SessionController::validateSession()
+[06-Oct-2022 17:54:06 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 17:54:06 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 17:54:06 UTC] SessionController::validateSession() public page
+[06-Oct-2022 17:58:19 UTC] SessionController::validateSession()
+[06-Oct-2022 17:58:19 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 17:58:19 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 17:58:19 UTC] SessionController::validateSession() public page
+[06-Oct-2022 17:58:20 UTC] SessionController::validateSession()
+[06-Oct-2022 17:58:20 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 17:58:20 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 17:58:20 UTC] SessionController::validateSession() public page
+[06-Oct-2022 17:58:22 UTC] SessionController::validateSession()
+[06-Oct-2022 17:58:22 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 17:58:22 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 17:58:22 UTC] SessionController::validateSession() public page
+[06-Oct-2022 17:58:26 UTC] SessionController::validateSession()
+[06-Oct-2022 17:58:26 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 17:58:26 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 17:58:26 UTC] SessionController::validateSession() public page
+[06-Oct-2022 17:58:30 UTC] SessionController::validateSession()
+[06-Oct-2022 17:58:30 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 17:58:30 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 17:58:30 UTC] SessionController::validateSession() public page
+[06-Oct-2022 17:58:31 UTC] SessionController::validateSession()
+[06-Oct-2022 17:58:31 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 17:58:31 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 17:58:31 UTC] SessionController::validateSession() public page
+[06-Oct-2022 17:58:32 UTC] SessionController::validateSession()
+[06-Oct-2022 17:58:32 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 17:58:32 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 17:58:32 UTC] SessionController::validateSession() public page
+[06-Oct-2022 18:31:19 UTC] SessionController::validateSession()
+[06-Oct-2022 18:31:19 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 18:31:19 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 18:31:19 UTC] SessionController::validateSession() public page
+[06-Oct-2022 18:31:22 UTC] SessionController::validateSession()
+[06-Oct-2022 18:31:22 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 18:31:22 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 18:31:22 UTC] SessionController::validateSession() public page
+[06-Oct-2022 18:31:26 UTC] SessionController::validateSession()
+[06-Oct-2022 18:31:26 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 18:31:26 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 18:31:26 UTC] SessionController::validateSession() public page
+[06-Oct-2022 18:31:32 UTC] SessionController::validateSession()
+[06-Oct-2022 18:31:32 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 18:31:32 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 18:31:32 UTC] SessionController::validateSession() public page
+[06-Oct-2022 19:25:13 UTC] SessionController::validateSession()
+[06-Oct-2022 19:25:13 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 19:25:13 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 19:25:13 UTC] SessionController::validateSession() public page
+[06-Oct-2022 19:25:13 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method View::showMessage() in C:\wamp64\www\HTML\MVC\views\login\singup.php:14
+Stack trace:
+#0 C:\wamp64\www\HTML\MVC\libreries\core\View.php(10): require()
+#1 C:\wamp64\www\HTML\MVC\Controllers\singup.php(10): View->render('login/singup', Array)
+#2 C:\wamp64\www\HTML\MVC\libreries\core\App.php(46): singup->render()
+#3 C:\wamp64\www\HTML\MVC\index.php(18): App->__construct()
+#4 {main}
+  thrown in C:\wamp64\www\HTML\MVC\views\login\singup.php on line 14
+[06-Oct-2022 19:25:20 UTC] SessionController::validateSession()
+[06-Oct-2022 19:25:20 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/login, url => login
+[06-Oct-2022 19:25:20 UTC] sessionController::isPublic(): currentURL => login
+[06-Oct-2022 19:25:20 UTC] SessionController::validateSession() redirect al Home 
+[06-Oct-2022 20:11:59 UTC] SessionController::validateSession()
+[06-Oct-2022 20:11:59 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 20:11:59 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 20:11:59 UTC] SessionController::validateSession() public page
+[06-Oct-2022 20:11:59 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method View::showMessage() in C:\wamp64\www\HTML\MVC\views\login\singup.php:14
+Stack trace:
+#0 C:\wamp64\www\HTML\MVC\libreries\core\View.php(10): require()
+#1 C:\wamp64\www\HTML\MVC\Controllers\singup.php(10): View->render('login/singup', Array)
+#2 C:\wamp64\www\HTML\MVC\libreries\core\App.php(46): singup->render()
+#3 C:\wamp64\www\HTML\MVC\index.php(18): App->__construct()
+#4 {main}
+  thrown in C:\wamp64\www\HTML\MVC\views\login\singup.php on line 14
+[06-Oct-2022 20:15:13 UTC] SessionController::validateSession()
+[06-Oct-2022 20:15:13 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 20:15:13 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 20:15:13 UTC] SessionController::validateSession() public page
+[06-Oct-2022 20:15:13 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method View::showMessage() in C:\wamp64\www\HTML\MVC\views\login\singup.php:14
+Stack trace:
+#0 C:\wamp64\www\HTML\MVC\libreries\core\View.php(10): require()
+#1 C:\wamp64\www\HTML\MVC\Controllers\singup.php(10): View->render('login/singup', Array)
+#2 C:\wamp64\www\HTML\MVC\libreries\core\App.php(46): singup->render()
+#3 C:\wamp64\www\HTML\MVC\index.php(18): App->__construct()
+#4 {main}
+  thrown in C:\wamp64\www\HTML\MVC\views\login\singup.php on line 14
+[06-Oct-2022 20:24:56 UTC] SessionController::validateSession()
+[06-Oct-2022 20:24:56 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 20:24:56 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 20:24:56 UTC] SessionController::validateSession() public page
+[06-Oct-2022 20:24:56 UTC] PHP Warning:  require(views/views/login/singup.php): failed to open stream: No such file or directory in C:\wamp64\www\HTML\MVC\libreries\core\View.php on line 10
+[06-Oct-2022 20:24:56 UTC] PHP Stack trace:
+[06-Oct-2022 20:24:56 UTC] PHP   1. {main}() C:\wamp64\www\HTML\MVC\index.php:0
+[06-Oct-2022 20:24:56 UTC] PHP   2. App->__construct() C:\wamp64\www\HTML\MVC\index.php:18
+[06-Oct-2022 20:24:56 UTC] PHP   3. singup->render() C:\wamp64\www\HTML\MVC\libreries\core\App.php:46
+[06-Oct-2022 20:24:56 UTC] PHP   4. View->render() C:\wamp64\www\HTML\MVC\Controllers\singup.php:10
+[06-Oct-2022 20:24:56 UTC] PHP Fatal error:  require(): Failed opening required 'views/views/login/singup.php' (include_path='.;C:\php\pear') in C:\wamp64\www\HTML\MVC\libreries\core\View.php on line 10
+[06-Oct-2022 20:24:56 UTC] PHP Stack trace:
+[06-Oct-2022 20:24:56 UTC] PHP   1. {main}() C:\wamp64\www\HTML\MVC\index.php:0
+[06-Oct-2022 20:24:56 UTC] PHP   2. App->__construct() C:\wamp64\www\HTML\MVC\index.php:18
+[06-Oct-2022 20:24:56 UTC] PHP   3. singup->render() C:\wamp64\www\HTML\MVC\libreries\core\App.php:46
+[06-Oct-2022 20:24:56 UTC] PHP   4. View->render() C:\wamp64\www\HTML\MVC\Controllers\singup.php:10
+[06-Oct-2022 20:24:56 UTC] SessionController::validateSession()
+[06-Oct-2022 20:24:56 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url => singup
+[06-Oct-2022 20:24:56 UTC] sessionController::isPublic(): currentURL => singup
+[06-Oct-2022 20:24:56 UTC] SessionController::validateSession() public page
+[06-Oct-2022 20:24:56 UTC] PHP Warning:  require(views/views/login/singup.php): failed to open stream: No such file or directory in C:\wamp64\www\HTML\MVC\libreries\core\View.php on line 10
+[06-Oct-2022 20:24:56 UTC] PHP Stack trace:
+[06-Oct-2022 20:24:56 UTC] PHP   1. {main}() C:\wamp64\www\HTML\MVC\index.php:0
+[06-Oct-2022 20:24:56 UTC] PHP   2. App->__construct() C:\wamp64\www\HTML\MVC\index.php:18
+[06-Oct-2022 20:24:56 UTC] PHP   3. singup->render() C:\wamp64\www\HTML\MVC\libreries\core\App.php:46
+[06-Oct-2022 20:24:56 UTC] PHP   4. View->render() C:\wamp64\www\HTML\MVC\Controllers\singup.php:10
+[06-Oct-2022 20:24:56 UTC] PHP Fatal error:  require(): Failed opening required 'views/views/login/singup.php' (include_path='.;C:\php\pear') in C:\wamp64\www\HTML\MVC\libreries\core\View.php on line 10
+[06-Oct-2022 20:24:56 UTC] PHP Stack trace:
+[06-Oct-2022 20:24:56 UTC] PHP   1. {main}() C:\wamp64\www\HTML\MVC\index.php:0
+[06-Oct-2022 20:24:56 UTC] PHP   2. App->__construct() C:\wamp64\www\HTML\MVC\index.php:18
+[06-Oct-2022 20:24:56 UTC] PHP   3. singup->render() C:\wamp64\www\HTML\MVC\libreries\core\App.php:46
+[06-Oct-2022 20:24:56 UTC] PHP   4. View->render() C:\wamp64\www\HTML\MVC\Controllers\singup.php:10

@@ -91,7 +91,21 @@ public function get($id){
 }//fin get
 
 
-public function delete($id){}//fin delete
+public function delete($id){
+    try{
+        $query = $this->prepare(
+            'UPDATE `sucursal` SET 
+            estado_roles = "DC"
+            WHERE estado_sucursal = "AC"
+            AND id_sucursal = :id'  );
+
+        $query->execute(['id' => $this->getid()]);
+        
+        return true;
+    }catch(PDOException $e){
+        return false;
+    }
+}//fin delete
 
 
 public function update(){

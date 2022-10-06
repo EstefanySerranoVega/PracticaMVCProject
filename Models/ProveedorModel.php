@@ -89,7 +89,20 @@ Class ProveedorModel Extends Model implements IModel{
     }//fin get
 
 
-    public function delete($id){}//fin delete
+    public function delete($id){
+        try{
+            $query = $this->prepare(
+                'UPDATE `proveedor` SET
+                estado_proveedor = "DC"
+                WHERE estado_proveedor = "AC"
+                AND id_proveedor = :id' );
+            $query->execute(['id' => $this->getId() ]);
+            
+            return true;
+        }catch(PDOException $e){
+            return false;
+        }
+    }//fin delete
 
 
     public function update(){

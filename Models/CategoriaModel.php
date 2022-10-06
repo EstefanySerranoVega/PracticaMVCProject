@@ -90,8 +90,19 @@ public function get($id){
 
 
 public function delete($id){
-    
-    $this->estadoCategoria = 'DC';
+    try{
+        $query = $this->prepare(
+            'UPDATE `categoria` SET
+            estado_categoria = "DC"
+            WHERE id_categoria = :id
+            AND estado_categoria = "AC" ' );
+        $query->execute([ 'id' => $this->getId()]);
+
+        return true;
+    }catch(PDOException $e){
+        echo 'Hubo un error '.$e;
+        return false;
+    }
 }//fin delete
 
 

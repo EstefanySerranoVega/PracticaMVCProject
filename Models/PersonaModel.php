@@ -100,7 +100,19 @@ class PersonaModel extends Model implements IModel{
 
 
     public function delete($id){
+        try{
+            $query = $this->prepare(
+                'UPDATE `persona` SET
+              estado_persona = "DC"
+                WHERE id_persona = :id
+                AND estado_persona = "AC" ',
+                 );
+            $query->execute(['id' => $this->getId()]);
 
+            return true;
+        }catch(PDOException $e){
+            return false;
+        }
     }//fin delete persona
     public function update(){
         try{
@@ -192,6 +204,8 @@ public function setEstado($estado){
 public function setCreacion($creacion){
     $this->creacion = $creacion;
 }
+
+
 
 }
 

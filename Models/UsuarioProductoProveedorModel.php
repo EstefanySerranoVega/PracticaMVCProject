@@ -104,7 +104,21 @@ public function get($id){
         return false;}
 }//fin get
 
-public function delete($id){}//fin delete
+public function delete($id){
+    try{
+        $query = $this->prepare(
+            'UPDATE `usuario_producto_proveedor` SET
+            estado_upp = "DC"
+            WHERE id_usuario_producto_proveedor =:id 
+            AND estado_upp = "AC"'   );
+
+        $query->execute(['id' => $this->getId() ]);    
+
+            return true;
+    }catch(PDOException $e){
+        return false;
+    }
+}//fin delete
 
 public function update(){
     try{
