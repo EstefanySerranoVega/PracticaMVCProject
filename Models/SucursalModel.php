@@ -52,17 +52,13 @@ public function getAll(){
         while($p = $query->fetch(PDO::FETCH_ASSOC)){
             $item = new SucursalModel();
 
-            $item->setId($p['id_sucursal']);
-            $item->setAlmacen($p['id_almacen']);
-            $item->setNombre($p['nombre_sucursal']);
-            $item->setDireccion($p['direccion_sucursal']);
-            $item->setCreacion($p['creacion_sucursal']);
-            $item->setEstado($p['estado_sucursal']);
+            $item->from($p);
 
             array_push($items,$item);
         }
         return $items;
     }catch(PDOException $e){
+        error_log('SucursalModel::getAll()=> '.$e);
         return false;
     }
 }//fin getAll
@@ -77,15 +73,11 @@ public function get($id){
 
         $sucursal = $query->fetchAll(PDO::FETCH_ASSOC);
 
-        $this->setId($sucursal['id_sucursal']);
-        $this->setAlmacen($sucursal['id_almacen']);
-        $this->setNombre($sucursal['nombre_almacen']);
-        $this->setDireccion($sucursal['direccion_sucursal']);
-        $this->setCreacion($sucursal['creacion_sucursal']);
-        $this->setEstado($sucursal['estado_sucursal']);
+        $this->from($sucursal);
 
         return $this;
     }catch(PDOException $e){
+        error_log('SucursalModel::get()=> '.$e);
         return false;
     }
 }//fin get
@@ -178,27 +170,25 @@ public function getEstado(){
     return $this->estado;
 }
 
-public function sucursalExist($a){
-$this->idSucursal = $a;
-$this->estadoSucursal = 'AC';
-try{
-$sql = $this->db->prepare(
-    'SELECT * FROM `sucursal`
-    WHERE id_sucursal = :sucursal
-    AND estado_sucursal =:estado ');
-    $select = $sql->execute([
-        'sucursal'=>$this->idSucursal,
-        'estado'=>$this->idSucursal
-    ]);
-    if($sql->rowCount()){
-        return true;
-    }else{
-        return false;
-    }
+public function exist($name){
+    try{
+        $query = $this->prepare(
+            'SELECT * FROM `sucursal`
+            WHERE nombre_sucursal = :name
+            AND estado_sucursal = "AC"');
 
-}catch(Exception $x){
-    return 'Ha ocurrido un error'.$x;
-}
+        $query->execute([ 'name'=>$name]);
+        if($query->rowCount() > 0){
+            error_log('SucursalModel::exist()->rowCount()=> true');
+            return true;
+        }else{
+            error_log('SucursalModel::exist()->roeCount=> false');
+            return false;
+        }
+
+    }catch(Exception $x){
+        return 'Ha ocurrido un error'.$x;
+    }
 }//fin sucursal exist
 
 

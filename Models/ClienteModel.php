@@ -54,18 +54,14 @@ Class ClienteModel extends Model implements IModel {
 
                 $item = new ClienteModel();
 
-                $item->setId($p['id_cliente']);
-                $item->setPersona($p['id_persona']);
-                $item->setCorreo($p['correo_cliente']);
-                $item->setCreacion($p['creacion_cliente']);
-                $item->setEstado($p['estado_cliente']);
+                $item->from($p);
 
                 array_push($items, $item);
             }
 
             return $items;
         }catch(PDOException $e){
-            echo 'Hubo un error '.$e;
+            error_log('ClienteModel::getAll() => '.$e);
             return false;
         }
     }//fin get all
@@ -76,21 +72,16 @@ Class ClienteModel extends Model implements IModel {
         try{
             $query = $this->prepare(
                 'SELECT * FROM `cliente` WHERE id_cliente = :id ');
-            $query->execute([
-                'id'=>$id]);
+            $query->execute(['id'=>$id]);
 
             $cliente = $query->fetchAll(PDO::FETCH_ASSOC);
 
-            $this->setId($cliente['id_cliente']);
-            $this->setPersona($cliente['id_persona']);
-            $this->setCorreo($cliente['correo_cliente']);
-            $this->setCreacion($cliente['creacion_cliente']);
-            $this->setEstado($cliente['estado_cliente']);
+            $this->from($cliente);
 
             return $this;
 
         }catch(PDOException $e){
-            echo 'Hubo un error'.$e;
+            error_log('ClienteModel::get() => '.$e);
             return false;
         }
     }//fin get

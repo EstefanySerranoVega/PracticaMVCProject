@@ -9,7 +9,7 @@ Class Login Extends SessionController{
     }
     public function render(){
         echo 'User controller funciona';
-        $this->view->render('login/index');
+        $this->view->render('login/index', []);
     }
 }
 

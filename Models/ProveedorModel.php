@@ -50,16 +50,13 @@ Class ProveedorModel Extends Model implements IModel{
 
                 $item = new ProveedorModel();
 
-                $item->setId($p['id_proveedor']);
-                $item->setEmpresa($p['empresa_proveedor']);
-                $item->setCorreo($p['correo_proveedor']);
-                $item->setEstado($p['estado_proveedor']);
-                $item->setCreacion('creacion_proveedor');
+                $item->from($p);
 
                 array_push($items,$item);
             }
             return $items;
         }catch(PDOException $e){
+            error_log('ProveedorModel::getAll()=> '.$e);
             return false;
         }
     }//fin get all
@@ -75,15 +72,12 @@ Class ProveedorModel Extends Model implements IModel{
 
             $proveedor = $query->fetchAll(PDO::FETCH_ASSOC);
 
-            $this->setId($proveedor['id_proveedor']);
-            $this->setEmpresa($proveedor['empresa_proveedor']);
-            $this->setCorreo($proveedor['correo_proveedor']);
-            $this->setEstado($proveedor['estado_proveedor']);
-            $this->setCreacion($proveedor['creacion_proveedor']);
+            $this->from($proveedor);
 
             return $this;
 
         }catch(PDOException $e){
+            error_log('ProveedorModel::get()=> '.$e);
             return false;
         }
     }//fin get
@@ -166,25 +160,23 @@ public function getCreacion(){
     return $this->creacion;
 }
 
-    public function proveedorExist($a){
+    public function exist($name){
 
-        $this->idProveedor = $a;
-        $this->estadoProveedor = 'AC';
         try{
-            $sql = $this->db->prepare(
+            $query = $this->prepare(
                 ' SELECT * FROM `proveedor`
-                WHERE id_proveedor= :proveedor,
-                    estado_proveedor = :estado' );
-            $select = $sql->execute([
-                'proveedor'=>$this->idProveedor,
-                'estado'=>$this->estadoProveedor]);
-            if($sql->rowCount()){
+                WHERE empresa_proveedor= :name,
+                    estado_proveedor = "AC"' );
+            $query->execute(['name'=>$name]);
+            if($query->rowCount() > 0){
+                error_log('ProveedorModel::exist()->rowCount()=> true');
                 return true;
-}else{
-    return false;
-}
-        }catch(Exception $x){
-            return 'Ha ocurrido un error '.$x;
+            }else{
+                error_log('ProveedorModel::exist()->rowCount()=> false');
+                return false;
+            }
+        }catch(PDOException $e){
+            error_log('ProveedorModel::exist() => '.$e);
         }
 
     }//fin proveedor exist

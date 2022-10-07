@@ -56,22 +56,17 @@ public function getAll(){
     try{
         $query = $this->query(
             'SELECT * FROM `producto` WHERE estado_producto = "AC"' );
+        
         while($p = $query->fetchAll(PDO::FETCH_ASSOC)){
             $item = new ProductoModel();
 
-            $item->setId($p['id_producto']);
-            $item->setCategoria($p['id_categoria']);
-            $item->setNombre($p['nombre_producto']);
-            $item->setCodigo($p['codigo_producto']);
-            $item->setCantidad($p['cantidadProducto']);
-            $item->setImg($p['img_producto']);
-            $item->setPrecio($p['precio_venta_producto']);
-            $item->setEstado($p['estado_producto']);
+            $item->from($p);
 
             array_push($items,$item);
         }
         return $items;
     }catch(PDOException $e){
+        error_log('ProductoModel::getAll() =>'.$e);
         return false;
     }
 
@@ -82,20 +77,13 @@ public function getAll(){
 public function get($id){
     try{
         $query = $this->prepare(
-            'SELECT * FROM `producto` WHERE id_productp = :id 
+            'SELECT * FROM `producto` WHERE id_producto = :id 
             AND estado_producto = "AC" ' );
             $query->execute(['id'=> $id]);
         
             $producto = $query->fetAll(PDO::FETCH_ASSOC);
 
-            $this->setId($producto['id_producto']);
-            $this->setCategoria($producto['id_categoria']);
-            $this->setNombre($producto['nombre_producto']);
-            $this->setCodigo($producto['codigo_producto']);
-            $this->setCantidad($producto['cantidad_producto']);
-            $this->setImg($producto['img_producto']);
-            $this->setPrecio($producto['precio_venta_producto']);
-            $this->setEstado($producto['estado_producto']);
+            $this->from($producto);
 
             return $this;
     }catch(PDOException $e){
@@ -216,28 +204,72 @@ public function setEstado($estado){
 
 public function exist($name)
     {
-        $this->estadoProducto = 'AC';
         try {
-            $sql = $this->db->prepare(
-                'SELECT *
-                FROM `producto`
+            $query = $this->prepare(
+                'SELECT * FROM `producto`
             WHERE nombre_producto = :name
-            AND estado_producto = :estado '
-            );
-            $select = $sql->execute([
-                'name' => $name,
-            'estado'=>$this->estadoProducto]);
-          if($sql->rowCount()){
+            AND estado_producto = "AC" ' );
+            $query->execute(['name' => $name]);
+
+          if($query->rowCount()){
+            error_log('ProductoModel::exist()->rowCount => true');
             return true;
           }else{
+            error_log('ProductoModel::exist()->rowCount => false');
             return false;
           }
-        } catch (exception $x) {
-            return 'Hubo un error al verificar el producto' . $x;
+        } catch (PDOException $e) {
+            error_log('ProductoModel::exist() => '.$e);
         }
     }//fin product exist
 
+public function getAllCategoryId($idCat){
+    $items = [];
+    try{
+        $query = $this->prepare(
+            'SELECT * FROM `producto` WHERE id_categoria = :id 
+            AND estado_producto = "AC" ' );
+            $query->execute(['id'=> $idCat]);
+        
+            $producto = $query->fetAll(PDO::FETCH_ASSOC);
 
-   
+            $this->from($producto);
+            while($p = $query->fetch(PDO::FETCH_ASSOC)){
+                $item = new ProductoModel();
+
+                $item->from($p);
+                array_push($items,$item);
+            }
+
+            return $items;
+    }catch(PDOException $e){
+        return false;
+    } 
+}
+public function getCategoryIdAndLimit($idCat, $n){
+    $items = [];
+    try{
+        $query = $this->prepare(
+            'SELECT * FROM `producto` WHERE id_categoria = :id ORDER BY nombre_producto DESC LIMIT :n
+            AND estado_producto = "AC" ' );
+            $query->execute([
+                'id'=> $idCat,
+                'n' => $n]);
+        
+            $producto = $query->fetAll(PDO::FETCH_ASSOC);
+
+            $this->from($producto);
+            while($p = $query->fetch(PDO::FETCH_ASSOC)){
+                $item = new ProductoModel();
+
+                $item->from($p);
+                array_push($items,$item);
+            }
+
+            return $items;
+    }catch(PDOException $e){
+        return false;
+    } 
+} 
  
 }

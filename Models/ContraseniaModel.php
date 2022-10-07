@@ -51,17 +51,13 @@ public function getAll(){
         while($p = $query->fetch(PDO::FETCH_ASSOC)){
             $item = new ContraseniaModel();
 
-            $item->setId($p['id_contrasenia']);
-            $item->setUser($p['id_usuario']);
-            $item->setNombre($p['nombre_contrasenia']);
-            $item->setEstado($p['estado_contrasenia']);
-            $item->setModificacion($p['modificacion_contrasenia']);
-            $item->setCreacion($p['creacion_contrasenia']);
+            $item->from($p);
 
             array_push($items,$item);
         }
         return $items;
     }catch(PDOException $e){
+        error_log('ContraseniaModel::getAll()=> '.$e);
         return false;
     }
 }//fin get all
@@ -75,15 +71,11 @@ public function get($id){
 
         $contrasenia = $query->fetchAll(PDO::FETCH_ASSOC);
 
-        $this->setId($contrasenia['id_contrasenia']);
-        $this->setUser($contrasenia['id_usuario']);
-        $this->setNombre($contrasenia['nombre_contrasenia']);
-        $this->setEstado($contrasenia['estado_contrasenia']);
-        $this->setModificacion($contrasenia['modificacion_contrasenia']);
-        $this->setCreacion($contrasenia['creacion_contrasenia']);
+        $this->from($contrasenia);
 
         return $this;
     }catch(PDOException $e){
+        error_log('ContraseniaModel::get()=> '.$e);
         return false;
     }
 }//fin get
@@ -175,7 +167,15 @@ public function setModificacion($modificacion){
 public function setCreacion($creacion){
     $this->creacion = $creacion;
 }
-
+public function comparePassword($pass, $user){
+    try{
+        $user = $this->get($user); 
+        return password_verify($pass,$user->getNombre());
+    }catch(PDOException $e){
+        error_log('ERROR::CONTRASENIAMODEL_conparePassword '.$e);
+        return false;
+    }
+}
 
 }
 

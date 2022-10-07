@@ -11,6 +11,11 @@
         "role": ""
     }, {
 
+        "site": "login",
+        "access": "public",
+        "role": ""
+    }, {
+
         "site": "venta",
         "access": "private",
         "role": "user"

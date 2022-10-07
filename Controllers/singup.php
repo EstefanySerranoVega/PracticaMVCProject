@@ -7,7 +7,7 @@ function __construct(){
     parent::__construct();    
 }
 public function render(){
-    $this->view->render('views/login/singup',[]);
+    $this->view->render('login/singup',[]);
 }
 
 function newUser(){

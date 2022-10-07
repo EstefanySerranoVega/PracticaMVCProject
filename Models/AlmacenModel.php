@@ -52,17 +52,14 @@ public function getAll(){
         while($p = $query->fetch(PDO::FETCH_ASSOC)){
             $item = new AlmacenModel();
 
-            $item->setId($p['id_almacen']);
-            $item->setNombre($p['nombre_almacen']);
-            $item->setCreacion($p['creacion_almacen']);
-            $item->setEstado($p['estado_almacen']);
+            $item->from($p);
 
             array_push($items,$item);
         }
 
         return $items;
     }catch(PDOException $e){
-        echo 'Hubo un error al cargar los elementos '.$e;
+        error_log('AlmacenModel::getAll() => '.$e);
 
         return false;
     }
@@ -77,15 +74,12 @@ public function get($id){
 
         $almacen = $query->fetchAll(PDO::FETCH_ASSOC);
 
-        $this->setId($almacen['id_almacen']);
-        $this->setNombre($almacen['nombre_almacen']);
-        $this->setCreacion($almacen['creacion_almacen']);
-        $this->setEstado($almacen['estado_almacen']);
+        $this->from($almacen);
 
         return $this;
 
     }catch(PDOException $e){
-        echo 'Ha ocurrido un error '.$e;
+        error_log('AlmacenModel::get() => '.$e);
 
         return false;
     }
@@ -179,7 +173,7 @@ public function exist($a){
             return false;
         }
     }catch(Exception $e){
-        return 'Ha ocurrido un error '.$e;
+        return 'AlmacenModel::exist() => '.$e;
     }
 }//fin almacen exist
 

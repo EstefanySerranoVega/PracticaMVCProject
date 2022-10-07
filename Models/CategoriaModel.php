@@ -50,16 +50,13 @@ public function getAll(){
 
             $item = new CategoriaModel();
 
-            $item->setId($p['id_categoria']);
-            $item->setNombre($p['nombre_categoria']);
-            $item->setCreacion($p['creacion_categoria']);
-            $item-> setEstado($p['estado_categoria']);
+            $item->from($p);
 
             array_push($items,$item);
         }
         return $items;
     }catch(PDOException $e){
-        echo 'Hubo un error '.$e;
+        error_log('CategoriaModel::getAll()=> '.$e);
         return false;
     }
 
@@ -70,20 +67,15 @@ public function get($id){
     try{
         $query = $this->prepare(
             'SELECT * FROM `categoria` WHERE id_categoria = :id ');
-        $query->execute([
-            'id'=>$id]);
+        $query->execute([ 'id'=>$id]);
 
         $categoria = $query->fetchAll(PDO::FETCH_ASSOC);
 
-        $this->setId($categoria['id_categoria']);
-        $this->setNombre($categoria['nombre_categoria']);
-        $this->setCreacion($categoria['creacion_categoria']);
-        $this->setEstado($categoria['estado_categoria']);
+        $this->from($categoria);
 
         return $this;
-
     }catch(PDOException $e){
-        echo 'Hubo un error '.$e;
+        error_log('CategoriaModel::get()=> '.$e);
         return false;
     }
 }//fin get
@@ -153,6 +145,27 @@ public function from($array){
         return $this->creacionCategoria;}
         public function getEstado(){
             return $this->estadoCategoria;}
+
+public function exist($name){
+    try{
+        $query = $this->prepare(
+            'SELECT * FROM `categoria`
+            WHERE nombre_categoria = :name
+            AND estado_producto = "AC"');
+            $query->execute(['name' => $name]);
+            
+          if($query->rowCount()){
+            error_log('CategoriaModel::exist()->rowCount => true');
+            return true;
+          }else{
+            error_log('CategoriaModel::exist()->rowCount => false');
+            return false;
+          }
+    }catch(PDOException $e){
+        error_log('CategoriaModel::exist()=> '.$e);
+    }
+
+}
 
 }
 

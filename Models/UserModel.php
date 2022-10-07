@@ -53,19 +53,14 @@ class UserModel extends Model implements IModel{
 
                 $item = new UserModel();
 
-                $item->setId($p['id_usuario']);
-                $item->setPersona($p['id_persona']);
-                $item->setRoles($p['id_roles']);
-                $item->setNombre($p['nombre_usuario']);
-                $item->setEstado($p['estado_usuario']);
-                $item->setCreacion($p['creacion_usuario']);
+                $item->from($p);
 
                 array_push($items,$item);
 
             }
             return $items;
         }catch(PDOException $e){
-           // error_log('ERROR::USER_MODEL->getAll()'.$e);
+           error_log('ERROR::USER_MODEL->getAll() => '.$e);
            return false;
         }
     }//fin getAll
@@ -79,17 +74,12 @@ class UserModel extends Model implements IModel{
 
              $user = $query->fetchAll(PDO::FETCH_ASSOC);
                 
-             $this->setId($user['id_usuario']);
-             $this->setPersona($user['id_persona']);
-             $this->setRoles($user['id_roles']);
-             $this->setNombre($user['nombre_usuario']);
-             $this->setCreacion($user['creacion_usuario']);
-             $this->setEstado($user['estado_usuario']);
+             $this->from($user);
 
              return $this;
 
             }catch(PDOException $e){
-             echo 'Hubo un error'.$e;
+                error_log('ERROR::UserModel->get() => '.$e);
             return false;
             }
     }//fin get
@@ -178,15 +168,19 @@ public function getRoles(){
 public function exist($name){
     try{
         $query = $this->prepare(
-            'SELECT * FROM `usuario` WHERE nombre_usuario = :name');
+            'SELECT * FROM `usuario` 
+            WHERE nombre_usuario = :name
+            AND estado_usuario = "AC"');
         $query->execute(['name' => $name]);
         if($query->rowCount() > 0){
+            error_log('UserModel::exist->rowCount()=> true');
             return true;
         }else{
+            error_log('UserModel::exist->rowCount()=> false');
             return false;
         }
     }catch(PDOException $e){
-        echo $e;
+       error_log('ERROR::UserModel->exist() => '.$e);
         return false;
     }
 }

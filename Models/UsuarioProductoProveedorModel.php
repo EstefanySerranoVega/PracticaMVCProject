@@ -61,14 +61,7 @@ public function getAll(){
         while($p = $query->fetch(PDO::FETCH_ASSOC)){
             $item = new UsuarioProductoProveedorModel();
 
-            $item->setId($p['id_usuario_producto_proveedor']);
-            $item->setUsuario($p['id_usuario']);
-            $item->setProducto($p['id_proveedor']);
-            $item->setProveedor($p['id_proveedor']);
-            $item->setPrecio($p['precio_upp']);
-            $item->setIngreso($p['fecha_ingreso_upp']);
-            $item->setEstado($p['estado_upp']);
-            $item->setCreacion($p['creacion_upp']);
+            $item->from($p);
 
             array_push($items,$item);
         }
@@ -76,6 +69,7 @@ public function getAll(){
         return $items;
 
     }catch(PDOException $e){
+        error_log('ERROR::usuarioProductoProveedor->getAll() => '.$e);
         return false;
     }
 }//fin get all
@@ -89,18 +83,12 @@ public function get($id){
 
         $upp = $query->fetchAll(PDO::FETCH_ASSOC);
 
-        $this->setId($upp['id_usuario_producto_proveedor']);
-        $this->setUsuario($upp['id_usuario']);
-        $this->setProducto($upp['id_proveedor']);
-        $this->setProveedor($upp['id_proveedor']);
-        $this->setPrecio($upp['precio_upp']);
-        $this->setIngreso($upp['fecha_ingreso_upp']);
-        $this->setEstado($upp['estado_upp']);
-        $this->setCreacion($upp['creacion_upp']);
+        $this->from($upp);
 
         return $this;
 
     }catch(PDOException $e){
+        error_log('ERROR::usuarioProductoProveedor->get() => '.$e);
         return false;}
 }//fin get
 
@@ -208,31 +196,6 @@ public function getCreacion(){
     return $this->creacion ;
 }
 
-
-public function uppExist($a){
-$this->idUPP = $a;
-$this->estadoUPP = 'AC';
-try{
-$sql = $this->db->prepare(
-    'SELECT * FROM `usuario_producto_proveedor`
-    WHERE id_usuario_producto_proveedor =:upp
-    AND estado_UPP = :estado'
-);
-$select = $sql->execute([
-    'upp'=>$this->idUPP,
-    'estado'=>$this->estadoU
-]);
-if($sql->rowCount()){
-    return true;
-}else{
-return false;
-}
-
-}catch(Exception $x){
-    return 'Ha cocurrido un error '.$x;
-}
-
-}//fin function upp exist
 
 
 }

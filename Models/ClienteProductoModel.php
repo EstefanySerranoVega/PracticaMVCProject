@@ -56,19 +56,13 @@ Class ClienteProductoModel Extends Model implements IModel{
             while($p = $query->fetch(PDO::FETCH_ASSOC)){
                 $item = new ClienteProductoModel();
 
-                $item->setId($p['id_ClienteProducto']);
-                $item->setCliente($p['id_cliente']);
-                $item->setProducto($p['id_producto']);
-                $item->setTipoPago($p['id_tipo_pago']);
-                $item-> setCantidad($p['cantidad_cp']);
-                $item->setEstado($p['estado_cp']);
-                $item->setCreacion($p['creacion_cp']);
+                $item->from($p);
 
                 array_push($items, $item);
             }
             return $items;
         }catch(PDOException $e){
-            echo 'Ha ocurrido un error '.$e;
+            error_log('ClienteProductoModel::getAll() => '.$e);
             return false;
         }
     }//fin get all
@@ -84,17 +78,12 @@ Class ClienteProductoModel Extends Model implements IModel{
 
             $clienteProducto = $query->fetchAll(PDO::FETCH_ASSOC);
 
-            $this->setId($clienteProducto['id_cliente_producto']);
-            $this->setCliente($clienteProducto['id_cliente']);
-            $this->setProducto($clienteProducto['id_producto']);
-            $this->setTipoPago($clienteProducto['id_tipo_pago']);
-            $this-> setCantidad($clienteProducto['cantidad_cp']);
-            $this->setEstado($clienteProducto['estado_cp']);
-            $this->setCreacion($clienteProducto['creacion_cp']);
+            $this->from($clienteProducto);
 
             return $this;
 
         }catch(PDOException $e){
+            error_log('ClienteProductoModel::get() => '.$e);
             return false;
         }
     }//fin get

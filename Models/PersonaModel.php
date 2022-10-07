@@ -57,19 +57,13 @@ class PersonaModel extends Model implements IModel{
             while($p = $query->fetch(PDO::FETCH_ASSOC)){
                 $item = new PersonaModel();
 
-                $item->setId($p['id_persona']);
-                $item->setNombre($p['nombre_persona']);
-                $item->setPaterno($p['paterno_persona']);
-                $item->setMaterno($p['materno_persona']);
-                $item->setTelefono($p['telefono_persona']);
-                $item->setNacimiento($p['nac_persona']);
-                $item->setEstado($p['estado_persona']);
-                $item->setCreacion($p['creacion_persona']);
+                $item->from($p);
 
                 array_push($items,$item);
             }
             return $items;
         }catch(PDOException $e){
+            error_log('PersonaModel::getAll()=> '.$e);
             return false;
         }
 
@@ -83,17 +77,11 @@ class PersonaModel extends Model implements IModel{
 
             $persona = $query->fetchAll(PDO::FETCH_ASSOC);
 
-            $this->setId($persona['id_persona']);
-            $this->setNombre($persona['nombre_persona']);
-            $this->setPaterno($persona['paterno_persona']);
-            $this->setMaterno($persona['materno_persona']);
-            $this->setTelefono($persona['telefono_persona']);
-            $this->setNacimiento($persona['nac_persona']);
-            $this->setEstado($persona['estado_persona']);
-            $this->setCreacion($persona['creacion_persona']);
+            $this->from($persona);
 
             return $this;
         }catch(PDOException $e){
+            error_log('PersonaModel::get()=> '.$e);
             return false;
         }
     }//fin get

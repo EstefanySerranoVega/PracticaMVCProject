@@ -43,15 +43,13 @@ public function getAll(){
         while($p = $query->fetch(PDO::FETCH_ASSOC)){
             $item = new TipoPagoModel();
 
-            $item->setId($p['id_tipo_pago']);
-            $item->setNombre($p['nombre_tipo_pago']);
-            $item->setCreacion($p['creacion_tipo_pago']);
-            $item->setEstado($p['estado_tipo_pago']);
+            $item->from($p);
 
             array_push($items,$item);
         }
         return $items;
     }catch(PDOException $e){
+        error_log('TipoPagoModel::getAll() => '.$e);
         return false;
     }
 }//fin get all
@@ -64,14 +62,12 @@ public function get($id){
 
         $tipoPago = $query->fetchAll(PDO::FETCH_ASSOC);
 
-        $this->setId($tipoPago['id_tipo_pago']);
-        $this->setNombre($tipoPago['nombre_tipo_pago']);
-        $this->setCreacion($tipoPago['creacion_tipo_pago']);
-        $this->setEstado($tipoPago['estado_tipo_pago']);
+        $this->from($tipoPago);
 
         return $this;
 
     }catch(PDOException $e){
+        error_log('TipoPagoModel::get() => '.$e);
         return false;
     }
 }//fin get
@@ -117,28 +113,6 @@ public function from($array){
     $this->estado = $array['estado_tipo_pago'];
 }//fin from
 
-public function tipoPagoExist($a){
-    $this->idTP =$a;
-    $this->estadoTP = 'AC';
-try{
-$sql = $this->db->prepare(
-    'SELECT * FROM `tipo_pago`
-    WHERE id_tipo_pago= :tipoPago
-    estado_tp =: estado '
-);
-$select = $sql->execute([
-    'tipoPago'=>$this->idTipoPago,
-    'estado'=>$this->estadoTP
-]);
-if($sql->rowCount()){
-    return true;
-}else{
-    return false;}
-
-}catch(Exception $x){
-    return 'Ha ocurrido un error '.$x;
-}
-}//fin tipo pago exist
 
 //SETTERS
 public function setId($id){
@@ -167,6 +141,25 @@ public function getCreacion(){
 public function getEstado(){
     return $this->estado;
 }
+
+public function exist($name){
+    try{
+        $query = $this->prepare(
+            'SELECT * FROM `tipo_pago`
+            WHERE nombre_tipo_pago = :name
+            estado_tp = "AC" ');
+        $query->execute(['name'=>$name]);
+        if($query->rowCount()){
+            error_log('TipoPagoModel::exist()->rowCount()=> true');
+            return true;
+        }else{
+            error_log('TipoPagoModel::exist()->rowCount()=> false');
+            return false;}
+
+    }catch(PDOException $e){
+        error_log('TipoPagoModel::exist()=> '.$e);
+}
+}//fin tipo pago exist
 
 
 }

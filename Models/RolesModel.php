@@ -43,17 +43,14 @@ public function getAll(){
         while($p = $query->Fetch(PDO::FETCH_ASSOC)){
             $item = new RolesModel();
 
-            $item->setId($p['id_roles']);
-            $item->setAccesos($p['id_roles']);
-            $item->setNombre($p['nombre_roles']);
-            $item->setCreacion($p['creacion_roles']);
-            $item->setEstado($p['estado_roles']);
+            $item->from($p);
 
             array_push($items,$item);
 
         }
         return $items;
     }catch(PDOException $e){
+        error_log('RolesModel::getAll()=> '.$e);
         return false;
     }
 }//fin getAll
@@ -67,14 +64,11 @@ public function get($id){
 
         $roles = $query->fetchAll(PDO::FETCH_ASSOC);
 
-        $this->setId($roles['id_roles']);
-        $this->setAccesos($roles['id_roles']);
-        $this->setNombre($roles['nombre_roles']);
-        $this->setCreacion($roles['creacion_roles']);
-        $this->setEstado($roles['estado_roles']);
+        $this->from($roles);
 
         return $this;
     }catch(PDOException $e){
+        error_log('RolesModel::get()=> '.$e);
         return false;
     }
 }//fin get
@@ -154,28 +148,23 @@ public function getEstado(){
     return $this->estado;
 }
 
-public function rolesExist($a){
-$this->idRoles = $a;
-$this->estadoRoles = 'AC';
+public function exist($name){
+    try{
+        $query =$this->prepare(
+            'SELECT * FROM `roles` 
+            WHERE nombre_roles = :name 
+            AND estado_roles = "AC" ');
+        $query->execute(['name'=>$name]);
+    if($query->rowCount() > 0){
+        error_log('RolesModel::exist()->rowCount()=> true');
+        return true;
+    }else{
+        error_log('RolesModel::exist()->rowCount()=> false');
+        return false;
+    }
 
-try{
-$sql =$this->db->prepare(
-    'SELECT * FROM `roles` 
-    WHERE id_roles =:roles 
-    AND estado_roles =:estado'
-);
-$select = $sql->execute([
-    'roles'=>$this->idRoles,
-    'estado'=>$this->estadoRoles
-]);
-if($sql->rowCount()){
-    return true;
-}else{
-    return false;
-}
-
-}catch(Exception $x){
-    return 'Ha ocurrido un error '.$x;
+}catch(PDOException $e){
+    error_log('RolesModel::exist()=> '.$e);
 }
 }//fin roles exist
 

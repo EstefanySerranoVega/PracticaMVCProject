@@ -53,17 +53,14 @@ Class AccesosModel Extends Model implements IModel{
 
                 $item = new AccesosModel();
 
-                $item->setId($p['id_accesos']);
-                $item->setNombre($p['nombre_accesos']);
-                $item->setCreacion($p['creacion_accesos']);
-                $item->setEstado($p['estado_accesos']);
+                $item->from($p);
 
                 array_push($items,$item);
             }
             
             return $items;
         }catch(PDOException $e){
-            echo 'Hubo un error al cargar los elementos '.$e;
+            error_log('AccesosModel::GetAll()=> '.$e);
 
             return false;
         }
@@ -80,15 +77,12 @@ Class AccesosModel Extends Model implements IModel{
 
             $accesos = $query->fetchAll(PDO::FETCH_ASSOC);
 
-            $this->setId($accesos['id_accesos']);
-            $this->setNombre($accesos['nombre_accesos']);
-            $this->setCreacion($accesos['creacion_accesos']);
-            $this->setEstado($accesos['estado_accesos']);
+            $this->from($accesos);
 
             return $this;
 
         }catch(PDOException $e){
-            echo'Hubo un error '.$e;
+            error_log('AccesosModel::get() => '.$e);
             return false;
         }
     
@@ -159,6 +153,25 @@ Class AccesosModel Extends Model implements IModel{
             return $this->estadoAccesos;
         }
 
+        public function exist($name){
+            try{
+                $query = $this->prepare(
+                    'SELECT * FROM `accesos`
+                    WHERE nombre_accesos = :name
+                    AND estado_accesos = "AC" ' );
+                $query->execute(['name' => $name]);
+
+                if($query->rowCount() > 0){
+                    error_log('AccesosModel::exist()->rowCount => true');
+                    return true;
+                }else{
+                    error_log('AccesosModel::exist()->rowCount => false');
+                    return false;
+                }
+            }catch(PDOException $e){
+                error_log('AccesosModel::exist() => '.$e);
+            }
+        }
 }
 
 

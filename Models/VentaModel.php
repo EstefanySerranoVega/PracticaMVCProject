@@ -45,16 +45,14 @@ Class VentaModel extends Model implements IModel{
             while($p = $query->fetch(PDO::FETCH_ASSOC)){
                 $item = new VentaModel();
 
-                $item->setId($p['id_venta']);
-                $item->setCP($p['id_cliente_producto']);
-                $item->setFecha($p['fecha_venta']);
-                $item->setEstado($p['estado_venta']);
+                $item->from($p);
 
                 array_push($items,$item);
             }
 
             return $items;
         }catch(PDOException $e){
+            error_log('ERROR::VentaModel->getAll() => '.$e);
             return false;
         }
     }//fin get all
@@ -69,12 +67,10 @@ Class VentaModel extends Model implements IModel{
 
             $venta = $query->fetchAll(PDO::FETCH_ASSOC);
             
-            $this->setId($venta['id_venta']);
-            $this->setCP($venta['id_cliente_producto']);
-            $this->setFecha($venta['fecha_venta']);
-            $this->setEstado($venta['estado_venta']);
+            $this->from($venta);
 
         }catch(PDOException $e){
+            error_log('ERROR::VentaModel->get() => '.$e);
             return false;
         }
     }//fin get
