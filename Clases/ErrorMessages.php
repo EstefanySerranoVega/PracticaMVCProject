@@ -18,6 +18,15 @@ Class ErrorMessages{
     public function get($hash){
         return $this->errorList[$hash];
     }
+
+function existKey($key){
+    if(array_key_exists($key,$this->errorList)){
+        return true;
+    }else{
+        return false;
+    }
+}
+
 }
 
 ?>

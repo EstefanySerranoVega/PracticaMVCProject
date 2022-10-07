@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <?php $this->showMessage() ?>
+    <?php $this->showMessages(); ?>
     <div class="container-gral">
         <div class="Register">
             <form action="<?php echo constant('URL_RAIZ'); ?> singup/newUser" method="POST">
