@@ -33,7 +33,7 @@ class UserModel extends Model implements IModel{
                     'estado' => $this->estado,
                     'creacion' => $this->creacion );
             $query->execute($arrayData);
-            $this->idUser = $this->conexion()->lastInsertId();
+           // $this->idUser = $this->conexion()->lastInsertId();
 
             return true;
         }catch(PDOException $e){

@@ -1,5 +1,7 @@
 <?php
-
+require_once('Clases/ErrorMessages.php');
+require_once('Clases/MessagesManager.php');
+require_once('Clases/SuccessMessages.php');
 Class View{
 
     function __construct(){

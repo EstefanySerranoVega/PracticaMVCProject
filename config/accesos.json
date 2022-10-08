@@ -11,6 +11,16 @@
         "role": ""
     }, {
 
+        "site": "errores",
+        "access": "public",
+        "role": ""
+    }, {
+
+        "site": "success",
+        "access": "public",
+        "role": ""
+    }, {
+
         "site": "login",
         "access": "public",
         "role": ""

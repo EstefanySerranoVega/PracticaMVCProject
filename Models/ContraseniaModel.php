@@ -32,7 +32,7 @@ public function save(){
             'creacion' => $this->creacion
         );
         $query->execute($arrayData);
-        $this->idContrasenia = $this->db->lastInsertId();
+        //$this->idContrasenia = $this->db->lastInsertId();
         return true;
 
     }catch(PDOException $e){

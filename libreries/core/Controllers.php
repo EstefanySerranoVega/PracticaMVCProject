@@ -12,9 +12,9 @@ Class Controllers {
             if(file_exists($rutaModel)){
                 require_once($rutaModel);
                 $this->model = new $model();
-                echo 'loadModel funciona';
+                error_log('Controllers::loadModel()=> true');
             }else{
-                echo 'El modelo no existe';
+                error_log('Controllers::loadModel()=> false [no existe] => '.$rutaModel);
             }
 
     }//fin load model
@@ -22,7 +22,7 @@ Class Controllers {
     public function existPOST($params){
 
         foreach($params as $param){
-            if(isset($_POST[$param])){
+            if(!isset($_POST[$param])){
                 error_log("ExistPOST: No existe el parametro $param" );
                 
                 return false;
@@ -36,7 +36,7 @@ Class Controllers {
     public function existGET($params){
 
         foreach($params as $param){
-            if(isset($_GET[$param])){
+            if(!isset($_GET[$param])){
             return false;
             }
         }
@@ -51,17 +51,20 @@ Class Controllers {
         return $_POST[$name];
     }
 
-    public function redirect($ruta,$mensajes){
-        $data=[];
+    public function redirect($ruta,$mensajes = []){
+        $data = [];
         $params = '';
 
-        foreach($mensajes as $key=>$mensaje){
+        foreach($mensajes as $key => $mensaje){
             array_push($data,$key.'='.$mensaje);
         }
-        $params=join('&',$data);
-        if(!empty($params)){
+       
+        $params = join('&', $data);
+
+        if(empty($params)){
             $params = '?'.$params;
         }
+        error_log('Controllers::redirect()=> ruta: '.$ruta.' params: '.$params);
         header('Location: '.CONSTANT('URL_RAIZ').'/'.$ruta.$params);
     }
 

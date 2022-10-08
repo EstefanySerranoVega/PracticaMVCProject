@@ -40,7 +40,7 @@ class PersonaModel extends Model implements IModel{
 
             $query->execute($arrayData);
 
-            $this->idPersona = $this->db->lastInsertId();
+            //$this->idPersona = $this->db->lastInsertId();
 
             return true;
         }catch(PDOException $e){

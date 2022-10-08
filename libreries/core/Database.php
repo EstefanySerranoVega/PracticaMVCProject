@@ -21,7 +21,7 @@
             
             try{
               
-                $conexionPDO = new PDO('mysql:host='.$this->host,';dbname=' .$this->bd, $this->user, $this->password);
+                $conexionPDO = new PDO('mysql:host=localhost;dbname=' .$this->bd, $this->user, $this->password);
                // $conexionPDO->query("SET NAMES 'utf8'");
                $conexionPDO->query("SET NAMES".$this->charset);
                 return $conexionPDO;

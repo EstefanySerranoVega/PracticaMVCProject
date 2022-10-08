@@ -11,6 +11,6 @@
     <title>Document</title>
 </head>
 <body>
-    Error 404
+    <h1>Error 404</h1>
 </body>
 </html>

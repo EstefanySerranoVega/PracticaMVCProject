@@ -134,7 +134,7 @@ public function isPublic(){
 public function getCurrentPage(){
         $currentLink =  trim("$_SERVER[REQUEST_URI]");
         $url = explode('/',$currentLink);
-        error_log("sessionController::getCurrentPage(): actualLink =>" . $currentLink . ", url => " . $url[3]);
+        error_log("sessionController::getCurrentPage(): actualLink =>" . $currentLink .", url =>".$url[3]);
         
         return $url[3];
 }//fin get current page

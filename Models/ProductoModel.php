@@ -81,7 +81,7 @@ public function get($id){
             AND estado_producto = "AC" ' );
             $query->execute(['id'=> $id]);
         
-            $producto = $query->fetAll(PDO::FETCH_ASSOC);
+            $producto = $query->fetchAll(PDO::FETCH_ASSOC);
 
             $this->from($producto);
 
