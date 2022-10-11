@@ -11,13 +11,16 @@ Class SuccessMessages{
     }
 
     public function get($hash){
+        error_log('SuccessMessages::get()->$hash => '.$hash);
         return $this->successList[$hash];
     }
 
 function existKey($key){
     if(array_key_exists($key,$this->successList)){
+        error_log('SuccessMessages::existKey()->$key => true');
         return true;
     }else{
+        error_log('SuccessMessages::existKey()->$key => false');
         return false;
     }
 }

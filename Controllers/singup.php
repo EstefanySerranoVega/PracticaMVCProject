@@ -6,14 +6,16 @@ require_once('Clases/ErrorMessages.php');
 require_once('Models/PersonaModel.php');
 require_once('Models/UserModel.php');
 require_once('Models/ContraseniaModel.php');
+require_once('libreries/core/View.php');
 
 Class singup Extends sessionController{
-
+    
 function __construct(){
-    parent::__construct();    
+    parent::__construct();   
+    
 }
 public function render(){
-    $this->view->errorMessage ='';
+    //$this->view->ErrorMessages ='';
     $this->view->render('login/singup',[]);
 }
 
@@ -40,7 +42,7 @@ function newUser(){
         || $username = '' || empty($username) 
         || $password = '' || empty($password)){
             error_log('Singup::newUser()->empty ');
-            $this->redirect('singup',['error' =>ErrorMessages::ERROR_SINGUP_NEWUSER_EMPTY]);
+            $this->redirect('singup',['error' => ErrorMessages::ERROR_SINGUP_NEWUSER_EMPTY]);
         }else{
             error_log('Singup::newUser()->value exist ');
             $persona = new PersonaModel();

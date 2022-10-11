@@ -17,13 +17,16 @@ Class ErrorMessages{
         ];
     }
     public function get($hash){
+        error_log('ErrorMessages::get()->$hash => '.$hash);
         return $this->errorList[$hash];
     }
 
 function existKey($key){
     if(array_key_exists($key,$this->errorList)){
+        error_log('ErrorMessages::existKey()->$key => true');
         return true;
     }else{
+        error_log('ErrorMessages::existKey()->$key => false');
         return false;
     }
 }

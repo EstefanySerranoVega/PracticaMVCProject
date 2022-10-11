@@ -10,17 +10,11 @@
     <title>Document</title>
 </head>
 <body>
-    <?php require 'views/header.php'; ?>
-    <?php  $this->showMessages(); 
-      //  error_log('show messages es=> '.$this->showMessages()); 
-      ?>
-
-
     <div class="container-gral">
         <div class="Register">
             <form action="<?php
             echo constant('URL_RAIZ');?>singup/newUser" method="POST">
-            <?php error_log('view/action '.constant('URL_RAIZ').' singup/newUser');?>
+            <?php error_log('view/action '.constant('URL_RAIZ').'singup/newUser');?>
                 <h2>Registrarse</h2>
                 <h2>¿Tienes una cuenta? <a href="<?php echo constant('URL_RAIZ'); ?>/views/login/index.php"  >Iniciar Sesion</a> </h2>
                 <label for="nombrePersona">Escriba su nombre</label>

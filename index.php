@@ -10,11 +10,14 @@ ini_set('log_errors', TRUE); // Error/Exception file logging engine.
 ini_set("error_log", "/wamp64/www/HTML/MVC/php-error.log");
 //error_log( "Hello, errors!" );
 require_once('config/config.php');
+
 require_once('Clases/MessagesManager.php');
+require_once('Clases/sessionController.php');
+
 require_once('libreries/core/App.php');
 require_once('libreries/core/Controllers.php');
-require_once('Clases/sessionController.php');
 require_once('libreries/core/Model.php');
+require_once('libreries/core/messages.php');
 
 
 $app = new App();

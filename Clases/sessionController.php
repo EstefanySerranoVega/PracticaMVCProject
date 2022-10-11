@@ -1,5 +1,6 @@
 <?php
 require_once('Clases/Session.php');
+require_once('libreries/core/Controllers.php');
 Class SessionController Extends Controllers{
 private $userSession;
 private $username;
@@ -52,13 +53,13 @@ public function validateSesion(){
 
         if($this->existSesion()){
         //obtenemos el rol para determinar el acceso a la pagina correspondiente
-                $rol = $this->getUserSesionData()->getRoles();
                 error_log("sessionController::validateSession(): username:" . $this->user->getUsername() . " - role: " . $this->user->getRoles());
+                $rol = $this->getUserSesionData()->getRoles();
             
                 //si es publica
                 if($this->isPublic()){
-                        $this->redirectDefaultSiteByRole($rol);
                         error_log( "SessionController::validateSession() => sitio público, redirige al main de cada rol" );
+                        $this->redirectDefaultSiteByRole($rol);
                    
                 //no es publica
                 }else {
@@ -74,11 +75,11 @@ public function validateSesion(){
                 }
         }else{//no existe la sesion
                 if($this->isPublic()){
-                        error_log('SessionController::validateSession() public page');
+                        error_log('SessionController::validateSession()->is public ->true public page');
                        
                         //ingresa al sitio
                 }else{ 
-                         error_log('SessionController::validateSession() redirect al Home ');
+                         error_log('SessionController::validateSession()->is public false redirect al Home ');
                
                         header('Location: '.constant('URL_RAIZ').'');
                 }
@@ -124,10 +125,12 @@ public function isPublic(){
         $currentURL = preg_replace( "/\?.*/", "", $currentURL);
         for($i = 0; $i < sizeOf($this->sites); $i++){
                 if($currentURL === $this->sites[$i]['site'] &&  $this->sites[$i]['access'] === 'public'){
+                        error_log('sessionController::isPublic()=> true');
                         return true;
                 }
 
         }
+        error_log('sessionController::isPublic()=> false');
         return false;
 }//fin isPublic
 
@@ -154,13 +157,16 @@ private function redirectDefaultSiteByRole($rol){
 
 
 private function isAuthorized($rol){
+        error_log('sessionController::isAuthorized()->rol => '.$rol);
         $currentURL = $this->getCurrentPage();
         $currentURL = preg_replace('/\?.*/','',$currentURL);
 
         for($i = 0; $i < sizeOf($this->sites);$i++){
                 if($currentURL === $this->sites[$i]['site'] && $this->sites[$i]['role'] === $rol){
+                        error_log('sessionController::isAuthorized()=> true');
                         return true;
                 }
+                error_log('sessionController::isAuthorized()=> false');
                 return false;
 
         }
