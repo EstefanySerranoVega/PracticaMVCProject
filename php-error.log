@@ -1,0 +1,73 @@
+[16-Oct-2022 03:22:31 UTC] SessionController::validateSession()
+[16-Oct-2022 03:22:31 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url =>singup
+[16-Oct-2022 03:22:31 UTC] sessionController::isPublic(): currentURL => singup
+[16-Oct-2022 03:22:31 UTC] sessionController::isPublic()=> true
+[16-Oct-2022 03:22:31 UTC] SessionController::validateSession()->is public ->true public page
+[16-Oct-2022 03:22:31 UTC] Controllers::loadModel()=> true singupModel
+[16-Oct-2022 03:22:31 UTC] view/action http://localhost/html/MVC/singup/newUser
+[16-Oct-2022 03:22:56 UTC] SessionController::validateSession()
+[16-Oct-2022 03:22:56 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup/newUser, url =>singup
+[16-Oct-2022 03:22:56 UTC] sessionController::isPublic(): currentURL => singup
+[16-Oct-2022 03:22:56 UTC] sessionController::isPublic()=> true
+[16-Oct-2022 03:22:56 UTC] SessionController::validateSession()->is public ->true public page
+[16-Oct-2022 03:22:56 UTC] Controllers::loadModel()=> true singupModel
+[16-Oct-2022 03:22:56 UTC] ExistPOST: Existen parametros password
+[16-Oct-2022 03:22:56 UTC] existPOST()->getPOST($nombrePersona)-> Valery
+[16-Oct-2022 03:22:56 UTC] singup::newUser()=>existPOST()-> true 
+[16-Oct-2022 03:22:56 UTC] Singup::newUser()->value exist 
+[16-Oct-2022 03:22:56 UTC] existPOST()->getPOST($nombrePersona)-> Valery
+[16-Oct-2022 03:22:56 UTC] persona->getNombre()-> Valery
+[16-Oct-2022 03:22:56 UTC] persona->getId()-> 
+[16-Oct-2022 03:22:56 UTC] UserModel::exist->rowCount()=> false
+[16-Oct-2022 03:22:56 UTC] PersonaModel::save()=> $nombrePersona: Valery
+[16-Oct-2022 03:22:56 UTC] Singup::newUser()->exist()
+[16-Oct-2022 03:22:56 UTC] Controllers::redirect() values $ruta is-> singup
+[16-Oct-2022 03:22:56 UTC] Controllers::redirect()=> ruta: singup params: ?
+[16-Oct-2022 03:22:56 UTC] SessionController::validateSession()
+[16-Oct-2022 03:22:56 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup/?, url =>singup
+[16-Oct-2022 03:22:56 UTC] sessionController::isPublic(): currentURL => singup
+[16-Oct-2022 03:22:56 UTC] sessionController::isPublic()=> true
+[16-Oct-2022 03:22:56 UTC] SessionController::validateSession()->is public ->true public page
+[16-Oct-2022 03:22:56 UTC] Controllers::loadModel()=> true singupModel
+[16-Oct-2022 03:22:56 UTC] view/action http://localhost/html/MVC/singup/newUser
+[16-Oct-2022 03:24:47 UTC] SessionController::validateSession()
+[16-Oct-2022 03:24:47 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup, url =>singup
+[16-Oct-2022 03:24:47 UTC] sessionController::isPublic(): currentURL => singup
+[16-Oct-2022 03:24:47 UTC] sessionController::isPublic()=> true
+[16-Oct-2022 03:24:47 UTC] SessionController::validateSession()->is public ->true public page
+[16-Oct-2022 03:24:47 UTC] Controllers::loadModel()=> true singupModel
+[16-Oct-2022 03:24:47 UTC] view/action http://localhost/html/MVC/singup/newUser
+[16-Oct-2022 03:25:21 UTC] SessionController::validateSession()
+[16-Oct-2022 03:25:21 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/singup/newUser, url =>singup
+[16-Oct-2022 03:25:21 UTC] sessionController::isPublic(): currentURL => singup
+[16-Oct-2022 03:25:21 UTC] sessionController::isPublic()=> true
+[16-Oct-2022 03:25:21 UTC] SessionController::validateSession()->is public ->true public page
+[16-Oct-2022 03:25:21 UTC] Controllers::loadModel()=> true singupModel
+[16-Oct-2022 03:25:21 UTC] ExistPOST: Existen parametros password
+[16-Oct-2022 03:25:21 UTC] existPOST()->getPOST($nombrePersona)-> esther
+[16-Oct-2022 03:25:21 UTC] singup::newUser()=>existPOST()-> true 
+[16-Oct-2022 03:25:21 UTC] Singup::newUser()->value exist 
+[16-Oct-2022 03:25:21 UTC] existPOST()->getPOST($nombrePersona)-> esther
+[16-Oct-2022 03:25:21 UTC] persona->getNombre()-> esther
+[16-Oct-2022 03:25:21 UTC] persona->getId()-> 
+[16-Oct-2022 03:25:21 UTC] UserModel::exist->rowCount()=> false
+[16-Oct-2022 03:25:21 UTC] PersonaModel::save()=> $nombrePersona: esther
+[16-Oct-2022 03:25:21 UTC] PersonaModel::save()=>true
+[16-Oct-2022 03:25:21 UTC] idPersona =  <- id
+[16-Oct-2022 03:25:21 UTC] UserModel::save()->true
+[16-Oct-2022 03:25:21 UTC] ContraseniaModel::save()-> true
+[16-Oct-2022 03:25:21 UTC] Singup::newUser()->exist()=>false->save()
+[16-Oct-2022 03:25:21 UTC] Controllers::redirect() values $ruta is-> login
+[16-Oct-2022 03:25:21 UTC] Controllers::redirect()=> ruta: login params: ?
+[16-Oct-2022 03:25:21 UTC] SessionController::validateSession()
+[16-Oct-2022 03:25:21 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/login/?, url =>login
+[16-Oct-2022 03:25:21 UTC] sessionController::isPublic(): currentURL => login
+[16-Oct-2022 03:25:21 UTC] sessionController::isPublic()=> true
+[16-Oct-2022 03:25:21 UTC] SessionController::validateSession()->is public ->true public page
+[16-Oct-2022 03:25:21 UTC] Controllers::loadModel()=> true LoginModel
+[16-Oct-2022 03:25:21 UTC] SessionController::validateSession()
+[16-Oct-2022 03:25:21 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/login/style.css, url =>login
+[16-Oct-2022 03:25:21 UTC] sessionController::isPublic(): currentURL => login
+[16-Oct-2022 03:25:21 UTC] sessionController::isPublic()=> true
+[16-Oct-2022 03:25:21 UTC] SessionController::validateSession()->is public ->true public page
+[16-Oct-2022 03:25:21 UTC] Controllers::loadModel()=> true LoginModel

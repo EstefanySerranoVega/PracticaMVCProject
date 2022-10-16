@@ -13,12 +13,7 @@
 <body>
     <div class="container-gral">
         <div class="login">
-            <form action="<?php require_once('Controllers/login.php');
-            if(isset($_POST['btn-login'])){
-                echo 'hiciste click';
-                $login = new Login();
-            $login->authenticate();
-            } ?>" method="post">
+            <form action="" method="post">
                 <h2>INICIAR SESION</h2>
                 <input type="text" id="username" placeholder="Nombre de usuario">
                 <input type="password" id="password" placeholder="Contraseña">

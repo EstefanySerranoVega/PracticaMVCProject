@@ -8,6 +8,6 @@ const VIEWS ="views/";
 define('HOST','localhost');
 define('USER','root');
 define('PASSWORD','');
-define('DB','bd_proyecto');
+define('DB','bd_proyecto_01');
 define('CHARSET','utf8');
 ?>

@@ -4,6 +4,7 @@ require_once('libreries/core/imodel.php');
 Class Model extends Database{
 function __construct(){
     $this->db = new Database();
+    $this->conexion = $this->db->Conexion();
 }
 function query($query){
     return $this->db->conexion()->query($query);

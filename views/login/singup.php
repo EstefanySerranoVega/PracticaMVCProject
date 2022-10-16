@@ -10,6 +10,8 @@
     <title>Document</title>
 </head>
 <body>
+        <?php 
+  require_once('views/header.php'); ?>
     <div class="container-gral">
         <div class="Register">
             <form action="<?php

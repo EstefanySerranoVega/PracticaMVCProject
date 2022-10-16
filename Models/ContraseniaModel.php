@@ -32,12 +32,13 @@ public function save(){
             'creacion' => $this->creacion
         );
         $query->execute($arrayData);
+        error_log('ContraseniaModel::save()-> true');
         //$this->idContrasenia = $this->db->lastInsertId();
         return true;
 
     }catch(PDOException $e){
 
-       echo 'Hubo u error al insertar los datos '.$e;
+       error_log('ERROR::ContraseniaModel::save()-> false'.$e) ;
        return   false;
     }
 }//fin save 

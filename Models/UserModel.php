@@ -34,10 +34,10 @@ class UserModel extends Model implements IModel{
                     'creacion' => $this->creacion );
             $query->execute($arrayData);
            // $this->idUser = $this->conexion()->lastInsertId();
-
+                error_log('UserModel::save()->true');
             return true;
         }catch(PDOException $e){
-            echo 'Hubo un error '.$e;
+            error_log('ERROR::UserModel::save()->false '.$e);
             return false;
         }
     }//fin save

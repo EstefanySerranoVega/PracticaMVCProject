@@ -27,12 +27,15 @@ function newUser(){
         'password'])){ 
 
             $nombrePersona = $this->getPOST('nombrePersona');
+            error_log('existPOST()->getPOST($nombrePersona)-> '.$nombrePersona);
             $paternoPersona = $this->getPOST('paternoPersona');
             $maternoPersona = $this->getPOST('maternoPersona');
             $telefonoPersona = $this->getPOST('telefonoPersona');
             $nacPersona = $this->getPOST('nacPersona');
             $username  = $this->getPOST('username');
             $password = $this->getPOST('password');
+            error_log('singup::newUser()=>existPOST()-> true ');
+           
 
         if( $nombrePersona = '' || empty($nombrePersona)
         || $paternoPersona = '' || empty($paternoPersona)
@@ -42,9 +45,21 @@ function newUser(){
         || $username = '' || empty($username) 
         || $password = '' || empty($password)){
             error_log('Singup::newUser()->empty ');
-            $this->redirect('singup',['error' => ErrorMessages::ERROR_SINGUP_NEWUSER_EMPTY]);
+            error_log('Singup::newUser()->empty redirect singup');
+           $this->redirect('singup');
+            // $this->redirect('singup',['error' => ErrorMessages::ERROR_SINGUP_NEWUSER_EMPTY]);
         }else{
+            //$nombrePersona = $this->getPOST('nombrePersona');
             error_log('Singup::newUser()->value exist ');
+            $nombrePersona = $this->getPOST('nombrePersona');
+            error_log('existPOST()->getPOST($nombrePersona)-> '.$nombrePersona);
+            $paternoPersona = $this->getPOST('paternoPersona');
+            $maternoPersona = $this->getPOST('maternoPersona');
+            $telefonoPersona = $this->getPOST('telefonoPersona');
+            $nacPersona = $this->getPOST('nacPersona');
+            $username  = $this->getPOST('username');
+            $password = $this->getPOST('password');
+           
             $persona = new PersonaModel();
             $persona->setNombre($nombrePersona);
             $persona->setPaterno($paternoPersona);
@@ -53,7 +68,8 @@ function newUser(){
             $persona->setNacimiento($nacPersona);
             $persona->setEstado('AC');
             $persona->setCreacion(Date('Y-m-d H:i:s'));
-        
+            error_log('persona->getNombre()-> '.$persona->getNombre());
+            error_log('persona->getId()-> '.$persona->getId());
             $usuario = new UserModel();
             $usuario->setPersona($persona->getId());
             $usuario->setRoles(2);
@@ -71,17 +87,23 @@ function newUser(){
             if($usuario->exist($username)){
                 //echo('el nombre de usuario no está disponible');
                 error_log('Singup::newUser()->exist() => true');
-               $this->redirect('singup',['error' => ErrorMessages::ERROR_GENERICO]);
-            }else if($usuario->save()){
+                $this->redirect('singup');
+               //$this->redirect('singup',['error' => ErrorMessages::ERROR_GENERICO]);
+            }else if( $persona->save() and $usuario->save() and $contrasenia->save()){
+            
                 //echo('usuario creado exitosamente');
-                error_log('Singup::newUser()->exist()=>false->save() ');
-               $this->redirect('login',['success' => SuccessMessages::SUCCESS_SINGUP]);
+                error_log('Singup::newUser()->exist()=>false->save()');
+                $this->redirect('login');
+               //$this->redirect('login',['success' => SuccessMessages::SUCCESS_SINGUP]);
             }else{
                 //echo 'ha ocurrido un error';
                 error_log('Singup::newUser()->exist()');
-                $this->redirect('singup',['error' => ErrorMessages::ERROR_GENERICO]);
+                $this->redirect('singup');
+                //$this->redirect('singup',['error' => ErrorMessages::ERROR_GENERICO]);
             }
+        
         }
+        
         
    
 

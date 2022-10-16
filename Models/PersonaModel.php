@@ -19,8 +19,10 @@ class PersonaModel extends Model implements IModel{
     public function save(){
         $this->estadoAccesos = 'AC';
         try{
+           // $this->conexion()->beginTransaction();
             $query = $this->prepare(
-                'INSERT INTO `persona`  VALUES (     
+                'INSERT INTO `persona`  VALUES (
+                    NULL,     
                     :nombre,
                     :paterno,
                     :materno,
@@ -35,15 +37,26 @@ class PersonaModel extends Model implements IModel{
                 'materno' => $this->maternoPersona,
                 'telefono' => $this->telefonoPersona,
                 'nac' => $this->nacPersona,
-                'estado' => $this->estadoPersona,
-                'creacion' => $this->creacionPersona);
+                'estado' => $this->estado,
+                'creacion' => $this->creacion);
 
             $query->execute($arrayData);
-
-            //$this->idPersona = $this->db->lastInsertId();
-
-            return true;
+            //$this->conexion()->commit();
+                error_log('PersonaModel::save()=> $nombrePersona: '.$this->nombrePersona);
+                //$this->idPersona = $this->conexion()->lastInsertId();
+                if($query->rowCount()>0){
+                    error_log('PersonaModel::save()=>true');
+                    //$query = $this->prepare('SELECT LAST_INSERT_ID() AS `id_persona`');
+                    //$this->idPersona =$this->Conexion()->lastInsertId();
+                    //$this->idPersona = 1;
+                    error_log('idPersona = ' . $this->idPersona.' <- id');
+                    return true;
+                }else{
+                    return false;
+                }
+                //$this->idPersona = $this->db->lastInsertId();
         }catch(PDOException $e){
+            error_log('ERROR::personaModel::save()-> '.$e);
             return false;
         }
     }//fin save

@@ -14,10 +14,8 @@ Class Producto Extends sessionController{
     public function render(){
         echo ' Producto funciona ';
         $productoModel = new ProductoModel();
-        $producto = $productoModel->get(3);
-        $this->view->render('Producto/index',[
-            $this->user = $producto
-        ]);
+        $producto = $productoModel->getAll();
+        $this->view->render('Producto/index');
 
         return print_r($producto );
     }

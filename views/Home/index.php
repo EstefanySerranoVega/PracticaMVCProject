@@ -14,33 +14,11 @@
 
 <body>
     <div class="container-page">
-        <header class="header">
-            <nav>
-                <div class="logo"></div>
-                <menu>
-                    <ul>
-                        <a href="#">
-                            <li>INICIO</li>
-                        </a>
-                        <a href="#">
-                            <li>PRODUCTOS</li>
-                        </a>
-                        <a href="#">
-                            <li>BLOG</li>
-                        </a>
-                        <a href="#">
-                            <li>CONTACTOS</li>
-                        </a>
-                    </ul>
-                </menu>
-            </nav>
-        </header>
+        <?php 
+  require_once('views/header.php'); ?>
         
     <h2>Selecciona un link: </h2>
-    <a href="views/Home/index.php">Cerrar sesión</a>
-    <a href="views/login/singup.php" target="_blank">Registrarse</a>
-    <a href="views/login/index.php" target="_blank">Ingresar</a>
-        <div class="container">
+    <div class="container">
             <div class="hero">
                 <div class="info-producto_hero">
                     <h1>TITULO PUBLICIDAD DEL PRODUCTO!</h1>
