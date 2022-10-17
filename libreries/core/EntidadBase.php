@@ -1,14 +1,16 @@
 <?php
 require_once('Database.php');
-Class EntidadBase{
+Class EntidadBase {
 
-    private $db;
-    private $conectar;
-    private $tabla;
-    function __construct($table){
+    protected $db;
+    protected $tabla;
+    protected $id;
+    protected $data;
+    function __construct( $id, $table, PDO $conexion){
+        $this->id = $id;
         $this->tabla = (string)$table;
-        $this->db = new Database();
-        $this->conectar = $this->db->Conexion();
+        $this->db = $conexion;
+        
     }
 
     public function getConexion(){

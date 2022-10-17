@@ -20,6 +20,7 @@ public function render(){
 }
 
 function newUser(){
+    error_log('EJECUTANDO: singup::newUser()');
     if($this->existPOST(
         ['nombrePersona','paternoPersona',
         'maternoPersona','telefonoPersona',
@@ -27,7 +28,6 @@ function newUser(){
         'password'])){ 
 
             $nombrePersona = $this->getPOST('nombrePersona');
-            error_log('existPOST()->getPOST($nombrePersona)-> '.$nombrePersona);
             $paternoPersona = $this->getPOST('paternoPersona');
             $maternoPersona = $this->getPOST('maternoPersona');
             $telefonoPersona = $this->getPOST('telefonoPersona');
@@ -45,21 +45,19 @@ function newUser(){
         || $username = '' || empty($username) 
         || $password = '' || empty($password)){
             error_log('Singup::newUser()->empty ');
-            error_log('Singup::newUser()->empty redirect singup');
            $this->redirect('singup');
             // $this->redirect('singup',['error' => ErrorMessages::ERROR_SINGUP_NEWUSER_EMPTY]);
         }else{
             //$nombrePersona = $this->getPOST('nombrePersona');
-            error_log('Singup::newUser()->value exist ');
             $nombrePersona = $this->getPOST('nombrePersona');
-            error_log('existPOST()->getPOST($nombrePersona)-> '.$nombrePersona);
             $paternoPersona = $this->getPOST('paternoPersona');
             $maternoPersona = $this->getPOST('maternoPersona');
             $telefonoPersona = $this->getPOST('telefonoPersona');
             $nacPersona = $this->getPOST('nacPersona');
             $username  = $this->getPOST('username');
             $password = $this->getPOST('password');
-           
+            
+            error_log('personaModel create ');
             $persona = new PersonaModel();
             $persona->setNombre($nombrePersona);
             $persona->setPaterno($paternoPersona);
@@ -68,22 +66,26 @@ function newUser(){
             $persona->setNacimiento($nacPersona);
             $persona->setEstado('AC');
             $persona->setCreacion(Date('Y-m-d H:i:s'));
-            error_log('persona->getNombre()-> '.$persona->getNombre());
-            error_log('persona->getId()-> '.$persona->getId());
+            
+
+            error_log('UserModel() create ');
             $usuario = new UserModel();
             $usuario->setPersona($persona->getId());
+            //$usuario->setPersona(23);
             $usuario->setRoles(2);
             $usuario->setNombre($username);
             $usuario->setEstado('AC');
             $usuario->setCreacion(Date('Y-m-d H:i:s'));
-        
+
+
+            error_log('ContraseniaModel() create ');
             $contrasenia = new ContraseniaModel();
             $contrasenia->setUser($usuario->getId());
             $contrasenia->setNombre($password);
             $contrasenia->setEstado('AC');
             $contrasenia->setModificacion(Date('Y-m-d H:i:s'));
             $contrasenia->setCreacion(Date('Y-m-d H:i:s'));
-        
+
             if($usuario->exist($username)){
                 //echo('el nombre de usuario no está disponible');
                 error_log('Singup::newUser()->exist() => true');
@@ -92,12 +94,12 @@ function newUser(){
             }else if( $persona->save() and $usuario->save() and $contrasenia->save()){
             
                 //echo('usuario creado exitosamente');
-                error_log('Singup::newUser()->exist()=>false->save()');
+                error_log('Singup::newUser()->exist()=>false->save() true');
                 $this->redirect('login');
                //$this->redirect('login',['success' => SuccessMessages::SUCCESS_SINGUP]);
             }else{
                 //echo 'ha ocurrido un error';
-                error_log('Singup::newUser()->exist()');
+                error_log('Singup::newUser()->save() false');
                 $this->redirect('singup');
                 //$this->redirect('singup',['error' => ErrorMessages::ERROR_GENERICO]);
             }
@@ -109,8 +111,8 @@ function newUser(){
 
     }else{
         //echo 'error al crear usuario';
-        error_log('Singup::newUser->false existPOST()');
-        $this->redirect('singup',['error' => ErrorMessages::ERROR_SINGUP_NEWUSER]);
+        error_log('Singup::newUser->false existPOST() ha ocurrido un error');
+        //$this->redirect('singup',['error' => ErrorMessages::ERROR_SINGUP_NEWUSER]);
     }
 }
 

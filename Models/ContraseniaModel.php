@@ -32,9 +32,25 @@ public function save(){
             'creacion' => $this->creacion
         );
         $query->execute($arrayData);
+
+        error_log('ContraseniaModel::save()-> user '.$this->user);
+        error_log('ContraseniaModel::save()-> pass '.$this->nombreContrasenia);
+        error_log('ContraseniaModel::save()-> estado '.$this->estado);
+        error_log('ContraseniaModel::save()-> modf '.$this->modificacion);
+        error_log('ContraseniaModel::save()-> creacion '.$this->creacion);
+
         error_log('ContraseniaModel::save()-> true');
-        //$this->idContrasenia = $this->db->lastInsertId();
-        return true;
+        
+        $this->idContrasenia = $this->Conexion()->lastInsertId();
+        if($query->rowCount()>0) {
+            //$this->idPersona = $this->Conexion()::FETCH_ORI_LAST;
+            error_log('ContraseniaModel::save()=>idContrasenia '.$this->idContrasenia);
+            error_log('ContraseniaModel::save()=>true');
+            return true;
+            }else{
+              error_log('PersonModel::save()=>false');
+              return false;}
+            
 
     }catch(PDOException $e){
 

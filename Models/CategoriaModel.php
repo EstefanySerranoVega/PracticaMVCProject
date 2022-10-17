@@ -32,8 +32,17 @@ public function save(){
 
         $query->execute($arrayData);
 
-        $this->idCategoria = $this->conexion()->lastInsertId();
-        
+        //$this->idCategoria = $this->conexion()->lastInsertId();
+         
+        if($query->rowCount()>0) {
+                
+            //$this->idPersona = $this->Conexion()::FETCH_ORI_LAST;
+            //error_log('PersonModel::save()=>idPersona '.$this->idPersona);
+            error_log('PersonModel::save()=>true');
+            return true;
+            }else{
+              error_log('PersonModel::save()=>false');
+              return false;}
         return true;
     }catch(PDOException $e){
         echo 'Hubo un error '.$e;
@@ -45,7 +54,7 @@ public function save(){
 public function getAll(){
     $items = [];
     try{
-        $query = $this->query('SELECT *FROM `categoria`');
+        $query = $this->query('SELECT * FROM `categoria`');
         while($p = $query->fetch(PDO::FETCH_ASSOC)){
 
             $item = new CategoriaModel();

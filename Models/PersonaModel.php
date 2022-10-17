@@ -19,42 +19,47 @@ class PersonaModel extends Model implements IModel{
     public function save(){
         $this->estadoAccesos = 'AC';
         try{
-           // $this->conexion()->beginTransaction();
-            $query = $this->prepare(
+            $query = $this->query(
                 'INSERT INTO `persona`  VALUES (
-                    NULL,     
+                    NULL,
                     :nombre,
                     :paterno,
                     :materno,
                     :telefono,
                     :nac,
                     :estado,
-                    :creacion)');
-
-            $arrayData= array(
+                    :creacion); SELECT LAST_INSERT_ID() AS id_persona');
+            $arrayData= array([
                 'nombre' => $this->nombrePersona,
                 'paterno' => $this->paternoPersona,
                 'materno' => $this->maternoPersona,
                 'telefono' => $this->telefonoPersona,
                 'nac' => $this->nacPersona,
                 'estado' => $this->estado,
-                'creacion' => $this->creacion);
+                'creacion' => $this->creacion]);
 
             $query->execute($arrayData);
-            //$this->conexion()->commit();
-                error_log('PersonaModel::save()=> $nombrePersona: '.$this->nombrePersona);
-                //$this->idPersona = $this->conexion()->lastInsertId();
-                if($query->rowCount()>0){
-                    error_log('PersonaModel::save()=>true');
-                    //$query = $this->prepare('SELECT LAST_INSERT_ID() AS `id_persona`');
-                    //$this->idPersona =$this->Conexion()->lastInsertId();
-                    //$this->idPersona = 1;
-                    error_log('idPersona = ' . $this->idPersona.' <- id');
-                    return true;
-                }else{
-                    return false;
-                }
-                //$this->idPersona = $this->db->lastInsertId();
+            $this->idPersona = $this->Conexion()->lastInsertId();
+             
+            
+              error_log('PersonaModel::save()=> $nombrePersona: '.$this->nombrePersona);
+              error_log('PersonaModel::save()=> $paternoPersona: '.$this->paternoPersona);
+              error_log('PersonaModel::save()=> $maternoPersona: '.$this->maternoPersona);
+              error_log('PersonaModel::save()=> $telefonoPersona: '.$this->telefonoPersona);
+              error_log('PersonaModel::save()=> $nacPersona: '.$this->nacPersona);
+              error_log('PersonaModel::save()=> $estado: '.$this->estado);
+              error_log('PersonaModel::save()=> $creacion: '.$this->creacion);
+             
+              //$this->idPersona = $this->Conexion()->lastInsertId(`persona`);
+              if($query->rowCount()) {
+              //$this->idPersona = $this->Conexion()::FETCH_ORI_LAST;
+              error_log('PersonaModel::save()=>idPersona '.$this->idPersona);
+              error_log('PersonaModel::save()=>true');
+              return true;
+              }else{
+                error_log('PersonModel::save()=>false');
+                return false;}
+              
         }catch(PDOException $e){
             error_log('ERROR::personaModel::save()-> '.$e);
             return false;

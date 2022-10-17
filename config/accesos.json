@@ -34,6 +34,11 @@
         "site": "admin",
         "access": "public",
         "role": ""
+    }, {
+
+        "site": "dashboard",
+        "access": "public",
+        "role": ""
     }],
 
     "default-sites": {

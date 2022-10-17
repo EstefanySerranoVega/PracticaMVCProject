@@ -33,9 +33,20 @@ class UserModel extends Model implements IModel{
                     'estado' => $this->estado,
                     'creacion' => $this->creacion );
             $query->execute($arrayData);
-           // $this->idUser = $this->conexion()->lastInsertId();
-                error_log('UserModel::save()->true');
+           $this->idUser = $this->conexion()->lastInsertId();
+           error_log('UserModel::save()->persona '.$this->persona );
+           error_log('UserModel::save()->roles '.$this->roles);     
+           error_log('UserModel::save()->nameUser '.$this->nameUser);     
+           error_log('UserModel::save()->estado '.$this->estado);     
+           error_log('UserModel::save()->creacion '.$this->creacion);          
+           
+           if($query->rowCount()) {
+            error_log('UserModel::save()->true');  
             return true;
+            }else{
+              error_log('UserModel::save()=>false');
+              return false;}
+         
         }catch(PDOException $e){
             error_log('ERROR::UserModel::save()->false '.$e);
             return false;

@@ -9,21 +9,27 @@
         private $bd;
         private $charset;
     
-        function __Construct(){
+        function __construct(){
             $this-> host = constant('HOST');
             $this-> user = constant('USER');
             $this-> password = constant('PASSWORD');
             $this-> bd = constant('DB');
             $this-> charset = constant('CHARSET');
         }
-        function Conexion(){
+        public function Conexion(){
             
+            $this-> host = constant('HOST');
+            $this-> user = constant('USER');
+            $this-> password = constant('PASSWORD');
+            $this-> bd = constant('DB');
+            $this-> charset = constant('CHARSET');
+
             
             try{
               
                 $conexionPDO = new PDO('mysql:host=localhost;dbname=' .$this->bd, $this->user, $this->password);
-               // $conexionPDO->query("SET NAMES 'utf8'");
-               //$conexionPDO->query("SET NAMES".$this->charset);
+                //$conexionPDO->query("SET NAMES 'utf8'");
+                $conexionPDO->query("SET NAMES".$this->charset);
                //$conexionPDO = new PDO('mysql:host=localhost;dbname='. $this->bd, $this->user, $this->password);
                 return $conexionPDO;
                 //return ($conexionPDO); 
