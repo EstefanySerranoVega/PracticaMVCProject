@@ -1,0 +1,61 @@
+.producto {
+    width: 60%;
+    border-radius: 2rem;
+    background: #fff5;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: left;
+    padding: 1rem;
+}
+
+.producto form {
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+form label {
+    width: 100%;
+    padding: 0 1rem;
+    margin: 0.8rem 0;
+}
+
+form input {
+    width: 90%;
+    border-radius: 0.8rem;
+    border: none;
+    height: 2rem;
+    margin: 0.8rem 0;
+}
+
+#codigoProducto,
+#selectCat {
+    width: 22%;
+}
+
+#category {
+    width: 20%;
+    border-radius: 0.8rem;
+    border: none;
+    height: 2rem;
+}
+
+#cant,
+#cantidadProducto {
+    width: 20%;
+}
+
+#precio,
+#precioVenta {
+    width: 20%;
+}
+
+#imgProducto {
+    border-radius: 0.8rem;
+    border: none;
+    height: 2rem;
+    background: red;
+}

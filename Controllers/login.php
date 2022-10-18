@@ -8,7 +8,6 @@ Class Login Extends SessionController{
         parent::__construct();
     }
     public function render(){
-        echo 'User controller funciona';
         $actual_link = trim("$_SERVER[REQUEST_URI]");
         $url = explode('/', $actual_link);
         $this->view->errorMessage = '';

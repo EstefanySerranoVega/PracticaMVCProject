@@ -7,7 +7,7 @@
         private $user;
         private $password;
         private $bd;
-        private $charset;
+        private$charset;
     
         function __construct(){
             $this-> host = constant('HOST');

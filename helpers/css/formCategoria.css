@@ -1,0 +1,30 @@
+         /*FORMULARIO CATEGORIA*/
+         
+         .categoria {
+             width: 20rem;
+             background: #fff5;
+             padding: 1rem 0.5rem;
+             border-radius: 2rem;
+         }
+         
+         .categoria form {
+             width: 95%;
+             display: flex;
+             flex-wrap: wrap;
+             align-items: center;
+             justify-content: space-around;
+         }
+         
+         form label {
+             width: 100%;
+             padding: 0 1rem;
+             margin: 0.8rem 0;
+         }
+         
+         form input {
+             width: 90%;
+             border-radius: 0.8rem;
+             border: none;
+             height: 2rem;
+             margin: 0.8rem 0;
+         }

@@ -17,9 +17,10 @@ class PersonaModel extends Model implements IModel{
 
    
     public function save(){
-        $this->estadoAccesos = 'AC';
+        $this->estado = 'AC';
         try{
-            $query = $this->query(
+            
+            $query = $this->prepare(
                 'INSERT INTO `persona`  VALUES (
                     NULL,
                     :nombre,
@@ -28,33 +29,21 @@ class PersonaModel extends Model implements IModel{
                     :telefono,
                     :nac,
                     :estado,
-                    :creacion); SELECT LAST_INSERT_ID() AS id_persona');
-            $arrayData= array([
+                    :creacion)');
+            $arrayData= array(
                 'nombre' => $this->nombrePersona,
                 'paterno' => $this->paternoPersona,
                 'materno' => $this->maternoPersona,
                 'telefono' => $this->telefonoPersona,
                 'nac' => $this->nacPersona,
                 'estado' => $this->estado,
-                'creacion' => $this->creacion]);
+                'creacion' => $this->creacion);
 
-            $query->execute($arrayData);
-            $this->idPersona = $this->Conexion()->lastInsertId();
+                $query->execute($arrayData);
+         
+            if($query->rowCount()) {
              
-            
-              error_log('PersonaModel::save()=> $nombrePersona: '.$this->nombrePersona);
-              error_log('PersonaModel::save()=> $paternoPersona: '.$this->paternoPersona);
-              error_log('PersonaModel::save()=> $maternoPersona: '.$this->maternoPersona);
-              error_log('PersonaModel::save()=> $telefonoPersona: '.$this->telefonoPersona);
-              error_log('PersonaModel::save()=> $nacPersona: '.$this->nacPersona);
-              error_log('PersonaModel::save()=> $estado: '.$this->estado);
-              error_log('PersonaModel::save()=> $creacion: '.$this->creacion);
-             
-              //$this->idPersona = $this->Conexion()->lastInsertId(`persona`);
-              if($query->rowCount()) {
-              //$this->idPersona = $this->Conexion()::FETCH_ORI_LAST;
-              error_log('PersonaModel::save()=>idPersona '.$this->idPersona);
-              error_log('PersonaModel::save()=>true');
+                error_log('PersonaModel::save()=>true');
               return true;
               }else{
                 error_log('PersonModel::save()=>false');

@@ -36,15 +36,28 @@ Class ProductoModel Extends Model implements IModel {
                 'codigo' => $this->codigoProducto,
                 'cantidad' => $this->cantidadProducto,
                 'img' => $this->imgProducto,
-                'precio' => $this->precioVProducto,
+                'precio' => $this->precioProducto,
                 'estado' =>$this->estado);
 
-            $query->execute($arrayData);
-            
-            $this->idProducto = $this->db->lastInsertId();
+                error_log($this->categoria);
+                error_log($this->nombreProducto);
+                error_log($this->codigoProducto);
+                error_log($this->cantidadProducto);
+                error_log($this->imgProducto);
+                error_log($this->precioProducto);
+                error_log($this->estado);
 
-            return true;
+            $query->execute($arrayData);
+            if($query->rowCount()){
+                return true;
+            }else{
+                return false;
+            }
+            
+            //$this->idProducto = $this->db->lastInsertId();
+
         }catch(Exception $e){
+            error_log('ERROR::ProductoModel::save()-> '.$e);
             return false;
         }
 
@@ -57,7 +70,7 @@ public function getAll(){
         $query = $this->query(
             'SELECT * FROM `producto` WHERE estado_producto = "AC"' );
         
-        while($p = $query->fetchAll(PDO::FETCH_ASSOC)){
+        while($p = $query->fetch(PDO::FETCH_ASSOC)){
             $item = new ProductoModel();
 
             $item->from($p);
@@ -195,7 +208,7 @@ public function setImg($img){
     $this->imgProducto = $img;
 }
 public function setPrecio($precio){
-    $this->precioproducto = $precio;
+    $this->precioProducto = $precio;
 }
 public function setEstado($estado){ 
     $this->estado = $estado;

@@ -9,10 +9,10 @@ Class DashboardModel extends Model{
 
     public function getAllCategory(){
         $category = new CategoriaModel();
-        $category->getAll();
-
-        return $category;
-
+        $cat = $category->getAll();
+    /*    foreach($cat as $key){
+            var_dump($key);   }*/   
+return $cat; 
     }
 
 }

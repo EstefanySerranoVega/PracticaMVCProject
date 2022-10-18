@@ -10,6 +10,7 @@ Class Producto Extends sessionController{
 
        // $this->user->getUserSesionData();
     }
+/*
 
     public function render(){
         echo ' Producto funciona ';
@@ -18,7 +19,7 @@ Class Producto Extends sessionController{
         $this->view->render('Producto/index');
 
         return print_r($producto );
-    }
+    }*/
 }
 
 ?>

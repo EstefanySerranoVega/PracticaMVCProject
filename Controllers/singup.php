@@ -11,7 +11,7 @@ require_once('libreries/core/View.php');
 Class singup Extends sessionController{
     
 function __construct(){
-    parent::__construct();   
+    parent::__construct(); 
     
 }
 public function render(){

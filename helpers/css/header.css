@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+li a {
+    color: #000;
+    transition: all 400ms;
+    padding: 0.8rem;
+    border-radius: 0.8rem;
+}
+
+li a:hover {
+    color: #0008;
+    background: #f2f2f288;
+}
+
+.icon {
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 100%;
+    background: red;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+svg {
+    width: 1.8rem;
+    transition: all 400ms;
+}
+
+svg:hover {
+    fill: #0008;
+}
+
+.header {
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    background: #fff8;
+}
+
+.logo {
+    width: 8rem;
+    height: 80%;
+    border-radius: 0.8rem;
+    background: #f2f2f2;
+}
+
+.buscador {
+    width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-input {
+    width: 98%;
+    height: 2rem;
+    background: #f2f2f288;
+    border-radius: 0.8rem;
+    border: none;
+    padding: 0 0.8rem;
+}
+
+menu {
+    width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}

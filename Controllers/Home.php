@@ -10,7 +10,6 @@ Class Home Extends Controllers{
     }
 
     public function render(){
-        echo ' RENDER Home funciona ';
         $this->view->render('Home/index',[]);
     }
     //public function reder(){}

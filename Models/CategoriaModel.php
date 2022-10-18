@@ -3,16 +3,13 @@
 Class CategoriaModel Extends Model implements IModel {
 private $idCategoria;
 private $nombreCategoria;
-private $creacionCategoria;
-private $estadoCategoria;
+private $creacion;
+private $estado;
 
 
 function __construct(){
     parent::__construct();
 
-    $this->nombreCategoria = '';
-    $this->creacionCategoria = Date('Y-m-d H:i:s');
-    $this->estadoCategoria = '';
 }//fin construct
 
 
@@ -27,21 +24,18 @@ public function save(){
                 :estado ) ' );
         $arrayData = array(
             'nombre' => $this->nombreCategoria,
-            'creacion' => $this->creacionCategoria,
-            'estado' => $this->estadoCategoria);
+            'creacion' => $this->creacion,
+            'estado' => $this->estado);
 
         $query->execute($arrayData);
 
         //$this->idCategoria = $this->conexion()->lastInsertId();
          
         if($query->rowCount()>0) {
-                
-            //$this->idPersona = $this->Conexion()::FETCH_ORI_LAST;
-            //error_log('PersonModel::save()=>idPersona '.$this->idPersona);
-            error_log('PersonModel::save()=>true');
+          error_log('CategoriaModel::save()=>true');
             return true;
             }else{
-              error_log('PersonModel::save()=>false');
+              error_log('CategoriaModel::save()=>false');
               return false;}
         return true;
     }catch(PDOException $e){
@@ -55,13 +49,11 @@ public function getAll(){
     $items = [];
     try{
         $query = $this->query('SELECT * FROM `categoria`');
-        while($p = $query->fetch(PDO::FETCH_ASSOC)){
-
-            $item = new CategoriaModel();
-
-            $item->from($p);
-
-            array_push($items,$item);
+        while($item = $query->fetch()){
+            $category = new CategoriaModel();
+            $category->from($item);
+  
+        array_push($items,$item);
         }
         return $items;
     }catch(PDOException $e){
@@ -117,8 +109,8 @@ public function update(){
             WHERE id_categoria = :id ' );
         $query->execute([
             'nombre' => $this->nombreCategoria,
-            'creacion' => $this->creacionCategoria,
-            'estado' => $this->creacionCategoria,
+            'creacion' => $this->creacion,
+            'estado' => $this->estado,
             'id' => $this->getId()
         ]);
 
@@ -128,11 +120,11 @@ public function update(){
         return false;
     }
 }//fin update
-public function from($array){
-    $this->idCategoria = $array['id_categoria'];
-    $this->nombreCategoria = $array['nombre_categoria'];
-    $this->creacionCategoria = $array['creacion_categoria'];
-    $this->estado = $array['estado_categoria'];
+public function from($array = [] ){
+    $this->idCategoria = $array[0];
+    $this->nombreCategoria = $array[1];
+    $this->creacion = $array[2];
+    $this->estado = $array[3];
 }//fin array
 
     //SETTERS
@@ -141,9 +133,9 @@ public function from($array){
     public function setNombre($nombre){
         $this->nombreCategoria = $nombre; } 
     public function setCreacion($creacion){
-        $this->creacionCategoria = $creacion;  } 
+        $this->creacion = $creacion;  } 
     public function setEstado($estado){
-        $this->estadoCategoria =$estado;} 
+        $this->estado =$estado;} 
 
 //GETTERS
         public function getId(){
@@ -160,14 +152,12 @@ public function exist($name){
         $query = $this->prepare(
             'SELECT * FROM `categoria`
             WHERE nombre_categoria = :name
-            AND estado_producto = "AC"');
+            AND estado_categoria = "AC"');
             $query->execute(['name' => $name]);
-            
+          
           if($query->rowCount()){
-            error_log('CategoriaModel::exist()->rowCount => true');
             return true;
           }else{
-            error_log('CategoriaModel::exist()->rowCount => false');
             return false;
           }
     }catch(PDOException $e){

@@ -39,6 +39,11 @@
         "site": "dashboard",
         "access": "public",
         "role": ""
+    }, {
+
+        "site": "panelControl",
+        "access": "public",
+        "role": ""
     }],
 
     "default-sites": {

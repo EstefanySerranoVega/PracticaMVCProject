@@ -1,0 +1,128 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        background-image: radial-gradient(circle at 35.58% 103.81%, #ee45e4 0, #d53feb 25%, #b53cf2 50%, #8e3cf9 75%, #5540ff 100%);
+    }
+    
+    .container-page,
+    .container-gral,
+    .container {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .container {
+        background: #fff;
+    }
+    
+    .hero {
+        width: 100%;
+        height: 90vh;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+    }
+    
+    .img-producto_hero {
+        width: 60%;
+        height: 95%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        overflow: hidden;
+    }
+    
+    .img-producto_hero img {
+        height: 100%;
+    }
+    
+    .info-producto_hero {
+        width: 40%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .info-producto_hero h1 {
+        margin: 1rem;
+    }
+    
+    .info-producto_hero p {
+        margin: 1rem;
+    }
+    
+    .info-producto_hero button {
+        margin: 1rem;
+        border: none;
+        border-radius: 1rem;
+        padding: 0.8rem;
+        background: rgb(241, 173, 15);
+        transition: all 400ms;
+    }
+    
+    .info-producto_hero button:hover {
+        box-shadow: 0px 0px 5px 0px #0008;
+    }
+    
+    .section-category {
+        width: 100%;
+        height: 8rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        background: rgb(234, 181, 255);
+    }
+    
+    .category {
+        width: 12%;
+        height: 70%;
+        border-radius: 0.8rem;
+        background: orange;
+    }
+    
+    section {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        margin: 1rem 0;
+    }
+    
+    .title-section_destacados,
+    .title-section_ultimos {
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+    }
+    
+    .section-productos_destacados,
+    .section-productos_ultimos {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        padding: 1rem;
+    }
+    
+    .card-producto {
+        width: 22%;
+        height: 15rem;
+        background: #f2f2f2;
+        border-radius: 1rem;
+    }
