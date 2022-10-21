@@ -70,29 +70,35 @@ function newUser(){
 
             error_log('UserModel() create ');
             $usuario = new UserModel();
-            $usuario->setPersona($persona->getId());
-            //$usuario->setPersona(23);
-            $usuario->setRoles(2);
-            $usuario->setNombre($username);
-            $usuario->setEstado('AC');
-            $usuario->setCreacion(Date('Y-m-d H:i:s'));
-
-
-            error_log('ContraseniaModel() create ');
-            $contrasenia = new ContraseniaModel();
-            $contrasenia->setUser($usuario->getId());
-            $contrasenia->setNombre($password);
-            $contrasenia->setEstado('AC');
-            $contrasenia->setModificacion(Date('Y-m-d H:i:s'));
-            $contrasenia->setCreacion(Date('Y-m-d H:i:s'));
-
             if($usuario->exist($username)){
                 //echo('el nombre de usuario no está disponible');
                 error_log('Singup::newUser()->exist() => true');
                 $this->redirect('singup');
                //$this->redirect('singup',['error' => ErrorMessages::ERROR_GENERICO]);
-            }else if( $persona->save() and $usuario->save() and $contrasenia->save()){
+            }else if( $persona->save() ){
             
+                $usuario->setPersona($persona->getId());
+                //$usuario->setPersona(23);
+                $usuario->setRoles(1);
+                $usuario->setNombre($username);
+                $usuario->setEstado('AC');
+                $usuario->setCreacion(Date('Y-m-d H:i:s'));
+    
+    if($usuario->save()){
+        
+        error_log('ContraseniaModel() create ');
+        $contrasenia = new ContraseniaModel();
+        $contrasenia->setUser($usuario->getId());
+        $contrasenia->setNombre($password);
+        $contrasenia->setEstado('AC');
+        $contrasenia->setModificacion(Date('Y-m-d H:i:s'));
+        $contrasenia->setCreacion(Date('Y-m-d H:i:s'));
+if($contrasenia->save()){
+    error_log('save contrasenia is true');
+}
+       
+
+    } 
                 //echo('usuario creado exitosamente');
                 error_log('Singup::newUser()->exist()=>false->save() true');
                 $this->redirect('login');

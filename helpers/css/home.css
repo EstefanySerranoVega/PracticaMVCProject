@@ -122,7 +122,43 @@
     
     .card-producto {
         width: 22%;
-        height: 15rem;
+        height: 23rem;
         background: #f2f2f2;
         border-radius: 1rem;
+        margin: 1rem;
+        padding: 0.8rem;
+    }
+    
+    .img-producto {
+        width: 98%;
+        height: 60%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        border-radius: 1rem;
+        overflow: hidden;
+    }
+    
+    .img-producto img {
+        height: 100%;
+        border-radius: 0.8rem;
+    }
+    
+    .info-producto {
+        width: 90%;
+        display: inline-block;
+    }
+    
+    .info-text {
+        margin: 0.5rem;
+    }
+    
+    .info-producto button {
+        border: none;
+        border-radius: 1rem;
+        padding: 0.8rem;
+        background: rgb(241, 173, 15);
+        transition: all 400ms;
+        cursor: pointer;
     }

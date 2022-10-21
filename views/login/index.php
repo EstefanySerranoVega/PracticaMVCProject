@@ -22,9 +22,9 @@
             </div>
             <div class="content-form">
                 <label for="name">Nombre de Usuario: </label>
-                <input type="text" id="username" placeholder="Nombre de usuario">
+                <input type="text" name="username" id="username" placeholder="Nombre de usuario">
                 <label for="name">Contraseña: </label>
-               <input type="password" id="password" placeholder="Contraseña">
+               <input type="password" name="password" id="password" placeholder="Contraseña">
                 <input type="submit" value="INGRESAR" id="btn-login" class="btn-login">
            
             </div>

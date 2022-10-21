@@ -5,6 +5,7 @@ Class SessionController Extends Controllers{
 private $userSession;
 private $username;
 private $userId;
+private $rolUser;
 
 private $user;
 
@@ -30,6 +31,7 @@ public function getUserId(){
 }
 
 public function init(){
+        error_log('SesionController::init()');
     $this->session = new Session();
 
     $json = $this->getJSONFileConfig();
@@ -53,8 +55,8 @@ public function validateSesion(){
 
         if($this->existSesion()){
         //obtenemos el rol para determinar el acceso a la pagina correspondiente
-                error_log("sessionController::validateSession(): username:" . $this->user->getUsername() . " - role: " . $this->user->getRoles());
-                $rol = $this->getUserSesionData()->getRoles();
+                error_log("sessionController::validateSession(): username:" . $this->username . " - role: " . $this->rolUser);
+                $rol = $this->rolUser;
             
                 //si es publica
                 if($this->isPublic()){
@@ -102,20 +104,22 @@ public function existSesion(){
 
 public function getUserSesionData(){
       $id = $this->session->getCurrentUser();
-
+/*
       $this->user = new UserModel();
-      $this->user->get($id);
+      $this->user->get($id);*/
 
-      error_log("sessionController::getUserSesionData(): ".$this->user->getNombre());
+      error_log("sessionController::getUserSesionData(): ".$this->username);
       
       return $this->user;
 }//fin getUserSesionData
 
 public function initialize($user){
-        error_log("sessionController::initilize(): user: ".$user->getNombre());
-        
-        $this->session->setCurrentUser($user->getId());
-        $this->authorizeAccess($user->getRoles());
+        $this->username = $user[0][1];
+        $this->userId = $user[0][0];
+        $this->rolUser = $user[0][3];
+        error_log("sessionController::initilize(): user: ".$this->username);
+        $this->session->setCurrentUser($this->username);
+        $this->authorizeAccess($this->rolUser);
 }
 
 public function isPublic(){

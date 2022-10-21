@@ -3,7 +3,6 @@ require_once('clases/sessionController.php');
 
 Class Login Extends SessionController{
 
-    private $user;
     public function __construct(){
         parent::__construct();
     }
@@ -15,24 +14,28 @@ Class Login Extends SessionController{
     }
 
     function authenticate(){
-        if($this->existPOST('username','password')){
+        if($this->existPOST(['username','password'])){
             $username = $this->getPOST('username');
             $password = $this->getPOST('password');
 
             if($username == '' || empty($username) 
             || $password == '' || empty($password)){
                 error_log('Login::authenticate() => empty');
-                return ;
+               $this->redirect('login');
             }
+                error_log('username: '.$username);
+                error_log('password: '.$password);
 
             $user = $this->model->login($username,$password);
 
             if($user != NULL){
                 error_log('Login::authenticate() passed');
                 $this->initialize($user);
+                $this->redirect('home');
             }else{
                 error_log('Login::authenticate() error params authenticate');
-                $this->redirect('',['error' => ErrorMessages::ERROR_GENERICO]);
+                //$this->redirect('',['error' => ErrorMessages::ERROR_GENERICO]);
+                $this->redirect('login');
             }
 
         }else{

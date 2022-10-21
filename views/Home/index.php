@@ -1,4 +1,6 @@
-
+<?php 
+require_once('Models/HomeModel.php');
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,6 +35,7 @@
             </div>
             <div class="container">
                 <div class="section-category">
+           
                     <div class="category"></div>
                     <div class="category"></div>
                     <div class="category"></div>
@@ -41,14 +44,46 @@
                     <div class="category"></div>
                 </div>
             <section class="section-destacados">
+           
                 <div class="title-section_destacados">
                     <h1>Productos destacados</h1>
                 </div>
+                
+                
                 <div class="section-productos_destacados">
-                    <div class="card-producto"></div>
-                    <div class="card-producto"></div>
-                    <div class="card-producto"></div>
-                    <div class="card-producto"></div>
+
+                <?php
+                    $productos = new HomeModel();
+                    $producto = $productos->getAllProductos();
+                    $items =[];
+                    for($i=0;$i<count($producto);$i++){?>
+                        
+              
+                    <div class="card-producto" >
+                    <?php  array_push($items,$producto[$i][1]);?>
+                    <div class="img-producto">
+                        <img src="<?php echo URL_RAIZ.IMG.$producto[$i][5];?>" alt="">
+                        
+                    </div>
+                    <div class="info-producto">
+                        <div class="name-producto info-text">
+                            <?php echo $producto[$i][2].'<br>'; ?>
+                        </div>
+                        <div class="cod-producto info-text">
+                            <label for="codigo">Codigo:</label>
+                            <?php echo $producto[$i][3].'<br>'; ?>
+                        </div>
+                        <div class="precio-producto info-text">
+                            <label for="precio">Precio:</label>
+                        <?php    echo $producto[$i][6].'.bs'.'<br>';   ?>
+
+                        </div>
+                        <button>Agregar al Carrito</button>
+                   
+                    </div>
+       
+                    </div>
+                <?php }  ?>
                 </div>
             </section>
             <section class="section-ultimos">
@@ -56,10 +91,39 @@
                     <h1>Ultimos productos</h1>
                 </div>
                 <div class="section-productos_ultimos">
-                    <div class="card-producto"></div>
-                    <div class="card-producto"></div>
-                    <div class="card-producto"></div>
-                    <div class="card-producto"></div>
+                    
+                <?php
+                    $productos = new HomeModel();
+                    $producto = $productos->getAllProductos();
+                    $items =[];
+                    for($i=0;$i<count($producto);$i++){?>
+                        
+              
+                    <div class="card-producto" >
+                    <?php  array_push($items,$producto[$i][1]);?>
+                    <div class="img-producto">
+                        <img src="<?php echo URL_RAIZ.IMG.$producto[$i][5];?>" alt="">
+                        
+                    </div>
+                    <div class="info-producto">
+                        <div class="name-producto info-text">
+                            <?php echo $producto[$i][2].'<br>'; ?>
+                        </div>
+                        <div class="cod-producto info-text">
+                            <label for="codigo">Codigo:</label>
+                            <?php echo $producto[$i][3].'<br>'; ?>
+                        </div>
+                        <div class="precio-producto info-text">
+                            <label for="precio">Precio:</label>
+                        <?php    echo $producto[$i][6].'.bs'.'<br>';   ?>
+
+                        </div>
+                        <button>Agregar al Carrito</button>
+                   
+                    </div>
+       
+                    </div>
+                <?php }  ?>
                 </div>
             </section>
             </div>

@@ -14,6 +14,7 @@ Class Home Extends Controllers{
     }
     //public function reder(){}
 
+ 
 }
 
 ?>

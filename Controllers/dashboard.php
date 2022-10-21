@@ -8,7 +8,7 @@ public function __construct(){
 
 
 public function render(){
-    $this->view->render('Dashboard/index',[]);
+    $this->view->render('admin/section/dashboard',[]);
 }
 
 public function newCategoria(){

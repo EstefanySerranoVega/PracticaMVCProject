@@ -33,12 +33,21 @@ Class SucursalModel extends Model implements IModel{
             'creacion' => $this->creacionSucursal);
 
         $query->execute($arrayData);
-            
-        $this->idSucursal = $this->db->lastInsertId();
         
-        return true;
-        }catch(Exception $e){
+        $id = $this->query("SELECT MAX(id_sucursal) AS id FROM sucursal");
             
+        if ($row = $id->fetchAll()) {
+        $this->idSucursal = $row[0][0];
+        }
+
+        if($query->rowCount() > 0) {
+            return true;
+        }else{
+            return false;
+        }
+
+        }catch(Exception $e){
+            error_log('ERROR::SucursalModel::save()-> '.$e);
             return false;
         }  
     }//fin save
@@ -49,12 +58,12 @@ public function getAll(){
         $query = $this->query(
             'SELECT * FROM `sucursal` WHERE estado_sucursal = "AC"');
             
-        while($p = $query->fetch(PDO::FETCH_ASSOC)){
+        while($p = $query->fetch()){
             $item = new SucursalModel();
 
             $item->from($p);
 
-            array_push($items,$item);
+            array_push($items,$p);
         }
         return $items;
     }catch(PDOException $e){

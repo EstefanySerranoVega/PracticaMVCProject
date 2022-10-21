@@ -33,18 +33,15 @@ class UserModel extends Model implements IModel{
                     'estado' => $this->estado,
                     'creacion' => $this->creacion );
             $query->execute($arrayData);
-           $this->idUser = $this->conexion()->lastInsertId();
-           error_log('UserModel::save()->persona '.$this->persona );
-           error_log('UserModel::save()->roles '.$this->roles);     
-           error_log('UserModel::save()->nameUser '.$this->nameUser);     
-           error_log('UserModel::save()->estado '.$this->estado);     
-           error_log('UserModel::save()->creacion '.$this->creacion);          
            
+           $id = $this->query("SELECT MAX(id_usuario) AS id FROM usuario");
+           if ($row = $id->fetchAll()) {
+           $this->idUser = $row[0][0];
+           }
+           error_log('id: '.$this->idUser);
            if($query->rowCount()) {
-            error_log('UserModel::save()->true');  
             return true;
             }else{
-              error_log('UserModel::save()=>false');
               return false;}
          
         }catch(PDOException $e){
@@ -60,13 +57,13 @@ class UserModel extends Model implements IModel{
         try{
             $query = $this->query(
                 'SELECT * FROM `usuario` WHERE estado_usuario = '.$this->estado);
-            while($p = $query->fetch(PDO::FETCH_ASSOC)){
+            while($p = $query->fetch()){
 
                 $item = new UserModel();
 
                 $item->from($p);
 
-                array_push($items,$item);
+                array_push($items,$p);
 
             }
             return $items;

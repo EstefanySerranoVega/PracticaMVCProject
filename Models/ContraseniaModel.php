@@ -33,22 +33,16 @@ public function save(){
         );
         $query->execute($arrayData);
 
-        error_log('ContraseniaModel::save()-> user '.$this->user);
-        error_log('ContraseniaModel::save()-> pass '.$this->nombreContrasenia);
-        error_log('ContraseniaModel::save()-> estado '.$this->estado);
-        error_log('ContraseniaModel::save()-> modf '.$this->modificacion);
-        error_log('ContraseniaModel::save()-> creacion '.$this->creacion);
-
-        error_log('ContraseniaModel::save()-> true');
-        
-        $this->idContrasenia = $this->Conexion()->lastInsertId();
-        if($query->rowCount()>0) {
-            //$this->idPersona = $this->Conexion()::FETCH_ORI_LAST;
-            error_log('ContraseniaModel::save()=>idContrasenia '.$this->idContrasenia);
-            error_log('ContraseniaModel::save()=>true');
+    
+        $id = $this->query("SELECT MAX(id_contrasenia) AS id FROM contrasenia");
+        if ($row = $id->fetchAll()) {
+        $this->idContrasenia = $row[0][0];
+        }
+         if($query->rowCount()>0) {
+         
             return true;
             }else{
-              error_log('PersonModel::save()=>false');
+                
               return false;}
             
 
@@ -70,7 +64,7 @@ public function getAll(){
 
             $item->from($p);
 
-            array_push($items,$item);
+            array_push($items,$p);
         }
         return $items;
     }catch(PDOException $e){
@@ -86,7 +80,7 @@ public function get($id){
             AND estado_contraseni = "AC" ');
         $query->execute(['id' => $id]);
 
-        $contrasenia = $query->fetchAll(PDO::FETCH_ASSOC);
+        $contrasenia = $query->fetchAll();
 
         $this->from($contrasenia);
 

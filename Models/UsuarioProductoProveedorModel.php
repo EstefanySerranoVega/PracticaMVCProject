@@ -43,10 +43,20 @@ public function save(){
             
             $query->execute($arrayData);
             
-            $this->idUPP = $this->conexion()->lastInsertId();
+            $id = $this->query("SELECT MAX(id_usuario_producto_proveedor) AS id FROM usuario_produccto_proveedor");
+            
+            if ($row = $id->fetchAll()) {
+            $this->idUPP = $row[0][0];
+            }
 
+            if($query->rowCount() > 0) {
+                return true;
+            }else{
+                return false;
+            }
             return true;
     }catch(PDOException $e){
+        error_log('ERROR::UsuarioProductoProveedorModel::save()-> '.$e);
         return false;}
 }//fin save
 
@@ -58,12 +68,12 @@ public function getAll(){
             'SELECT * FROM `usuario_producto_proveedor` 
             WHERE  estado_UPP = "AC"' );
             
-        while($p = $query->fetch(PDO::FETCH_ASSOC)){
+        while($p = $query->fetch()){
             $item = new UsuarioProductoProveedorModel();
 
             $item->from($p);
 
-            array_push($items,$item);
+            array_push($items,$p);
         }
 
         return $items;

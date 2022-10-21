@@ -41,7 +41,7 @@
         "role": ""
     }, {
 
-        "site": "panelControl",
+        "site": "sectionProductos",
         "access": "public",
         "role": ""
     }],

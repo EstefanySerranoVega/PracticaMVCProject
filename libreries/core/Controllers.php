@@ -22,6 +22,7 @@ Class Controllers {
     }//fin load model
 
     public function existPOST($params){
+       //error_log('existPOST->params-> '.$params);
 
         foreach($params as $param){
             if(!isset($_POST[$param])){

@@ -28,9 +28,13 @@ public function save(){
             'estado' => $this->estado);
 
         $query->execute($arrayData);
+ 
+        $id = $this->query("SELECT MAX(id_categoria) AS id FROM categoria");
+        if ($row = $id->fetchAll()) {
+        $this->idCategoria = $row[0][0];
+        }
+        
 
-        //$this->idCategoria = $this->conexion()->lastInsertId();
-         
         if($query->rowCount()>0) {
           error_log('CategoriaModel::save()=>true');
             return true;
@@ -48,7 +52,8 @@ public function save(){
 public function getAll(){
     $items = [];
     try{
-        $query = $this->query('SELECT * FROM `categoria`');
+        $query = $this->query('SELECT * FROM `categoria`
+        WHERE estado_categoria ="AC"');
         while($item = $query->fetch()){
             $category = new CategoriaModel();
             $category->from($item);

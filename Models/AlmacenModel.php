@@ -34,7 +34,10 @@ public function save(){
             'estado' => $this->estadoAlmacen);
         $query->execute($arrayData);
 
-        $this->idAlmacen = $this->db->lastInsertId();
+        $id = $this->query("SELECT MAX(id_almacen) AS id FROM almacen");
+        if ($row = $id->fetchAll()) {
+        $this->idAlmacen = $row[0][0];
+        }
 
         return true;
     }catch(PDOException $x){
@@ -49,12 +52,12 @@ public function getAll(){
     try{
         $query = $this->query(
             'SELECT * FROM `almacen` WHERE estado_almacen = "AC"');
-        while($p = $query->fetch(PDO::FETCH_ASSOC)){
+        while($p = $query->fetch()){
             $item = new AlmacenModel();
 
             $item->from($p);
 
-            array_push($items,$item);
+            array_push($items,$p);
         }
 
         return $items;

@@ -29,7 +29,7 @@ require_once('Models/DashboardModel.php');
                     <li>
                     <a href="">AGREGAR</a></li>
                     <li>
-                        <a href="">VER PRODUCTOS</a>
+                        <a href="<?php echo URL_RAIZ;?>sectionProductos">VER PRODUCTOS</a>
                     </li>
                     <li>
                     <a href="">VER CLIENTES</a></li>
@@ -121,7 +121,7 @@ require_once('Models/DashboardModel.php');
             <label for="email">Correo proveedor:</label>
             <input type="email" name="correoProveedor" id="correoProveedor">
             <input type="submit" value="GUARDAR" class="button">  
-                
+            </form> 
                 </div>
             </div>
             <div class="section-option"></div>

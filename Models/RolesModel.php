@@ -29,9 +29,20 @@ public function save(){
 
         $query->execute($arrayData);
 
-        $this->idRoles = $this->conexion()->lastInsertId();
-        return true;
+        $id = $this->query("SELECT MAX(id_roles) AS id FROM roles");
+            
+        if ($row = $id->fetchAll()) {
+        $this->idRoles = $row[0][0];
+        }
+
+        if($query->rowCount() > 0) {
+            return true;
+        }else{
+            return false;
+        }
+
     }catch(PDOException $e){
+        error_log('ERROR::RolesModel::save()-> '.$e);
         return false;
     }
 }//fin save
@@ -40,12 +51,12 @@ public function getAll(){
     try{
         $query = $this->query(
             'SELECT * FROM `roles`WHERE estado_roles = "AC"');
-        while($p = $query->Fetch(PDO::FETCH_ASSOC)){
+        while($p = $query->Fetch()){
             $item = new RolesModel();
 
             $item->from($p);
 
-            array_push($items,$item);
+            array_push($items,$p);
 
         }
         return $items;

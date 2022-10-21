@@ -36,8 +36,10 @@ Class ClienteModel extends Model implements IModel {
 
             $query->execute($arrayData);
 
-            $this->idAccesos = $this->conexion()->lastInsertId();
-
+            $id = $this->query("SELECT MAX(id_cliente) AS id FROM cliente");
+            if ($row = $id->fetchAll()) {
+            $this->idCliente = $row[0][0];
+            }
             return true;
         }catch(PDOException $e){
             echo 'Hubo un error '.$e;
@@ -50,13 +52,13 @@ Class ClienteModel extends Model implements IModel {
         $items = []; 
         try{
             $query = $this->query('SELECT * FROM `cliente`');
-            while($p = $query->fetch(PDO::FETCH_ASSOC)){
+            while($p = $query->fetch()){
 
                 $item = new ClienteModel();
 
                 $item->from($p);
 
-                array_push($items, $item);
+                array_push($items, $p);
             }
 
             return $items;

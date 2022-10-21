@@ -29,10 +29,21 @@ Class VentaModel extends Model implements IModel{
 
             $query->execute($arrayData);
 
-            $this->idVenta = $this->db->lastInsertId();
+            $id = $this->query("SELECT MAX(id_venta) AS id FROM venta");
+            
+            if ($row = $id->fetchAll()) {
+            $this->idVenta = $row[0][0];
+            }
+    
+            if($query->rowCount() > 0) {
+                return true;
+            }else{
+                return false;
+            }
 
             return true;
         }catch(Exception $e){
+            error_log('ERROR::VentaModel::save()-> '.$e);
             return false;
         }
     }//fin save
@@ -42,12 +53,12 @@ Class VentaModel extends Model implements IModel{
         try{
             $query =$this->query(
                 'SELECT * FROM `venta` WHERE estado_venta = "AC"');
-            while($p = $query->fetch(PDO::FETCH_ASSOC)){
+            while($p = $query->fetch()){
                 $item = new VentaModel();
 
                 $item->from($p);
 
-                array_push($items,$item);
+                array_push($items,$p);
             }
 
             return $items;

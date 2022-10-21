@@ -28,12 +28,22 @@ Class ProveedorModel Extends Model implements IModel{
                 'estado' => $this->estado,
                 'creacion' => $this->creacion);
   
-            $this->idProveedor= $this->conexion()->lastInsertId();
-
+            
             $query->execute($arrayData);
+            $id = $this->query("SELECT MAX(id_proveedor) AS id FROM proveedor");
+            
+            if ($row = $id->fetchAll()) {
+            $this->idProveedor = $row[0][0];
+            }
 
-           return true;
+            if($query->rowCount() > 0) {
+                return true;
+            }else{
+                return false;
+            }
+
         }catch(PDOException $e){
+            error_log('ProveedorModel'.$e);
             return false;
         }
     }//fin save
@@ -46,13 +56,13 @@ Class ProveedorModel Extends Model implements IModel{
             $query = $this->query(
                 'SELECT * FROM `proveedor` WHERE 
                 estado_proveedor = '.$this->estado );
-            while($p =$query->fetch(PDO::FETCH_ASSOC)){
+            while($p =$query->fetch()){
 
                 $item = new ProveedorModel();
 
                 $item->from($p);
 
-                array_push($items,$item);
+                array_push($items,$p);
             }
             return $items;
         }catch(PDOException $e){

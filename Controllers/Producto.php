@@ -10,16 +10,13 @@ Class Producto Extends sessionController{
 
        // $this->user->getUserSesionData();
     }
-/*
+
 
     public function render(){
-        echo ' Producto funciona ';
-        $productoModel = new ProductoModel();
-        $producto = $productoModel->getAll();
         $this->view->render('Producto/index');
 
-        return print_r($producto );
-    }*/
+        //return print_r($producto );
+    }
 }
 
 ?>

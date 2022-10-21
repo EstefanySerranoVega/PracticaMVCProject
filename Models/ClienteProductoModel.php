@@ -38,8 +38,10 @@ Class ClienteProductoModel Extends Model implements IModel{
 
             $query->execute($arrayData);
 
-            $this->idCP = $this->Conexion()->lastInsertId();
-
+            $id = $this->query("SELECT MAX(id_cliente_producto) AS id FROM cliente_producto");
+            if ($row = $id->fetchAll()) {
+            $this->idCP = $row[0][0];
+            }
             return true;
         }catch(PDOException $e){
             echo 'Ha ocurrido un error'.$e;
@@ -53,12 +55,12 @@ Class ClienteProductoModel Extends Model implements IModel{
         try{
             $query = $this->query(
                 'SELECT * FROM `cliente_producto` WHERE estado_cp = "AC"');
-            while($p = $query->fetch(PDO::FETCH_ASSOC)){
+            while($p = $query->fetch()){
                 $item = new ClienteProductoModel();
 
                 $item->from($p);
 
-                array_push($items, $item);
+                array_push($items, $p);
             }
             return $items;
         }catch(PDOException $e){

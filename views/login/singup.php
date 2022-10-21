@@ -26,7 +26,7 @@
                 <input type="text"  name="nombrePersona" id="nombrePersona" placeholder="Nombre" >
                 <input type="text" name="paternoPersona" id="paternoPersona" placeholder="Apellido Paterno" >
                 <input type="text" name="maternoPersona" id="maternoPersona" placeholder="Apellido Materno" >
-                <input type="text" name="telefonoPersona" id="telefonoPersona" placeholder="Telefono" >
+                <input type="tel" name="telefonoPersona" id="telefonoPersona" placeholder="Telefono" >
                 <input type="date" name="nacPersona" id="nacPersona" >
                 <input type="text" name="username" id="nameUser" placeholder="Nombre de usuario">
                 <input type="password" name="password" id="password" placeholder="password">

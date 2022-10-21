@@ -27,11 +27,19 @@ public function save(){
             'estado' => $this->estado );
 
         $query->execute($arrayData);
+        $id = $this->query("SELECT MAX(id_tipo_pago) AS id FROM tipo_pago");
+            
+        if ($row = $id->fetchAll()) {
+        $this->idTP = $row[0][0];
+        }
 
-        $this->idTP = $this->db->lastInsertId();
-        
-        return true;
+        if($query->rowCount() > 0) {
+            return true;
+        }else{
+            return false;
+        }
     }catch(PDOException $e){
+        error_log('ERROR::TipoPagoModel::save()-> '.$e);
         return false;
     }
 }//fin save
@@ -40,12 +48,12 @@ public function getAll(){
     try{
         $query = $this->query(
             'SELECT * FROM `tipo_pago` WHERE estado_tipo_pago = "AC" ');
-        while($p = $query->fetch(PDO::FETCH_ASSOC)){
+        while($p = $query->fetch()){
             $item = new TipoPagoModel();
 
             $item->from($p);
 
-            array_push($items,$item);
+            array_push($items,$p);
         }
         return $items;
     }catch(PDOException $e){

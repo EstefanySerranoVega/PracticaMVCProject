@@ -33,8 +33,10 @@ Class AccesosModel Extends Model implements IModel{
 
             $query->execute($arrayData);
 
-            $this->idAccesos = $this->conexion()->lastInsertId();
-        
+            $id = $this->query("SELECT MAX(id_accesos) AS id FROM accesos");
+            if ($row = $id->fetchAll()) {
+            $this->idAccesos = $row[0][0];
+            }
             return true;
         }catch(PDOException $e){
             echo'Hubo un error al agregar el acceso '.$e;
@@ -49,18 +51,18 @@ Class AccesosModel Extends Model implements IModel{
         try{
             $query = $this->query(
                 'SELECT * FROM `accesos` WHERE estado_accesos ="AC"');
-            while($p = $query->fetch(PDO::FETCH_ASSOC)){
+            while($item = $query->fetch()){
 
-                $item = new AccesosModel();
+                $accesos = new AccesosModel();
 
-                $item->from($p);
+                $accesos->from($item);
 
                 array_push($items,$item);
             }
             
             return $items;
         }catch(PDOException $e){
-            error_log('AccesosModel::GetAll()=> '.$e);
+            error_log('AccesosModel::getAll()=> '.$e);
 
             return false;
         }

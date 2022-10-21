@@ -39,15 +39,13 @@ Class ProductoModel Extends Model implements IModel {
                 'precio' => $this->precioProducto,
                 'estado' =>$this->estado);
 
-                error_log($this->categoria);
-                error_log($this->nombreProducto);
-                error_log($this->codigoProducto);
-                error_log($this->cantidadProducto);
-                error_log($this->imgProducto);
-                error_log($this->precioProducto);
-                error_log($this->estado);
-
             $query->execute($arrayData);
+
+            $id = $this->query("SELECT MAX(id_producto) AS id FROM producto");
+            if ($row = $id->fetchAll()) {
+            $this->idProducto = $row[0][0];
+            }
+
             if($query->rowCount()){
                 return true;
             }else{
@@ -70,12 +68,13 @@ public function getAll(){
         $query = $this->query(
             'SELECT * FROM `producto` WHERE estado_producto = "AC"' );
         
-        while($p = $query->fetch(PDO::FETCH_ASSOC)){
+        while($p = $query->fetch()){
+            error_log('p es: '.$p);
             $item = new ProductoModel();
 
             $item->from($p);
 
-            array_push($items,$item);
+            array_push($items,$p);
         }
         return $items;
     }catch(PDOException $e){

@@ -40,6 +40,11 @@ class PersonaModel extends Model implements IModel{
                 'creacion' => $this->creacion);
 
                 $query->execute($arrayData);
+
+                $id = $this->query("SELECT MAX(id_persona) AS id FROM persona");
+                if ($row = $id->fetchAll()) {
+                $this->idPersona = $row[0][0];
+                }
          
             if($query->rowCount()) {
              
@@ -61,12 +66,12 @@ class PersonaModel extends Model implements IModel{
         try{
             $query = $this->prepare(
                 'SELECT * FROM `persona` WHERE estado_persona = "AC"');
-            while($p = $query->fetch(PDO::FETCH_ASSOC)){
+            while($p = $query->fetch()){
                 $item = new PersonaModel();
 
                 $item->from($p);
 
-                array_push($items,$item);
+                array_push($items,$p);
             }
             return $items;
         }catch(PDOException $e){
