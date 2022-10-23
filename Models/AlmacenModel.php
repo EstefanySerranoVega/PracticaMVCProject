@@ -129,10 +129,10 @@ public function update(){
 
 
 public function from($array){
-    $this->idAlmacen = $array['id_almacen'];
-    $this->nombreAlmacen = $array['nombre_almacen'];
-    $this->creacionAlmacen = $array['creacion_almacen'];
-    $this->estadoAlmacen = $array['estado_almacen'];
+    $this->idAlmacen = $array[0];
+    $this->nombreAlmacen = $array[2];
+    $this->creacionAlmacen = $array[3];
+    $this->estadoAlmacen = $array[4];
 }//fin from
 
     //SETTERS

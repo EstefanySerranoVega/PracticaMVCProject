@@ -54,6 +54,7 @@ public function getAll(){
     try{
         $query = $this->query('SELECT * FROM `categoria`
         WHERE estado_categoria ="AC"');
+
         while($item = $query->fetch()){
             $category = new CategoriaModel();
             $category->from($item);
@@ -167,6 +168,37 @@ public function exist($name){
           }
     }catch(PDOException $e){
         error_log('CategoriaModel::exist()=> '.$e);
+    }
+
+}
+public function getAllLimit($n){
+    $items = [];
+
+    try{
+        $query = $this->query(
+            'SELECT * FROM categoria
+            WHERE estado_categoria = "AC"
+            ORDER BY nombre_categoria
+            LIMIT '.$n );
+        //$query->execute(['n'=> $n]);
+
+        //$categoria = $query->fetchAll();
+
+
+        //error_log('query es: '.$query);
+        
+        while($p = $query->fetch()){
+            //error_log('p es: '.$p);
+            $item = new CategoriaModel();
+            $item->from($p);
+            array_push($items,$p);
+        }
+        return $items;
+
+
+    }catch(PDOException $e){
+        error_log('ERROR::CategoriaModel::getAllLimit()-> '.$e);
+        return false;
     }
 
 }

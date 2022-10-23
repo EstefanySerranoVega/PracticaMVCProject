@@ -35,13 +35,19 @@ require_once('Models/HomeModel.php');
             </div>
             <div class="container">
                 <div class="section-category">
+                <?php
+                    $category	 = new HomeModel();
+                    $cat = $category->getAllCategory();
+                    $items =[];
+                    for($i=0;$i<count($cat);$i++){
+                   array_push($items,$cat);?>
+                   
+                    <div class="category">
+                 <?php 
+                      echo $cat[$i][1]; ?>
+                    </div>
+                    <?php  }?>
            
-                    <div class="category"></div>
-                    <div class="category"></div>
-                    <div class="category"></div>
-                    <div class="category"></div>
-                    <div class="category"></div>
-                    <div class="category"></div>
                 </div>
             <section class="section-destacados">
            
@@ -65,8 +71,8 @@ require_once('Models/HomeModel.php');
                         <img src="<?php echo URL_RAIZ.IMG.$producto[$i][5];?>" alt="">
                         
                     </div>
-                    <div class="info-producto">
-                        <div class="name-producto info-text">
+                    <form action="<?php echo URL_RAIZ;?>carrito/addProducto" class="info-producto">
+                    <div class="name-producto info-text">
                             <?php echo $producto[$i][2].'<br>'; ?>
                         </div>
                         <div class="cod-producto info-text">
@@ -79,8 +85,8 @@ require_once('Models/HomeModel.php');
 
                         </div>
                         <button>Agregar al Carrito</button>
-                   
-                    </div>
+                    </form>
+                    
        
                     </div>
                 <?php }  ?>
@@ -105,8 +111,8 @@ require_once('Models/HomeModel.php');
                         <img src="<?php echo URL_RAIZ.IMG.$producto[$i][5];?>" alt="">
                         
                     </div>
-                    <div class="info-producto">
-                        <div class="name-producto info-text">
+                    <form action="<?php echo URL_RAIZ;?>carrito/addProducto" class="info-producto">
+                    <div class="name-producto info-text">
                             <?php echo $producto[$i][2].'<br>'; ?>
                         </div>
                         <div class="cod-producto info-text">
@@ -119,8 +125,7 @@ require_once('Models/HomeModel.php');
 
                         </div>
                         <button>Agregar al Carrito</button>
-                   
-                    </div>
+                    </form>
        
                     </div>
                 <?php }  ?>

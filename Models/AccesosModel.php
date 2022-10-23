@@ -127,10 +127,10 @@ Class AccesosModel Extends Model implements IModel{
 
 
     public function from($array){
-        $this->idAccesos = $array['id_accesos'];
-        $this->nombreAccesos = $array['nombre_accesos'];
-        $this->creacionAccesos = $array['creacion_accesos'];
-        $this->estadoAccesos = $array['estado_accesos'];
+        $this->idAccesos = $array[0];
+        $this->nombreAccesos = $array[1];
+        $this->creacionAccesos = $array[2];
+        $this->estadoAccesos = $array[3];
     }//fin from
   
 

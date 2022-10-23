@@ -135,15 +135,15 @@ public function update(){
     }
 }//fin update
 public function from($array){
-    $this->idUPP = $array['id_usuario_producto_proveedor'];
-    $this->usuario = $array['id_usuario'];
-    $this->producto = $array['id_producto'];
-    $this->proveedor = $array['id_proveedor'];
-    $this->almacen = $array['id_almacen_upp'];
-    $this->precioUPP = $array['precio_upp'];
-    $this->fechaIngresoUPP = $array['fecha_ingreso_upp'];
-    $this->estado = $array['estado_upp'];
-    $this->creacion = $array['creacion_upp'];
+    $this->idUPP = $array[0];
+    $this->usuario = $array[1];
+    $this->producto = $array[2];
+    $this->proveedor = $array[3];
+    $this->almacen = $array[4];
+    $this->precioUPP = $array[5];
+    $this->fechaIngresoUPP = $array[6];
+    $this->estado = $array[7];
+    $this->creacion = $array[8];
 }//fin from
 
 //SETTERS

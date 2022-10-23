@@ -69,7 +69,7 @@ public function getAll(){
             'SELECT * FROM `producto` WHERE estado_producto = "AC"' );
         
         while($p = $query->fetch()){
-            error_log('p es: '.$p);
+            //error_log('p es: '.$p);
             $item = new ProductoModel();
 
             $item->from($p);
@@ -147,18 +147,19 @@ public function update(){
 
         return true;
     }catch(PDOException $e){
+        error_log('ERROR::ProductoModel::update()-> '.$e);
         return false;}
 }//fin updateProducto
 
 public function from($array){
-    $this->idProducto = $array['id_producto'];
-    $this->categoria = $array['id_categoria'];
-    $this->nombreProducto = $array['nombre_producto'];
-    $this->codigoProducto = $array['codigo_producto'];
-    $this->cantidadProducto = $array['cantidad_producto'];
-    $this->imgProducto = $array['img_producto'];
-    $this->precioProducto = $array['precio_venta_producto'];
-    $this->estado = $array['estado_producto'];
+    $this->idProducto = $array[0];
+    $this->categoria = $array[1];
+    $this->nombreProducto = $array[2];
+    $this->codigoProducto = $array[3];
+    $this->cantidadProducto = $array[4];
+    $this->imgProducto = $array[5];
+    $this->precioProducto = $array[6];
+    $this->estado = $array[7];
 }//fin from
 
 //getters 
@@ -280,6 +281,7 @@ public function getCategoryIdAndLimit($idCat, $n){
 
             return $items;
     }catch(PDOException $e){
+        error_log('ERROR::ProductoModel::getCategoryIdAndLimit()'.$e);
         return false;
     } 
 } 

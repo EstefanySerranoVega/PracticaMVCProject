@@ -44,6 +44,9 @@ Class Login Extends SessionController{
             return ;
         }
 }
+public function closeSesion(){
+    $user = $this->model->logout();
+}
  
 }
 ?>

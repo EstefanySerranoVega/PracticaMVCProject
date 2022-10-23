@@ -124,12 +124,12 @@ public function update(){
     }
 }//fin update
 public function from($array){
-    $this->idContrasenia = $array['id_contrasenia'];
-    $this->user = $array['id_usuario'];
-    $this->nombreContrasenia = $array['nombre_contrasenia'];
-    $this->estado = $array['estado_contrasenia'];
-    $this->modificacion = $array['modificacion_contrasenia'];
-    $this->creacion = $array['creacion_contrasenia'];
+    $this->idContrasenia = $array[0];
+    $this->user = $array[1];
+    $this->nombreContrasenia = $array[2];
+    $this->estado = $array[3];
+    $this->modificacion = $array[4];
+    $this->creacion = $array[5];
 }//fin from
 
 

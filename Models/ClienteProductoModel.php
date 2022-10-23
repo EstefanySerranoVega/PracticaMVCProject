@@ -126,13 +126,13 @@ Class ClienteProductoModel Extends Model implements IModel{
 
 
     public function from($array){
-        $this->idCP = $array['id_tipo_pago'];
-        $this->cliente = $array['id_cliente'];
-        $this->producto = $array['id_producto'];
-        $this->tipoPago = $array['id_tipo_pago'];
-        $this->cantidadCP = $array['cantidad_cp'];
-        $this->estado = $array['estado_cp'];
-        $this->creacion = $array['creacion_cp'];
+        $this->idCP = $array[0];
+        $this->cliente = $array[1];
+        $this->producto = $array[2];
+        $this->tipoPago = $array[3];
+        $this->cantidadCP = $array[4];
+        $this->estado = $array[5];
+        $this->creacion = $array[6];
 
     }//fin from
 

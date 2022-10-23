@@ -142,14 +142,14 @@ class PersonaModel extends Model implements IModel{
 
 
     public function from($array){
-        $this->idPersona = $array['id_persona'];
-        $this->nombrePersona = $array['nombre_persona'];
-        $this->paternoPersona = $array['paterno_persona'];
-        $this->maternoPersona = $array['materno_persona'];
-        $this->telefonoPersona = $array['telefono_persona'];
-        $this->nacPersona = $array['nac_persona'];
-        $this->estado = $array['nac_persona'];
-        $this->creacion = $array['creacion_persona'];
+        $this->idPersona = $array[0];
+        $this->nombrePersona = $array[1];
+        $this->paternoPersona = $array[2];
+        $this->maternoPersona = $array[3];
+        $this->telefonoPersona = $array[4];
+        $this->nacPersona = $array[5];
+        $this->estado = $array[6];
+        $this->creacion = $array[7];
     }//fin from persona
 
 //getters

@@ -130,11 +130,11 @@ Class ProveedorModel Extends Model implements IModel{
 
 
     public function from($array){
-        $this->idProveedor = $array['id_proveedor'];
-        $this->empresaProveedor = $array['empresa_proveedor'];
-        $this->correoProveedor =$array['correo_proveedor'];
-        $this->estado = $array['estado_proveedor'];
-        $this->creacion = $array['creacion_proveedor'];
+        $this->idProveedor = $array[0];
+        $this->empresaProveedor = $array[1];
+        $this->correoProveedor =$array[2];
+        $this->estado = $array[3];
+        $this->creacion = $array[4];
     }//fin from
 
 //setters

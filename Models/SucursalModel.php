@@ -130,12 +130,12 @@ public function update(){
 }//fin update
 
 public function from($array){
-    $this->idSucursal = $array['id_sucursla'];
-    $this->almacen = $array['id_almacen'];
-    $this->nombreAlmacen = $array['nombre_almacen'];
-    $this->direccionSucursal = $array['direccion_sucursal'];
-    $this->creacionSucursal = $array['creacion_sucursal'];
-    $this->estadoSucursal = $array['estado_sucursal'];
+    $this->idSucursal = $array[0];
+    $this->almacen = $array[1];
+    $this->nombreAlmacen = $array[2];
+    $this->direccionSucursal = $array[3];
+    $this->creacionSucursal = $array[4];
+    $this->estadoSucursal = $array[5];
 }//fin from
 
 //SETTERS

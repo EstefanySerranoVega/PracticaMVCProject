@@ -129,12 +129,12 @@ class UserModel extends Model implements IModel{
     }//fin update
 
     public function from($array){
-        $this->idUser = $array['id_usuario'];
-        $this->persona = $array['id_persona'];
-        $this->roles = $array['id_roles'];
-        $this->nameUser = $array['nombre_usuario'];
-        $this->estado = $array['estado_usuario'];
-        $this->creacion = $array['creacion_usuario'];
+        $this->idUser = $array[0];
+        $this->persona = $array[1];
+        $this->roles = $array[2];
+        $this->nameUser = $array[3];
+        $this->estado = $array[4];
+        $this->creacion = $array[5];
     }
   
 

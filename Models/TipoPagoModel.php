@@ -115,10 +115,10 @@ public function update(){
 
 
 public function from($array){
-    $this->idTP = $array['id_tipo_pago'];
-    $this->nombreTP = $array['nombre_tipo_pago'];
-    $this->creacion = $array['creacion_tipo_pago'];
-    $this->estado = $array['estado_tipo_pago'];
+    $this->idTP = $array[0];
+    $this->nombreTP = $array[1];
+    $this->creacion = $array[2];
+    $this->estado = $array[3];
 }//fin from
 
 

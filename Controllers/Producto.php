@@ -13,7 +13,7 @@ Class Producto Extends sessionController{
 
 
     public function render(){
-        $this->view->render('Producto/index');
+        $this->view->render('Home/producto');
 
         //return print_r($producto );
     }

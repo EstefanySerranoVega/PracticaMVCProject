@@ -118,11 +118,11 @@ public function update(){
 }//fin update
 public function from($array){
     
-    $this->idRoles = $array['id_roles'];
-    $this->accesos = $array['id_accesos'];
-    $this->nombreRoles = $array['nombre_roles'];
-    $this->creacion = $array['creacion_roles'];
-    $this->estado = $array['estado_roles'];
+    $this->idRoles = $array[0];
+    $this->accesos = $array[1];
+    $this->nombreRoles = $array[2];
+    $this->creacion = $array[3];
+    $this->estado = $array[4];
 }//fin from
 
 //SETTERS

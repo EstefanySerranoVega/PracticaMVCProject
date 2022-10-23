@@ -119,11 +119,11 @@ Class ClienteModel extends Model implements IModel {
         }
     }//fin update
     public function from($array){
-        $this->idCliente = $array['id_cliente'];
-        $this->persona = $array['id_persona'];
-        $this->correoCliente = $array['correo_cliente'];
-        $this->creacionCliente = $array['creacion_cliente'];
-        $this->estadoCliente = $array['estado_cliente'];
+        $this->idCliente = $array[0];
+        $this->persona = $array[1];
+        $this->correoCliente = $array[2];
+        $this->creacionCliente = $array[3];
+        $this->estadoCliente = $array[4];
     }//fin from
 
     //SETTERS

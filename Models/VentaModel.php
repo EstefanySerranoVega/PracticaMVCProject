@@ -91,10 +91,10 @@ Class VentaModel extends Model implements IModel{
     public function update(){}//fin update
 
     public function from($array){
-        $this->idVenta = $array['id_venta'];
-        $this->clienteProducto = $array['id_cliente_producto'];
-        $this->fechaVenta = $array['fecha_venta'];
-        $this->estado = $array['estado_venta'];
+        $this->idVenta = $array[0];
+        $this->clienteProducto = $array[1];
+        $this->fechaVenta = $array[2];
+        $this->estado = $array[3];
     }//fin from
 
 //SETTERS

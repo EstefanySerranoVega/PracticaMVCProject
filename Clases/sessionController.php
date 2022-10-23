@@ -32,12 +32,12 @@ public function getUserId(){
 
 public function init(){
         error_log('SesionController::init()');
-    $this->session = new Session();
-
-    $json = $this->getJSONFileConfig();
-    $this->sites = $json['sites'];
-    $this->defaultSites = $json['default-sites'];
-    $this->validateSesion();
+                $this->session = new Session();
+            
+                $json = $this->getJSONFileConfig();
+                $this->sites = $json['sites'];
+                $this->defaultSites = $json['default-sites'];
+   $this->validateSesion();
 }//fin init
 
 
@@ -79,6 +79,7 @@ public function validateSesion(){
                 if($this->isPublic()){
                         error_log('SessionController::validateSession()->is public ->true public page');
                        
+                //$this->redirect('home');
                         //ingresa al sitio
                 }else{ 
                          error_log('SessionController::validateSession()->is public false redirect al Home ');
@@ -141,6 +142,9 @@ public function isPublic(){
 public function getCurrentPage(){
         $currentLink =  trim("$_SERVER[REQUEST_URI]");
         $url = explode('/',$currentLink);
+        if(!$url[3] ){
+                return 'home';
+        }
         error_log("sessionController::getCurrentPage(): actualLink =>" . $currentLink .", url =>".$url[3]);
         
         return $url[3];
@@ -195,6 +199,7 @@ public function authorizeAccess($rol){
         }
 }
 public function logout(){
+        error_log('SessionController::logout->execute');
         $this->session->closeSesion();
 }
 

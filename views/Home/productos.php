@@ -1,6 +1,3 @@
-<?php
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    Vista producto!
+    <?php require_once('views/header.php'); ?>
 </body>
 </html>

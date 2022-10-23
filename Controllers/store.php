@@ -8,7 +8,7 @@ Class store extends Controllers{
     }
 
     public function render(){
-        $this->view->render('store/index',[]);
+        $this->view->render('Home/store',[]);
     }
 
 
