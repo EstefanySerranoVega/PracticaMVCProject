@@ -51,7 +51,7 @@ Class AccesosModel Extends Model implements IModel{
         try{
             $query = $this->query(
                 'SELECT * FROM `accesos` WHERE estado_accesos ="AC"');
-            while($item = $query->fetch()){
+            while($item = $query->fetch(PDO::FETCH_ASSOC)){
 
                 $accesos = new AccesosModel();
 
@@ -127,10 +127,10 @@ Class AccesosModel Extends Model implements IModel{
 
 
     public function from($array){
-        $this->idAccesos = $array[0];
-        $this->nombreAccesos = $array[1];
-        $this->creacionAccesos = $array[2];
-        $this->estadoAccesos = $array[3];
+        $this->idAccesos = $array['ID_ACCESOS'];
+        $this->nombreAccesos = $array['NOMBRE_ACCESOS'];
+        $this->creacionAccesos = $array['CREACION_ACCESOS'];
+        $this->estadoAccesos = $array['ESTADO_ACCESOS'];
     }//fin from
   
 

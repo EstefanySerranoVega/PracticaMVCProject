@@ -68,7 +68,7 @@ public function getAll(){
         $query = $this->query(
             'SELECT * FROM `producto` WHERE estado_producto = "AC"' );
         
-        while($p = $query->fetch()){
+        while($p = $query->fetch(PDO::FETCH_ASSOC)){
             //error_log('p es: '.$p);
             $item = new ProductoModel();
 
@@ -152,14 +152,18 @@ public function update(){
 }//fin updateProducto
 
 public function from($array){
-    $this->idProducto = $array[0];
-    $this->categoria = $array[1];
-    $this->nombreProducto = $array[2];
-    $this->codigoProducto = $array[3];
-    $this->cantidadProducto = $array[4];
-    $this->imgProducto = $array[5];
-    $this->precioProducto = $array[6];
-    $this->estado = $array[7];
+    $this->idProducto = $array['ID_PRODUCTO'];
+    error_log($this->idProducto);
+    $this->categoria = $array['ID_CATEGORIA'];
+    error_log($this->categoria);
+    $this->nombreProducto = $array['NOMBRE_PRODUCTO'];
+    error_log($this->nombreProducto);
+    $this->codigoProducto = $array['CODIGO_PRODUCTO'];
+    $this->cantidadProducto = $array['CANTIDAD_PRODUCTO'];
+    $this->imgProducto = $array['IMG_PRODUCTO'];
+    $this->precioProducto = $array['PRECIO_VENTA_PRODUCTO'];
+    $this->estado = $array['ESTADO_PRODUCTO'];
+    error_log($this->estado);
 }//fin from
 
 //getters 

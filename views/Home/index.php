@@ -1,5 +1,5 @@
 <?php 
-require_once('Models/HomeModel.php');
+require_once('Clases/HomeModel.php');
 ?>
 
 <!DOCTYPE html>
@@ -66,22 +66,24 @@ require_once('Models/HomeModel.php');
                         
               
                     <div class="card-producto" >
-                    <?php  array_push($items,$producto[$i][1]);?>
+                    <?php  array_push($items,$producto[$i]);
+                    $id = $producto[$i]['ID_PRODUCTO'];
+                    var_dump($id);?>
                     <div class="img-producto">
-                        <img src="<?php echo URL_RAIZ.IMG.$producto[$i][5];?>" alt="">
+                        <img src="<?php echo URL_RAIZ.IMG.$producto[$i]['IMG_PRODUCTO'];?>" alt="">
                         
                     </div>
-                    <form action="<?php echo URL_RAIZ;?>carrito/addProducto" class="info-producto">
+                    <form action="<?php echo URL_RAIZ;?>viewProducto/selectProducto/id=<?php echo $producto[$i]['ID_PRODUCTO']?>" class="info-producto" method="GET">
                     <div class="name-producto info-text">
-                            <?php echo $producto[$i][2].'<br>'; ?>
+                            <?php echo $producto[$i]['NOMBRE_PRODUCTO'].'<br>'; ?>
                         </div>
                         <div class="cod-producto info-text">
                             <label for="codigo">Codigo:</label>
-                            <?php echo $producto[$i][3].'<br>'; ?>
+                            <?php echo $producto[$i]['CODIGO_PRODUCTO'].'<br>'; ?>
                         </div>
                         <div class="precio-producto info-text">
                             <label for="precio">Precio:</label>
-                        <?php    echo $producto[$i][6].'.bs'.'<br>';   ?>
+                        <?php    echo $producto[$i]['PRECIO_VENTA_PRODUCTO'].'.bs'.'<br>';   ?>
 
                         </div>
                         <button>Agregar al Carrito</button>
@@ -106,22 +108,22 @@ require_once('Models/HomeModel.php');
                         
               
                     <div class="card-producto" >
-                    <?php  array_push($items,$producto[$i][1]);?>
+                    <?php  array_push($items,$producto[$i]);?>
                     <div class="img-producto">
-                        <img src="<?php echo URL_RAIZ.IMG.$producto[$i][5];?>" alt="">
+                        <img src="<?php echo URL_RAIZ.IMG.$producto[$i]['IMG_PRODUCTO'];?>" alt="">
                         
                     </div>
                     <form action="<?php echo URL_RAIZ;?>carrito/addProducto" class="info-producto">
                     <div class="name-producto info-text">
-                            <?php echo $producto[$i][2].'<br>'; ?>
+                            <?php echo $producto[$i]['NOMBRE_PRODUCTO'].'<br>'; ?>
                         </div>
                         <div class="cod-producto info-text">
                             <label for="codigo">Codigo:</label>
-                            <?php echo $producto[$i][3].'<br>'; ?>
+                            <?php echo $producto[$i]['CODIGO_PRODUCTO'].'<br>'; ?>
                         </div>
                         <div class="precio-producto info-text">
                             <label for="precio">Precio:</label>
-                        <?php    echo $producto[$i][6].'.bs'.'<br>';   ?>
+                        <?php    echo $producto[$i]['PRECIO_VENTA_PRODUCTO'].'.bs'.'<br>';   ?>
 
                         </div>
                         <button>Agregar al Carrito</button>

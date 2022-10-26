@@ -1,5 +1,5 @@
 <?php
-require_once('Models/sectionProductos.php');
+require_once('Clases/sectionProductosModel.php');
 ?>
 
 
@@ -141,23 +141,23 @@ require_once('Models/sectionProductos.php');
               $res = [];
               for($i=0;$i<count($producto);$i++){
                 
-              array_push($res,$producto[$i][1]);  ?>
+              array_push($res,$producto[$i]);  ?>
                         <div class="row-table">
 
                             <div class="cell-table">
-                                <?php echo $producto[$i][3]; ?>
+                                <?php echo $producto[$i]['CODIGO_PRODUCTO']; ?>
                             </div>
                             <div class="cell-table">
-                                <?php echo $producto[$i][2]; ?>
+                                <?php echo $producto[$i]['NOMBRE_PRODUCTO']; ?>
                             </div>
                             <div class="cell-table">
-                                <?php echo $producto[$i][1]; ?> 
+                                <?php echo $producto[$i]['ID_CATEGORIA']; ?> 
                             </div>
                             <div class="cell-table">
-                                <?php echo $producto[$i][6]; ?> 
+                                <?php echo $producto[$i]['PRECIO_VENTA_PRODUCTO']; ?> 
                             </div>
                             <div class="cell-table">
-                                <?php echo $producto[$i][4]; ?>
+                                <?php echo $producto[$i]['CANTIDAD_PRODUCTO']; ?>
                             </div>
                             <div class="cell-table">
 

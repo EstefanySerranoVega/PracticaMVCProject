@@ -44,6 +44,11 @@
         "site": "sectionProductos",
         "access": "public",
         "role": ""
+    }, {
+
+        "site": "viewProducto",
+        "access": "public",
+        "role": ""
     }],
 
     "default-sites": {

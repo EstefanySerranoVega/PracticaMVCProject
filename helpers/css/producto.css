@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-gral {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.section-select_producto {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.img-producto_select {
+    width: 45%;
+    background: #f2f2f2;
+    border-radius: 1rem 0 0 1rem;
+}
+
+.info-producto_select {
+    width: 45%;
+    background: orange;
+    border-radius: 0 1rem 1rem 0rem;
+}
+
+.info-producto_select form {
+    padding: 1rem;
+    margin: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+form label {
+    width: 100%;
+    height: 2rem;
+    margin: 0.5rem;
+}
+
+form input {
+    width: 100%;
+    margin: 0.5rem;
+}
+
+.similar-products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.header-similar_products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: orange;
+    padding: 0.8rem;
+}
+
+.section-similar_products {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    background: red;
+}
+
+.card-producto {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    background: green;
+}
+
+.card-producto .img-producto {
+    width: 95%;
+    height: 10rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: pink;
+    margin: 0.8rem;
+}
+
+.cad-producto form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.cad-producto form button {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 0.8rem;
+}

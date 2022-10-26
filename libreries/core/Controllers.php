@@ -9,7 +9,7 @@ Class Controllers {
 
     public function loadModel($model){
         $model = get_class($this).'Model';
-        $rutaModel = 'Models/'.$model.'.php';
+        $rutaModel = 'Clases/'.$model.'.php';
         
             if(file_exists($rutaModel)){
                 require_once($rutaModel);
@@ -37,14 +37,14 @@ Class Controllers {
     }//fin exist POST
 
     public function existGET($params){
-
         foreach($params as $param){
+            error_log($param);
             if(!isset($_GET[$param])){
-                error_log('Controllers::existPOST-> false');
+                error_log('Controllers::existGET-> false');
             return false;
             }
         }
-        error_log('Controllers::existPOST-> true');
+        error_log('Controllers::exisGET-> true');
         return true;
     }//fin exist GET
     

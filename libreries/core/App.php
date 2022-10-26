@@ -22,6 +22,7 @@ Class App{
         $archivoController = 'Controllers/'.$arrayUrl[0].'.php';
         
         if(file_exists($archivoController)){
+            error_log($archivoController);
             require_once($archivoController);
             $controller = new $arrayUrl[0];
        
