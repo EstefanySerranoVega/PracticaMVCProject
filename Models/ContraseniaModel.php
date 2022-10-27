@@ -80,7 +80,7 @@ public function get($id){
             AND estado_contraseni = "AC" ');
         $query->execute(['id' => $id]);
 
-        $contrasenia = $query->fetchAll();
+        $contrasenia = $query->fetchAll(PDO::FETCH_ASSOC);
 
         $this->from($contrasenia);
 
@@ -124,12 +124,12 @@ public function update(){
     }
 }//fin update
 public function from($array){
-    $this->idContrasenia = $array[0];
-    $this->user = $array[1];
-    $this->nombreContrasenia = $array[2];
-    $this->estado = $array[3];
-    $this->modificacion = $array[4];
-    $this->creacion = $array[5];
+    $this->idContrasenia = $array['ID_CONTRASENIA'];
+    $this->user = $array['ID_USUARIO'];
+    $this->nombreContrasenia = $array['NOMBRE_CONTRASENIA'];
+    $this->estado = $array['ESTADO_CONTRASENIA'];
+    $this->modificacion = $array['MODIFICACION_CONTRASENIA'];
+    $this->creacion = $array['CREACION_CONTRASENIA'];
 }//fin from
 
 

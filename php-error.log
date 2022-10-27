@@ -1,119 +1,1720 @@
-[26-Oct-2022 05:44:13 UTC] Controllers/viewProducto.php
-[26-Oct-2022 05:44:13 UTC] SesionController::init()
-[26-Oct-2022 05:44:13 UTC] Session::session_start
-[26-Oct-2022 05:44:13 UTC] SessionController::validateSession()
-[26-Oct-2022 05:44:13 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/viewProducto/selectProducto/id=1?, url =>viewProducto
-[26-Oct-2022 05:44:13 UTC] sessionController::isPublic(): currentURL => viewProducto
-[26-Oct-2022 05:44:13 UTC] sessionController::isPublic()=> true
-[26-Oct-2022 05:44:13 UTC] SessionController::validateSession()->is public ->true public page
-[26-Oct-2022 05:44:13 UTC] view producto carga
-[26-Oct-2022 05:44:13 UTC] Controllers::loadModel()=> true viewProductoModel
-[26-Oct-2022 05:44:13 UTC] view select producto carga
-[26-Oct-2022 05:44:13 UTC] PHP Warning:  error_log() expects parameter 1 to be string, array given in C:\wamp64\www\HTML\MVC\libreries\core\Controllers.php on line 40
-[26-Oct-2022 05:44:13 UTC] PHP Stack trace:
-[26-Oct-2022 05:44:13 UTC] PHP   1. {main}() C:\wamp64\www\HTML\MVC\index.php:0
-[26-Oct-2022 05:44:13 UTC] PHP   2. App->__construct() C:\wamp64\www\HTML\MVC\index.php:23
-[26-Oct-2022 05:44:13 UTC] PHP   3. viewProducto->selectProducto() C:\wamp64\www\HTML\MVC\libreries\core\App.php:39
-[26-Oct-2022 05:44:13 UTC] PHP   4. viewProducto->existGET() C:\wamp64\www\HTML\MVC\Controllers\viewProducto.php:26
-[26-Oct-2022 05:44:13 UTC] PHP   5. error_log() C:\wamp64\www\HTML\MVC\libreries\core\Controllers.php:40
-[26-Oct-2022 05:44:13 UTC] PHP Warning:  Illegal offset type in isset or empty in C:\wamp64\www\HTML\MVC\libreries\core\Controllers.php on line 42
-[26-Oct-2022 05:44:13 UTC] PHP Stack trace:
-[26-Oct-2022 05:44:13 UTC] PHP   1. {main}() C:\wamp64\www\HTML\MVC\index.php:0
-[26-Oct-2022 05:44:13 UTC] PHP   2. App->__construct() C:\wamp64\www\HTML\MVC\index.php:23
-[26-Oct-2022 05:44:13 UTC] PHP   3. viewProducto->selectProducto() C:\wamp64\www\HTML\MVC\libreries\core\App.php:39
-[26-Oct-2022 05:44:13 UTC] PHP   4. viewProducto->existGET() C:\wamp64\www\HTML\MVC\Controllers\viewProducto.php:26
-[26-Oct-2022 05:44:13 UTC] Controllers::existGET-> false
-[26-Oct-2022 05:44:13 UTC] la variable get sí es: 
-[26-Oct-2022 05:44:13 UTC] else validacion id
-[26-Oct-2022 05:44:59 UTC] Controllers/viewProducto.php
-[26-Oct-2022 05:44:59 UTC] SesionController::init()
-[26-Oct-2022 05:44:59 UTC] Session::session_start
-[26-Oct-2022 05:44:59 UTC] SessionController::validateSession()
-[26-Oct-2022 05:44:59 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/viewProducto/selectProducto/id=1?, url =>viewProducto
-[26-Oct-2022 05:44:59 UTC] sessionController::isPublic(): currentURL => viewProducto
-[26-Oct-2022 05:44:59 UTC] sessionController::isPublic()=> true
-[26-Oct-2022 05:44:59 UTC] SessionController::validateSession()->is public ->true public page
-[26-Oct-2022 05:44:59 UTC] view producto carga
-[26-Oct-2022 05:44:59 UTC] Controllers::loadModel()=> true viewProductoModel
-[26-Oct-2022 05:44:59 UTC] view select producto carga
-[26-Oct-2022 05:44:59 UTC] PHP Warning:  error_log() expects parameter 1 to be string, array given in C:\wamp64\www\HTML\MVC\libreries\core\Controllers.php on line 41
-[26-Oct-2022 05:44:59 UTC] PHP Stack trace:
-[26-Oct-2022 05:44:59 UTC] PHP   1. {main}() C:\wamp64\www\HTML\MVC\index.php:0
-[26-Oct-2022 05:44:59 UTC] PHP   2. App->__construct() C:\wamp64\www\HTML\MVC\index.php:23
-[26-Oct-2022 05:44:59 UTC] PHP   3. viewProducto->selectProducto() C:\wamp64\www\HTML\MVC\libreries\core\App.php:39
-[26-Oct-2022 05:44:59 UTC] PHP   4. viewProducto->existGET() C:\wamp64\www\HTML\MVC\Controllers\viewProducto.php:26
-[26-Oct-2022 05:44:59 UTC] PHP   5. error_log() C:\wamp64\www\HTML\MVC\libreries\core\Controllers.php:41
-[26-Oct-2022 05:44:59 UTC] PHP Warning:  Illegal offset type in isset or empty in C:\wamp64\www\HTML\MVC\libreries\core\Controllers.php on line 42
-[26-Oct-2022 05:44:59 UTC] PHP Stack trace:
-[26-Oct-2022 05:44:59 UTC] PHP   1. {main}() C:\wamp64\www\HTML\MVC\index.php:0
-[26-Oct-2022 05:44:59 UTC] PHP   2. App->__construct() C:\wamp64\www\HTML\MVC\index.php:23
-[26-Oct-2022 05:44:59 UTC] PHP   3. viewProducto->selectProducto() C:\wamp64\www\HTML\MVC\libreries\core\App.php:39
-[26-Oct-2022 05:44:59 UTC] PHP   4. viewProducto->existGET() C:\wamp64\www\HTML\MVC\Controllers\viewProducto.php:26
-[26-Oct-2022 05:44:59 UTC] Controllers::existGET-> false
-[26-Oct-2022 05:44:59 UTC] la variable get sí es: 
-[26-Oct-2022 05:44:59 UTC] else validacion id
-[26-Oct-2022 16:58:44 UTC] Controllers/sectionProductos.php
-[26-Oct-2022 16:58:44 UTC] SesionController::init()
-[26-Oct-2022 16:58:44 UTC] Session::session_start
-[26-Oct-2022 16:58:44 UTC] SessionController::validateSession()
-[26-Oct-2022 16:58:44 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/sectionProductos, url =>sectionProductos
-[26-Oct-2022 16:58:44 UTC] sessionController::isPublic(): currentURL => sectionProductos
-[26-Oct-2022 16:58:44 UTC] sessionController::isPublic()=> true
-[26-Oct-2022 16:58:44 UTC] SessionController::validateSession()->is public ->true public page
-[26-Oct-2022 16:58:44 UTC] Controllers::loadModel()=> true sectionProductosModel
-[26-Oct-2022 16:58:44 UTC] 1
-[26-Oct-2022 16:58:44 UTC] 5
-[26-Oct-2022 16:58:44 UTC] Mouse Genius
-[26-Oct-2022 16:58:44 UTC] AC
-[26-Oct-2022 16:58:44 UTC] 2
-[26-Oct-2022 16:58:44 UTC] 5
-[26-Oct-2022 16:58:44 UTC] Mouse gamer inalambrico
-[26-Oct-2022 16:58:44 UTC] AC
-[26-Oct-2022 16:58:44 UTC] 3
-[26-Oct-2022 16:58:44 UTC] 4
-[26-Oct-2022 16:58:44 UTC] audifonos delux
-[26-Oct-2022 16:58:44 UTC] AC
-[26-Oct-2022 16:58:44 UTC] 4
-[26-Oct-2022 16:58:44 UTC] 16
-[26-Oct-2022 16:58:44 UTC] microfono gamer
-[26-Oct-2022 16:58:44 UTC] AC
-[26-Oct-2022 16:58:44 UTC] 5
-[26-Oct-2022 16:58:44 UTC] 14
-[26-Oct-2022 16:58:44 UTC] funda de 14 pulgadas
-[26-Oct-2022 16:58:44 UTC] AC
-[26-Oct-2022 16:58:44 UTC] 6
-[26-Oct-2022 16:58:44 UTC] 1
-[26-Oct-2022 16:58:44 UTC] teclado mecanico delux
-[26-Oct-2022 16:58:44 UTC] AC
-[26-Oct-2022 16:58:44 UTC] 7
-[26-Oct-2022 16:58:44 UTC] 6
-[26-Oct-2022 16:58:44 UTC] Parlantes delux
-[26-Oct-2022 16:58:44 UTC] AC
-[26-Oct-2022 16:58:44 UTC] 8
-[26-Oct-2022 16:58:44 UTC] 13
-[26-Oct-2022 16:58:44 UTC] Cargador Huawei tipo c
-[26-Oct-2022 16:58:44 UTC] AC
-[26-Oct-2022 16:58:44 UTC] 9
-[26-Oct-2022 16:58:44 UTC] 4
-[26-Oct-2022 16:58:44 UTC] Audifonos gamer genius
-[26-Oct-2022 16:58:44 UTC] AC
-[26-Oct-2022 16:58:45 UTC] Controllers/viewProducto.php
-[26-Oct-2022 16:58:45 UTC] SesionController::init()
-[26-Oct-2022 16:58:45 UTC] Session::session_start
-[26-Oct-2022 16:58:45 UTC] SessionController::validateSession()
-[26-Oct-2022 16:58:45 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/viewProducto/selectProducto/id=1?, url =>viewProducto
-[26-Oct-2022 16:58:45 UTC] sessionController::isPublic(): currentURL => viewProducto
-[26-Oct-2022 16:58:45 UTC] sessionController::isPublic()=> true
-[26-Oct-2022 16:58:45 UTC] SessionController::validateSession()->is public ->true public page
-[26-Oct-2022 16:58:45 UTC] view producto carga
-[26-Oct-2022 16:58:45 UTC] Controllers::loadModel()=> true viewProductoModel
-[26-Oct-2022 16:58:45 UTC] view select producto carga
-[26-Oct-2022 16:58:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\wamp64\www\HTML\MVC\libreries\core\Controllers.php on line 40
-[26-Oct-2022 16:58:45 UTC] PHP Stack trace:
-[26-Oct-2022 16:58:45 UTC] PHP   1. {main}() C:\wamp64\www\HTML\MVC\index.php:0
-[26-Oct-2022 16:58:45 UTC] PHP   2. App->__construct() C:\wamp64\www\HTML\MVC\index.php:23
-[26-Oct-2022 16:58:45 UTC] PHP   3. viewProducto->selectProducto() C:\wamp64\www\HTML\MVC\libreries\core\App.php:39
-[26-Oct-2022 16:58:45 UTC] PHP   4. viewProducto->existGET() C:\wamp64\www\HTML\MVC\Controllers\viewProducto.php:26
-[26-Oct-2022 16:58:45 UTC] Controllers::exisGET-> true
-[26-Oct-2022 16:58:45 UTC] la variable get sí es: 
-[26-Oct-2022 16:58:45 UTC] else validacion id
+[27-Oct-2022 07:16:00 UTC] Controllers/viewProducto.php
+[27-Oct-2022 07:16:00 UTC] SesionController::init()
+[27-Oct-2022 07:16:00 UTC] Session::session_start
+[27-Oct-2022 07:16:00 UTC] SessionController::validateSession()
+[27-Oct-2022 07:16:00 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/viewProducto, url =>viewProducto
+[27-Oct-2022 07:16:00 UTC] sessionController::isPublic(): currentURL => viewProducto
+[27-Oct-2022 07:16:00 UTC] sessionController::isPublic()=> true
+[27-Oct-2022 07:16:00 UTC] SessionController::validateSession()->is public ->true public page
+[27-Oct-2022 07:16:00 UTC] view producto carga
+[27-Oct-2022 07:16:00 UTC] Controllers::loadModel()=> true viewProductoModel
+[27-Oct-2022 07:16:05 UTC] Controllers/viewProducto.php
+[27-Oct-2022 07:16:05 UTC] SesionController::init()
+[27-Oct-2022 07:16:05 UTC] Session::session_start
+[27-Oct-2022 07:16:05 UTC] SessionController::validateSession()
+[27-Oct-2022 07:16:05 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/viewProducto, url =>viewProducto
+[27-Oct-2022 07:16:05 UTC] sessionController::isPublic(): currentURL => viewProducto
+[27-Oct-2022 07:16:05 UTC] sessionController::isPublic()=> true
+[27-Oct-2022 07:16:05 UTC] SessionController::validateSession()->is public ->true public page
+[27-Oct-2022 07:16:05 UTC] view producto carga
+[27-Oct-2022 07:16:05 UTC] Controllers::loadModel()=> true viewProductoModel
+[27-Oct-2022 07:16:08 UTC] Controllers/home.php
+[27-Oct-2022 07:16:08 UTC] Controllers::loadModel()=> true HomeModel
+[27-Oct-2022 07:16:08 UTC] session name no existe Home 
+[27-Oct-2022 07:16:08 UTC] getAllCategory-> execute 
+[27-Oct-2022 07:16:08 UTC] 1
+[27-Oct-2022 07:16:08 UTC] 5
+[27-Oct-2022 07:16:08 UTC] Mouse Genius
+[27-Oct-2022 07:16:08 UTC] AC
+[27-Oct-2022 07:16:08 UTC] 2
+[27-Oct-2022 07:16:08 UTC] 5
+[27-Oct-2022 07:16:08 UTC] Mouse gamer inalambrico
+[27-Oct-2022 07:16:08 UTC] AC
+[27-Oct-2022 07:16:08 UTC] 3
+[27-Oct-2022 07:16:08 UTC] 4
+[27-Oct-2022 07:16:08 UTC] audifonos delux
+[27-Oct-2022 07:16:08 UTC] AC
+[27-Oct-2022 07:16:08 UTC] 4
+[27-Oct-2022 07:16:08 UTC] 16
+[27-Oct-2022 07:16:08 UTC] microfono gamer
+[27-Oct-2022 07:16:08 UTC] AC
+[27-Oct-2022 07:16:08 UTC] 5
+[27-Oct-2022 07:16:08 UTC] 14
+[27-Oct-2022 07:16:08 UTC] funda de 14 pulgadas
+[27-Oct-2022 07:16:08 UTC] AC
+[27-Oct-2022 07:16:08 UTC] 6
+[27-Oct-2022 07:16:08 UTC] 1
+[27-Oct-2022 07:16:08 UTC] teclado mecanico delux
+[27-Oct-2022 07:16:08 UTC] AC
+[27-Oct-2022 07:16:08 UTC] 7
+[27-Oct-2022 07:16:08 UTC] 6
+[27-Oct-2022 07:16:08 UTC] Parlantes delux
+[27-Oct-2022 07:16:08 UTC] AC
+[27-Oct-2022 07:16:08 UTC] 8
+[27-Oct-2022 07:16:08 UTC] 13
+[27-Oct-2022 07:16:08 UTC] Cargador Huawei tipo c
+[27-Oct-2022 07:16:08 UTC] AC
+[27-Oct-2022 07:16:08 UTC] 9
+[27-Oct-2022 07:16:08 UTC] 4
+[27-Oct-2022 07:16:08 UTC] Audifonos gamer genius
+[27-Oct-2022 07:16:08 UTC] AC
+[27-Oct-2022 07:16:08 UTC] 1
+[27-Oct-2022 07:16:08 UTC] 5
+[27-Oct-2022 07:16:08 UTC] Mouse Genius
+[27-Oct-2022 07:16:08 UTC] AC
+[27-Oct-2022 07:16:08 UTC] 2
+[27-Oct-2022 07:16:08 UTC] 5
+[27-Oct-2022 07:16:08 UTC] Mouse gamer inalambrico
+[27-Oct-2022 07:16:08 UTC] AC
+[27-Oct-2022 07:16:08 UTC] 3
+[27-Oct-2022 07:16:08 UTC] 4
+[27-Oct-2022 07:16:08 UTC] audifonos delux
+[27-Oct-2022 07:16:08 UTC] AC
+[27-Oct-2022 07:16:08 UTC] 4
+[27-Oct-2022 07:16:08 UTC] 16
+[27-Oct-2022 07:16:08 UTC] microfono gamer
+[27-Oct-2022 07:16:08 UTC] AC
+[27-Oct-2022 07:16:08 UTC] 5
+[27-Oct-2022 07:16:08 UTC] 14
+[27-Oct-2022 07:16:08 UTC] funda de 14 pulgadas
+[27-Oct-2022 07:16:08 UTC] AC
+[27-Oct-2022 07:16:08 UTC] 6
+[27-Oct-2022 07:16:08 UTC] 1
+[27-Oct-2022 07:16:08 UTC] teclado mecanico delux
+[27-Oct-2022 07:16:08 UTC] AC
+[27-Oct-2022 07:16:08 UTC] 7
+[27-Oct-2022 07:16:08 UTC] 6
+[27-Oct-2022 07:16:08 UTC] Parlantes delux
+[27-Oct-2022 07:16:08 UTC] AC
+[27-Oct-2022 07:16:08 UTC] 8
+[27-Oct-2022 07:16:08 UTC] 13
+[27-Oct-2022 07:16:08 UTC] Cargador Huawei tipo c
+[27-Oct-2022 07:16:08 UTC] AC
+[27-Oct-2022 07:16:08 UTC] 9
+[27-Oct-2022 07:16:08 UTC] 4
+[27-Oct-2022 07:16:08 UTC] Audifonos gamer genius
+[27-Oct-2022 07:16:08 UTC] AC
+[27-Oct-2022 07:16:09 UTC] Controllers/viewProducto.php
+[27-Oct-2022 07:16:09 UTC] SesionController::init()
+[27-Oct-2022 07:16:09 UTC] Session::session_start
+[27-Oct-2022 07:16:09 UTC] SessionController::validateSession()
+[27-Oct-2022 07:16:09 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/viewProducto/2, url =>viewProducto
+[27-Oct-2022 07:16:09 UTC] sessionController::isPublic(): currentURL => viewProducto
+[27-Oct-2022 07:16:09 UTC] sessionController::isPublic()=> true
+[27-Oct-2022 07:16:09 UTC] SessionController::validateSession()->is public ->true public page
+[27-Oct-2022 07:16:09 UTC] view producto carga
+[27-Oct-2022 07:16:09 UTC] Controllers::loadModel()=> true viewProductoModel
+[27-Oct-2022 07:18:33 UTC] Controllers/home.php
+[27-Oct-2022 07:18:33 UTC] Controllers::loadModel()=> true HomeModel
+[27-Oct-2022 07:18:33 UTC] session name no existe Home 
+[27-Oct-2022 07:18:33 UTC] getAllCategory-> execute 
+[27-Oct-2022 07:18:33 UTC] 1
+[27-Oct-2022 07:18:33 UTC] 5
+[27-Oct-2022 07:18:33 UTC] Mouse Genius
+[27-Oct-2022 07:18:33 UTC] AC
+[27-Oct-2022 07:18:33 UTC] 2
+[27-Oct-2022 07:18:33 UTC] 5
+[27-Oct-2022 07:18:33 UTC] Mouse gamer inalambrico
+[27-Oct-2022 07:18:33 UTC] AC
+[27-Oct-2022 07:18:33 UTC] 3
+[27-Oct-2022 07:18:33 UTC] 4
+[27-Oct-2022 07:18:33 UTC] audifonos delux
+[27-Oct-2022 07:18:33 UTC] AC
+[27-Oct-2022 07:18:33 UTC] 4
+[27-Oct-2022 07:18:33 UTC] 16
+[27-Oct-2022 07:18:33 UTC] microfono gamer
+[27-Oct-2022 07:18:33 UTC] AC
+[27-Oct-2022 07:18:33 UTC] 5
+[27-Oct-2022 07:18:33 UTC] 14
+[27-Oct-2022 07:18:33 UTC] funda de 14 pulgadas
+[27-Oct-2022 07:18:33 UTC] AC
+[27-Oct-2022 07:18:33 UTC] 6
+[27-Oct-2022 07:18:33 UTC] 1
+[27-Oct-2022 07:18:33 UTC] teclado mecanico delux
+[27-Oct-2022 07:18:33 UTC] AC
+[27-Oct-2022 07:18:33 UTC] 7
+[27-Oct-2022 07:18:33 UTC] 6
+[27-Oct-2022 07:18:33 UTC] Parlantes delux
+[27-Oct-2022 07:18:33 UTC] AC
+[27-Oct-2022 07:18:33 UTC] 8
+[27-Oct-2022 07:18:33 UTC] 13
+[27-Oct-2022 07:18:33 UTC] Cargador Huawei tipo c
+[27-Oct-2022 07:18:33 UTC] AC
+[27-Oct-2022 07:18:33 UTC] 9
+[27-Oct-2022 07:18:33 UTC] 4
+[27-Oct-2022 07:18:33 UTC] Audifonos gamer genius
+[27-Oct-2022 07:18:33 UTC] AC
+[27-Oct-2022 07:18:33 UTC] 1
+[27-Oct-2022 07:18:33 UTC] 5
+[27-Oct-2022 07:18:33 UTC] Mouse Genius
+[27-Oct-2022 07:18:33 UTC] AC
+[27-Oct-2022 07:18:33 UTC] 2
+[27-Oct-2022 07:18:33 UTC] 5
+[27-Oct-2022 07:18:33 UTC] Mouse gamer inalambrico
+[27-Oct-2022 07:18:33 UTC] AC
+[27-Oct-2022 07:18:33 UTC] 3
+[27-Oct-2022 07:18:33 UTC] 4
+[27-Oct-2022 07:18:33 UTC] audifonos delux
+[27-Oct-2022 07:18:33 UTC] AC
+[27-Oct-2022 07:18:33 UTC] 4
+[27-Oct-2022 07:18:33 UTC] 16
+[27-Oct-2022 07:18:33 UTC] microfono gamer
+[27-Oct-2022 07:18:33 UTC] AC
+[27-Oct-2022 07:18:33 UTC] 5
+[27-Oct-2022 07:18:33 UTC] 14
+[27-Oct-2022 07:18:33 UTC] funda de 14 pulgadas
+[27-Oct-2022 07:18:33 UTC] AC
+[27-Oct-2022 07:18:33 UTC] 6
+[27-Oct-2022 07:18:33 UTC] 1
+[27-Oct-2022 07:18:33 UTC] teclado mecanico delux
+[27-Oct-2022 07:18:33 UTC] AC
+[27-Oct-2022 07:18:33 UTC] 7
+[27-Oct-2022 07:18:33 UTC] 6
+[27-Oct-2022 07:18:33 UTC] Parlantes delux
+[27-Oct-2022 07:18:33 UTC] AC
+[27-Oct-2022 07:18:33 UTC] 8
+[27-Oct-2022 07:18:33 UTC] 13
+[27-Oct-2022 07:18:33 UTC] Cargador Huawei tipo c
+[27-Oct-2022 07:18:33 UTC] AC
+[27-Oct-2022 07:18:33 UTC] 9
+[27-Oct-2022 07:18:33 UTC] 4
+[27-Oct-2022 07:18:33 UTC] Audifonos gamer genius
+[27-Oct-2022 07:18:33 UTC] AC
+[27-Oct-2022 07:18:34 UTC] Controllers/viewProducto.php
+[27-Oct-2022 07:18:34 UTC] SesionController::init()
+[27-Oct-2022 07:18:34 UTC] Session::session_start
+[27-Oct-2022 07:18:34 UTC] SessionController::validateSession()
+[27-Oct-2022 07:18:34 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/viewProducto/id=1, url =>viewProducto
+[27-Oct-2022 07:18:34 UTC] sessionController::isPublic(): currentURL => viewProducto
+[27-Oct-2022 07:18:34 UTC] sessionController::isPublic()=> true
+[27-Oct-2022 07:18:34 UTC] SessionController::validateSession()->is public ->true public page
+[27-Oct-2022 07:18:34 UTC] view producto carga
+[27-Oct-2022 07:18:34 UTC] Controllers::loadModel()=> true viewProductoModel
+[27-Oct-2022 07:21:02 UTC] Controllers/home.php
+[27-Oct-2022 07:21:02 UTC] Controllers::loadModel()=> true HomeModel
+[27-Oct-2022 07:21:02 UTC] session name no existe Home 
+[27-Oct-2022 07:21:02 UTC] getAllCategory-> execute 
+[27-Oct-2022 07:21:03 UTC] 1
+[27-Oct-2022 07:21:03 UTC] 5
+[27-Oct-2022 07:21:03 UTC] Mouse Genius
+[27-Oct-2022 07:21:03 UTC] AC
+[27-Oct-2022 07:21:03 UTC] 2
+[27-Oct-2022 07:21:03 UTC] 5
+[27-Oct-2022 07:21:03 UTC] Mouse gamer inalambrico
+[27-Oct-2022 07:21:03 UTC] AC
+[27-Oct-2022 07:21:03 UTC] 3
+[27-Oct-2022 07:21:03 UTC] 4
+[27-Oct-2022 07:21:03 UTC] audifonos delux
+[27-Oct-2022 07:21:03 UTC] AC
+[27-Oct-2022 07:21:03 UTC] 4
+[27-Oct-2022 07:21:03 UTC] 16
+[27-Oct-2022 07:21:03 UTC] microfono gamer
+[27-Oct-2022 07:21:03 UTC] AC
+[27-Oct-2022 07:21:03 UTC] 5
+[27-Oct-2022 07:21:03 UTC] 14
+[27-Oct-2022 07:21:03 UTC] funda de 14 pulgadas
+[27-Oct-2022 07:21:03 UTC] AC
+[27-Oct-2022 07:21:03 UTC] 6
+[27-Oct-2022 07:21:03 UTC] 1
+[27-Oct-2022 07:21:03 UTC] teclado mecanico delux
+[27-Oct-2022 07:21:03 UTC] AC
+[27-Oct-2022 07:21:03 UTC] 7
+[27-Oct-2022 07:21:03 UTC] 6
+[27-Oct-2022 07:21:03 UTC] Parlantes delux
+[27-Oct-2022 07:21:03 UTC] AC
+[27-Oct-2022 07:21:03 UTC] 8
+[27-Oct-2022 07:21:03 UTC] 13
+[27-Oct-2022 07:21:03 UTC] Cargador Huawei tipo c
+[27-Oct-2022 07:21:03 UTC] AC
+[27-Oct-2022 07:21:03 UTC] 9
+[27-Oct-2022 07:21:03 UTC] 4
+[27-Oct-2022 07:21:03 UTC] Audifonos gamer genius
+[27-Oct-2022 07:21:03 UTC] AC
+[27-Oct-2022 07:21:03 UTC] 1
+[27-Oct-2022 07:21:03 UTC] 5
+[27-Oct-2022 07:21:03 UTC] Mouse Genius
+[27-Oct-2022 07:21:03 UTC] AC
+[27-Oct-2022 07:21:03 UTC] 2
+[27-Oct-2022 07:21:03 UTC] 5
+[27-Oct-2022 07:21:03 UTC] Mouse gamer inalambrico
+[27-Oct-2022 07:21:03 UTC] AC
+[27-Oct-2022 07:21:03 UTC] 3
+[27-Oct-2022 07:21:03 UTC] 4
+[27-Oct-2022 07:21:03 UTC] audifonos delux
+[27-Oct-2022 07:21:03 UTC] AC
+[27-Oct-2022 07:21:03 UTC] 4
+[27-Oct-2022 07:21:03 UTC] 16
+[27-Oct-2022 07:21:03 UTC] microfono gamer
+[27-Oct-2022 07:21:03 UTC] AC
+[27-Oct-2022 07:21:03 UTC] 5
+[27-Oct-2022 07:21:03 UTC] 14
+[27-Oct-2022 07:21:03 UTC] funda de 14 pulgadas
+[27-Oct-2022 07:21:03 UTC] AC
+[27-Oct-2022 07:21:03 UTC] 6
+[27-Oct-2022 07:21:03 UTC] 1
+[27-Oct-2022 07:21:03 UTC] teclado mecanico delux
+[27-Oct-2022 07:21:03 UTC] AC
+[27-Oct-2022 07:21:03 UTC] 7
+[27-Oct-2022 07:21:03 UTC] 6
+[27-Oct-2022 07:21:03 UTC] Parlantes delux
+[27-Oct-2022 07:21:03 UTC] AC
+[27-Oct-2022 07:21:03 UTC] 8
+[27-Oct-2022 07:21:03 UTC] 13
+[27-Oct-2022 07:21:03 UTC] Cargador Huawei tipo c
+[27-Oct-2022 07:21:03 UTC] AC
+[27-Oct-2022 07:21:03 UTC] 9
+[27-Oct-2022 07:21:03 UTC] 4
+[27-Oct-2022 07:21:03 UTC] Audifonos gamer genius
+[27-Oct-2022 07:21:03 UTC] AC
+[27-Oct-2022 07:21:05 UTC] Controllers/viewProducto.php
+[27-Oct-2022 07:21:05 UTC] SesionController::init()
+[27-Oct-2022 07:21:05 UTC] Session::session_start
+[27-Oct-2022 07:21:05 UTC] SessionController::validateSession()
+[27-Oct-2022 07:21:05 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/viewProducto/id=2, url =>viewProducto
+[27-Oct-2022 07:21:05 UTC] sessionController::isPublic(): currentURL => viewProducto
+[27-Oct-2022 07:21:05 UTC] sessionController::isPublic()=> true
+[27-Oct-2022 07:21:05 UTC] SessionController::validateSession()->is public ->true public page
+[27-Oct-2022 07:21:05 UTC] view producto carga
+[27-Oct-2022 07:21:05 UTC] no se recibió id
+[27-Oct-2022 07:21:05 UTC] Controllers::loadModel()=> true viewProductoModel
+[27-Oct-2022 07:21:59 UTC] Controllers/home.php
+[27-Oct-2022 07:21:59 UTC] Controllers::loadModel()=> true HomeModel
+[27-Oct-2022 07:21:59 UTC] session name no existe Home 
+[27-Oct-2022 07:21:59 UTC] getAllCategory-> execute 
+[27-Oct-2022 07:21:59 UTC] 1
+[27-Oct-2022 07:21:59 UTC] 5
+[27-Oct-2022 07:21:59 UTC] Mouse Genius
+[27-Oct-2022 07:21:59 UTC] AC
+[27-Oct-2022 07:21:59 UTC] 2
+[27-Oct-2022 07:21:59 UTC] 5
+[27-Oct-2022 07:21:59 UTC] Mouse gamer inalambrico
+[27-Oct-2022 07:21:59 UTC] AC
+[27-Oct-2022 07:21:59 UTC] 3
+[27-Oct-2022 07:21:59 UTC] 4
+[27-Oct-2022 07:21:59 UTC] audifonos delux
+[27-Oct-2022 07:21:59 UTC] AC
+[27-Oct-2022 07:21:59 UTC] 4
+[27-Oct-2022 07:21:59 UTC] 16
+[27-Oct-2022 07:21:59 UTC] microfono gamer
+[27-Oct-2022 07:21:59 UTC] AC
+[27-Oct-2022 07:21:59 UTC] 5
+[27-Oct-2022 07:21:59 UTC] 14
+[27-Oct-2022 07:21:59 UTC] funda de 14 pulgadas
+[27-Oct-2022 07:21:59 UTC] AC
+[27-Oct-2022 07:21:59 UTC] 6
+[27-Oct-2022 07:21:59 UTC] 1
+[27-Oct-2022 07:21:59 UTC] teclado mecanico delux
+[27-Oct-2022 07:21:59 UTC] AC
+[27-Oct-2022 07:21:59 UTC] 7
+[27-Oct-2022 07:21:59 UTC] 6
+[27-Oct-2022 07:21:59 UTC] Parlantes delux
+[27-Oct-2022 07:21:59 UTC] AC
+[27-Oct-2022 07:21:59 UTC] 8
+[27-Oct-2022 07:21:59 UTC] 13
+[27-Oct-2022 07:21:59 UTC] Cargador Huawei tipo c
+[27-Oct-2022 07:21:59 UTC] AC
+[27-Oct-2022 07:21:59 UTC] 9
+[27-Oct-2022 07:21:59 UTC] 4
+[27-Oct-2022 07:21:59 UTC] Audifonos gamer genius
+[27-Oct-2022 07:21:59 UTC] AC
+[27-Oct-2022 07:21:59 UTC] 1
+[27-Oct-2022 07:21:59 UTC] 5
+[27-Oct-2022 07:21:59 UTC] Mouse Genius
+[27-Oct-2022 07:21:59 UTC] AC
+[27-Oct-2022 07:21:59 UTC] 2
+[27-Oct-2022 07:21:59 UTC] 5
+[27-Oct-2022 07:21:59 UTC] Mouse gamer inalambrico
+[27-Oct-2022 07:21:59 UTC] AC
+[27-Oct-2022 07:21:59 UTC] 3
+[27-Oct-2022 07:21:59 UTC] 4
+[27-Oct-2022 07:21:59 UTC] audifonos delux
+[27-Oct-2022 07:21:59 UTC] AC
+[27-Oct-2022 07:21:59 UTC] 4
+[27-Oct-2022 07:21:59 UTC] 16
+[27-Oct-2022 07:21:59 UTC] microfono gamer
+[27-Oct-2022 07:21:59 UTC] AC
+[27-Oct-2022 07:21:59 UTC] 5
+[27-Oct-2022 07:21:59 UTC] 14
+[27-Oct-2022 07:21:59 UTC] funda de 14 pulgadas
+[27-Oct-2022 07:21:59 UTC] AC
+[27-Oct-2022 07:21:59 UTC] 6
+[27-Oct-2022 07:21:59 UTC] 1
+[27-Oct-2022 07:21:59 UTC] teclado mecanico delux
+[27-Oct-2022 07:21:59 UTC] AC
+[27-Oct-2022 07:21:59 UTC] 7
+[27-Oct-2022 07:21:59 UTC] 6
+[27-Oct-2022 07:21:59 UTC] Parlantes delux
+[27-Oct-2022 07:21:59 UTC] AC
+[27-Oct-2022 07:21:59 UTC] 8
+[27-Oct-2022 07:21:59 UTC] 13
+[27-Oct-2022 07:21:59 UTC] Cargador Huawei tipo c
+[27-Oct-2022 07:21:59 UTC] AC
+[27-Oct-2022 07:21:59 UTC] 9
+[27-Oct-2022 07:21:59 UTC] 4
+[27-Oct-2022 07:21:59 UTC] Audifonos gamer genius
+[27-Oct-2022 07:21:59 UTC] AC
+[27-Oct-2022 07:22:00 UTC] Controllers/viewProducto.php
+[27-Oct-2022 07:22:00 UTC] SesionController::init()
+[27-Oct-2022 07:22:00 UTC] Session::session_start
+[27-Oct-2022 07:22:00 UTC] SessionController::validateSession()
+[27-Oct-2022 07:22:00 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/viewProducto/id=1, url =>viewProducto
+[27-Oct-2022 07:22:00 UTC] sessionController::isPublic(): currentURL => viewProducto
+[27-Oct-2022 07:22:00 UTC] sessionController::isPublic()=> true
+[27-Oct-2022 07:22:00 UTC] SessionController::validateSession()->is public ->true public page
+[27-Oct-2022 07:22:00 UTC] view producto carga
+[27-Oct-2022 07:22:00 UTC] no se recibió id
+[27-Oct-2022 07:22:00 UTC] Controllers::loadModel()=> true viewProductoModel
+[27-Oct-2022 07:23:12 UTC] Controllers/home.php
+[27-Oct-2022 07:23:12 UTC] Controllers::loadModel()=> true HomeModel
+[27-Oct-2022 07:23:12 UTC] session name no existe Home 
+[27-Oct-2022 07:23:12 UTC] getAllCategory-> execute 
+[27-Oct-2022 07:23:12 UTC] 1
+[27-Oct-2022 07:23:12 UTC] 5
+[27-Oct-2022 07:23:12 UTC] Mouse Genius
+[27-Oct-2022 07:23:12 UTC] AC
+[27-Oct-2022 07:23:12 UTC] 2
+[27-Oct-2022 07:23:12 UTC] 5
+[27-Oct-2022 07:23:12 UTC] Mouse gamer inalambrico
+[27-Oct-2022 07:23:12 UTC] AC
+[27-Oct-2022 07:23:12 UTC] 3
+[27-Oct-2022 07:23:12 UTC] 4
+[27-Oct-2022 07:23:12 UTC] audifonos delux
+[27-Oct-2022 07:23:12 UTC] AC
+[27-Oct-2022 07:23:12 UTC] 4
+[27-Oct-2022 07:23:12 UTC] 16
+[27-Oct-2022 07:23:12 UTC] microfono gamer
+[27-Oct-2022 07:23:12 UTC] AC
+[27-Oct-2022 07:23:12 UTC] 5
+[27-Oct-2022 07:23:12 UTC] 14
+[27-Oct-2022 07:23:12 UTC] funda de 14 pulgadas
+[27-Oct-2022 07:23:12 UTC] AC
+[27-Oct-2022 07:23:12 UTC] 6
+[27-Oct-2022 07:23:12 UTC] 1
+[27-Oct-2022 07:23:12 UTC] teclado mecanico delux
+[27-Oct-2022 07:23:12 UTC] AC
+[27-Oct-2022 07:23:12 UTC] 7
+[27-Oct-2022 07:23:12 UTC] 6
+[27-Oct-2022 07:23:12 UTC] Parlantes delux
+[27-Oct-2022 07:23:12 UTC] AC
+[27-Oct-2022 07:23:12 UTC] 8
+[27-Oct-2022 07:23:12 UTC] 13
+[27-Oct-2022 07:23:12 UTC] Cargador Huawei tipo c
+[27-Oct-2022 07:23:12 UTC] AC
+[27-Oct-2022 07:23:12 UTC] 9
+[27-Oct-2022 07:23:12 UTC] 4
+[27-Oct-2022 07:23:12 UTC] Audifonos gamer genius
+[27-Oct-2022 07:23:12 UTC] AC
+[27-Oct-2022 07:23:12 UTC] 1
+[27-Oct-2022 07:23:12 UTC] 5
+[27-Oct-2022 07:23:12 UTC] Mouse Genius
+[27-Oct-2022 07:23:12 UTC] AC
+[27-Oct-2022 07:23:12 UTC] 2
+[27-Oct-2022 07:23:12 UTC] 5
+[27-Oct-2022 07:23:12 UTC] Mouse gamer inalambrico
+[27-Oct-2022 07:23:12 UTC] AC
+[27-Oct-2022 07:23:12 UTC] 3
+[27-Oct-2022 07:23:12 UTC] 4
+[27-Oct-2022 07:23:12 UTC] audifonos delux
+[27-Oct-2022 07:23:12 UTC] AC
+[27-Oct-2022 07:23:12 UTC] 4
+[27-Oct-2022 07:23:12 UTC] 16
+[27-Oct-2022 07:23:12 UTC] microfono gamer
+[27-Oct-2022 07:23:12 UTC] AC
+[27-Oct-2022 07:23:12 UTC] 5
+[27-Oct-2022 07:23:12 UTC] 14
+[27-Oct-2022 07:23:12 UTC] funda de 14 pulgadas
+[27-Oct-2022 07:23:12 UTC] AC
+[27-Oct-2022 07:23:12 UTC] 6
+[27-Oct-2022 07:23:12 UTC] 1
+[27-Oct-2022 07:23:12 UTC] teclado mecanico delux
+[27-Oct-2022 07:23:12 UTC] AC
+[27-Oct-2022 07:23:12 UTC] 7
+[27-Oct-2022 07:23:12 UTC] 6
+[27-Oct-2022 07:23:12 UTC] Parlantes delux
+[27-Oct-2022 07:23:12 UTC] AC
+[27-Oct-2022 07:23:12 UTC] 8
+[27-Oct-2022 07:23:12 UTC] 13
+[27-Oct-2022 07:23:12 UTC] Cargador Huawei tipo c
+[27-Oct-2022 07:23:12 UTC] AC
+[27-Oct-2022 07:23:12 UTC] 9
+[27-Oct-2022 07:23:12 UTC] 4
+[27-Oct-2022 07:23:12 UTC] Audifonos gamer genius
+[27-Oct-2022 07:23:12 UTC] AC
+[27-Oct-2022 07:23:13 UTC] Controllers/viewProducto.php
+[27-Oct-2022 07:23:13 UTC] SesionController::init()
+[27-Oct-2022 07:23:13 UTC] Session::session_start
+[27-Oct-2022 07:23:13 UTC] SessionController::validateSession()
+[27-Oct-2022 07:23:13 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/viewProducto/1, url =>viewProducto
+[27-Oct-2022 07:23:13 UTC] sessionController::isPublic(): currentURL => viewProducto
+[27-Oct-2022 07:23:13 UTC] sessionController::isPublic()=> true
+[27-Oct-2022 07:23:13 UTC] SessionController::validateSession()->is public ->true public page
+[27-Oct-2022 07:23:13 UTC] view producto carga
+[27-Oct-2022 07:23:13 UTC] no se recibió id
+[27-Oct-2022 07:23:13 UTC] Controllers::loadModel()=> true viewProductoModel
+[27-Oct-2022 07:25:04 UTC] App::archivoController-> controllers/home.php
+[27-Oct-2022 07:25:04 UTC] Controllers::loadModel()=> true HomeModel
+[27-Oct-2022 07:25:04 UTC] session name no existe Home 
+[27-Oct-2022 07:25:04 UTC] getAllCategory-> execute 
+[27-Oct-2022 07:25:04 UTC] 1
+[27-Oct-2022 07:25:04 UTC] 5
+[27-Oct-2022 07:25:04 UTC] Mouse Genius
+[27-Oct-2022 07:25:04 UTC] AC
+[27-Oct-2022 07:25:04 UTC] 2
+[27-Oct-2022 07:25:04 UTC] 5
+[27-Oct-2022 07:25:04 UTC] Mouse gamer inalambrico
+[27-Oct-2022 07:25:04 UTC] AC
+[27-Oct-2022 07:25:04 UTC] 3
+[27-Oct-2022 07:25:04 UTC] 4
+[27-Oct-2022 07:25:04 UTC] audifonos delux
+[27-Oct-2022 07:25:04 UTC] AC
+[27-Oct-2022 07:25:04 UTC] 4
+[27-Oct-2022 07:25:04 UTC] 16
+[27-Oct-2022 07:25:04 UTC] microfono gamer
+[27-Oct-2022 07:25:04 UTC] AC
+[27-Oct-2022 07:25:04 UTC] 5
+[27-Oct-2022 07:25:04 UTC] 14
+[27-Oct-2022 07:25:04 UTC] funda de 14 pulgadas
+[27-Oct-2022 07:25:04 UTC] AC
+[27-Oct-2022 07:25:04 UTC] 6
+[27-Oct-2022 07:25:04 UTC] 1
+[27-Oct-2022 07:25:04 UTC] teclado mecanico delux
+[27-Oct-2022 07:25:04 UTC] AC
+[27-Oct-2022 07:25:04 UTC] 7
+[27-Oct-2022 07:25:04 UTC] 6
+[27-Oct-2022 07:25:04 UTC] Parlantes delux
+[27-Oct-2022 07:25:04 UTC] AC
+[27-Oct-2022 07:25:04 UTC] 8
+[27-Oct-2022 07:25:04 UTC] 13
+[27-Oct-2022 07:25:04 UTC] Cargador Huawei tipo c
+[27-Oct-2022 07:25:04 UTC] AC
+[27-Oct-2022 07:25:04 UTC] 9
+[27-Oct-2022 07:25:04 UTC] 4
+[27-Oct-2022 07:25:04 UTC] Audifonos gamer genius
+[27-Oct-2022 07:25:04 UTC] AC
+[27-Oct-2022 07:25:04 UTC] 1
+[27-Oct-2022 07:25:04 UTC] 5
+[27-Oct-2022 07:25:04 UTC] Mouse Genius
+[27-Oct-2022 07:25:04 UTC] AC
+[27-Oct-2022 07:25:04 UTC] 2
+[27-Oct-2022 07:25:04 UTC] 5
+[27-Oct-2022 07:25:04 UTC] Mouse gamer inalambrico
+[27-Oct-2022 07:25:04 UTC] AC
+[27-Oct-2022 07:25:04 UTC] 3
+[27-Oct-2022 07:25:04 UTC] 4
+[27-Oct-2022 07:25:04 UTC] audifonos delux
+[27-Oct-2022 07:25:04 UTC] AC
+[27-Oct-2022 07:25:04 UTC] 4
+[27-Oct-2022 07:25:04 UTC] 16
+[27-Oct-2022 07:25:04 UTC] microfono gamer
+[27-Oct-2022 07:25:04 UTC] AC
+[27-Oct-2022 07:25:04 UTC] 5
+[27-Oct-2022 07:25:04 UTC] 14
+[27-Oct-2022 07:25:04 UTC] funda de 14 pulgadas
+[27-Oct-2022 07:25:04 UTC] AC
+[27-Oct-2022 07:25:04 UTC] 6
+[27-Oct-2022 07:25:04 UTC] 1
+[27-Oct-2022 07:25:04 UTC] teclado mecanico delux
+[27-Oct-2022 07:25:04 UTC] AC
+[27-Oct-2022 07:25:04 UTC] 7
+[27-Oct-2022 07:25:04 UTC] 6
+[27-Oct-2022 07:25:04 UTC] Parlantes delux
+[27-Oct-2022 07:25:04 UTC] AC
+[27-Oct-2022 07:25:04 UTC] 8
+[27-Oct-2022 07:25:04 UTC] 13
+[27-Oct-2022 07:25:04 UTC] Cargador Huawei tipo c
+[27-Oct-2022 07:25:04 UTC] AC
+[27-Oct-2022 07:25:04 UTC] 9
+[27-Oct-2022 07:25:04 UTC] 4
+[27-Oct-2022 07:25:04 UTC] Audifonos gamer genius
+[27-Oct-2022 07:25:04 UTC] AC
+[27-Oct-2022 07:25:43 UTC] App::archivoController-> controllers/home.php
+[27-Oct-2022 07:25:43 UTC] Controllers::loadModel()=> true HomeModel
+[27-Oct-2022 07:25:43 UTC] session name no existe Home 
+[27-Oct-2022 07:25:43 UTC] getAllCategory-> execute 
+[27-Oct-2022 07:25:43 UTC] 1
+[27-Oct-2022 07:25:43 UTC] 5
+[27-Oct-2022 07:25:43 UTC] Mouse Genius
+[27-Oct-2022 07:25:43 UTC] AC
+[27-Oct-2022 07:25:43 UTC] 2
+[27-Oct-2022 07:25:43 UTC] 5
+[27-Oct-2022 07:25:43 UTC] Mouse gamer inalambrico
+[27-Oct-2022 07:25:43 UTC] AC
+[27-Oct-2022 07:25:43 UTC] 3
+[27-Oct-2022 07:25:43 UTC] 4
+[27-Oct-2022 07:25:43 UTC] audifonos delux
+[27-Oct-2022 07:25:43 UTC] AC
+[27-Oct-2022 07:25:43 UTC] 4
+[27-Oct-2022 07:25:43 UTC] 16
+[27-Oct-2022 07:25:43 UTC] microfono gamer
+[27-Oct-2022 07:25:43 UTC] AC
+[27-Oct-2022 07:25:43 UTC] 5
+[27-Oct-2022 07:25:43 UTC] 14
+[27-Oct-2022 07:25:43 UTC] funda de 14 pulgadas
+[27-Oct-2022 07:25:43 UTC] AC
+[27-Oct-2022 07:25:43 UTC] 6
+[27-Oct-2022 07:25:43 UTC] 1
+[27-Oct-2022 07:25:43 UTC] teclado mecanico delux
+[27-Oct-2022 07:25:43 UTC] AC
+[27-Oct-2022 07:25:43 UTC] 7
+[27-Oct-2022 07:25:43 UTC] 6
+[27-Oct-2022 07:25:43 UTC] Parlantes delux
+[27-Oct-2022 07:25:43 UTC] AC
+[27-Oct-2022 07:25:43 UTC] 8
+[27-Oct-2022 07:25:43 UTC] 13
+[27-Oct-2022 07:25:43 UTC] Cargador Huawei tipo c
+[27-Oct-2022 07:25:43 UTC] AC
+[27-Oct-2022 07:25:43 UTC] 9
+[27-Oct-2022 07:25:43 UTC] 4
+[27-Oct-2022 07:25:43 UTC] Audifonos gamer genius
+[27-Oct-2022 07:25:43 UTC] AC
+[27-Oct-2022 07:25:43 UTC] 1
+[27-Oct-2022 07:25:43 UTC] 5
+[27-Oct-2022 07:25:43 UTC] Mouse Genius
+[27-Oct-2022 07:25:43 UTC] AC
+[27-Oct-2022 07:25:43 UTC] 2
+[27-Oct-2022 07:25:43 UTC] 5
+[27-Oct-2022 07:25:43 UTC] Mouse gamer inalambrico
+[27-Oct-2022 07:25:43 UTC] AC
+[27-Oct-2022 07:25:43 UTC] 3
+[27-Oct-2022 07:25:43 UTC] 4
+[27-Oct-2022 07:25:43 UTC] audifonos delux
+[27-Oct-2022 07:25:43 UTC] AC
+[27-Oct-2022 07:25:43 UTC] 4
+[27-Oct-2022 07:25:43 UTC] 16
+[27-Oct-2022 07:25:43 UTC] microfono gamer
+[27-Oct-2022 07:25:43 UTC] AC
+[27-Oct-2022 07:25:43 UTC] 5
+[27-Oct-2022 07:25:43 UTC] 14
+[27-Oct-2022 07:25:43 UTC] funda de 14 pulgadas
+[27-Oct-2022 07:25:43 UTC] AC
+[27-Oct-2022 07:25:43 UTC] 6
+[27-Oct-2022 07:25:43 UTC] 1
+[27-Oct-2022 07:25:43 UTC] teclado mecanico delux
+[27-Oct-2022 07:25:43 UTC] AC
+[27-Oct-2022 07:25:43 UTC] 7
+[27-Oct-2022 07:25:43 UTC] 6
+[27-Oct-2022 07:25:43 UTC] Parlantes delux
+[27-Oct-2022 07:25:43 UTC] AC
+[27-Oct-2022 07:25:43 UTC] 8
+[27-Oct-2022 07:25:43 UTC] 13
+[27-Oct-2022 07:25:43 UTC] Cargador Huawei tipo c
+[27-Oct-2022 07:25:43 UTC] AC
+[27-Oct-2022 07:25:43 UTC] 9
+[27-Oct-2022 07:25:43 UTC] 4
+[27-Oct-2022 07:25:43 UTC] Audifonos gamer genius
+[27-Oct-2022 07:25:43 UTC] AC
+[27-Oct-2022 07:26:03 UTC] App::archivoController-> controllers/home.php
+[27-Oct-2022 07:26:03 UTC] Controllers::loadModel()=> true HomeModel
+[27-Oct-2022 07:26:03 UTC] session name no existe Home 
+[27-Oct-2022 07:26:03 UTC] getAllCategory-> execute 
+[27-Oct-2022 07:26:03 UTC] 1
+[27-Oct-2022 07:26:03 UTC] 5
+[27-Oct-2022 07:26:03 UTC] Mouse Genius
+[27-Oct-2022 07:26:03 UTC] AC
+[27-Oct-2022 07:26:03 UTC] 2
+[27-Oct-2022 07:26:03 UTC] 5
+[27-Oct-2022 07:26:03 UTC] Mouse gamer inalambrico
+[27-Oct-2022 07:26:03 UTC] AC
+[27-Oct-2022 07:26:03 UTC] 3
+[27-Oct-2022 07:26:03 UTC] 4
+[27-Oct-2022 07:26:03 UTC] audifonos delux
+[27-Oct-2022 07:26:03 UTC] AC
+[27-Oct-2022 07:26:03 UTC] 4
+[27-Oct-2022 07:26:03 UTC] 16
+[27-Oct-2022 07:26:03 UTC] microfono gamer
+[27-Oct-2022 07:26:03 UTC] AC
+[27-Oct-2022 07:26:03 UTC] 5
+[27-Oct-2022 07:26:03 UTC] 14
+[27-Oct-2022 07:26:03 UTC] funda de 14 pulgadas
+[27-Oct-2022 07:26:03 UTC] AC
+[27-Oct-2022 07:26:03 UTC] 6
+[27-Oct-2022 07:26:03 UTC] 1
+[27-Oct-2022 07:26:03 UTC] teclado mecanico delux
+[27-Oct-2022 07:26:03 UTC] AC
+[27-Oct-2022 07:26:03 UTC] 7
+[27-Oct-2022 07:26:03 UTC] 6
+[27-Oct-2022 07:26:03 UTC] Parlantes delux
+[27-Oct-2022 07:26:03 UTC] AC
+[27-Oct-2022 07:26:03 UTC] 8
+[27-Oct-2022 07:26:03 UTC] 13
+[27-Oct-2022 07:26:03 UTC] Cargador Huawei tipo c
+[27-Oct-2022 07:26:03 UTC] AC
+[27-Oct-2022 07:26:03 UTC] 9
+[27-Oct-2022 07:26:03 UTC] 4
+[27-Oct-2022 07:26:03 UTC] Audifonos gamer genius
+[27-Oct-2022 07:26:03 UTC] AC
+[27-Oct-2022 07:26:03 UTC] PHP Notice:  Undefined index: ID_PRODUCTO in C:\wamp64\www\HTML\MVC\views\Home\index.php on line 71
+[27-Oct-2022 07:26:03 UTC] PHP Stack trace:
+[27-Oct-2022 07:26:03 UTC] PHP   1. {main}() C:\wamp64\www\HTML\MVC\index.php:0
+[27-Oct-2022 07:26:03 UTC] PHP   2. App->__construct() C:\wamp64\www\HTML\MVC\index.php:23
+[27-Oct-2022 07:26:03 UTC] PHP   3. Home->render() C:\wamp64\www\HTML\MVC\libreries\core\App.php:17
+[27-Oct-2022 07:26:03 UTC] PHP   4. View->render() C:\wamp64\www\HTML\MVC\Controllers\Home.php:21
+[27-Oct-2022 07:26:03 UTC] PHP   5. require() C:\wamp64\www\HTML\MVC\libreries\core\View.php:15
+[27-Oct-2022 07:26:03 UTC] PHP Notice:  Undefined index: ID_PRODUCTO in C:\wamp64\www\HTML\MVC\views\Home\index.php on line 71
+[27-Oct-2022 07:26:03 UTC] PHP Stack trace:
+[27-Oct-2022 07:26:03 UTC] PHP   1. {main}() C:\wamp64\www\HTML\MVC\index.php:0
+[27-Oct-2022 07:26:03 UTC] PHP   2. App->__construct() C:\wamp64\www\HTML\MVC\index.php:23
+[27-Oct-2022 07:26:03 UTC] PHP   3. Home->render() C:\wamp64\www\HTML\MVC\libreries\core\App.php:17
+[27-Oct-2022 07:26:03 UTC] PHP   4. View->render() C:\wamp64\www\HTML\MVC\Controllers\Home.php:21
+[27-Oct-2022 07:26:03 UTC] PHP   5. require() C:\wamp64\www\HTML\MVC\libreries\core\View.php:15
+[27-Oct-2022 07:26:03 UTC] PHP Notice:  Undefined index: ID_PRODUCTO in C:\wamp64\www\HTML\MVC\views\Home\index.php on line 71
+[27-Oct-2022 07:26:03 UTC] PHP Stack trace:
+[27-Oct-2022 07:26:03 UTC] PHP   1. {main}() C:\wamp64\www\HTML\MVC\index.php:0
+[27-Oct-2022 07:26:03 UTC] PHP   2. App->__construct() C:\wamp64\www\HTML\MVC\index.php:23
+[27-Oct-2022 07:26:03 UTC] PHP   3. Home->render() C:\wamp64\www\HTML\MVC\libreries\core\App.php:17
+[27-Oct-2022 07:26:03 UTC] PHP   4. View->render() C:\wamp64\www\HTML\MVC\Controllers\Home.php:21
+[27-Oct-2022 07:26:03 UTC] PHP   5. require() C:\wamp64\www\HTML\MVC\libreries\core\View.php:15
+[27-Oct-2022 07:26:03 UTC] PHP Notice:  Undefined index: ID_PRODUCTO in C:\wamp64\www\HTML\MVC\views\Home\index.php on line 71
+[27-Oct-2022 07:26:03 UTC] PHP Stack trace:
+[27-Oct-2022 07:26:03 UTC] PHP   1. {main}() C:\wamp64\www\HTML\MVC\index.php:0
+[27-Oct-2022 07:26:03 UTC] PHP   2. App->__construct() C:\wamp64\www\HTML\MVC\index.php:23
+[27-Oct-2022 07:26:03 UTC] PHP   3. Home->render() C:\wamp64\www\HTML\MVC\libreries\core\App.php:17
+[27-Oct-2022 07:26:03 UTC] PHP   4. View->render() C:\wamp64\www\HTML\MVC\Controllers\Home.php:21
+[27-Oct-2022 07:26:03 UTC] PHP   5. require() C:\wamp64\www\HTML\MVC\libreries\core\View.php:15
+[27-Oct-2022 07:26:03 UTC] PHP Notice:  Undefined index: ID_PRODUCTO in C:\wamp64\www\HTML\MVC\views\Home\index.php on line 71
+[27-Oct-2022 07:26:03 UTC] PHP Stack trace:
+[27-Oct-2022 07:26:03 UTC] PHP   1. {main}() C:\wamp64\www\HTML\MVC\index.php:0
+[27-Oct-2022 07:26:03 UTC] PHP   2. App->__construct() C:\wamp64\www\HTML\MVC\index.php:23
+[27-Oct-2022 07:26:03 UTC] PHP   3. Home->render() C:\wamp64\www\HTML\MVC\libreries\core\App.php:17
+[27-Oct-2022 07:26:03 UTC] PHP   4. View->render() C:\wamp64\www\HTML\MVC\Controllers\Home.php:21
+[27-Oct-2022 07:26:03 UTC] PHP   5. require() C:\wamp64\www\HTML\MVC\libreries\core\View.php:15
+[27-Oct-2022 07:26:03 UTC] PHP Notice:  Undefined index: ID_PRODUCTO in C:\wamp64\www\HTML\MVC\views\Home\index.php on line 71
+[27-Oct-2022 07:26:03 UTC] PHP Stack trace:
+[27-Oct-2022 07:26:03 UTC] PHP   1. {main}() C:\wamp64\www\HTML\MVC\index.php:0
+[27-Oct-2022 07:26:03 UTC] PHP   2. App->__construct() C:\wamp64\www\HTML\MVC\index.php:23
+[27-Oct-2022 07:26:03 UTC] PHP   3. Home->render() C:\wamp64\www\HTML\MVC\libreries\core\App.php:17
+[27-Oct-2022 07:26:03 UTC] PHP   4. View->render() C:\wamp64\www\HTML\MVC\Controllers\Home.php:21
+[27-Oct-2022 07:26:03 UTC] PHP   5. require() C:\wamp64\www\HTML\MVC\libreries\core\View.php:15
+[27-Oct-2022 07:26:03 UTC] PHP Notice:  Undefined index: ID_PRODUCTO in C:\wamp64\www\HTML\MVC\views\Home\index.php on line 71
+[27-Oct-2022 07:26:03 UTC] PHP Stack trace:
+[27-Oct-2022 07:26:03 UTC] PHP   1. {main}() C:\wamp64\www\HTML\MVC\index.php:0
+[27-Oct-2022 07:26:03 UTC] PHP   2. App->__construct() C:\wamp64\www\HTML\MVC\index.php:23
+[27-Oct-2022 07:26:03 UTC] PHP   3. Home->render() C:\wamp64\www\HTML\MVC\libreries\core\App.php:17
+[27-Oct-2022 07:26:03 UTC] PHP   4. View->render() C:\wamp64\www\HTML\MVC\Controllers\Home.php:21
+[27-Oct-2022 07:26:03 UTC] PHP   5. require() C:\wamp64\www\HTML\MVC\libreries\core\View.php:15
+[27-Oct-2022 07:26:03 UTC] PHP Notice:  Undefined index: ID_PRODUCTO in C:\wamp64\www\HTML\MVC\views\Home\index.php on line 71
+[27-Oct-2022 07:26:03 UTC] PHP Stack trace:
+[27-Oct-2022 07:26:03 UTC] PHP   1. {main}() C:\wamp64\www\HTML\MVC\index.php:0
+[27-Oct-2022 07:26:03 UTC] PHP   2. App->__construct() C:\wamp64\www\HTML\MVC\index.php:23
+[27-Oct-2022 07:26:03 UTC] PHP   3. Home->render() C:\wamp64\www\HTML\MVC\libreries\core\App.php:17
+[27-Oct-2022 07:26:03 UTC] PHP   4. View->render() C:\wamp64\www\HTML\MVC\Controllers\Home.php:21
+[27-Oct-2022 07:26:03 UTC] PHP   5. require() C:\wamp64\www\HTML\MVC\libreries\core\View.php:15
+[27-Oct-2022 07:26:03 UTC] PHP Notice:  Undefined index: ID_PRODUCTO in C:\wamp64\www\HTML\MVC\views\Home\index.php on line 71
+[27-Oct-2022 07:26:03 UTC] PHP Stack trace:
+[27-Oct-2022 07:26:03 UTC] PHP   1. {main}() C:\wamp64\www\HTML\MVC\index.php:0
+[27-Oct-2022 07:26:03 UTC] PHP   2. App->__construct() C:\wamp64\www\HTML\MVC\index.php:23
+[27-Oct-2022 07:26:03 UTC] PHP   3. Home->render() C:\wamp64\www\HTML\MVC\libreries\core\App.php:17
+[27-Oct-2022 07:26:03 UTC] PHP   4. View->render() C:\wamp64\www\HTML\MVC\Controllers\Home.php:21
+[27-Oct-2022 07:26:03 UTC] PHP   5. require() C:\wamp64\www\HTML\MVC\libreries\core\View.php:15
+[27-Oct-2022 07:26:03 UTC] 1
+[27-Oct-2022 07:26:03 UTC] 5
+[27-Oct-2022 07:26:03 UTC] Mouse Genius
+[27-Oct-2022 07:26:03 UTC] AC
+[27-Oct-2022 07:26:03 UTC] 2
+[27-Oct-2022 07:26:03 UTC] 5
+[27-Oct-2022 07:26:03 UTC] Mouse gamer inalambrico
+[27-Oct-2022 07:26:03 UTC] AC
+[27-Oct-2022 07:26:03 UTC] 3
+[27-Oct-2022 07:26:03 UTC] 4
+[27-Oct-2022 07:26:03 UTC] audifonos delux
+[27-Oct-2022 07:26:03 UTC] AC
+[27-Oct-2022 07:26:03 UTC] 4
+[27-Oct-2022 07:26:03 UTC] 16
+[27-Oct-2022 07:26:03 UTC] microfono gamer
+[27-Oct-2022 07:26:03 UTC] AC
+[27-Oct-2022 07:26:03 UTC] 5
+[27-Oct-2022 07:26:03 UTC] 14
+[27-Oct-2022 07:26:03 UTC] funda de 14 pulgadas
+[27-Oct-2022 07:26:03 UTC] AC
+[27-Oct-2022 07:26:03 UTC] 6
+[27-Oct-2022 07:26:03 UTC] 1
+[27-Oct-2022 07:26:03 UTC] teclado mecanico delux
+[27-Oct-2022 07:26:03 UTC] AC
+[27-Oct-2022 07:26:03 UTC] 7
+[27-Oct-2022 07:26:03 UTC] 6
+[27-Oct-2022 07:26:03 UTC] Parlantes delux
+[27-Oct-2022 07:26:03 UTC] AC
+[27-Oct-2022 07:26:03 UTC] 8
+[27-Oct-2022 07:26:03 UTC] 13
+[27-Oct-2022 07:26:03 UTC] Cargador Huawei tipo c
+[27-Oct-2022 07:26:03 UTC] AC
+[27-Oct-2022 07:26:03 UTC] 9
+[27-Oct-2022 07:26:03 UTC] 4
+[27-Oct-2022 07:26:03 UTC] Audifonos gamer genius
+[27-Oct-2022 07:26:03 UTC] AC
+[27-Oct-2022 07:26:22 UTC] App::archivoController-> controllers/home.php
+[27-Oct-2022 07:26:22 UTC] Controllers::loadModel()=> true HomeModel
+[27-Oct-2022 07:26:22 UTC] session name no existe Home 
+[27-Oct-2022 07:26:22 UTC] getAllCategory-> execute 
+[27-Oct-2022 07:26:22 UTC] 1
+[27-Oct-2022 07:26:22 UTC] 5
+[27-Oct-2022 07:26:22 UTC] Mouse Genius
+[27-Oct-2022 07:26:22 UTC] AC
+[27-Oct-2022 07:26:22 UTC] 2
+[27-Oct-2022 07:26:22 UTC] 5
+[27-Oct-2022 07:26:22 UTC] Mouse gamer inalambrico
+[27-Oct-2022 07:26:22 UTC] AC
+[27-Oct-2022 07:26:22 UTC] 3
+[27-Oct-2022 07:26:22 UTC] 4
+[27-Oct-2022 07:26:22 UTC] audifonos delux
+[27-Oct-2022 07:26:22 UTC] AC
+[27-Oct-2022 07:26:22 UTC] 4
+[27-Oct-2022 07:26:22 UTC] 16
+[27-Oct-2022 07:26:22 UTC] microfono gamer
+[27-Oct-2022 07:26:22 UTC] AC
+[27-Oct-2022 07:26:22 UTC] 5
+[27-Oct-2022 07:26:22 UTC] 14
+[27-Oct-2022 07:26:22 UTC] funda de 14 pulgadas
+[27-Oct-2022 07:26:22 UTC] AC
+[27-Oct-2022 07:26:22 UTC] 6
+[27-Oct-2022 07:26:22 UTC] 1
+[27-Oct-2022 07:26:22 UTC] teclado mecanico delux
+[27-Oct-2022 07:26:22 UTC] AC
+[27-Oct-2022 07:26:22 UTC] 7
+[27-Oct-2022 07:26:22 UTC] 6
+[27-Oct-2022 07:26:22 UTC] Parlantes delux
+[27-Oct-2022 07:26:22 UTC] AC
+[27-Oct-2022 07:26:22 UTC] 8
+[27-Oct-2022 07:26:22 UTC] 13
+[27-Oct-2022 07:26:22 UTC] Cargador Huawei tipo c
+[27-Oct-2022 07:26:22 UTC] AC
+[27-Oct-2022 07:26:22 UTC] 9
+[27-Oct-2022 07:26:22 UTC] 4
+[27-Oct-2022 07:26:22 UTC] Audifonos gamer genius
+[27-Oct-2022 07:26:22 UTC] AC
+[27-Oct-2022 07:26:22 UTC] 1
+[27-Oct-2022 07:26:22 UTC] 5
+[27-Oct-2022 07:26:22 UTC] Mouse Genius
+[27-Oct-2022 07:26:22 UTC] AC
+[27-Oct-2022 07:26:22 UTC] 2
+[27-Oct-2022 07:26:22 UTC] 5
+[27-Oct-2022 07:26:22 UTC] Mouse gamer inalambrico
+[27-Oct-2022 07:26:22 UTC] AC
+[27-Oct-2022 07:26:22 UTC] 3
+[27-Oct-2022 07:26:22 UTC] 4
+[27-Oct-2022 07:26:22 UTC] audifonos delux
+[27-Oct-2022 07:26:22 UTC] AC
+[27-Oct-2022 07:26:22 UTC] 4
+[27-Oct-2022 07:26:22 UTC] 16
+[27-Oct-2022 07:26:22 UTC] microfono gamer
+[27-Oct-2022 07:26:22 UTC] AC
+[27-Oct-2022 07:26:22 UTC] 5
+[27-Oct-2022 07:26:22 UTC] 14
+[27-Oct-2022 07:26:22 UTC] funda de 14 pulgadas
+[27-Oct-2022 07:26:22 UTC] AC
+[27-Oct-2022 07:26:22 UTC] 6
+[27-Oct-2022 07:26:22 UTC] 1
+[27-Oct-2022 07:26:22 UTC] teclado mecanico delux
+[27-Oct-2022 07:26:22 UTC] AC
+[27-Oct-2022 07:26:22 UTC] 7
+[27-Oct-2022 07:26:22 UTC] 6
+[27-Oct-2022 07:26:22 UTC] Parlantes delux
+[27-Oct-2022 07:26:22 UTC] AC
+[27-Oct-2022 07:26:22 UTC] 8
+[27-Oct-2022 07:26:22 UTC] 13
+[27-Oct-2022 07:26:22 UTC] Cargador Huawei tipo c
+[27-Oct-2022 07:26:22 UTC] AC
+[27-Oct-2022 07:26:22 UTC] 9
+[27-Oct-2022 07:26:22 UTC] 4
+[27-Oct-2022 07:26:22 UTC] Audifonos gamer genius
+[27-Oct-2022 07:26:22 UTC] AC
+[27-Oct-2022 07:28:48 UTC] App::archivoController-> controllers/home.php
+[27-Oct-2022 07:28:48 UTC] Controllers::loadModel()=> true HomeModel
+[27-Oct-2022 07:28:48 UTC] session name no existe Home 
+[27-Oct-2022 07:28:48 UTC] getAllCategory-> execute 
+[27-Oct-2022 07:28:48 UTC] 1
+[27-Oct-2022 07:28:48 UTC] 5
+[27-Oct-2022 07:28:48 UTC] Mouse Genius
+[27-Oct-2022 07:28:48 UTC] AC
+[27-Oct-2022 07:28:48 UTC] 2
+[27-Oct-2022 07:28:48 UTC] 5
+[27-Oct-2022 07:28:48 UTC] Mouse gamer inalambrico
+[27-Oct-2022 07:28:48 UTC] AC
+[27-Oct-2022 07:28:48 UTC] 3
+[27-Oct-2022 07:28:48 UTC] 4
+[27-Oct-2022 07:28:48 UTC] audifonos delux
+[27-Oct-2022 07:28:48 UTC] AC
+[27-Oct-2022 07:28:48 UTC] 4
+[27-Oct-2022 07:28:48 UTC] 16
+[27-Oct-2022 07:28:48 UTC] microfono gamer
+[27-Oct-2022 07:28:48 UTC] AC
+[27-Oct-2022 07:28:48 UTC] 5
+[27-Oct-2022 07:28:48 UTC] 14
+[27-Oct-2022 07:28:48 UTC] funda de 14 pulgadas
+[27-Oct-2022 07:28:48 UTC] AC
+[27-Oct-2022 07:28:48 UTC] 6
+[27-Oct-2022 07:28:48 UTC] 1
+[27-Oct-2022 07:28:48 UTC] teclado mecanico delux
+[27-Oct-2022 07:28:48 UTC] AC
+[27-Oct-2022 07:28:48 UTC] 7
+[27-Oct-2022 07:28:48 UTC] 6
+[27-Oct-2022 07:28:48 UTC] Parlantes delux
+[27-Oct-2022 07:28:48 UTC] AC
+[27-Oct-2022 07:28:48 UTC] 8
+[27-Oct-2022 07:28:48 UTC] 13
+[27-Oct-2022 07:28:48 UTC] Cargador Huawei tipo c
+[27-Oct-2022 07:28:48 UTC] AC
+[27-Oct-2022 07:28:48 UTC] 9
+[27-Oct-2022 07:28:48 UTC] 4
+[27-Oct-2022 07:28:48 UTC] Audifonos gamer genius
+[27-Oct-2022 07:28:48 UTC] AC
+[27-Oct-2022 07:28:48 UTC] 1
+[27-Oct-2022 07:28:48 UTC] 5
+[27-Oct-2022 07:28:48 UTC] Mouse Genius
+[27-Oct-2022 07:28:48 UTC] AC
+[27-Oct-2022 07:28:48 UTC] 2
+[27-Oct-2022 07:28:48 UTC] 5
+[27-Oct-2022 07:28:48 UTC] Mouse gamer inalambrico
+[27-Oct-2022 07:28:48 UTC] AC
+[27-Oct-2022 07:28:48 UTC] 3
+[27-Oct-2022 07:28:48 UTC] 4
+[27-Oct-2022 07:28:48 UTC] audifonos delux
+[27-Oct-2022 07:28:48 UTC] AC
+[27-Oct-2022 07:28:48 UTC] 4
+[27-Oct-2022 07:28:48 UTC] 16
+[27-Oct-2022 07:28:48 UTC] microfono gamer
+[27-Oct-2022 07:28:48 UTC] AC
+[27-Oct-2022 07:28:48 UTC] 5
+[27-Oct-2022 07:28:48 UTC] 14
+[27-Oct-2022 07:28:48 UTC] funda de 14 pulgadas
+[27-Oct-2022 07:28:48 UTC] AC
+[27-Oct-2022 07:28:48 UTC] 6
+[27-Oct-2022 07:28:48 UTC] 1
+[27-Oct-2022 07:28:48 UTC] teclado mecanico delux
+[27-Oct-2022 07:28:48 UTC] AC
+[27-Oct-2022 07:28:48 UTC] 7
+[27-Oct-2022 07:28:48 UTC] 6
+[27-Oct-2022 07:28:48 UTC] Parlantes delux
+[27-Oct-2022 07:28:48 UTC] AC
+[27-Oct-2022 07:28:48 UTC] 8
+[27-Oct-2022 07:28:48 UTC] 13
+[27-Oct-2022 07:28:48 UTC] Cargador Huawei tipo c
+[27-Oct-2022 07:28:48 UTC] AC
+[27-Oct-2022 07:28:48 UTC] 9
+[27-Oct-2022 07:28:48 UTC] 4
+[27-Oct-2022 07:28:48 UTC] Audifonos gamer genius
+[27-Oct-2022 07:28:48 UTC] AC
+[27-Oct-2022 07:28:49 UTC] Controllers/viewProducto.php
+[27-Oct-2022 07:28:49 UTC] SesionController::init()
+[27-Oct-2022 07:28:49 UTC] Session::session_start
+[27-Oct-2022 07:28:49 UTC] SessionController::validateSession()
+[27-Oct-2022 07:28:49 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/viewProducto/selectProducto(2), url =>viewProducto
+[27-Oct-2022 07:28:49 UTC] sessionController::isPublic(): currentURL => viewProducto
+[27-Oct-2022 07:28:49 UTC] sessionController::isPublic()=> true
+[27-Oct-2022 07:28:49 UTC] SessionController::validateSession()->is public ->true public page
+[27-Oct-2022 07:28:49 UTC] view producto carga
+[27-Oct-2022 07:28:49 UTC] no se recibió id
+[27-Oct-2022 07:28:49 UTC] Controllers::loadModel()=> true viewProductoModel
+[27-Oct-2022 07:30:01 UTC] App::archivoController-> controllers/home.php
+[27-Oct-2022 07:30:01 UTC] Controllers::loadModel()=> true HomeModel
+[27-Oct-2022 07:30:01 UTC] session name no existe Home 
+[27-Oct-2022 07:30:01 UTC] getAllCategory-> execute 
+[27-Oct-2022 07:30:01 UTC] 1
+[27-Oct-2022 07:30:01 UTC] 5
+[27-Oct-2022 07:30:01 UTC] Mouse Genius
+[27-Oct-2022 07:30:01 UTC] AC
+[27-Oct-2022 07:30:01 UTC] 2
+[27-Oct-2022 07:30:01 UTC] 5
+[27-Oct-2022 07:30:01 UTC] Mouse gamer inalambrico
+[27-Oct-2022 07:30:01 UTC] AC
+[27-Oct-2022 07:30:01 UTC] 3
+[27-Oct-2022 07:30:01 UTC] 4
+[27-Oct-2022 07:30:01 UTC] audifonos delux
+[27-Oct-2022 07:30:01 UTC] AC
+[27-Oct-2022 07:30:01 UTC] 4
+[27-Oct-2022 07:30:01 UTC] 16
+[27-Oct-2022 07:30:01 UTC] microfono gamer
+[27-Oct-2022 07:30:01 UTC] AC
+[27-Oct-2022 07:30:01 UTC] 5
+[27-Oct-2022 07:30:01 UTC] 14
+[27-Oct-2022 07:30:01 UTC] funda de 14 pulgadas
+[27-Oct-2022 07:30:01 UTC] AC
+[27-Oct-2022 07:30:01 UTC] 6
+[27-Oct-2022 07:30:01 UTC] 1
+[27-Oct-2022 07:30:01 UTC] teclado mecanico delux
+[27-Oct-2022 07:30:01 UTC] AC
+[27-Oct-2022 07:30:01 UTC] 7
+[27-Oct-2022 07:30:01 UTC] 6
+[27-Oct-2022 07:30:01 UTC] Parlantes delux
+[27-Oct-2022 07:30:01 UTC] AC
+[27-Oct-2022 07:30:01 UTC] 8
+[27-Oct-2022 07:30:01 UTC] 13
+[27-Oct-2022 07:30:01 UTC] Cargador Huawei tipo c
+[27-Oct-2022 07:30:01 UTC] AC
+[27-Oct-2022 07:30:01 UTC] 9
+[27-Oct-2022 07:30:01 UTC] 4
+[27-Oct-2022 07:30:01 UTC] Audifonos gamer genius
+[27-Oct-2022 07:30:01 UTC] AC
+[27-Oct-2022 07:30:01 UTC] 1
+[27-Oct-2022 07:30:01 UTC] 5
+[27-Oct-2022 07:30:01 UTC] Mouse Genius
+[27-Oct-2022 07:30:01 UTC] AC
+[27-Oct-2022 07:30:01 UTC] 2
+[27-Oct-2022 07:30:01 UTC] 5
+[27-Oct-2022 07:30:01 UTC] Mouse gamer inalambrico
+[27-Oct-2022 07:30:01 UTC] AC
+[27-Oct-2022 07:30:01 UTC] 3
+[27-Oct-2022 07:30:01 UTC] 4
+[27-Oct-2022 07:30:01 UTC] audifonos delux
+[27-Oct-2022 07:30:01 UTC] AC
+[27-Oct-2022 07:30:01 UTC] 4
+[27-Oct-2022 07:30:01 UTC] 16
+[27-Oct-2022 07:30:01 UTC] microfono gamer
+[27-Oct-2022 07:30:01 UTC] AC
+[27-Oct-2022 07:30:01 UTC] 5
+[27-Oct-2022 07:30:01 UTC] 14
+[27-Oct-2022 07:30:01 UTC] funda de 14 pulgadas
+[27-Oct-2022 07:30:01 UTC] AC
+[27-Oct-2022 07:30:01 UTC] 6
+[27-Oct-2022 07:30:01 UTC] 1
+[27-Oct-2022 07:30:01 UTC] teclado mecanico delux
+[27-Oct-2022 07:30:01 UTC] AC
+[27-Oct-2022 07:30:01 UTC] 7
+[27-Oct-2022 07:30:01 UTC] 6
+[27-Oct-2022 07:30:01 UTC] Parlantes delux
+[27-Oct-2022 07:30:01 UTC] AC
+[27-Oct-2022 07:30:01 UTC] 8
+[27-Oct-2022 07:30:01 UTC] 13
+[27-Oct-2022 07:30:01 UTC] Cargador Huawei tipo c
+[27-Oct-2022 07:30:01 UTC] AC
+[27-Oct-2022 07:30:01 UTC] 9
+[27-Oct-2022 07:30:01 UTC] 4
+[27-Oct-2022 07:30:01 UTC] Audifonos gamer genius
+[27-Oct-2022 07:30:01 UTC] AC
+[27-Oct-2022 07:30:03 UTC] Controllers/viewProducto.php
+[27-Oct-2022 07:30:03 UTC] SesionController::init()
+[27-Oct-2022 07:30:03 UTC] Session::session_start
+[27-Oct-2022 07:30:03 UTC] SessionController::validateSession()
+[27-Oct-2022 07:30:03 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/viewProducto/selectProducto(1), url =>viewProducto
+[27-Oct-2022 07:30:03 UTC] sessionController::isPublic(): currentURL => viewProducto
+[27-Oct-2022 07:30:03 UTC] sessionController::isPublic()=> true
+[27-Oct-2022 07:30:03 UTC] SessionController::validateSession()->is public ->true public page
+[27-Oct-2022 07:30:03 UTC] Controllers::loadModel()=> true viewProductoModel
+[27-Oct-2022 07:31:36 UTC] App::archivoController-> controllers/home.php
+[27-Oct-2022 07:31:36 UTC] Controllers::loadModel()=> true HomeModel
+[27-Oct-2022 07:31:36 UTC] session name no existe Home 
+[27-Oct-2022 07:31:36 UTC] getAllCategory-> execute 
+[27-Oct-2022 07:31:36 UTC] 1
+[27-Oct-2022 07:31:36 UTC] 5
+[27-Oct-2022 07:31:36 UTC] Mouse Genius
+[27-Oct-2022 07:31:36 UTC] AC
+[27-Oct-2022 07:31:36 UTC] 2
+[27-Oct-2022 07:31:36 UTC] 5
+[27-Oct-2022 07:31:36 UTC] Mouse gamer inalambrico
+[27-Oct-2022 07:31:36 UTC] AC
+[27-Oct-2022 07:31:36 UTC] 3
+[27-Oct-2022 07:31:36 UTC] 4
+[27-Oct-2022 07:31:36 UTC] audifonos delux
+[27-Oct-2022 07:31:36 UTC] AC
+[27-Oct-2022 07:31:36 UTC] 4
+[27-Oct-2022 07:31:36 UTC] 16
+[27-Oct-2022 07:31:36 UTC] microfono gamer
+[27-Oct-2022 07:31:36 UTC] AC
+[27-Oct-2022 07:31:36 UTC] 5
+[27-Oct-2022 07:31:36 UTC] 14
+[27-Oct-2022 07:31:36 UTC] funda de 14 pulgadas
+[27-Oct-2022 07:31:36 UTC] AC
+[27-Oct-2022 07:31:36 UTC] 6
+[27-Oct-2022 07:31:36 UTC] 1
+[27-Oct-2022 07:31:36 UTC] teclado mecanico delux
+[27-Oct-2022 07:31:36 UTC] AC
+[27-Oct-2022 07:31:36 UTC] 7
+[27-Oct-2022 07:31:36 UTC] 6
+[27-Oct-2022 07:31:36 UTC] Parlantes delux
+[27-Oct-2022 07:31:36 UTC] AC
+[27-Oct-2022 07:31:36 UTC] 8
+[27-Oct-2022 07:31:36 UTC] 13
+[27-Oct-2022 07:31:36 UTC] Cargador Huawei tipo c
+[27-Oct-2022 07:31:36 UTC] AC
+[27-Oct-2022 07:31:37 UTC] 9
+[27-Oct-2022 07:31:37 UTC] 4
+[27-Oct-2022 07:31:37 UTC] Audifonos gamer genius
+[27-Oct-2022 07:31:37 UTC] AC
+[27-Oct-2022 07:31:37 UTC] 1
+[27-Oct-2022 07:31:37 UTC] 5
+[27-Oct-2022 07:31:37 UTC] Mouse Genius
+[27-Oct-2022 07:31:37 UTC] AC
+[27-Oct-2022 07:31:37 UTC] 2
+[27-Oct-2022 07:31:37 UTC] 5
+[27-Oct-2022 07:31:37 UTC] Mouse gamer inalambrico
+[27-Oct-2022 07:31:37 UTC] AC
+[27-Oct-2022 07:31:37 UTC] 3
+[27-Oct-2022 07:31:37 UTC] 4
+[27-Oct-2022 07:31:37 UTC] audifonos delux
+[27-Oct-2022 07:31:37 UTC] AC
+[27-Oct-2022 07:31:37 UTC] 4
+[27-Oct-2022 07:31:37 UTC] 16
+[27-Oct-2022 07:31:37 UTC] microfono gamer
+[27-Oct-2022 07:31:37 UTC] AC
+[27-Oct-2022 07:31:37 UTC] 5
+[27-Oct-2022 07:31:37 UTC] 14
+[27-Oct-2022 07:31:37 UTC] funda de 14 pulgadas
+[27-Oct-2022 07:31:37 UTC] AC
+[27-Oct-2022 07:31:37 UTC] 6
+[27-Oct-2022 07:31:37 UTC] 1
+[27-Oct-2022 07:31:37 UTC] teclado mecanico delux
+[27-Oct-2022 07:31:37 UTC] AC
+[27-Oct-2022 07:31:37 UTC] 7
+[27-Oct-2022 07:31:37 UTC] 6
+[27-Oct-2022 07:31:37 UTC] Parlantes delux
+[27-Oct-2022 07:31:37 UTC] AC
+[27-Oct-2022 07:31:37 UTC] 8
+[27-Oct-2022 07:31:37 UTC] 13
+[27-Oct-2022 07:31:37 UTC] Cargador Huawei tipo c
+[27-Oct-2022 07:31:37 UTC] AC
+[27-Oct-2022 07:31:37 UTC] 9
+[27-Oct-2022 07:31:37 UTC] 4
+[27-Oct-2022 07:31:37 UTC] Audifonos gamer genius
+[27-Oct-2022 07:31:37 UTC] AC
+[27-Oct-2022 07:31:39 UTC] Controllers/viewProducto.php
+[27-Oct-2022 07:31:39 UTC] SesionController::init()
+[27-Oct-2022 07:31:39 UTC] Session::session_start
+[27-Oct-2022 07:31:39 UTC] SessionController::validateSession()
+[27-Oct-2022 07:31:39 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/viewProducto, url =>viewProducto
+[27-Oct-2022 07:31:39 UTC] sessionController::isPublic(): currentURL => viewProducto
+[27-Oct-2022 07:31:39 UTC] sessionController::isPublic()=> true
+[27-Oct-2022 07:31:39 UTC] SessionController::validateSession()->is public ->true public page
+[27-Oct-2022 07:31:39 UTC] Controllers::loadModel()=> true viewProductoModel
+[27-Oct-2022 07:32:42 UTC] App::archivoController-> controllers/home.php
+[27-Oct-2022 07:32:42 UTC] Controllers::loadModel()=> true HomeModel
+[27-Oct-2022 07:32:42 UTC] session name no existe Home 
+[27-Oct-2022 07:32:42 UTC] getAllCategory-> execute 
+[27-Oct-2022 07:32:42 UTC] 1
+[27-Oct-2022 07:32:42 UTC] 5
+[27-Oct-2022 07:32:42 UTC] Mouse Genius
+[27-Oct-2022 07:32:42 UTC] AC
+[27-Oct-2022 07:32:42 UTC] 2
+[27-Oct-2022 07:32:42 UTC] 5
+[27-Oct-2022 07:32:42 UTC] Mouse gamer inalambrico
+[27-Oct-2022 07:32:42 UTC] AC
+[27-Oct-2022 07:32:42 UTC] 3
+[27-Oct-2022 07:32:42 UTC] 4
+[27-Oct-2022 07:32:42 UTC] audifonos delux
+[27-Oct-2022 07:32:42 UTC] AC
+[27-Oct-2022 07:32:42 UTC] 4
+[27-Oct-2022 07:32:42 UTC] 16
+[27-Oct-2022 07:32:42 UTC] microfono gamer
+[27-Oct-2022 07:32:42 UTC] AC
+[27-Oct-2022 07:32:42 UTC] 5
+[27-Oct-2022 07:32:42 UTC] 14
+[27-Oct-2022 07:32:42 UTC] funda de 14 pulgadas
+[27-Oct-2022 07:32:42 UTC] AC
+[27-Oct-2022 07:32:42 UTC] 6
+[27-Oct-2022 07:32:42 UTC] 1
+[27-Oct-2022 07:32:42 UTC] teclado mecanico delux
+[27-Oct-2022 07:32:42 UTC] AC
+[27-Oct-2022 07:32:42 UTC] 7
+[27-Oct-2022 07:32:42 UTC] 6
+[27-Oct-2022 07:32:42 UTC] Parlantes delux
+[27-Oct-2022 07:32:42 UTC] AC
+[27-Oct-2022 07:32:42 UTC] 8
+[27-Oct-2022 07:32:42 UTC] 13
+[27-Oct-2022 07:32:42 UTC] Cargador Huawei tipo c
+[27-Oct-2022 07:32:42 UTC] AC
+[27-Oct-2022 07:32:42 UTC] 9
+[27-Oct-2022 07:32:42 UTC] 4
+[27-Oct-2022 07:32:42 UTC] Audifonos gamer genius
+[27-Oct-2022 07:32:42 UTC] AC
+[27-Oct-2022 07:32:42 UTC] 1
+[27-Oct-2022 07:32:42 UTC] 5
+[27-Oct-2022 07:32:42 UTC] Mouse Genius
+[27-Oct-2022 07:32:42 UTC] AC
+[27-Oct-2022 07:32:42 UTC] 2
+[27-Oct-2022 07:32:42 UTC] 5
+[27-Oct-2022 07:32:42 UTC] Mouse gamer inalambrico
+[27-Oct-2022 07:32:42 UTC] AC
+[27-Oct-2022 07:32:42 UTC] 3
+[27-Oct-2022 07:32:42 UTC] 4
+[27-Oct-2022 07:32:42 UTC] audifonos delux
+[27-Oct-2022 07:32:42 UTC] AC
+[27-Oct-2022 07:32:42 UTC] 4
+[27-Oct-2022 07:32:42 UTC] 16
+[27-Oct-2022 07:32:42 UTC] microfono gamer
+[27-Oct-2022 07:32:42 UTC] AC
+[27-Oct-2022 07:32:42 UTC] 5
+[27-Oct-2022 07:32:42 UTC] 14
+[27-Oct-2022 07:32:42 UTC] funda de 14 pulgadas
+[27-Oct-2022 07:32:42 UTC] AC
+[27-Oct-2022 07:32:42 UTC] 6
+[27-Oct-2022 07:32:42 UTC] 1
+[27-Oct-2022 07:32:42 UTC] teclado mecanico delux
+[27-Oct-2022 07:32:42 UTC] AC
+[27-Oct-2022 07:32:42 UTC] 7
+[27-Oct-2022 07:32:42 UTC] 6
+[27-Oct-2022 07:32:42 UTC] Parlantes delux
+[27-Oct-2022 07:32:42 UTC] AC
+[27-Oct-2022 07:32:42 UTC] 8
+[27-Oct-2022 07:32:42 UTC] 13
+[27-Oct-2022 07:32:42 UTC] Cargador Huawei tipo c
+[27-Oct-2022 07:32:42 UTC] AC
+[27-Oct-2022 07:32:42 UTC] 9
+[27-Oct-2022 07:32:42 UTC] 4
+[27-Oct-2022 07:32:42 UTC] Audifonos gamer genius
+[27-Oct-2022 07:32:42 UTC] AC
+[27-Oct-2022 07:32:43 UTC] Controllers/viewProducto.php
+[27-Oct-2022 07:32:43 UTC] SesionController::init()
+[27-Oct-2022 07:32:43 UTC] Session::session_start
+[27-Oct-2022 07:32:43 UTC] SessionController::validateSession()
+[27-Oct-2022 07:32:43 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/viewProducto/selectProducto, url =>viewProducto
+[27-Oct-2022 07:32:43 UTC] sessionController::isPublic(): currentURL => viewProducto
+[27-Oct-2022 07:32:43 UTC] sessionController::isPublic()=> true
+[27-Oct-2022 07:32:43 UTC] SessionController::validateSession()->is public ->true public page
+[27-Oct-2022 07:32:43 UTC] Controllers::loadModel()=> true viewProductoModel
+[27-Oct-2022 07:32:43 UTC] producto seleccionado
+[27-Oct-2022 07:33:25 UTC] App::archivoController-> controllers/home.php
+[27-Oct-2022 07:33:25 UTC] Controllers::loadModel()=> true HomeModel
+[27-Oct-2022 07:33:25 UTC] session name no existe Home 
+[27-Oct-2022 07:33:25 UTC] getAllCategory-> execute 
+[27-Oct-2022 07:33:25 UTC] 1
+[27-Oct-2022 07:33:25 UTC] 5
+[27-Oct-2022 07:33:25 UTC] Mouse Genius
+[27-Oct-2022 07:33:25 UTC] AC
+[27-Oct-2022 07:33:25 UTC] 2
+[27-Oct-2022 07:33:25 UTC] 5
+[27-Oct-2022 07:33:25 UTC] Mouse gamer inalambrico
+[27-Oct-2022 07:33:25 UTC] AC
+[27-Oct-2022 07:33:25 UTC] 3
+[27-Oct-2022 07:33:25 UTC] 4
+[27-Oct-2022 07:33:25 UTC] audifonos delux
+[27-Oct-2022 07:33:25 UTC] AC
+[27-Oct-2022 07:33:25 UTC] 4
+[27-Oct-2022 07:33:25 UTC] 16
+[27-Oct-2022 07:33:25 UTC] microfono gamer
+[27-Oct-2022 07:33:25 UTC] AC
+[27-Oct-2022 07:33:25 UTC] 5
+[27-Oct-2022 07:33:25 UTC] 14
+[27-Oct-2022 07:33:25 UTC] funda de 14 pulgadas
+[27-Oct-2022 07:33:25 UTC] AC
+[27-Oct-2022 07:33:25 UTC] 6
+[27-Oct-2022 07:33:25 UTC] 1
+[27-Oct-2022 07:33:25 UTC] teclado mecanico delux
+[27-Oct-2022 07:33:25 UTC] AC
+[27-Oct-2022 07:33:25 UTC] 7
+[27-Oct-2022 07:33:25 UTC] 6
+[27-Oct-2022 07:33:25 UTC] Parlantes delux
+[27-Oct-2022 07:33:25 UTC] AC
+[27-Oct-2022 07:33:25 UTC] 8
+[27-Oct-2022 07:33:25 UTC] 13
+[27-Oct-2022 07:33:25 UTC] Cargador Huawei tipo c
+[27-Oct-2022 07:33:25 UTC] AC
+[27-Oct-2022 07:33:25 UTC] 9
+[27-Oct-2022 07:33:25 UTC] 4
+[27-Oct-2022 07:33:25 UTC] Audifonos gamer genius
+[27-Oct-2022 07:33:25 UTC] AC
+[27-Oct-2022 07:33:25 UTC] 1
+[27-Oct-2022 07:33:25 UTC] 5
+[27-Oct-2022 07:33:25 UTC] Mouse Genius
+[27-Oct-2022 07:33:25 UTC] AC
+[27-Oct-2022 07:33:25 UTC] 2
+[27-Oct-2022 07:33:25 UTC] 5
+[27-Oct-2022 07:33:25 UTC] Mouse gamer inalambrico
+[27-Oct-2022 07:33:25 UTC] AC
+[27-Oct-2022 07:33:25 UTC] 3
+[27-Oct-2022 07:33:25 UTC] 4
+[27-Oct-2022 07:33:25 UTC] audifonos delux
+[27-Oct-2022 07:33:25 UTC] AC
+[27-Oct-2022 07:33:25 UTC] 4
+[27-Oct-2022 07:33:25 UTC] 16
+[27-Oct-2022 07:33:25 UTC] microfono gamer
+[27-Oct-2022 07:33:25 UTC] AC
+[27-Oct-2022 07:33:25 UTC] 5
+[27-Oct-2022 07:33:25 UTC] 14
+[27-Oct-2022 07:33:25 UTC] funda de 14 pulgadas
+[27-Oct-2022 07:33:25 UTC] AC
+[27-Oct-2022 07:33:25 UTC] 6
+[27-Oct-2022 07:33:25 UTC] 1
+[27-Oct-2022 07:33:25 UTC] teclado mecanico delux
+[27-Oct-2022 07:33:25 UTC] AC
+[27-Oct-2022 07:33:25 UTC] 7
+[27-Oct-2022 07:33:25 UTC] 6
+[27-Oct-2022 07:33:25 UTC] Parlantes delux
+[27-Oct-2022 07:33:25 UTC] AC
+[27-Oct-2022 07:33:25 UTC] 8
+[27-Oct-2022 07:33:25 UTC] 13
+[27-Oct-2022 07:33:25 UTC] Cargador Huawei tipo c
+[27-Oct-2022 07:33:25 UTC] AC
+[27-Oct-2022 07:33:25 UTC] 9
+[27-Oct-2022 07:33:25 UTC] 4
+[27-Oct-2022 07:33:25 UTC] Audifonos gamer genius
+[27-Oct-2022 07:33:25 UTC] AC
+[27-Oct-2022 07:33:26 UTC] Controllers/viewProducto.php
+[27-Oct-2022 07:33:26 UTC] SesionController::init()
+[27-Oct-2022 07:33:26 UTC] Session::session_start
+[27-Oct-2022 07:33:26 UTC] SessionController::validateSession()
+[27-Oct-2022 07:33:26 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/viewProducto/selectProducto, url =>viewProducto
+[27-Oct-2022 07:33:26 UTC] sessionController::isPublic(): currentURL => viewProducto
+[27-Oct-2022 07:33:26 UTC] sessionController::isPublic()=> true
+[27-Oct-2022 07:33:26 UTC] SessionController::validateSession()->is public ->true public page
+[27-Oct-2022 07:33:26 UTC] Controllers::loadModel()=> true viewProductoModel
+[27-Oct-2022 07:33:26 UTC] producto seleccionado
+[27-Oct-2022 07:33:26 UTC] Controllers/viewProducto.php
+[27-Oct-2022 07:33:26 UTC] SesionController::init()
+[27-Oct-2022 07:33:26 UTC] Session::session_start
+[27-Oct-2022 07:33:26 UTC] SessionController::validateSession()
+[27-Oct-2022 07:33:26 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/viewProducto/asd, url =>viewProducto
+[27-Oct-2022 07:33:26 UTC] sessionController::isPublic(): currentURL => viewProducto
+[27-Oct-2022 07:33:26 UTC] sessionController::isPublic()=> true
+[27-Oct-2022 07:33:26 UTC] SessionController::validateSession()->is public ->true public page
+[27-Oct-2022 07:33:26 UTC] Controllers::loadModel()=> true viewProductoModel
+[27-Oct-2022 07:33:26 UTC] Controllers/viewProducto.php
+[27-Oct-2022 07:33:26 UTC] SesionController::init()
+[27-Oct-2022 07:33:26 UTC] Session::session_start
+[27-Oct-2022 07:33:26 UTC] SessionController::validateSession()
+[27-Oct-2022 07:33:26 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/viewProducto/asd, url =>viewProducto
+[27-Oct-2022 07:33:26 UTC] sessionController::isPublic(): currentURL => viewProducto
+[27-Oct-2022 07:33:26 UTC] sessionController::isPublic()=> true
+[27-Oct-2022 07:33:26 UTC] SessionController::validateSession()->is public ->true public page
+[27-Oct-2022 07:33:26 UTC] Controllers::loadModel()=> true viewProductoModel
+[27-Oct-2022 07:40:46 UTC] Controllers/viewProducto.php
+[27-Oct-2022 07:40:46 UTC] SesionController::init()
+[27-Oct-2022 07:40:46 UTC] Session::session_start
+[27-Oct-2022 07:40:46 UTC] SessionController::validateSession()
+[27-Oct-2022 07:40:46 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/viewProducto/selectProducto, url =>viewProducto
+[27-Oct-2022 07:40:46 UTC] sessionController::isPublic(): currentURL => viewProducto
+[27-Oct-2022 07:40:46 UTC] sessionController::isPublic()=> true
+[27-Oct-2022 07:40:46 UTC] SessionController::validateSession()->is public ->true public page
+[27-Oct-2022 07:40:46 UTC] Controllers::loadModel()=> true viewProductoModel
+[27-Oct-2022 07:40:46 UTC] producto seleccionado
+[27-Oct-2022 07:40:46 UTC] Controllers/viewProducto.php
+[27-Oct-2022 07:40:46 UTC] SesionController::init()
+[27-Oct-2022 07:40:46 UTC] Session::session_start
+[27-Oct-2022 07:40:46 UTC] SessionController::validateSession()
+[27-Oct-2022 07:40:46 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/viewProducto/asd, url =>viewProducto
+[27-Oct-2022 07:40:46 UTC] sessionController::isPublic(): currentURL => viewProducto
+[27-Oct-2022 07:40:46 UTC] sessionController::isPublic()=> true
+[27-Oct-2022 07:40:46 UTC] SessionController::validateSession()->is public ->true public page
+[27-Oct-2022 07:40:46 UTC] Controllers::loadModel()=> true viewProductoModel
+[27-Oct-2022 07:40:46 UTC] Controllers/viewProducto.php
+[27-Oct-2022 07:40:46 UTC] SesionController::init()
+[27-Oct-2022 07:40:46 UTC] Session::session_start
+[27-Oct-2022 07:40:46 UTC] SessionController::validateSession()
+[27-Oct-2022 07:40:46 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/viewProducto/asd, url =>viewProducto
+[27-Oct-2022 07:40:46 UTC] sessionController::isPublic(): currentURL => viewProducto
+[27-Oct-2022 07:40:46 UTC] sessionController::isPublic()=> true
+[27-Oct-2022 07:40:46 UTC] SessionController::validateSession()->is public ->true public page
+[27-Oct-2022 07:40:46 UTC] Controllers::loadModel()=> true viewProductoModel
+[27-Oct-2022 07:40:52 UTC] App::archivoController-> controllers/home.php
+[27-Oct-2022 07:40:52 UTC] Controllers::loadModel()=> true HomeModel
+[27-Oct-2022 07:40:52 UTC] session name no existe Home 
+[27-Oct-2022 07:40:52 UTC] PHP Warning:  require_once(): http:// wrapper is disabled in the server configuration by allow_url_include=0 in C:\wamp64\www\HTML\MVC\views\Home\index.php on line 3
+[27-Oct-2022 07:40:52 UTC] PHP Stack trace:
+[27-Oct-2022 07:40:52 UTC] PHP   1. {main}() C:\wamp64\www\HTML\MVC\index.php:0
+[27-Oct-2022 07:40:52 UTC] PHP   2. App->__construct() C:\wamp64\www\HTML\MVC\index.php:23
+[27-Oct-2022 07:40:52 UTC] PHP   3. Home->render() C:\wamp64\www\HTML\MVC\libreries\core\App.php:17
+[27-Oct-2022 07:40:52 UTC] PHP   4. View->render() C:\wamp64\www\HTML\MVC\Controllers\Home.php:21
+[27-Oct-2022 07:40:52 UTC] PHP   5. require() C:\wamp64\www\HTML\MVC\libreries\core\View.php:15
+[27-Oct-2022 07:40:52 UTC] PHP Warning:  require_once(http://localhost/html/MVC/helpers/js/selectProducto.js): failed to open stream: no suitable wrapper could be found in C:\wamp64\www\HTML\MVC\views\Home\index.php on line 3
+[27-Oct-2022 07:40:52 UTC] PHP Stack trace:
+[27-Oct-2022 07:40:52 UTC] PHP   1. {main}() C:\wamp64\www\HTML\MVC\index.php:0
+[27-Oct-2022 07:40:52 UTC] PHP   2. App->__construct() C:\wamp64\www\HTML\MVC\index.php:23
+[27-Oct-2022 07:40:52 UTC] PHP   3. Home->render() C:\wamp64\www\HTML\MVC\libreries\core\App.php:17
+[27-Oct-2022 07:40:52 UTC] PHP   4. View->render() C:\wamp64\www\HTML\MVC\Controllers\Home.php:21
+[27-Oct-2022 07:40:52 UTC] PHP   5. require() C:\wamp64\www\HTML\MVC\libreries\core\View.php:15
+[27-Oct-2022 07:40:52 UTC] PHP Fatal error:  require_once(): Failed opening required 'http://localhost/html/MVC/helpers/js/selectProducto.js' (include_path='.;C:\php\pear') in C:\wamp64\www\HTML\MVC\views\Home\index.php on line 3
+[27-Oct-2022 07:40:52 UTC] PHP Stack trace:
+[27-Oct-2022 07:40:52 UTC] PHP   1. {main}() C:\wamp64\www\HTML\MVC\index.php:0
+[27-Oct-2022 07:40:52 UTC] PHP   2. App->__construct() C:\wamp64\www\HTML\MVC\index.php:23
+[27-Oct-2022 07:40:52 UTC] PHP   3. Home->render() C:\wamp64\www\HTML\MVC\libreries\core\App.php:17
+[27-Oct-2022 07:40:52 UTC] PHP   4. View->render() C:\wamp64\www\HTML\MVC\Controllers\Home.php:21
+[27-Oct-2022 07:40:52 UTC] PHP   5. require() C:\wamp64\www\HTML\MVC\libreries\core\View.php:15
+[27-Oct-2022 07:42:07 UTC] App::archivoController-> controllers/home.php
+[27-Oct-2022 07:42:07 UTC] Controllers::loadModel()=> true HomeModel
+[27-Oct-2022 07:42:07 UTC] session name no existe Home 
+[27-Oct-2022 07:42:07 UTC] PHP Warning:  require_once(): http:// wrapper is disabled in the server configuration by allow_url_include=0 in C:\wamp64\www\HTML\MVC\views\Home\index.php on line 3
+[27-Oct-2022 07:42:07 UTC] PHP Stack trace:
+[27-Oct-2022 07:42:07 UTC] PHP   1. {main}() C:\wamp64\www\HTML\MVC\index.php:0
+[27-Oct-2022 07:42:07 UTC] PHP   2. App->__construct() C:\wamp64\www\HTML\MVC\index.php:23
+[27-Oct-2022 07:42:07 UTC] PHP   3. Home->render() C:\wamp64\www\HTML\MVC\libreries\core\App.php:17
+[27-Oct-2022 07:42:07 UTC] PHP   4. View->render() C:\wamp64\www\HTML\MVC\Controllers\Home.php:21
+[27-Oct-2022 07:42:07 UTC] PHP   5. require() C:\wamp64\www\HTML\MVC\libreries\core\View.php:15
+[27-Oct-2022 07:42:07 UTC] PHP Warning:  require_once(http://localhost/html/MVC/helpers/js/selectProducto.js): failed to open stream: no suitable wrapper could be found in C:\wamp64\www\HTML\MVC\views\Home\index.php on line 3
+[27-Oct-2022 07:42:07 UTC] PHP Stack trace:
+[27-Oct-2022 07:42:07 UTC] PHP   1. {main}() C:\wamp64\www\HTML\MVC\index.php:0
+[27-Oct-2022 07:42:07 UTC] PHP   2. App->__construct() C:\wamp64\www\HTML\MVC\index.php:23
+[27-Oct-2022 07:42:07 UTC] PHP   3. Home->render() C:\wamp64\www\HTML\MVC\libreries\core\App.php:17
+[27-Oct-2022 07:42:07 UTC] PHP   4. View->render() C:\wamp64\www\HTML\MVC\Controllers\Home.php:21
+[27-Oct-2022 07:42:07 UTC] PHP   5. require() C:\wamp64\www\HTML\MVC\libreries\core\View.php:15
+[27-Oct-2022 07:42:07 UTC] PHP Fatal error:  require_once(): Failed opening required 'http://localhost/html/MVC/helpers/js/selectProducto.js' (include_path='.;C:\php\pear') in C:\wamp64\www\HTML\MVC\views\Home\index.php on line 3
+[27-Oct-2022 07:42:07 UTC] PHP Stack trace:
+[27-Oct-2022 07:42:07 UTC] PHP   1. {main}() C:\wamp64\www\HTML\MVC\index.php:0
+[27-Oct-2022 07:42:07 UTC] PHP   2. App->__construct() C:\wamp64\www\HTML\MVC\index.php:23
+[27-Oct-2022 07:42:07 UTC] PHP   3. Home->render() C:\wamp64\www\HTML\MVC\libreries\core\App.php:17
+[27-Oct-2022 07:42:07 UTC] PHP   4. View->render() C:\wamp64\www\HTML\MVC\Controllers\Home.php:21
+[27-Oct-2022 07:42:07 UTC] PHP   5. require() C:\wamp64\www\HTML\MVC\libreries\core\View.php:15
+[27-Oct-2022 07:42:09 UTC] App::archivoController-> controllers/home.php
+[27-Oct-2022 07:42:09 UTC] Controllers::loadModel()=> true HomeModel
+[27-Oct-2022 07:42:09 UTC] session name no existe Home 
+[27-Oct-2022 07:42:09 UTC] PHP Warning:  require_once(): http:// wrapper is disabled in the server configuration by allow_url_include=0 in C:\wamp64\www\HTML\MVC\views\Home\index.php on line 3
+[27-Oct-2022 07:42:09 UTC] PHP Stack trace:
+[27-Oct-2022 07:42:09 UTC] PHP   1. {main}() C:\wamp64\www\HTML\MVC\index.php:0
+[27-Oct-2022 07:42:09 UTC] PHP   2. App->__construct() C:\wamp64\www\HTML\MVC\index.php:23
+[27-Oct-2022 07:42:09 UTC] PHP   3. Home->render() C:\wamp64\www\HTML\MVC\libreries\core\App.php:17
+[27-Oct-2022 07:42:09 UTC] PHP   4. View->render() C:\wamp64\www\HTML\MVC\Controllers\Home.php:21
+[27-Oct-2022 07:42:09 UTC] PHP   5. require() C:\wamp64\www\HTML\MVC\libreries\core\View.php:15
+[27-Oct-2022 07:42:09 UTC] PHP Warning:  require_once(http://localhost/html/MVC/helpers/js/selectProducto.js): failed to open stream: no suitable wrapper could be found in C:\wamp64\www\HTML\MVC\views\Home\index.php on line 3
+[27-Oct-2022 07:42:09 UTC] PHP Stack trace:
+[27-Oct-2022 07:42:09 UTC] PHP   1. {main}() C:\wamp64\www\HTML\MVC\index.php:0
+[27-Oct-2022 07:42:09 UTC] PHP   2. App->__construct() C:\wamp64\www\HTML\MVC\index.php:23
+[27-Oct-2022 07:42:09 UTC] PHP   3. Home->render() C:\wamp64\www\HTML\MVC\libreries\core\App.php:17
+[27-Oct-2022 07:42:09 UTC] PHP   4. View->render() C:\wamp64\www\HTML\MVC\Controllers\Home.php:21
+[27-Oct-2022 07:42:09 UTC] PHP   5. require() C:\wamp64\www\HTML\MVC\libreries\core\View.php:15
+[27-Oct-2022 07:42:09 UTC] PHP Fatal error:  require_once(): Failed opening required 'http://localhost/html/MVC/helpers/js/selectProducto.js' (include_path='.;C:\php\pear') in C:\wamp64\www\HTML\MVC\views\Home\index.php on line 3
+[27-Oct-2022 07:42:09 UTC] PHP Stack trace:
+[27-Oct-2022 07:42:09 UTC] PHP   1. {main}() C:\wamp64\www\HTML\MVC\index.php:0
+[27-Oct-2022 07:42:09 UTC] PHP   2. App->__construct() C:\wamp64\www\HTML\MVC\index.php:23
+[27-Oct-2022 07:42:09 UTC] PHP   3. Home->render() C:\wamp64\www\HTML\MVC\libreries\core\App.php:17
+[27-Oct-2022 07:42:09 UTC] PHP   4. View->render() C:\wamp64\www\HTML\MVC\Controllers\Home.php:21
+[27-Oct-2022 07:42:09 UTC] PHP   5. require() C:\wamp64\www\HTML\MVC\libreries\core\View.php:15
+[27-Oct-2022 07:43:00 UTC] App::archivoController-> controllers/home.php
+[27-Oct-2022 07:43:00 UTC] Controllers::loadModel()=> true HomeModel
+[27-Oct-2022 07:43:00 UTC] session name no existe Home 
+[27-Oct-2022 07:43:00 UTC] PHP Warning:  include_once(): http:// wrapper is disabled in the server configuration by allow_url_include=0 in C:\wamp64\www\HTML\MVC\views\Home\index.php on line 3
+[27-Oct-2022 07:43:00 UTC] PHP Stack trace:
+[27-Oct-2022 07:43:00 UTC] PHP   1. {main}() C:\wamp64\www\HTML\MVC\index.php:0
+[27-Oct-2022 07:43:00 UTC] PHP   2. App->__construct() C:\wamp64\www\HTML\MVC\index.php:23
+[27-Oct-2022 07:43:00 UTC] PHP   3. Home->render() C:\wamp64\www\HTML\MVC\libreries\core\App.php:17
+[27-Oct-2022 07:43:00 UTC] PHP   4. View->render() C:\wamp64\www\HTML\MVC\Controllers\Home.php:21
+[27-Oct-2022 07:43:00 UTC] PHP   5. require() C:\wamp64\www\HTML\MVC\libreries\core\View.php:15
+[27-Oct-2022 07:43:00 UTC] PHP Warning:  include_once(http://localhost/html/MVC/helpers/js/selectProducto.js): failed to open stream: no suitable wrapper could be found in C:\wamp64\www\HTML\MVC\views\Home\index.php on line 3
+[27-Oct-2022 07:43:00 UTC] PHP Stack trace:
+[27-Oct-2022 07:43:00 UTC] PHP   1. {main}() C:\wamp64\www\HTML\MVC\index.php:0
+[27-Oct-2022 07:43:00 UTC] PHP   2. App->__construct() C:\wamp64\www\HTML\MVC\index.php:23
+[27-Oct-2022 07:43:00 UTC] PHP   3. Home->render() C:\wamp64\www\HTML\MVC\libreries\core\App.php:17
+[27-Oct-2022 07:43:00 UTC] PHP   4. View->render() C:\wamp64\www\HTML\MVC\Controllers\Home.php:21
+[27-Oct-2022 07:43:00 UTC] PHP   5. require() C:\wamp64\www\HTML\MVC\libreries\core\View.php:15
+[27-Oct-2022 07:43:00 UTC] PHP Warning:  include_once(): Failed opening 'http://localhost/html/MVC/helpers/js/selectProducto.js' for inclusion (include_path='.;C:\php\pear') in C:\wamp64\www\HTML\MVC\views\Home\index.php on line 3
+[27-Oct-2022 07:43:00 UTC] PHP Stack trace:
+[27-Oct-2022 07:43:00 UTC] PHP   1. {main}() C:\wamp64\www\HTML\MVC\index.php:0
+[27-Oct-2022 07:43:00 UTC] PHP   2. App->__construct() C:\wamp64\www\HTML\MVC\index.php:23
+[27-Oct-2022 07:43:00 UTC] PHP   3. Home->render() C:\wamp64\www\HTML\MVC\libreries\core\App.php:17
+[27-Oct-2022 07:43:00 UTC] PHP   4. View->render() C:\wamp64\www\HTML\MVC\Controllers\Home.php:21
+[27-Oct-2022 07:43:00 UTC] PHP   5. require() C:\wamp64\www\HTML\MVC\libreries\core\View.php:15
+[27-Oct-2022 07:43:00 UTC] getAllCategory-> execute 
+[27-Oct-2022 07:43:00 UTC] 1
+[27-Oct-2022 07:43:00 UTC] 5
+[27-Oct-2022 07:43:00 UTC] Mouse Genius
+[27-Oct-2022 07:43:00 UTC] AC
+[27-Oct-2022 07:43:00 UTC] 2
+[27-Oct-2022 07:43:00 UTC] 5
+[27-Oct-2022 07:43:00 UTC] Mouse gamer inalambrico
+[27-Oct-2022 07:43:00 UTC] AC
+[27-Oct-2022 07:43:00 UTC] 3
+[27-Oct-2022 07:43:00 UTC] 4
+[27-Oct-2022 07:43:00 UTC] audifonos delux
+[27-Oct-2022 07:43:00 UTC] AC
+[27-Oct-2022 07:43:00 UTC] 4
+[27-Oct-2022 07:43:00 UTC] 16
+[27-Oct-2022 07:43:00 UTC] microfono gamer
+[27-Oct-2022 07:43:00 UTC] AC
+[27-Oct-2022 07:43:00 UTC] 5
+[27-Oct-2022 07:43:00 UTC] 14
+[27-Oct-2022 07:43:00 UTC] funda de 14 pulgadas
+[27-Oct-2022 07:43:00 UTC] AC
+[27-Oct-2022 07:43:00 UTC] 6
+[27-Oct-2022 07:43:00 UTC] 1
+[27-Oct-2022 07:43:00 UTC] teclado mecanico delux
+[27-Oct-2022 07:43:00 UTC] AC
+[27-Oct-2022 07:43:00 UTC] 7
+[27-Oct-2022 07:43:00 UTC] 6
+[27-Oct-2022 07:43:00 UTC] Parlantes delux
+[27-Oct-2022 07:43:00 UTC] AC
+[27-Oct-2022 07:43:00 UTC] 8
+[27-Oct-2022 07:43:00 UTC] 13
+[27-Oct-2022 07:43:00 UTC] Cargador Huawei tipo c
+[27-Oct-2022 07:43:00 UTC] AC
+[27-Oct-2022 07:43:00 UTC] 9
+[27-Oct-2022 07:43:00 UTC] 4
+[27-Oct-2022 07:43:00 UTC] Audifonos gamer genius
+[27-Oct-2022 07:43:00 UTC] AC
+[27-Oct-2022 07:43:00 UTC] 1
+[27-Oct-2022 07:43:00 UTC] 5
+[27-Oct-2022 07:43:00 UTC] Mouse Genius
+[27-Oct-2022 07:43:00 UTC] AC
+[27-Oct-2022 07:43:00 UTC] 2
+[27-Oct-2022 07:43:00 UTC] 5
+[27-Oct-2022 07:43:00 UTC] Mouse gamer inalambrico
+[27-Oct-2022 07:43:00 UTC] AC
+[27-Oct-2022 07:43:00 UTC] 3
+[27-Oct-2022 07:43:00 UTC] 4
+[27-Oct-2022 07:43:00 UTC] audifonos delux
+[27-Oct-2022 07:43:00 UTC] AC
+[27-Oct-2022 07:43:00 UTC] 4
+[27-Oct-2022 07:43:00 UTC] 16
+[27-Oct-2022 07:43:00 UTC] microfono gamer
+[27-Oct-2022 07:43:00 UTC] AC
+[27-Oct-2022 07:43:00 UTC] 5
+[27-Oct-2022 07:43:00 UTC] 14
+[27-Oct-2022 07:43:00 UTC] funda de 14 pulgadas
+[27-Oct-2022 07:43:00 UTC] AC
+[27-Oct-2022 07:43:00 UTC] 6
+[27-Oct-2022 07:43:00 UTC] 1
+[27-Oct-2022 07:43:00 UTC] teclado mecanico delux
+[27-Oct-2022 07:43:00 UTC] AC
+[27-Oct-2022 07:43:00 UTC] 7
+[27-Oct-2022 07:43:00 UTC] 6
+[27-Oct-2022 07:43:00 UTC] Parlantes delux
+[27-Oct-2022 07:43:00 UTC] AC
+[27-Oct-2022 07:43:00 UTC] 8
+[27-Oct-2022 07:43:00 UTC] 13
+[27-Oct-2022 07:43:00 UTC] Cargador Huawei tipo c
+[27-Oct-2022 07:43:00 UTC] AC
+[27-Oct-2022 07:43:00 UTC] 9
+[27-Oct-2022 07:43:00 UTC] 4
+[27-Oct-2022 07:43:00 UTC] Audifonos gamer genius
+[27-Oct-2022 07:43:00 UTC] AC
+[27-Oct-2022 07:43:05 UTC] Controllers/viewProducto.php
+[27-Oct-2022 07:43:05 UTC] SesionController::init()
+[27-Oct-2022 07:43:05 UTC] Session::session_start
+[27-Oct-2022 07:43:05 UTC] SessionController::validateSession()
+[27-Oct-2022 07:43:05 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/viewProducto/selectProducto, url =>viewProducto
+[27-Oct-2022 07:43:05 UTC] sessionController::isPublic(): currentURL => viewProducto
+[27-Oct-2022 07:43:05 UTC] sessionController::isPublic()=> true
+[27-Oct-2022 07:43:05 UTC] SessionController::validateSession()->is public ->true public page
+[27-Oct-2022 07:43:05 UTC] Controllers::loadModel()=> true viewProductoModel
+[27-Oct-2022 07:43:05 UTC] producto seleccionado
+[27-Oct-2022 07:43:05 UTC] Controllers/viewProducto.php
+[27-Oct-2022 07:43:05 UTC] SesionController::init()
+[27-Oct-2022 07:43:05 UTC] Session::session_start
+[27-Oct-2022 07:43:05 UTC] SessionController::validateSession()
+[27-Oct-2022 07:43:05 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/viewProducto/asd, url =>viewProducto
+[27-Oct-2022 07:43:05 UTC] sessionController::isPublic(): currentURL => viewProducto
+[27-Oct-2022 07:43:05 UTC] sessionController::isPublic()=> true
+[27-Oct-2022 07:43:05 UTC] SessionController::validateSession()->is public ->true public page
+[27-Oct-2022 07:43:05 UTC] Controllers::loadModel()=> true viewProductoModel
+[27-Oct-2022 07:43:05 UTC] Controllers/viewProducto.php
+[27-Oct-2022 07:43:05 UTC] SesionController::init()
+[27-Oct-2022 07:43:05 UTC] Session::session_start
+[27-Oct-2022 07:43:05 UTC] SessionController::validateSession()
+[27-Oct-2022 07:43:05 UTC] sessionController::getCurrentPage(): actualLink =>/html/MVC/viewProducto/asd, url =>viewProducto
+[27-Oct-2022 07:43:05 UTC] sessionController::isPublic(): currentURL => viewProducto
+[27-Oct-2022 07:43:05 UTC] sessionController::isPublic()=> true
+[27-Oct-2022 07:43:05 UTC] SessionController::validateSession()->is public ->true public page
+[27-Oct-2022 07:43:05 UTC] Controllers::loadModel()=> true viewProductoModel
+[27-Oct-2022 07:47:24 UTC] App::archivoController-> controllers/home.php
+[27-Oct-2022 07:47:24 UTC] Controllers::loadModel()=> true HomeModel
+[27-Oct-2022 07:47:24 UTC] session name no existe Home 
+[27-Oct-2022 07:47:24 UTC] getAllCategory-> execute 
+[27-Oct-2022 07:47:24 UTC] 1
+[27-Oct-2022 07:47:24 UTC] 5
+[27-Oct-2022 07:47:24 UTC] Mouse Genius
+[27-Oct-2022 07:47:24 UTC] AC
+[27-Oct-2022 07:47:24 UTC] 2
+[27-Oct-2022 07:47:24 UTC] 5
+[27-Oct-2022 07:47:24 UTC] Mouse gamer inalambrico
+[27-Oct-2022 07:47:24 UTC] AC
+[27-Oct-2022 07:47:24 UTC] 3
+[27-Oct-2022 07:47:24 UTC] 4
+[27-Oct-2022 07:47:24 UTC] audifonos delux
+[27-Oct-2022 07:47:24 UTC] AC
+[27-Oct-2022 07:47:24 UTC] 4
+[27-Oct-2022 07:47:24 UTC] 16
+[27-Oct-2022 07:47:24 UTC] microfono gamer
+[27-Oct-2022 07:47:24 UTC] AC
+[27-Oct-2022 07:47:24 UTC] 5
+[27-Oct-2022 07:47:24 UTC] 14
+[27-Oct-2022 07:47:24 UTC] funda de 14 pulgadas
+[27-Oct-2022 07:47:24 UTC] AC
+[27-Oct-2022 07:47:24 UTC] 6
+[27-Oct-2022 07:47:24 UTC] 1
+[27-Oct-2022 07:47:24 UTC] teclado mecanico delux
+[27-Oct-2022 07:47:24 UTC] AC
+[27-Oct-2022 07:47:24 UTC] 7
+[27-Oct-2022 07:47:24 UTC] 6
+[27-Oct-2022 07:47:24 UTC] Parlantes delux
+[27-Oct-2022 07:47:24 UTC] AC
+[27-Oct-2022 07:47:24 UTC] 8
+[27-Oct-2022 07:47:24 UTC] 13
+[27-Oct-2022 07:47:24 UTC] Cargador Huawei tipo c
+[27-Oct-2022 07:47:24 UTC] AC
+[27-Oct-2022 07:47:24 UTC] 9
+[27-Oct-2022 07:47:24 UTC] 4
+[27-Oct-2022 07:47:24 UTC] Audifonos gamer genius
+[27-Oct-2022 07:47:24 UTC] AC
+[27-Oct-2022 07:47:24 UTC] 1
+[27-Oct-2022 07:47:24 UTC] 5
+[27-Oct-2022 07:47:24 UTC] Mouse Genius
+[27-Oct-2022 07:47:24 UTC] AC
+[27-Oct-2022 07:47:24 UTC] 2
+[27-Oct-2022 07:47:24 UTC] 5
+[27-Oct-2022 07:47:24 UTC] Mouse gamer inalambrico
+[27-Oct-2022 07:47:24 UTC] AC
+[27-Oct-2022 07:47:24 UTC] 3
+[27-Oct-2022 07:47:24 UTC] 4
+[27-Oct-2022 07:47:24 UTC] audifonos delux
+[27-Oct-2022 07:47:24 UTC] AC
+[27-Oct-2022 07:47:24 UTC] 4
+[27-Oct-2022 07:47:24 UTC] 16
+[27-Oct-2022 07:47:24 UTC] microfono gamer
+[27-Oct-2022 07:47:24 UTC] AC
+[27-Oct-2022 07:47:24 UTC] 5
+[27-Oct-2022 07:47:24 UTC] 14
+[27-Oct-2022 07:47:24 UTC] funda de 14 pulgadas
+[27-Oct-2022 07:47:24 UTC] AC
+[27-Oct-2022 07:47:24 UTC] 6
+[27-Oct-2022 07:47:24 UTC] 1
+[27-Oct-2022 07:47:24 UTC] teclado mecanico delux
+[27-Oct-2022 07:47:24 UTC] AC
+[27-Oct-2022 07:47:24 UTC] 7
+[27-Oct-2022 07:47:24 UTC] 6
+[27-Oct-2022 07:47:24 UTC] Parlantes delux
+[27-Oct-2022 07:47:24 UTC] AC
+[27-Oct-2022 07:47:24 UTC] 8
+[27-Oct-2022 07:47:24 UTC] 13
+[27-Oct-2022 07:47:24 UTC] Cargador Huawei tipo c
+[27-Oct-2022 07:47:24 UTC] AC
+[27-Oct-2022 07:47:24 UTC] 9
+[27-Oct-2022 07:47:24 UTC] 4
+[27-Oct-2022 07:47:24 UTC] Audifonos gamer genius
+[27-Oct-2022 07:47:24 UTC] AC
+[27-Oct-2022 07:50:37 UTC] App::archivoController-> controllers/home.php
+[27-Oct-2022 07:50:37 UTC] Controllers::loadModel()=> true HomeModel
+[27-Oct-2022 07:50:37 UTC] session name no existe Home 
+[27-Oct-2022 07:50:37 UTC] getAllCategory-> execute 
+[27-Oct-2022 07:50:37 UTC] 1
+[27-Oct-2022 07:50:37 UTC] 5
+[27-Oct-2022 07:50:37 UTC] Mouse Genius
+[27-Oct-2022 07:50:37 UTC] AC
+[27-Oct-2022 07:50:37 UTC] 2
+[27-Oct-2022 07:50:37 UTC] 5
+[27-Oct-2022 07:50:37 UTC] Mouse gamer inalambrico
+[27-Oct-2022 07:50:37 UTC] AC
+[27-Oct-2022 07:50:37 UTC] 3
+[27-Oct-2022 07:50:37 UTC] 4
+[27-Oct-2022 07:50:37 UTC] audifonos delux
+[27-Oct-2022 07:50:37 UTC] AC
+[27-Oct-2022 07:50:37 UTC] 4
+[27-Oct-2022 07:50:37 UTC] 16
+[27-Oct-2022 07:50:37 UTC] microfono gamer
+[27-Oct-2022 07:50:37 UTC] AC
+[27-Oct-2022 07:50:37 UTC] 5
+[27-Oct-2022 07:50:37 UTC] 14
+[27-Oct-2022 07:50:37 UTC] funda de 14 pulgadas
+[27-Oct-2022 07:50:37 UTC] AC
+[27-Oct-2022 07:50:37 UTC] 6
+[27-Oct-2022 07:50:37 UTC] 1
+[27-Oct-2022 07:50:37 UTC] teclado mecanico delux
+[27-Oct-2022 07:50:37 UTC] AC
+[27-Oct-2022 07:50:37 UTC] 7
+[27-Oct-2022 07:50:37 UTC] 6
+[27-Oct-2022 07:50:37 UTC] Parlantes delux
+[27-Oct-2022 07:50:37 UTC] AC
+[27-Oct-2022 07:50:37 UTC] 8
+[27-Oct-2022 07:50:37 UTC] 13
+[27-Oct-2022 07:50:37 UTC] Cargador Huawei tipo c
+[27-Oct-2022 07:50:37 UTC] AC
+[27-Oct-2022 07:50:37 UTC] 9
+[27-Oct-2022 07:50:37 UTC] 4
+[27-Oct-2022 07:50:37 UTC] Audifonos gamer genius
+[27-Oct-2022 07:50:37 UTC] AC
+[27-Oct-2022 07:50:37 UTC] 1
+[27-Oct-2022 07:50:37 UTC] 5
+[27-Oct-2022 07:50:37 UTC] Mouse Genius
+[27-Oct-2022 07:50:37 UTC] AC
+[27-Oct-2022 07:50:37 UTC] 2
+[27-Oct-2022 07:50:37 UTC] 5
+[27-Oct-2022 07:50:37 UTC] Mouse gamer inalambrico
+[27-Oct-2022 07:50:37 UTC] AC
+[27-Oct-2022 07:50:37 UTC] 3
+[27-Oct-2022 07:50:37 UTC] 4
+[27-Oct-2022 07:50:37 UTC] audifonos delux
+[27-Oct-2022 07:50:37 UTC] AC
+[27-Oct-2022 07:50:37 UTC] 4
+[27-Oct-2022 07:50:37 UTC] 16
+[27-Oct-2022 07:50:37 UTC] microfono gamer
+[27-Oct-2022 07:50:37 UTC] AC
+[27-Oct-2022 07:50:37 UTC] 5
+[27-Oct-2022 07:50:37 UTC] 14
+[27-Oct-2022 07:50:37 UTC] funda de 14 pulgadas
+[27-Oct-2022 07:50:37 UTC] AC
+[27-Oct-2022 07:50:37 UTC] 6
+[27-Oct-2022 07:50:37 UTC] 1
+[27-Oct-2022 07:50:37 UTC] teclado mecanico delux
+[27-Oct-2022 07:50:37 UTC] AC
+[27-Oct-2022 07:50:37 UTC] 7
+[27-Oct-2022 07:50:37 UTC] 6
+[27-Oct-2022 07:50:37 UTC] Parlantes delux
+[27-Oct-2022 07:50:37 UTC] AC
+[27-Oct-2022 07:50:37 UTC] 8
+[27-Oct-2022 07:50:37 UTC] 13
+[27-Oct-2022 07:50:37 UTC] Cargador Huawei tipo c
+[27-Oct-2022 07:50:37 UTC] AC
+[27-Oct-2022 07:50:37 UTC] 9
+[27-Oct-2022 07:50:37 UTC] 4
+[27-Oct-2022 07:50:37 UTC] Audifonos gamer genius
+[27-Oct-2022 07:50:37 UTC] AC
+[27-Oct-2022 07:54:37 UTC] App::archivoController-> controllers/home.php
+[27-Oct-2022 07:54:37 UTC] Controllers::loadModel()=> true HomeModel
+[27-Oct-2022 07:54:37 UTC] session name no existe Home 
+[27-Oct-2022 07:54:37 UTC] getAllCategory-> execute 
+[27-Oct-2022 07:54:37 UTC] 1
+[27-Oct-2022 07:54:37 UTC] 5
+[27-Oct-2022 07:54:37 UTC] Mouse Genius
+[27-Oct-2022 07:54:37 UTC] AC
+[27-Oct-2022 07:54:37 UTC] 2
+[27-Oct-2022 07:54:37 UTC] 5
+[27-Oct-2022 07:54:37 UTC] Mouse gamer inalambrico
+[27-Oct-2022 07:54:37 UTC] AC
+[27-Oct-2022 07:54:37 UTC] 3
+[27-Oct-2022 07:54:37 UTC] 4
+[27-Oct-2022 07:54:37 UTC] audifonos delux
+[27-Oct-2022 07:54:37 UTC] AC
+[27-Oct-2022 07:54:37 UTC] 4
+[27-Oct-2022 07:54:37 UTC] 16
+[27-Oct-2022 07:54:37 UTC] microfono gamer
+[27-Oct-2022 07:54:37 UTC] AC
+[27-Oct-2022 07:54:37 UTC] 5
+[27-Oct-2022 07:54:37 UTC] 14
+[27-Oct-2022 07:54:37 UTC] funda de 14 pulgadas
+[27-Oct-2022 07:54:37 UTC] AC
+[27-Oct-2022 07:54:37 UTC] 6
+[27-Oct-2022 07:54:37 UTC] 1
+[27-Oct-2022 07:54:37 UTC] teclado mecanico delux
+[27-Oct-2022 07:54:37 UTC] AC
+[27-Oct-2022 07:54:37 UTC] 7
+[27-Oct-2022 07:54:37 UTC] 6
+[27-Oct-2022 07:54:37 UTC] Parlantes delux
+[27-Oct-2022 07:54:37 UTC] AC
+[27-Oct-2022 07:54:37 UTC] 8
+[27-Oct-2022 07:54:37 UTC] 13
+[27-Oct-2022 07:54:37 UTC] Cargador Huawei tipo c
+[27-Oct-2022 07:54:37 UTC] AC
+[27-Oct-2022 07:54:37 UTC] 9
+[27-Oct-2022 07:54:37 UTC] 4
+[27-Oct-2022 07:54:37 UTC] Audifonos gamer genius
+[27-Oct-2022 07:54:37 UTC] AC
+[27-Oct-2022 07:54:37 UTC] 1
+[27-Oct-2022 07:54:37 UTC] 5
+[27-Oct-2022 07:54:37 UTC] Mouse Genius
+[27-Oct-2022 07:54:37 UTC] AC
+[27-Oct-2022 07:54:37 UTC] 2
+[27-Oct-2022 07:54:37 UTC] 5
+[27-Oct-2022 07:54:37 UTC] Mouse gamer inalambrico
+[27-Oct-2022 07:54:37 UTC] AC
+[27-Oct-2022 07:54:37 UTC] 3
+[27-Oct-2022 07:54:37 UTC] 4
+[27-Oct-2022 07:54:37 UTC] audifonos delux
+[27-Oct-2022 07:54:37 UTC] AC
+[27-Oct-2022 07:54:37 UTC] 4
+[27-Oct-2022 07:54:37 UTC] 16
+[27-Oct-2022 07:54:37 UTC] microfono gamer
+[27-Oct-2022 07:54:37 UTC] AC
+[27-Oct-2022 07:54:37 UTC] 5
+[27-Oct-2022 07:54:37 UTC] 14
+[27-Oct-2022 07:54:37 UTC] funda de 14 pulgadas
+[27-Oct-2022 07:54:37 UTC] AC
+[27-Oct-2022 07:54:37 UTC] 6
+[27-Oct-2022 07:54:37 UTC] 1
+[27-Oct-2022 07:54:37 UTC] teclado mecanico delux
+[27-Oct-2022 07:54:37 UTC] AC
+[27-Oct-2022 07:54:37 UTC] 7
+[27-Oct-2022 07:54:37 UTC] 6
+[27-Oct-2022 07:54:37 UTC] Parlantes delux
+[27-Oct-2022 07:54:37 UTC] AC
+[27-Oct-2022 07:54:37 UTC] 8
+[27-Oct-2022 07:54:37 UTC] 13
+[27-Oct-2022 07:54:37 UTC] Cargador Huawei tipo c
+[27-Oct-2022 07:54:37 UTC] AC
+[27-Oct-2022 07:54:37 UTC] 9
+[27-Oct-2022 07:54:37 UTC] 4
+[27-Oct-2022 07:54:37 UTC] Audifonos gamer genius
+[27-Oct-2022 07:54:37 UTC] AC

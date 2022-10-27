@@ -1,6 +1,6 @@
 <?php
 
-Class Dashboard Extends Controllers{
+Class Dashboard Extends sessionController{
 
 public function __construct(){
     parent::__construct();

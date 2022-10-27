@@ -18,10 +18,12 @@ Class LoginModel extends Model{
             //desencriptar la contraseña desde la base de datos
             error_log('user: '.$this->user);
             //error_log('pass: '.$password);
-            $query = $this->prepare("SELECT cont.id_contrasenia, user.nombre_usuario, cont.nombre_contrasenia, user.id_roles
+            $query = $this->prepare("SELECT cont.id_contrasenia, user.nombre_usuario, cont.nombre_contrasenia, rol.nombre_roles
             FROM `usuario` user
            INNER JOIN `contrasenia` cont
            ON cont.id_usuario = user.id_usuario
+           INNER JOIN `roles` rol
+           ON user.id_roles = rol.id_roles
            WHERE user.nombre_usuario = :user");
            $query->execute(['user'=> $user]); 
            $resultado = $query->fetchAll();

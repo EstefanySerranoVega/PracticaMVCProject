@@ -19,18 +19,10 @@ Class viewProducto Extends sessionController{
         //return print_r($producto );
     }
     
-    public function selectProducto(){
-       // $producto = new ProductoModel();
-    
-        error_log('view select producto carga');
-        $this->existGET('');
-        error_log('la variable get sí es: ');
-        //$p = $producto->get($this->id);
-        if(isset($_GET['ID_PRODUCTO'])){
-            error_log('validando id');
-        }else{
-            error_log('else validacion id');}
-    }
+ public function selectProducto(){
+    error_log('producto seleccionado');
+    $this->render();
+}
 }
 
 ?>

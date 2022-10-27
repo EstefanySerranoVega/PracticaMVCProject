@@ -79,7 +79,7 @@ function newUser(){
             
                 $usuario->setPersona($persona->getId());
                 //$usuario->setPersona(23);
-                $usuario->setRoles(1);
+                $usuario->setRoles(2);
                 $usuario->setNombre($username);
                 $usuario->setEstado('AC');
                 $usuario->setCreacion(Date('Y-m-d H:i:s'));

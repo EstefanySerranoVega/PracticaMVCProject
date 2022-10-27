@@ -31,7 +31,6 @@ Class Login Extends SessionController{
             if($user != NULL){
                 error_log('Login::authenticate() passed');
                 $this->initialize($user);
-                $this->redirect('home');
             }else{
                 error_log('Login::authenticate() error params authenticate');
                 //$this->redirect('',['error' => ErrorMessages::ERROR_GENERICO]);

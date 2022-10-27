@@ -51,7 +51,7 @@ public function getAll(){
     try{
         $query = $this->query(
             'SELECT * FROM `roles`WHERE estado_roles = "AC"');
-        while($p = $query->Fetch()){
+        while($p = $query->fetch(PDO::FETCH_ASSOC)){
             $item = new RolesModel();
 
             $item->from($p);
@@ -118,11 +118,11 @@ public function update(){
 }//fin update
 public function from($array){
     
-    $this->idRoles = $array[0];
-    $this->accesos = $array[1];
-    $this->nombreRoles = $array[2];
-    $this->creacion = $array[3];
-    $this->estado = $array[4];
+    $this->idRoles = $array['ID_ROLES'];
+    $this->accesos = $array['ID_ACCESOS'];
+    $this->nombreRoles = $array['NOMBRE_ROLES'];
+    $this->creacion = $array['CREACION_ROLES'];
+    $this->estado = $array['ESTADO_ROLES'];
 }//fin from
 
 //SETTERS

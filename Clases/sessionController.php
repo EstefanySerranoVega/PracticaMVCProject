@@ -55,13 +55,15 @@ public function validateSesion(){
 
         if($this->existSesion()){
         //obtenemos el rol para determinar el acceso a la pagina correspondiente
+        $this->username = $this->session->getCurrentUser();
+        $this->rolUser = $this->session->getCurrentRol();
                 error_log("sessionController::validateSession(): username:" . $this->username . " - role: " . $this->rolUser);
-                $rol = $this->rolUser;
+                $rol = $this->session->getCurrentRol();
             
                 //si es publica
                 if($this->isPublic()){
                         error_log( "SessionController::validateSession() => sitio público, redirige al main de cada rol" );
-                        $this->redirectDefaultSiteByRole($rol);
+                        $this->redirect($rol);
                    
                 //no es publica
                 }else {
@@ -72,7 +74,7 @@ public function validateSesion(){
                         }else{
                                 error_log( "SessionController::validateSession() => no autorizado, redirige al main de cada rol" );
                                 
-                                $this->redirectDefaultSiteByRole($rol);
+                                $this->redirect($rol);
                         }
                 }
         }else{//no existe la sesion
@@ -119,7 +121,11 @@ public function initialize($user){
         $this->userId = $user[0][0];
         $this->rolUser = $user[0][3];
         error_log("sessionController::initilize(): user: ".$this->username);
+        error_log("sessionController::initilize(): id: ".$this->userId);
+        error_log("sessionController::initilize(): rol: ".$this->rolUser);
         $this->session->setCurrentUser($this->username);
+        $this->session->setCurrentIdUser($this->userId);
+        $this->session->setCurrentRol($this->rolUser);
         $this->authorizeAccess($this->rolUser);
 }
 
@@ -153,13 +159,16 @@ public function getCurrentPage(){
 
 
 private function redirectDefaultSiteByRole($rol){
+        error_log('redirectDefaultSiteByRole rol: '.$rol);
         $url = '';
         for($i = 0; $i<sizeOf($this->sites);$i++){
                 if($this->sites[$i]['role']===$rol){
-                        $url = '/MVC/'.$this->sites[$i]['site'];
+                        $url = '/HTML/MVC/'.$this->sites[$i]['site'];
+                        error_log('url es: '.$url);
                         break;
                 }
         }
+
         header('Location: '.$url);
 }//fin redirect default site by role
 
@@ -170,32 +179,46 @@ private function isAuthorized($rol){
         $currentURL = preg_replace('/\?.*/','',$currentURL);
 
         for($i = 0; $i < sizeOf($this->sites);$i++){
-                if($currentURL === $this->sites[$i]['site'] && $this->sites[$i]['role'] === $rol){
+                if($currentURL === $this->sites[$i]['site'] && $this->sites[$i]['role'] === $rol ){
+                  
                         error_log('sessionController::isAuthorized()=> true');
                         return true;
                 }
                 error_log('sessionController::isAuthorized()=> false');
-                return false;
+               
 
-        }
+        } 
+        return false; error_log('Site: '.$this->site[$i]['site']);
+
 }
 
 
 public function authorizeAccess($rol){
+        error_log('authorizedAccess rol es: '.$rol);
         switch($rol){
                 case 'user':
-                        $this->redirect($this->defaultSites['user'],[]);
+                        error_log('rol es: user');
+                        $this->redirect($rol);
                 break;
                 case 'admin':
-                        $this->redirect($this->defaultSites['admin'],[]);
+                        error_log('rol es: admin');
+                        $this->redirect('admin');
                 break;
                 case 'gral':
-                        $this->redirect($this->defaultSites['gral'],[]);
+                        error_log('rol es: gral');
+                        $this->redirect($this->defaultSites['gral']);
+                break;
+                case 'cliente':
+                        error_log('rol es: cliente');
+                        $this->redirect($this->defaultSites['cliente']);
                 break;
                 case '':
-                        $this->redirect($this->defaultSites[''],[]);
+                        error_log('rol es: empty');
+                        $this->redirect($this->defaultSites['']);
                 break;
                 default:
+                error_log('rol no encontrado, rol: '.$rol);
+                break;
         }
 }
 public function logout(){

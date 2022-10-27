@@ -67,13 +67,15 @@ require_once('Clases/HomeModel.php');
               
                     <div class="card-producto" >
                     <?php  array_push($items,$producto[$i]);
-                    $id = $producto[$i]['ID_PRODUCTO'];
-                    var_dump($id);?>
+                    $id = $producto[$i]['ID_PRODUCTO'];?>
+                    <a href="<?php echo URL_RAIZ.SCRIPT;?>selectProducto" class="link-selectProducto">
+
                     <div class="img-producto">
                         <img src="<?php echo URL_RAIZ.IMG.$producto[$i]['IMG_PRODUCTO'];?>" alt="">
                         
                     </div>
-                    <form action="<?php echo URL_RAIZ;?>viewProducto/selectProducto/id=<?php echo $producto[$i]['ID_PRODUCTO']?>" class="info-producto" method="GET">
+                    </a>
+                    <form action="<?php echo URL_RAIZ;?>carrito/addCarrito/id=<?php echo $producto[$i]['ID_PRODUCTO']?>" class="info-producto" method="GET">
                     <div class="name-producto info-text">
                             <?php echo $producto[$i]['NOMBRE_PRODUCTO'].'<br>'; ?>
                         </div>
@@ -138,6 +140,7 @@ require_once('Clases/HomeModel.php');
         </div>
         <footer class="footer"></footer>
     </div>
+    <script src="<?php echo URL_RAIZ.SCRIPT;?>selectProducto.js"></script>
 </body>
 
 </html>

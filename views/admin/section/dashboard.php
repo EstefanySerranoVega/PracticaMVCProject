@@ -1,5 +1,5 @@
 <?php
-require_once('Models/DashboardModel.php');
+require_once('Clases/DashboardModel.php');
 
 ?>
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ require_once('Models/DashboardModel.php');
             <div class="menu">
                 <ul>
                     <li>
-                        <a href="">Ver la tienda</a>
+                        <a href="<?php echo URL_RAIZ;?>">Ver la tienda</a>
                     </li>
                     <li>
                         <a href="">Vista Cliente</a>

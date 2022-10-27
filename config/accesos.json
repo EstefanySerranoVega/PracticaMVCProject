@@ -32,18 +32,18 @@
     }, {
 
         "site": "admin",
-        "access": "public",
-        "role": ""
+        "access": "private",
+        "role": "admin"
     }, {
 
         "site": "dashboard",
-        "access": "public",
-        "role": ""
+        "access": "private",
+        "role": "admin"
     }, {
 
         "site": "sectionProductos",
-        "access": "public",
-        "role": ""
+        "access": "private",
+        "role": "admin"
     }, {
 
         "site": "viewProducto",
@@ -54,6 +54,7 @@
     "default-sites": {
         "user": "home",
         "admin": "admin",
+        "cliente": "home",
         "": "login"
     }
 

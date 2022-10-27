@@ -57,7 +57,7 @@ class UserModel extends Model implements IModel{
         try{
             $query = $this->query(
                 'SELECT * FROM `usuario` WHERE estado_usuario = '.$this->estado);
-            while($p = $query->fetch()){
+            while($p = $query->fetch(PDO::FETCH_ASSOC)){
 
                 $item = new UserModel();
 
@@ -129,12 +129,12 @@ class UserModel extends Model implements IModel{
     }//fin update
 
     public function from($array){
-        $this->idUser = $array[0];
-        $this->persona = $array[1];
-        $this->roles = $array[2];
-        $this->nameUser = $array[3];
-        $this->estado = $array[4];
-        $this->creacion = $array[5];
+        $this->idUser = $array['ID_USUARIO'];
+        $this->persona = $array['ID_PERSONA'];
+        $this->roles = $array['ID_ROLES'];
+        $this->nameUser = $array['NOMBRE_USUARIO'];
+        $this->estado = $array['ESTADO_USUARIO'];
+        $this->creacion = $array['CREACION_USUARIO'];
     }
   
 
