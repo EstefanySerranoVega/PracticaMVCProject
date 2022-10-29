@@ -1,1 +1,1 @@
-let btn = document.getElementsByClassName('link-selectProducto');
+//let btn = document.getElementsByClassName('link-selectProducto');

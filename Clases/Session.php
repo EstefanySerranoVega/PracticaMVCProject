@@ -8,26 +8,21 @@ function __construct(){
         session_start();
         error_log('Session::session_start');
     }
-
 }
+
 public function setCurrentUser($user){
-    error_log('Session::setCurrentUser '.$user);
     $_SESSION[$this->username ] = $user;
-    error_log('Session::setCurrentUser variable username'.$_SESSION[$this->username]);
 }
 public function setCurrentIdUser($id){
     $_SESSION[$this->idUser] = $id;
-    error_log('Session::setCurrentUser variable id user '.$_SESSION[$this->idUser]);
  
 }
 public function setcurrentRol($rol) {
     $_SESSION[$this->rol] = $rol;
-    error_log('Session::setCurrentUser variable rol '.$_SESSION[$this->rol]);
  
 }
 public function getCurrentUser(){
-    error_log('Session::getCurrentUser sesionName: '.$_SESSION[$this->username]);
-    return $_SESSION[$this->username];
+   return $_SESSION[$this->username];
 }
 public function getCurrentIdUser(){
    return $_SESSION[$this->idUser];

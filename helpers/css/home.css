@@ -129,7 +129,7 @@
         padding: 0.8rem;
     }
     
-    .img-producto {
+    .image-producto {
         width: 98%;
         height: 60%;
         display: flex;
@@ -140,7 +140,7 @@
         overflow: hidden;
     }
     
-    .img-producto img {
+    .image-producto .img-producto {
         height: 100%;
         border-radius: 0.8rem;
     }

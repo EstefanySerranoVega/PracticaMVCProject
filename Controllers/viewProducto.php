@@ -1,28 +1,27 @@
 <?php
-require_once('Clases/sessionController.php');
+require_once('libreries/core/Controllers.php');
+require_once('Models/ProductoModel.php');
 
 
-Class viewProducto Extends sessionController{
+Class viewProducto Extends Controllers{
 
     private $user;
+    private $model;
+    private $producto;
     public function __construct(){
 
         parent::__construct();
-
        // $this->user->getUserSesionData();
     }
 
-
     public function render(){
         $this->view->render('Home/viewProducto');
+        error_log('la vista se cargó exitosamente');
 
         //return print_r($producto );
     }
     
- public function selectProducto(){
-    error_log('producto seleccionado');
-    $this->render();
-}
+
 }
 
 ?>

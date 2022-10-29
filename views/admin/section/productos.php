@@ -135,6 +135,7 @@ require_once('Clases/sectionProductosModel.php');
                     <?php
         $productos = new sectionProductosModel(); 
         $producto = $productos->getAllProductos();
+        
     ?>
                     <div class="body-table">
                     <?php

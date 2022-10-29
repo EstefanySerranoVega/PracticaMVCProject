@@ -1,6 +1,6 @@
 <?php
-
-Class Dashboard Extends sessionController{
+require_once('Admin.php');
+Class Dashboard extends Admin{
 
 public function __construct(){
     parent::__construct();
@@ -8,7 +8,7 @@ public function __construct(){
 
 
 public function render(){
-    $this->view->render('admin/section/dashboard',[]);
+    $this->redirect('admin');
 }
 
 public function newCategoria(){

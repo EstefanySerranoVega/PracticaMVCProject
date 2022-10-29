@@ -3,6 +3,7 @@ require_once('View.php');
 require_once('Clases/MessagesManager.php');
 
 Class Controllers {
+    private $model;
     function __construct(){
       $this->view = new View();
     }//fin __construct
@@ -13,16 +14,14 @@ Class Controllers {
         
             if(file_exists($rutaModel)){
                 require_once($rutaModel);
+                error_log('model es: '.$rutaModel);
                 $this->model = new $model();
-                error_log('Controllers::loadModel()=> true '.$model);
             }else{
-                error_log('Controllers::loadModel()=> false [no existe] => '.$rutaModel);
             }
 
     }//fin load model
 
     public function existPOST($params){
-       //error_log('existPOST->params-> '.$params);
 
         foreach($params as $param){
             if(!isset($_POST[$param])){
@@ -57,22 +56,22 @@ Class Controllers {
     }
 
     public function redirect($ruta,$mensajes = []){
-        error_log('60 Controllers::redirect() values $ruta is-> '.$ruta);
+        error_log('Controllers::redirect() values $ruta is-> '.$ruta);
         $data = [];
         $params = '';
         foreach($mensajes as $key => $mensaje){
             array_push($data,$key.'='.$mensaje);
             
-        error_log('66 Controllers::redirect()->key=> '.$key.' messages=> '.$mensaje);
+        error_log('Controllers::redirect()->key=> '.$key.' messages=> '.$mensaje);
         }
        
         $params = join('&', $data);
 
         if(empty($params)){
-            error_log('72 params is empty '.$params);
+            error_log('params is empty '.$params);
             $params = '?'.$params;
         }
-        error_log('74 Controllers::redirect()=> ruta: '.$ruta.' params: '.$params);
+        error_log('Controllers::redirect()=> ruta: '.$ruta.' params: '.$params);
         header('Location: '.CONSTANT('URL_RAIZ').$ruta.'/'.$params);
     }
 

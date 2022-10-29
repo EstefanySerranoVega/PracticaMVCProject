@@ -31,6 +31,11 @@
         "role": ""
     }, {
 
+        "site": "carrito",
+        "access": "public",
+        "role": ""
+    }, {
+
         "site": "admin",
         "access": "private",
         "role": "admin"

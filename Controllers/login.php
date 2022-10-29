@@ -2,7 +2,7 @@
 require_once('clases/sessionController.php');
 
 Class Login Extends SessionController{
-
+    private $model;
     public function __construct(){
         parent::__construct();
     }
@@ -25,7 +25,7 @@ Class Login Extends SessionController{
             }
                 error_log('username: '.$username);
                 error_log('password: '.$password);
-
+            $this->model = new loginModel();
             $user = $this->model->login($username,$password);
 
             if($user != NULL){

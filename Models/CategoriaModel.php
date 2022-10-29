@@ -55,7 +55,7 @@ public function getAll(){
         $query = $this->query('SELECT * FROM `categoria`
         WHERE estado_categoria ="AC"');
 
-        while($item = $query->fetch()){
+        while($item = $query->fetch(PDO::FETCH_ASSOC)){
             $category = new CategoriaModel();
             $category->from($item);
   
@@ -127,10 +127,10 @@ public function update(){
     }
 }//fin update
 public function from($array = [] ){
-    $this->idCategoria = $array[0];
-    $this->nombreCategoria = $array[1];
-    $this->creacion = $array[2];
-    $this->estado = $array[3];
+    $this->idCategoria = $array['ID_CATEGORIA'];
+    $this->nombreCategoria = $array['NOMBRE_CATEGORIA'];
+    $this->creacion = $array['CREACION_CATEGORIA'];
+    $this->estado = $array['ESTADO_CATEGORIA'];
 }//fin array
 
     //SETTERS
@@ -200,6 +200,15 @@ public function getAllLimit($n){
         error_log('ERROR::CategoriaModel::getAllLimit()-> '.$e);
         return false;
     }
+
+}
+
+public function getNameById($id){
+    $query = $this->query(
+        'SELECT nombre_categoria from categoria where id_categoria ='.$id );
+        
+        $name = $query->fetchAll(PDO::FETCH_ASSOC);
+        return $name[0]['nombre_categoria'];
 
 }
 

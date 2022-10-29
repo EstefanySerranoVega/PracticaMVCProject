@@ -1,4 +1,15 @@
-<?php
+<?php 
+
+require_once('Clases/viewProductoModel.php');
+if(isset($_GET['id'])){
+    $id = $_GET['id'];
+    $producto = new viewProductoModel();
+    $p =$producto->getCurrentProduct($id);
+    $ps = $producto->getSimilarProductos();
+}else{
+    error_log('no existe');
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -17,20 +28,19 @@
 <div class="container">
     <div class="section-select_producto">
         <div class="img-producto_select">
-            <img src="" alt="">
+            <img src="<?php echo URL_RAIZ.IMG.$p['imagen'] ?>" alt="" class="img">
+            
         </div>
         <div class="info-producto_select">
-            <form action="<?php echo URL_RAIZ;?>sendCarrito">
-                <label for="name-categoria">Categoria</label>
-                <label for="name-producto">
-                    <h1>Nombre del producto</h1>
-                </label>
-                <label for="desc">Precio de venta: por unidad</label>
-                <label for="precio">Precio</label>
+            <form action="<?php echo URL_RAIZ;?>carrito/addCarrito" method="post">
+            <input type="text" name="categoria-producto" id="categoria-producto" value ="<?php echo $p['categoria']?>" readonly>
+            <input type="text" name="nombre-producto" id="nombre-producto" value="<?php echo $p['name'] ?>" readonly>
+            <input type="text" name="codigo-producto" id="codigo-producto" value="<?php echo $p['codigo'] ?>" readonly> 
+            <label for="desc">Precio de venta: por unidad</label>
+                <input type="text" name="precio-producto" id="precio-producto" value="<?php echo $p['precio'].'Bs';?>" readonly>
                 <label for="cantidad">Cantidad:</label>
-                <input type="number" name="cantidad" id="cantidad">
+                <input type="number" name="cantidad-producto" id="cantidad-producto" value="1">
                 <input type="submit" value="AGREGAR AL CARRITO">
-                <input type="submit" value="COMPRAR AHORA!">
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus nemo reiciendis ut totam recusandae quibusdam vitae quas, quasi fugiat. Asperiores nulla sint delectus quasi facilis, voluptatum fuga error quam vero!</p>
             </form>
         </div>
@@ -40,73 +50,36 @@
             <h1>Explora productos similares</h1>
         </div>
         <div class="section-similar_products">
-        <div class="card-producto" >
-                    <div class="img-producto">
-                        <img src="asd" alt="">
+        <?php
+      $items =[];
+                    for($i=0;$i<count($ps);$i++){?>
+                        
+              <form action="<?php echo URL_RAIZ;?>carrito/addProducto" class="card-producto" method="post">
+              <a href="<?php echo URL_RAIZ;?>viewProducto" class="">
+                    <div class="image-producto">
+                        <input type="image" src="<?php echo URL_RAIZ.IMG.$ps[$i]['imagen'];?>" alt=""name="img-producto" id="img-producto">
                     </div>
-                    <form action="<?php echo URL_RAIZ;?>carrito/addProducto" class="info-producto">
-                        <div class="name-producto info-text">
-                            <label for="">Nombre del producto</label>
-                        </div>
+                    </a>
+                <div class="info-productos">
+
+                <div class="name-producto info-text">
+                   <input type="text" name="nombre-producto" id="nombre-producto" value="<?php echo $ps['name']?>" readonly>
+                   <input type="text" name="categoria-producto" id="categoria-producto" value="<?php echo $ps['cat']; ?>"readonly> 
+                </div>
                         <div class="cod-producto info-text">
-                            <label for="codigo">Codigo:</label>
+                            <label for="codigo" name="codigo">Codigo:</label>
+                            <input type="text" name="codigo-producto" id="codigo-producto" value="<?php echo $ps[$i]['codigo']; ?>"readonly>
+  
                         </div>
                         <div class="precio-producto info-text">
                             <label for="precio">Precio:</label>
-                        </div>
-                        <button>Agregar al Carrito</button>
-                    </form>
-        </div>
-        <div class="card-producto" >
-                    <div class="img-producto">
-                        <img src="asd" alt="">
-                    </div>
-                    <form action="<?php echo URL_RAIZ;?>carrito/addProducto" class="info-producto">
-                        <div class="name-producto info-text">
-                            <label for="">Nombre del producto</label>
-                        </div>
-                        <div class="cod-producto info-text">
-                            <label for="codigo">Codigo:</label>
-                        </div>
-                        <div class="precio-producto info-text">
-                            <label for="precio">Precio:</label>
-                        </div>
-                        <button>Agregar al Carrito</button>
-                    </form>
-        </div>
-        <div class="card-producto" >
-                    <div class="img-producto">
-                        <img src="asd" alt="">
-                    </div>
-                    <form action="<?php echo URL_RAIZ;?>carrito/addProducto" class="info-producto">
-                        <div class="name-producto info-text">
-                            <label for="">Nombre del producto</label>
-                        </div>
-                        <div class="cod-producto info-text">
-                            <label for="codigo">Codigo:</label>
-                        </div>
-                        <div class="precio-producto info-text">
-                            <label for="precio">Precio:</label>
-                        </div>
-                        <button>Agregar al Carrito</button>
-                    </form>
-        </div>
-        <div class="card-producto" >
-                    <div class="img-producto">
-                        <img src="asd" alt="">
-                    </div>
-                    <form action="<?php echo URL_RAIZ;?>carrito/addProducto" class="info-producto">
-                        <div class="name-producto info-text">
-                            <label for="">Nombre del producto</label>
-                        </div>
-                        <div class="cod-producto info-text">
-                            <label for="codigo">Codigo:</label>
-                        </div>
-                        <div class="precio-producto info-text">
-                            <label for="precio">Precio:</label>
-                        </div>
-                        <button>Agregar al Carrito</button>
-                    </form>
+                        <input type="text" name="precio-producto" id="precio-producto" value="<?php echo $ps[$i]['precio'].'.bs';?>"readonly>
+
+                        </div>  </div>
+                        <input type="submit" value="AGREGAR AL CARRITO" class="btn-addCarrito" id="btn-addCarrito" name="btn-addCarrito">
+                 
+              </form>
+                <?php }  ?>
         </div>
         </div>
     </div>

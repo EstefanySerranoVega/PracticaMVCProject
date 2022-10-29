@@ -69,11 +69,8 @@ public function getAll(){
             'SELECT * FROM `producto` WHERE estado_producto = "AC"' );
         
         while($p = $query->fetch(PDO::FETCH_ASSOC)){
-            //error_log('p es: '.$p);
             $item = new ProductoModel();
-
             $item->from($p);
-
             array_push($items,$p);
         }
         return $items;
@@ -92,12 +89,12 @@ public function get($id){
             'SELECT * FROM `producto` WHERE id_producto = :id 
             AND estado_producto = "AC" ' );
             $query->execute(['id'=> $id]);
-        
-            $producto = $query->fetchAll(PDO::FETCH_ASSOC);
+        error_log('buscando id: '.$id);
+            $producto = $query->fetch(PDO::FETCH_ASSOC);
 
             $this->from($producto);
 
-            return $this;
+            return $producto;
     }catch(PDOException $e){
         return false;
     }
@@ -248,14 +245,14 @@ public function getAllCategoryId($idCat){
             AND estado_producto = "AC" ' );
             $query->execute(['id'=> $idCat]);
         
-            $producto = $query->fetAll(PDO::FETCH_ASSOC);
+            //$producto = $query->fetch(PDO::FETCH_ASSOC);
 
-            $this->from($producto);
+            //$this->from($producto);
             while($p = $query->fetch(PDO::FETCH_ASSOC)){
                 $item = new ProductoModel();
 
                 $item->from($p);
-                array_push($items,$item);
+                array_push($items,$p);
             }
 
             return $items;

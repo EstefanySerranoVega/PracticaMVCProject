@@ -13,7 +13,6 @@ Class Home Extends controllers{
     public function render(){
         if (!isset($_SESSION['name'])) {
             //session_start();
-           error_log('session name no existe Home ');
         }else{
             
         error_log('session name existe Home '.$_SESSION['name']);

@@ -184,7 +184,6 @@ private function isAuthorized($rol){
                         error_log('sessionController::isAuthorized()=> true');
                         return true;
                 }
-                error_log('sessionController::isAuthorized()=> false');
                
 
         } 
