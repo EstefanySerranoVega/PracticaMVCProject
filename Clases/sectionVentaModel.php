@@ -1,6 +1,6 @@
 <?php
 
-Class Venta extends sessionController{
+Class sectionVentaModel extends Model{
     public function __construct(){
         parent::__construct();
     }

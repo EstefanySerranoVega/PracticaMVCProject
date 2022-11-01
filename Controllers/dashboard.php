@@ -8,7 +8,7 @@ public function __construct(){
 
 
 public function render(){
-    $this->redirect('admin');
+    $this->view->render('admin/section/dashboard');
 }
 
 public function newCategoria(){

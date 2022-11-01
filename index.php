@@ -14,10 +14,10 @@ require_once('config/config.php');
 require_once('Clases/MessagesManager.php');
 require_once('Clases/sessionController.php');
 
-require_once('libreries/core/App.php');
-require_once('libreries/core/Controllers.php');
-require_once('libreries/core/Model.php');
-require_once('libreries/core/messages.php');
+require_once('libreries/App.php');
+require_once('libreries/Controllers.php');
+require_once('libreries/Model.php');
+require_once('libreries/messages.php');
 
 
 $app = new App();

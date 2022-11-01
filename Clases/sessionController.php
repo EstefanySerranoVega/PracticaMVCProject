@@ -1,6 +1,6 @@
 <?php
 require_once('Clases/Session.php');
-require_once('libreries/core/Controllers.php');
+require_once('libreries/Controllers.php');
 Class SessionController Extends Controllers{
 private $userSession;
 private $username;

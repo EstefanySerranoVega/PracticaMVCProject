@@ -89,7 +89,6 @@ public function get($id){
             'SELECT * FROM `producto` WHERE id_producto = :id 
             AND estado_producto = "AC" ' );
             $query->execute(['id'=> $id]);
-        error_log('buscando id: '.$id);
             $producto = $query->fetch(PDO::FETCH_ASSOC);
 
             $this->from($producto);
@@ -150,17 +149,13 @@ public function update(){
 
 public function from($array){
     $this->idProducto = $array['ID_PRODUCTO'];
-    error_log($this->idProducto);
     $this->categoria = $array['ID_CATEGORIA'];
-    error_log($this->categoria);
     $this->nombreProducto = $array['NOMBRE_PRODUCTO'];
-    error_log($this->nombreProducto);
     $this->codigoProducto = $array['CODIGO_PRODUCTO'];
     $this->cantidadProducto = $array['CANTIDAD_PRODUCTO'];
     $this->imgProducto = $array['IMG_PRODUCTO'];
     $this->precioProducto = $array['PRECIO_VENTA_PRODUCTO'];
     $this->estado = $array['ESTADO_PRODUCTO'];
-    error_log($this->estado);
 }//fin from
 
 //getters 
@@ -246,7 +241,6 @@ public function getAllCategoryId($idCat){
             $query->execute(['id'=> $idCat]);
         
             //$producto = $query->fetch(PDO::FETCH_ASSOC);
-
             //$this->from($producto);
             while($p = $query->fetch(PDO::FETCH_ASSOC)){
                 $item = new ProductoModel();

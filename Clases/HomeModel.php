@@ -1,5 +1,5 @@
 <?php
-require_once('libreries/core/Model.php');
+require_once('libreries/Model.php');
 require_once('Models/ProductoModel.php');
 require_once('Models/CategoriaModel.php');
 Class HomeModel extends Model  {

@@ -8,5 +8,6 @@
 </head>
 <body>
     <?php require_once('views/header.php'); ?>
+    vista productos
 </body>
 </html>

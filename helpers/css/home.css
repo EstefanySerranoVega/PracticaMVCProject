@@ -5,7 +5,12 @@
     }
     
     body {
+        width: 100%;
         background-image: radial-gradient(circle at 35.58% 103.81%, #ee45e4 0, #d53feb 25%, #b53cf2 50%, #8e3cf9 75%, #5540ff 100%);
+    }
+    
+    button {
+        cursor: pointer;
     }
     
     .container-page,
@@ -19,6 +24,7 @@
     }
     
     .container {
+        width: 100%;
         background: #fff;
     }
     
@@ -29,6 +35,7 @@
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-around;
+        background: none;
     }
     
     .img-producto_hero {
@@ -161,4 +168,12 @@
         background: rgb(241, 173, 15);
         transition: all 400ms;
         cursor: pointer;
+    }
+    
+    footer {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
     }

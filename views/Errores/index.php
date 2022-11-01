@@ -12,5 +12,6 @@
 </head>
 <body>
     <h1>Error 404</h1>
+    <h2>Desing 404 </h2>
 </body>
 </html>

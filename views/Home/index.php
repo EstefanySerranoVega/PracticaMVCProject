@@ -26,11 +26,11 @@ require_once('Clases/HomeModel.php');
             </div>
 
             <div class="info-producto_hero">
-                <h1>TITULO PUBLICIDAD DEL PRODUCTO!</h1>
-                <p class="text-hero" id="text-hero">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, expedita! Hic, ullam quasi! Illo, cumque laudantium? Mollitia corporis praesentium consequatur, tenetur ut quia molestiae molestias commodi ratione facere et?
+                <h1 class="title-hero_home">TITULO PUBLICIDAD DEL PRODUCTO!</h1>
+                <p class="text-hero" id="text-hero_home">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, expedita! Hic, ullam quasi! Illo, cumque laudantium? Mollitia corporis praesentium consequatur, tenetur ut quia molestiae molestias commodi ratione facere et?
                         Ducimus?
                 </p>
-                <button>Ver producto</button>
+                <button class="btn-hero_home">Ver producto</button>
             </div>
         </div>
         <div class="container">
@@ -56,7 +56,7 @@ require_once('Clases/HomeModel.php');
                     $producto = $productos->getAllProductos();
                     for($i=0;$i<count($producto);$i++){
                         //<?php echo URL_RAIZ;carrito/addCarrito?>
-                 <form action="<?php echo URL_RAIZ;?>carrito/addCarrito"  id="card_producto" class="card-producto" method="post">
+                 <form action="<?php echo URL_RAIZ;?>carrito/addCarrito?id=<?php echo $producto[$i]['id']?>"  id="card_producto" class="card-producto" method="post">
   
                  <a href="<?php echo URL_RAIZ;?>viewProducto?id=<?php echo $producto[$i]['id']?>" class="">
                     <div class="image-producto">
@@ -128,7 +128,22 @@ require_once('Clases/HomeModel.php');
             </div>
          
         </div>
-        <footer class="footer"></footer>
+        <footer class="footer">
+            <div class="section-redes-sociales_footer">
+                <div class="icon">
+                    Facebook
+                </div>
+                <div class="icon">
+                    Instagram
+                </div>
+                <div class="icon">
+                    Whatsapp
+                </div>
+                <div class="icon">
+                    Youtube
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 

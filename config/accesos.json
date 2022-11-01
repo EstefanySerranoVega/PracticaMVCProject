@@ -51,9 +51,41 @@
         "role": "admin"
     }, {
 
+        "site": "profile",
+        "access": "private",
+        "role": "admin"
+    }, {
+
         "site": "viewProducto",
         "access": "public",
         "role": ""
+    }, {
+
+        "site": "settins",
+        "access": "private",
+        "role": "admin"
+    }, {
+
+        "site": "sectionClientes",
+        "access": "private",
+        "role": "admin"
+    }, {
+
+        "site": "sectionShoppin",
+        "access": "private",
+        "role": "admin"
+    }, {
+        "site": "sectionCategory",
+        "access": "private",
+        "role": "admin"
+    }, {
+        "site": "sectionProvider",
+        "access": "private",
+        "role": "admin"
+    }, {
+        "site": "sectionVenta",
+        "access": "private",
+        "role": "admin"
     }],
 
     "default-sites": {

@@ -1,0 +1,11 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.container-gral {
+    width: 90%;
+    background: orange;
+}

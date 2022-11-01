@@ -6,7 +6,7 @@ require_once('Clases/ErrorMessages.php');
 require_once('Models/PersonaModel.php');
 require_once('Models/UserModel.php');
 require_once('Models/ContraseniaModel.php');
-require_once('libreries/core/View.php');
+require_once('libreries/View.php');
 
 Class singup Extends sessionController{
     
@@ -93,11 +93,9 @@ function newUser(){
         $contrasenia->setEstado('AC');
         $contrasenia->setModificacion(Date('Y-m-d H:i:s'));
         $contrasenia->setCreacion(Date('Y-m-d H:i:s'));
-if($contrasenia->save()){
-    error_log('save contrasenia is true');
-}
-       
-
+        if($contrasenia->save()){
+        error_log('save contrasenia is true');
+        }
     } 
                 //echo('usuario creado exitosamente');
                 error_log('Singup::newUser()->exist()=>false->save() true');
@@ -109,12 +107,8 @@ if($contrasenia->save()){
                 $this->redirect('singup');
                 //$this->redirect('singup',['error' => ErrorMessages::ERROR_GENERICO]);
             }
-        
         }
         
-        
-   
-
     }else{
         //echo 'error al crear usuario';
         error_log('Singup::newUser->false existPOST() ha ocurrido un error');
@@ -123,6 +117,5 @@ if($contrasenia->save()){
 }
 
 }
-
 
 ?>  

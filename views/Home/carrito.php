@@ -1,3 +1,14 @@
+<?php  
+require_once('Clases/CarritoModel.php');
+$carrito = new CarritoModel();
+$lista = $carrito->listProducts();
+var_dump($_SESSION['carrito']);
+var_dump($lista);
+$prueba = $carrito->prueba();
+var_dump($prueba);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

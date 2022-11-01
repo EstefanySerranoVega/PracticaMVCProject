@@ -1,11 +1,24 @@
-.producto {
-    width: 60%;
-    border-radius: 2rem;
-    background: #fff5;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body-formProducto {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: left;
+    justify-content: center;
+}
+
+.producto {
+    width: 60%;
+    border-radius: 2rem;
+    background: pink;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
     padding: 1rem;
 }
 

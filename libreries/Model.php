@@ -1,6 +1,6 @@
 <?php
-require_once('libreries/core/Database.php');
-require_once('libreries/core/imodel.php');
+require_once('libreries/Database.php');
+require_once('libreries/imodel.php');
 Class Model extends Database{
 function __construct(){
     $this->db = new Database();

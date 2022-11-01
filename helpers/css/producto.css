@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+button {
+    cursor: pointer;
+}
+
 .container-gral {
     width: 100%;
     display: flex;
@@ -55,7 +59,7 @@
     align-items: center;
 }
 
-#nombre-producto {
+.name-select {
     font-size: 2rem;
 }
 
@@ -73,6 +77,13 @@ form input {
     outline: none;
 }
 
+.btn-selectProducto {
+    width: auto;
+    padding: 0.8rem;
+    border-radius: 0.8rem;
+    background: #f2f2f2;
+}
+
 .similar-products {
     display: flex;
     flex-wrap: wrap;
@@ -86,7 +97,6 @@ form input {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background: orange;
     padding: 0.8rem;
 }
 
@@ -95,8 +105,7 @@ form input {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 1rem;
-    padding: 1rem;
-    background: red;
+    padding: 2rem;
 }
 
 .card-producto {
@@ -105,10 +114,11 @@ form input {
     justify-content: center;
     align-items: center;
     border-radius: 1rem;
-    background: green;
+    overflow: hidden;
+    background: #f2f2f2;
 }
 
-.card-producto .img-producto {
+.card-producto .image-producto {
     width: 95%;
     height: 15rem;
     border-radius: 1rem;
@@ -116,8 +126,12 @@ form input {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background: pink;
     margin: 0.8rem;
+    overflow: hidden;
+}
+
+.image-producto .image {
+    overflow: hidden;
 }
 
 .cad-producto form {
@@ -132,4 +146,48 @@ form input {
     padding: 0.8rem;
     border: none;
     border-radius: 0.8rem;
+}
+
+.btn-addCarrito {
+    background: #5fb3ff;
+    padding: 0.8rem;
+    border-radius: 0.8rem;
+}
+
+.btn-addCarrito:hover {
+    cursor: pointer;
+}
+
+.info-text {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.2em;
+}
+
+.info-text label {
+    width: auto;
+}
+
+.name-producto {
+    width: 95%;
+}
+
+.nombre-info_text {
+    width: 100%;
+}
+
+.categoria-info_text {
+    display: none;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    background: yellow;
+}
+
+.input-text {
+    width: auto;
+    font-size: 1em;
 }

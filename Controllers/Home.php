@@ -1,5 +1,5 @@
 <?php
-require_once('libreries/core/Controllers.php');
+require_once('libreries/Controllers.php');
 require_once('Models/CategoriaModel.php');
 Class Home Extends controllers{
     private $session;

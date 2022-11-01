@@ -8,109 +8,6 @@
       text-decoration: none;
   }
   
-  a {
-      color: #000;
-  }
-  
-  .container {
-      width: 100%;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-  }
-  
-  header {
-      width: 100%;
-      height: 7rem;
-      background: #f2f2f2;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-  }
-  
-  .logo {
-      width: 10%;
-      height: 100%;
-      background: blue;
-  }
-  
-  .menu {
-      width: 40%;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      align-items: center;
-  }
-  
-  ul {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-  }
-  
-  ul li {
-      margin: 0 1.8rem;
-  }
-  
-  .ul-icons {
-      border-left: 2px solid#0008;
-  }
-  
-  .icon {
-      width: 3rem;
-      height: 3rem;
-      border-radius: 0.8rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      margin: 0 1rem;
-      transition: all 400ms;
-  }
-  
-  .icon:hover {
-      background: #fff8;
-  }
-  
-  .icon svg {
-      width: 1.5rem;
-  }
-  
-  .menu-lateral {
-      width: 10%;
-      height: calc(100vh - 7rem);
-      background: skyblue;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      padding: 0.5rem 0 0 0;
-  }
-  
-  .menu-lateral .option {
-      width: 70%;
-      height: 5rem;
-      border-radius: 1rem;
-      background: #f2f2f255;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      transition: all 400ms;
-  }
-  
-  .option:hover {
-      background: #fff8;
-  }
-  
-  .option:hover .icon {
-      background: #f2f2f2;
-  }
-  
-  .text-option h3 {
-      font-size: 0.8em;
-  }
-  
   .container-gral {
       width: 90%;
       background: orange;
@@ -118,17 +15,17 @@
   
   .nav-search {
       width: 100%;
-      height: 8rem;
+      height: 5rem;
       background: skyblue;
       display: flex;
       flex-wrap: wrap;
+      padding: 0.8rem;
       justify-content: space-around;
   }
   
   .section-search {
       width: 75%;
       background: #f2f2f288;
-      margin: 1rem;
       border-radius: 1rem;
       display: flex;
       flex-wrap: wrap;
@@ -142,12 +39,11 @@
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      margin: 0 1rem;
   }
   
   .search input {
       width: 98%;
-      height: 2rem;
+      height: 1.8rem;
       border-radius: 0.8rem;
       border: none;
       padding: 0 1rem;
@@ -163,7 +59,7 @@
   
   .btn-filter button {
       border: none;
-      padding: 0.8rem 2rem;
+      padding: 0.8rem;
       border-radius: 0.8rem;
   }
   
@@ -175,13 +71,12 @@
       justify-content: center;
       align-items: center;
       background: #f2f2f288;
-      margin: 1rem;
       border-radius: 1rem;
   }
   
   .btn-new button {
       border: 3px solid rgb(63, 191, 254);
-      padding: 0.3rem 0.8rem;
+      padding: 0.3rem;
       border-radius: 0.8rem;
       background: #f2f2f255;
       display: flex;
@@ -199,7 +94,6 @@
   button .icon-btn {
       width: 1.5rem;
       height: 1.5rem;
-      margin: 0.5rem;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;

@@ -2,7 +2,7 @@
 require_once('Clases/ErrorMessages.php');
 require_once('Clases/MessagesManager.php');
 require_once('Clases/SuccessMessages.php');
-require_once('libreries/core/messages.php');
+require_once('libreries/messages.php');
 Class View{
 private $d;
     function __construct(){
