@@ -26,9 +26,9 @@ public function save(){
                 :producto,
                 :proveedor,
                 :almacen,
+                :estado,
                 :precio,
                 :ingreso,
-                :estado,
                 :creacion )');
 
             $arrayData= array(
@@ -36,20 +36,27 @@ public function save(){
                 'producto' => $this->producto,
                 'proveedor' => $this->proveedor,
                 'almacen' => $this->almacen,
+                'estado' => $this->estado,
                 'precio' => $this->precioUPP,
                 'ingreso' =>$this->fechaIngresoUPP,
-                'estado' => $this->estado,
                 'creacion' => $this->creacion  );
-            
+            error_log( $this->usuario);
+            error_log($this->producto);
+            error_log($this->proveedor);
+            error_log($this->almacen);
+            error_log($this->estado);
+            error_log($this->precioUPP);
+            error_log($this->fechaIngresoUPP);
+            error_log($this->creacion );
+
             $query->execute($arrayData);
-            
-            $id = $this->query("SELECT MAX(id_usuario_producto_proveedor) AS id FROM usuario_produccto_proveedor");
+            $id = $this->query("SELECT MAX(id_usuario_proveedor_producto) AS id FROM usuario_produccto_proveedor");
             
             if ($row = $id->fetchAll()) {
             $this->idUPP = $row[0][0];
             }
 
-            if($query->rowCount() > 0) {
+            if($query->rowCount()) {
                 return true;
             }else{
                 return false;
@@ -69,7 +76,7 @@ public function getAll(){
             WHERE  estado_UPP = "AC"' );
             
         while($p = $query->fetch()){
-            $item = new UsuarioProductoProveedorModel();
+            $item = new UsuarioProductoProveedorModel(PDO::FETCH_ASSOC);
 
             $item->from($p);
 
@@ -135,15 +142,15 @@ public function update(){
     }
 }//fin update
 public function from($array){
-    $this->idUPP = $array[0];
-    $this->usuario = $array[1];
-    $this->producto = $array[2];
-    $this->proveedor = $array[3];
-    $this->almacen = $array[4];
-    $this->precioUPP = $array[5];
-    $this->fechaIngresoUPP = $array[6];
-    $this->estado = $array[7];
-    $this->creacion = $array[8];
+    $this->idUPP = $array['ID_USUARIO_PROVEEDOR_PRODUCTO'];
+    $this->usuario = $array['ID_USUARIO'];
+    $this->producto = $array['ID_PRODUCTO'];
+    $this->proveedor = $array['ID_PROVEEDOR'];
+    $this->almacen = $array['ID_ALMACEN'];
+    $this->estado = $array['ESTADO_UPP'];
+    $this->precioUPP = $array['PRECIO_UPP'];
+    $this->fechaIngresoUPP = $array['FECHA_INGRESO_UPP'];
+    $this->creacion = $array['CREACION_UPP'];
 }//fin from
 
 //SETTERS
@@ -206,6 +213,22 @@ public function getCreacion(){
     return $this->creacion ;
 }
 
+/*
+public function getAllData(){
+    $query = $this->query('
+    SELECT prod.id_producto, prod.codigo_producto,
+prod.nombre_producto, cat.nombre_categoria, prod.precio_venta_producto,
+prod.cantidad_producto, prov.empresa_proveedor from usuario_producto_proveedor
+inner join producto prod
+on usuario_producto_proveedor.id_producto = prod.ID_PRODUCTO
+inner join categoria cat
+on cat.ID_CATEGORIA = prod.ID_CATEGORIA
+inner join proveedor prov
+on usuario_producto_proveedor.ID_PROVEEDOR = prov.ID_PROVEEDOR');
+$query->execute();
+
+}
+*/
 
 
 }

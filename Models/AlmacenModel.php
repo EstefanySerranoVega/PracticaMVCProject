@@ -96,7 +96,7 @@ public function delete($id){
             estado_almacen = "DC"
             WHERE id_almacen = :id 
             AND estado_almacen = "AC" ');
-        $query->execute([ 'id' => $this->getId() ]);
+        $query->execute([ 'id' => $id ]);
 
         return true;
     }catch(PDOException $e){

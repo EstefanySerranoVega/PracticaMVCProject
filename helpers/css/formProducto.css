@@ -13,7 +13,7 @@
 
 .producto {
     width: 60%;
-    border-radius: 2rem;
+    border-radius: 0.8rem;
     background: pink;
     display: flex;
     flex-wrap: wrap;

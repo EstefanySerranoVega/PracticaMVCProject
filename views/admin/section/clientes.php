@@ -31,14 +31,17 @@
             </div>
             <div class="table-container">
                 <div class="table-grid">
-                    <div class="header-table">
-                        <div class="cell-header">Codigo</div>
+                <div class="header-table">
                         <div class="cell-header">Nombre</div>
-                        <div class="cell-header">Correo</div>
-                        <div class="cell-header">Precio</div>
-                        <div class="cell-header">Stock</div>
+                        <div class="cell-header">Paterno</div>
+                        <div class="cell-header">Materno</div>
+                        <div class="cell-header">Telefono</div>
+                        <div class="cell-header">Fecha Nacimiento</div>
                         <div class="cell-header">Proveedor</div>
-                        <div class="cell-header">Action</div>
+                        <div class="cell-header">nombre usuario</div>
+                        <div class="cell-header">correo</div>
+                        <div class="cell-header">estado</div>
+                        <div class="cell-header">accion</div>
                     </div>
                     <?php
                         $productos = new sectionClientesModel(); 

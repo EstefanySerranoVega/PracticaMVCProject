@@ -97,7 +97,7 @@ Class AccesosModel Extends Model implements IModel{
                 estado_accesos = "DC"
                 WHERE id_accesos =  :id
                 AND estado_accesos = "AC"');
-            $query->execute(['id' => $this->getId()  ]);
+            $query->execute(['id' => $id ]);
             
             return true;
         }catch(PDOException $e){

@@ -153,6 +153,10 @@ button .icon-btn {
     align-items: center;
 }
 
+.icon-ingresos_mensuales svg {
+    width: 2.5rem;
+}
+
 .menu-dashboard .option-section a .icon svg {
     width: 3rem;
 }

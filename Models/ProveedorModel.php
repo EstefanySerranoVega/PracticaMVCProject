@@ -51,18 +51,18 @@ Class ProveedorModel Extends Model implements IModel{
 
     public function getAll(){
         $items = [];
-        $this->estado = 'AC';
+       //$this->estado = 'AC';
         try{
             $query = $this->query(
                 'SELECT * FROM `proveedor` WHERE 
-                estado_proveedor = '.$this->estado );
-            while($p =$query->fetch()){
+                estado_proveedor = "AC"' );
+            while($item =$query->fetch(PDO::FETCH_ASSOC)){
 
-                $item = new ProveedorModel();
+                $proveedor = new ProveedorModel();
 
-                $item->from($p);
+                $proveedor->from($item);
 
-                array_push($items,$p);
+                array_push($items,$item);
             }
             return $items;
         }catch(PDOException $e){
@@ -100,7 +100,7 @@ Class ProveedorModel Extends Model implements IModel{
                 estado_proveedor = "DC"
                 WHERE estado_proveedor = "AC"
                 AND id_proveedor = :id' );
-            $query->execute(['id' => $this->getId() ]);
+            $query->execute(['id' => $id]);
             
             return true;
         }catch(PDOException $e){
@@ -129,12 +129,12 @@ Class ProveedorModel Extends Model implements IModel{
     }//fin updateProducto
 
 
-    public function from($array){
-        $this->idProveedor = $array[0];
-        $this->empresaProveedor = $array[1];
-        $this->correoProveedor =$array[2];
-        $this->estado = $array[3];
-        $this->creacion = $array[4];
+    public function from($array = []){
+        $this->idProveedor = $array['ID_PROVEEDOR'];
+        $this->empresaProveedor = $array['EMPRESA_PROVEEDOR'];
+        $this->correoProveedor =$array['CORREO_PROVEEDOR'];
+        $this->estado = $array['ESTADO_PROVEEDOR'];
+        $this->creacion = $array['CREACION_PROVEEDOR'];
     }//fin from
 
 //setters

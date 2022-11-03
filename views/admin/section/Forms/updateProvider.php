@@ -1,8 +1,10 @@
+<link rel="stylesheet" href="<?php echo URL_RAIZ.STYLE;?>updateProvider.css">
+<body class="body-formprovider">
 <div class="provider">
 <div class="section-provider">
                 <div class="proveedor">
                     
-        <h2>NUEVO PROVEEDOR:</h2>
+        <h2>UPDATE PROVEEDOR:</h2>
         <form action="<?php
                 echo constant('URL_RAIZ');?>Dashboard/newProveedor" method = "post">
                 
@@ -16,3 +18,4 @@
             </div>
 
 </div>
+</body>

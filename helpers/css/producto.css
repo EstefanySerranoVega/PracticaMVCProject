@@ -130,8 +130,9 @@ form input {
     overflow: hidden;
 }
 
-.image-producto .image {
-    overflow: hidden;
+.image-producto .img-producto {
+    width: 100%;
+    height: 100%;
 }
 
 .cad-producto form {

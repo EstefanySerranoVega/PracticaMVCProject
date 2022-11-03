@@ -95,7 +95,7 @@ public function delete($id){
             estado_categoria = "DC"
             WHERE id_categoria = :id
             AND estado_categoria = "AC" ' );
-        $query->execute([ 'id' => $this->getId()]);
+        $query->execute([ 'id' => $id]);
 
         return true;
     }catch(PDOException $e){
@@ -202,6 +202,7 @@ public function getAllLimit($n){
     }
 
 }
+
 
 public function getNameById($id){
     $query = $this->query(

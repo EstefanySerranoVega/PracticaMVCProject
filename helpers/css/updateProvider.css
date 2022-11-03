@@ -1,0 +1,49 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .body-formprovider {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .provider {
+            width: 30rem;
+            background: pink;
+            padding: 1rem;
+            overflow: hidden;
+            border-radius: 0.6rem;
+        }
+        
+        .section-provider {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        
+        form {
+            width: 95%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+        }
+        
+        form label {
+            width: 100%;
+            padding: 0 1rem;
+            margin: 0.8rem 0;
+        }
+        
+        form input {
+            width: 90%;
+            border-radius: 0.8rem;
+            border: none;
+            height: 2rem;
+            margin: 0.8rem 0;
+        }

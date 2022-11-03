@@ -1,5 +1,5 @@
 <?php
-
+require_once('Models/ProductoModel.php');
 Class sectionProductos Extends SessionController{
 
 function __construct(){
@@ -13,6 +13,21 @@ public function render(){
 public function addProducto(){
     $this->view->render('admin/section/Forms/addProducto');
 }
+public function updateItem(){
+    $this->view->render('admin/section/Forms/updateProducto');
+}
+
+public function deleteItem(){
+    if($this->existGET(['id'])){
+        $id = $this->getGET('id');
+        error_log('eliminar id: '.$id);
+        $producto = new ProductoModel();
+        $producto->delete($id);
+    }else{
+        error_log('el id del producto no ha sido encontrado');
+    }
+    
+    }
 
 
 

@@ -6,6 +6,7 @@ private $userSession;
 private $username;
 private $userId;
 private $rolUser;
+private $idRol;
 
 private $user;
 
@@ -119,7 +120,8 @@ public function getUserSesionData(){
 public function initialize($user){
         $this->username = $user[0][1];
         $this->userId = $user[0][0];
-        $this->rolUser = $user[0][3];
+        $this->rolUser = $user[0][4];
+        $this->idRol = $user[0][3];
         error_log("sessionController::initilize(): user: ".$this->username);
         error_log("sessionController::initilize(): id: ".$this->userId);
         error_log("sessionController::initilize(): rol: ".$this->rolUser);

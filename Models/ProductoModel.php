@@ -44,6 +44,7 @@ Class ProductoModel Extends Model implements IModel {
             $id = $this->query("SELECT MAX(id_producto) AS id FROM producto");
             if ($row = $id->fetchAll()) {
             $this->idProducto = $row[0][0];
+            error_log('ultimo id es: '.$this->idProducto);
             }
 
             if($query->rowCount()){
@@ -107,7 +108,7 @@ public function delete($id){
              WHERE estado_producto = "AC"
              AND id_producto = :id');
         
-        $arrayData= array(['id' => $this->getId() ]);
+        $arrayData= array('id' => $id);
             
         $query->execute($arrayData);
 
@@ -211,14 +212,14 @@ public function setEstado($estado){
 }
 
 
-public function exist($name)
+public function exist($codigo)
     {
         try {
             $query = $this->prepare(
                 'SELECT * FROM `producto`
-            WHERE nombre_producto = :name
+            WHERE codigo_producto = :name
             AND estado_producto = "AC" ' );
-            $query->execute(['name' => $name]);
+            $query->execute(['codigo' => $codigo]);
 
           if($query->rowCount()){
             error_log('ProductoModel::exist()->rowCount => true');

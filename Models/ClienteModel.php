@@ -96,7 +96,7 @@ Class ClienteModel extends Model implements IModel {
                 estado_cliente = "DC"
                 WHERE  id_cliente = :id
                 AND estado_cliente = "AC"' );
-            $query->execute(['id' => $this->getId()]);
+            $query->execute(['id' => $id]);
 
             return true;
         }catch(PDOException $e){

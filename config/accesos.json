@@ -71,6 +71,11 @@
         "role": "admin"
     }, {
 
+        "site": "sectionUsers",
+        "access": "private",
+        "role": "admin"
+    }, {
+
         "site": "sectionShoppin",
         "access": "private",
         "role": "admin"
