@@ -129,7 +129,7 @@ public function from($array){
     $this->nombreContrasenia = $array['NOMBRE_CONTRASENIA'];
     $this->estado = $array['ESTADO_CONTRASENIA'];
     $this->modificacion = $array['MODIFICACION_CONTRASENIA'];
-    $this->creacion = $array['CREACION_CONTRASENIA'];
+    $this->creacion = $array['CREATE_CONTRASENIA'];
 }//fin from
 
 

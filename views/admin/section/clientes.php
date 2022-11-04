@@ -1,3 +1,8 @@
+<?php
+    $cliente = new sectionClientesModel(); 
+    $c = $cliente->getAllClientes(); 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,11 +41,8 @@
                         <div class="cell-header">Paterno</div>
                         <div class="cell-header">Materno</div>
                         <div class="cell-header">Telefono</div>
-                        <div class="cell-header">Fecha Nacimiento</div>
-                        <div class="cell-header">Proveedor</div>
                         <div class="cell-header">nombre usuario</div>
                         <div class="cell-header">correo</div>
-                        <div class="cell-header">estado</div>
                         <div class="cell-header">accion</div>
                     </div>
                     <?php
@@ -48,29 +50,26 @@
                         $producto = $productos->getAllClientes(); ?>
                     <div class="body-table">
                     <?php
-              $res = [];
-              for($i=0;$i<count($cliente);$i++){
-                
-              array_push($res,$cliente[$i]);  ?>
+              for($i=0;$i<count($c);$i++){ ?>
                         <div class="row-table">
 
                             <div class="cell-table">
-                                <?php echo $cliente[$i]['CODIGO_PRODUCTO']; ?>
+                                <?php echo $c[$i]['name']; ?>
                             </div>
                             <div class="cell-table">
-                                <?php echo $cliente[$i]['NOMBRE_PRODUCTO']; ?>
+                                <?php echo $c[$i]['paterno']; ?>
                             </div>
                             <div class="cell-table">
-                                <?php echo $cliente[$i]['ID_CATEGORIA']; ?> 
+                                <?php echo $c[$i]['materno']; ?> 
                             </div>
                             <div class="cell-table">
-                                <?php echo $cliente[$i]['PRECIO_VENTA_PRODUCTO']; ?> 
+                                <?php echo $c[$i]['telefono']; ?> 
                             </div>
                             <div class="cell-table">
-                                <?php echo $cliente[$i]['CANTIDAD_PRODUCTO']; ?>
+                                <?php echo $c[$i]['username']; ?>
                             </div>
                             <div class="cell-table">
-
+                                <?php echo $c[$i]['correo']; ?>
                             </div>
                             <div class="cell-table">
                                 <div class="icons-table">

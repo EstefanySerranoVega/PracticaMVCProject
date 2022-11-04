@@ -56,7 +56,7 @@ class UserModel extends Model implements IModel{
         $this->estado = 'AC';
         try{
             $query = $this->query(
-                'SELECT * FROM `usuario` WHERE estado_usuario = '.$this->estado);
+                'SELECT * FROM `usuario` WHERE estado_usuario = "AC"');
             while($p = $query->fetch(PDO::FETCH_ASSOC)){
 
                 $item = new UserModel();

@@ -13,8 +13,6 @@ if($_GET['id']){
     $id = $_GET['id'];
 $producto = new ProductoModel();
 $product = $producto->get($id);
-var_dump($id);
-var_dump($product);
 
 }else{
         echo 'no se ha encontrado el producto solicitado';
@@ -64,6 +62,7 @@ var_dump($product);
             <input type="number" name="precioA" id="precioA">
             <label for="precio" id="precio">Precio de venta: </label>
             <input type="number" name="precioVenta" id="precioVenta" value="">
+            <img src="<?php ?>" alt="">
             <input type="file" name="imgProducto" id="imgProducto">
             <input type="submit" value="GUARDAR" class="button">  
         </form>

@@ -15,19 +15,19 @@
     <div class="container-gral">
         <div class="singup">
             <form action="<?php
-            echo constant('URL_RAIZ');?>singup/newUser" method="POST">
+            echo constant('URL_RAIZ');?>singup/newCliente" method="POST">
                <div class="header-form">
                <h2>Registrarse</h2>
                 <p>¿Tienes una cuenta? <a href="<?php echo constant('URL_RAIZ'); ?>login"  >Iniciar Sesion</a> </p> 
                </div>
             <div class="content-form">
                 
-               <label for="nombrePersona">Escriba su nombre</label>
                 <input type="text"  name="nombrePersona" id="nombrePersona" placeholder="Nombre" >
                 <input type="text" name="paternoPersona" id="paternoPersona" placeholder="Apellido Paterno" >
                 <input type="text" name="maternoPersona" id="maternoPersona" placeholder="Apellido Materno" >
                 <input type="tel" name="telefonoPersona" id="telefonoPersona" placeholder="Telefono" >
-                <input type="date" name="nacPersona" id="nacPersona" >
+                <input type="email" name="emailCliente" id="emailCliente">
+                <input type="date" name="nacPersona" id="nacPersona" placeholder="Correo">
                 <input type="text" name="username" id="nameUser" placeholder="Nombre de usuario">
                 <input type="password" name="password" id="password" placeholder="password">
                 <input type="submit" value="Registrar" name="btn-newPersona" id="btn btn-newPersona" class="btn btn-newPersona">

@@ -66,13 +66,15 @@ class PersonaModel extends Model implements IModel{
         try{
             $query = $this->prepare(
                 'SELECT * FROM `persona` WHERE estado_persona = "AC"');
-            while($p = $query->fetch()){
+                $query->execute();
+            while($p = $query->fetch(PDO::FETCH_ASSOC)){
                 $item = new PersonaModel();
 
                 $item->from($p);
 
                 array_push($items,$p);
             }
+            error_log('p es: '.$p);
             return $items;
         }catch(PDOException $e){
             error_log('PersonaModel::getAll()=> '.$e);
@@ -107,7 +109,7 @@ class PersonaModel extends Model implements IModel{
                 WHERE id_persona = :id
                 AND estado_persona = "AC" ',
                  );
-            $query->execute(['id' => $this->getId()]);
+            $query->execute(['id' =>  $id]);
 
             return true;
         }catch(PDOException $e){
@@ -142,14 +144,14 @@ class PersonaModel extends Model implements IModel{
 
 
     public function from($array){
-        $this->idPersona = $array[0];
-        $this->nombrePersona = $array[1];
-        $this->paternoPersona = $array[2];
-        $this->maternoPersona = $array[3];
-        $this->telefonoPersona = $array[4];
-        $this->nacPersona = $array[5];
-        $this->estado = $array[6];
-        $this->creacion = $array[7];
+        $this->idPersona = $array['ID_PERSONA'];
+        $this->nombrePersona = $array['NOMBRE_PERSONA'];
+        $this->paternoPersona = $array['PATERNO_PERSONA'];
+        $this->maternoPersona = $array['MATERMO_PERSONA'];
+        $this->telefonoPersona = $array['TELEFONO_PERSONA'];
+        $this->nacPersona = $array['NAC_PERSONA'];
+        $this->estado = $array['ESTADO_PERSONA'];
+        $this->creacion = $array['CREACION_PERSONA'];
     }//fin from persona
 
 //getters

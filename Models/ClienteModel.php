@@ -9,15 +9,11 @@ Class ClienteModel extends Model implements IModel {
 
     function __construct(){
         parent::__construct();
-
-         //$this->persona =new Persona();
-         $this->correoCliente = '';
-         $this->creacionCliente = Date('Y-m-d H:i:s');
-         $this->estadoCliente = '';
     }//fin construct
 
    
     public function save(){
+        error_log('ClienteModel::save()');
         $this->estadoCliente = 'AC';
         try{
             $query = $this->prepare(
@@ -25,24 +21,29 @@ Class ClienteModel extends Model implements IModel {
                     NULL,
                     :persona,
                     :correo,
-                    :creacion,
-                    :estado)');
+                    :estado,
+                    :creacion)');
 
             $arrayData = array(
                 'persona'=>$this->persona,
                 'correo' => $this->correoCliente,
-                'creacion' => $this->creacionCliente,
-                'estado' => $this->estadoCliente);
-
+                'estado' => $this->estadoCliente,
+                'creacion' => $this->creacionCliente);
+                
             $query->execute($arrayData);
 
             $id = $this->query("SELECT MAX(id_cliente) AS id FROM cliente");
             if ($row = $id->fetchAll()) {
             $this->idCliente = $row[0][0];
-            }
-            return true;
+            } if($query->rowCount()) {
+                error_log('ClienteModel::save()=>true');
+              return true;
+              }else{
+                error_log('ClienteModel::save()=>false');
+                return false;}
+             
         }catch(PDOException $e){
-            echo 'Hubo un error '.$e;
+            error_log('Hubo un error '.$e);
             return false;
         }
     }//fin save
@@ -52,7 +53,7 @@ Class ClienteModel extends Model implements IModel {
         $items = []; 
         try{
             $query = $this->query('SELECT * FROM `cliente`');
-            while($p = $query->fetch()){
+            while($p = $query->fetch(PDO::FETCH_ASSOC)){
 
                 $item = new ClienteModel();
 
@@ -119,11 +120,11 @@ Class ClienteModel extends Model implements IModel {
         }
     }//fin update
     public function from($array){
-        $this->idCliente = $array[0];
-        $this->persona = $array[1];
-        $this->correoCliente = $array[2];
-        $this->creacionCliente = $array[3];
-        $this->estadoCliente = $array[4];
+        $this->idCliente = $array['ID_CLIENTE'];
+        $this->persona = $array['ID_PERSONA'];
+        $this->correoCliente = $array['CORREO_CLIENTE'];
+        $this->creacionCliente = $array['CREACION_CLIENTE'];
+        $this->estadoCliente = $array['ESTADO_CLIENTE'];
     }//fin from
 
     //SETTERS

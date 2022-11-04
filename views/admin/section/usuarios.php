@@ -1,3 +1,8 @@
+  <?php
+    $users = new sectionUsersModel(); 
+    $u = $users->getAllUsers(); 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,41 +39,35 @@
                     <div class="header-table">
                         <div class="cell-header">Nombre</div>
                         <div class="cell-header">Paterno</div>
-                        <div class="cell-header">Materno</div>
+                        <div class="cell-header">Rol</div>
                         <div class="cell-header">Telefono</div>
-                        <div class="cell-header">Fecha Nacimiento</div>
                         <div class="cell-header">nombre usuario</div>
                         <div class="cell-header">estado</div>
                         <div class="cell-header">accion</div>
                     </div>
-                    <?php
-                        $productos = new sectionClientesModel(); 
-                        $producto = $productos->getAllClientes(); ?>
                     <div class="body-table">
                     <?php
-              $res = [];
-              for($i=0;$i<count($cliente);$i++){
-                
-              array_push($res,$cliente[$i]);  ?>
+              for($i=0;$i<count($u);$i++){ 
+                ?>
                         <div class="row-table">
 
                             <div class="cell-table">
-                                <?php echo $cliente[$i]['CODIGO_PRODUCTO']; ?>
+                                <?php echo $u[$i]['name']; ?>
                             </div>
                             <div class="cell-table">
-                                <?php echo $cliente[$i]['NOMBRE_PRODUCTO']; ?>
+                                <?php echo $u[$i]['paterno']; ?>
                             </div>
                             <div class="cell-table">
-                                <?php echo $cliente[$i]['ID_CATEGORIA']; ?> 
+                                <?php echo $u[$i]['rol']; ?> 
                             </div>
                             <div class="cell-table">
-                                <?php echo $cliente[$i]['PRECIO_VENTA_PRODUCTO']; ?> 
+                                <?php echo $u[$i]['telefono']; ?> 
                             </div>
                             <div class="cell-table">
-                                <?php echo $cliente[$i]['CANTIDAD_PRODUCTO']; ?>
+                                <?php echo $u[$i]['username']; ?>
                             </div>
                             <div class="cell-table">
-
+                                <?php echo $u[$i]['estado']; ?>
                             </div>
                             <div class="cell-table">
                                 <div class="icons-table">
