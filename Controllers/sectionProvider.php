@@ -6,7 +6,7 @@ Class sectionProvider extends sessionController{
         parent::__construct();
     }
     public function render(){
-        $this->view->render('admin/section/provider');
+        $this->view->render('admin/section/Dashboard/provider');
     }
     public function updateItem(){
         $this->view->render('admin/section/Forms/updateProvider');

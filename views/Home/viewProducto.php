@@ -35,7 +35,7 @@ if(isset($_GET['id'])){
             <form action="<?php echo URL_RAIZ;?>carrito/addCarrito" method="post">
             <input type="hidden" name="categoria-producto" id="categoria-producto" value ="<?php echo $p['categoria']?>" readonly>
             <input type="hidden" name="id-producto" id="id-producto" value="<?php echo $p['id'];?>">
-            <input type="text" name="nombre-producto" id="nombre-producto" class="name-select"value="<?php echo $p['name'] ?>" readonly>
+            <input type="text" name="nombre-producto" id="nombre-producto" class="name-select" value="<?php echo $p['name'] ?>" readonly>
             <label for="codigo">Codigo:</label>
             <input type="text" name="codigo-producto" id="codigo-producto" value="<?php echo $p['codigo'] ?>" readonly> 
             <label for="desc">Precio de venta: por unidad</label>
@@ -53,11 +53,11 @@ if(isset($_GET['id'])){
         </div>
         <div class="section-similar_products">
         <?php
-      $items =[];
-                    for($i=0;$i<count($ps);$i++){?>
+            $items =[];
+            for($i=0;$i<count($ps);$i++){?>
                         
               <form action="<?php echo URL_RAIZ;?>carrito/addProducto" class="card-producto" method="post">
-                <a href="<?php echo URL_RAIZ;?>viewProducto?id=<?php echo $ps[$i]['id']?>" class="">
+                <a href="<?php echo URL_RAIZ;?>viewProducto?id=<?php echo $ps[$i]['id']?>" class="link-card" >
                     <div class="image-producto">
                         <img src="<?php echo URL_RAIZ.IMG.$ps[$i]['imagen'];?>" alt="" name="img-producto" id="img-producto" class="img-producto">
                     </div>

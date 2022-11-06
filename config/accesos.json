@@ -91,6 +91,10 @@
         "site": "sectionVenta",
         "access": "private",
         "role": "admin"
+    }, {
+        "site": "sectionAdministrar",
+        "access": "private",
+        "role": "admin"
     }],
 
     "default-sites": {

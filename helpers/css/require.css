@@ -1,0 +1,26 @@
+/*reinicio general*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Work Sans', sans-serif;
+}
+
+p {
+    font-family: 'Oswald', sans-serif;
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+}
+
+li {
+    font-family: 'Oswal', sans-serif;
+    font-weight: 300;
+}
+
+h3 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: regular 400;
+}

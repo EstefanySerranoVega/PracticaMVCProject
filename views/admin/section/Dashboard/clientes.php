@@ -1,7 +1,3 @@
-  <?php
-    $users = new sectionUsersModel(); 
-    $u = $users->getAllUsers(); 
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,64 +6,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="<?php echo URL_RAIZ.STYLE;?>sectionUsuarios.css">
+    <link rel="stylesheet" href="<?php echo URL_RAIZ.STYLE;?>sectionClientes.css">
 </head>
 <body>
 <?php
-   require_once('views/admin/section/header.php') ;
-   require_once('views/admin/section/menuLateral.php') ;?>
+   require_once('helpers/html/header.php') ;
+   require_once('helpers/html/menuLateral.php');?>
  
  <div class="container-gral">
-            <div class="nav-search">
-                <div class="section-search">
-                    <div class="search">
-                        <input type="search" name="input-search" id="input-search">
-                    </div>
-                    <div class="btn-filter">
-                        <button>FILTER</button>
-                    </div>
-                </div>
-                <div class="btn-new">
-                    <button>
-                        <div class="icon-btn">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
-                        </div>NUEVO PRODUCTO</button>
-                </div>
-            </div>
+    <?php 
+require_once('helpers/html/menuDashboard.php'); ?>
             <div class="table-container">
+            <?php
+    $cliente = new sectionClientesModel(); 
+    $c = $cliente->getAllClientes(); 
+?>
+
                 <div class="table-grid">
-                    <div class="header-table">
+                <div class="header-table">
                         <div class="cell-header">Nombre</div>
                         <div class="cell-header">Paterno</div>
-                        <div class="cell-header">Rol</div>
+                        <div class="cell-header">Materno</div>
                         <div class="cell-header">Telefono</div>
                         <div class="cell-header">nombre usuario</div>
-                        <div class="cell-header">estado</div>
+                        <div class="cell-header">correo</div>
                         <div class="cell-header">accion</div>
                     </div>
                     <div class="body-table">
                     <?php
-              for($i=0;$i<count($u);$i++){ 
-                ?>
+              for($i=0;$i<count($c);$i++){ ?>
                         <div class="row-table">
 
                             <div class="cell-table">
-                                <?php echo $u[$i]['name']; ?>
+                                <?php echo $c[$i]['nombre_persona']; ?>
                             </div>
                             <div class="cell-table">
-                                <?php echo $u[$i]['paterno']; ?>
+                                <?php echo $c[$i]['paterno_persona']; ?>
                             </div>
                             <div class="cell-table">
-                                <?php echo $u[$i]['rol']; ?> 
+                                <?php echo $c[$i]['materno_persona']; ?> 
                             </div>
                             <div class="cell-table">
-                                <?php echo $u[$i]['telefono']; ?> 
+                                <?php echo $c[$i]['telefono_persona']; ?> 
                             </div>
                             <div class="cell-table">
-                                <?php echo $u[$i]['username']; ?>
+                                <?php echo $c[$i]['nombre_usuario']; ?>
                             </div>
                             <div class="cell-table">
-                                <?php echo $u[$i]['estado']; ?>
+                                <?php echo $c[$i]['correo_cliente']; ?>
                             </div>
                             <div class="cell-table">
                                 <div class="icons-table">

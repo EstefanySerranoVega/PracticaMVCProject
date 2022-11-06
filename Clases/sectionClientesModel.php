@@ -12,46 +12,24 @@ Class sectionClientesModel extends Model{
     }
 
 public function getAllClientes(){
-    $persona = new PersonaModel();
-    $usuario = new UserModel();
-    $cliente = new ClienteModel();
-    $password = new ContraseniaModel();
-    $rol = new RolesModel();
-    $per = $persona->getAll();
-    $u = $usuario->getAll();
-    $c = $cliente->getAll();
-    $p = $password->getAll();
-    $r = $rol->getAll();
+
+
     $items = [];
-    for($i=0; $i<Count($p);$i++){
-        for($j=0;$j<Count($u);$j++){
-            //contrasenia and user
-        if($p[$i]['ID_USUARIO'] == $u[$j]['ID_USUARIO']){
-            for($s=0;$s<Count($per);$s++){
-                //persona and user
-                if($per[$s]['ID_PERSONA'] == $u[$j]['ID_PERSONA']){
-                    for($x=0;$x<Count($r);$x++){
-                        //
-                        if($u[$j]['ID_ROLES'] == $r[$x]['ID_ROLES']){
-                            if($r[$x]['NOMBRE_ROLES'] == 'cliente'){
-                                $item = array(
-                                    'id_persona' => $per[$s]['ID_PERSONA'],
-                                    'name' => $per[$s]['NOMBRE_PERSONA'],
-                                    'paterno' => $per[$s]['PATERNO_PERSONA'],
-                                    'materno' => $per[$s]['MATERNO_PERSONA'],
-                                    'telefono' => $per[$s]['TELEFONO_PERSONA'],
-                                    'username' => $u[$j]['NOMBRE_USUARIO'],
-                                    'correo' => $u[$j]['ESTADO_USUARIO']
-                                );
-                                array_push($items,$item);
-                            }
-                     
-                        }
-                    }
-                }
-            }
-        }
-        }
+    $query = $this->prepare(
+        'SELECT user.id_usuario, per.nombre_persona, per.paterno_persona,per.materno_persona, per.telefono_persona, user.nombre_usuario, rol.nombre_roles, cl.correo_cliente
+        FROM contrasenia cont
+        INNER JOIN usuario user
+        ON user.ID_USUARIO= cont.ID_USUARIO
+        INNER JOIN persona per
+        ON per.ID_PERSONA = user.ID_PERSONA
+        INNER JOIN cliente cl
+        ON cl.id_persona = per.id_persona 
+        INNER JOIN roles rol
+        ON rol.NOMBRE_ROLES ="cliente"'
+    );
+    $query->execute();
+    while($item = $query->fetch(PDO::FETCH_ASSOC)){
+        array_push($items,$item);
     }
 
     return $items;

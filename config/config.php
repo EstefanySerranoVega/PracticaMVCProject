@@ -6,8 +6,10 @@ const VIEWS ="views/";
 const STYLE = "helpers/css/";
 const SCRIPT = "helpers/js/";
 const IMG = "helpers/img/";
+const AVATAR = "helpers/img/avatar/";
 const ICON = "helpers/icon/";
 const CONTROLLER = "Controllers/";
+const REQUIRE_STYLE = "helpers/html/require.php";
 
 //const HOST = 'localhost';
 define('HOST','3306');

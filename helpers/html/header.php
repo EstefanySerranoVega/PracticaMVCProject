@@ -1,4 +1,7 @@
+<?php
 
+require_once('helpers/html/require.php');
+?>
     <link rel="stylesheet" href="<?php echo URL_RAIZ.STYLE;?>headerAdmin.css">
 <div class="container">
         <header class="header">

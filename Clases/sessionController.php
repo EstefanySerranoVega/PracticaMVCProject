@@ -203,7 +203,7 @@ public function authorizeAccess($rol){
                 break;
                 case 'admin':
                         error_log('rol es: admin');
-                        $this->redirect('admin');
+                        $this->redirect('dashboard');
                 break;
                 case 'gral':
                         error_log('rol es: gral');

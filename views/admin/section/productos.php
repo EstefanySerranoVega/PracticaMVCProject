@@ -20,8 +20,8 @@ $producto = $productos->getAllProductos();
 
 <body>
     <?php
-   require_once('views/admin/section/header.php') ;
-   require_once('views/admin/section/menuLateral.php') ;?>
+   require_once('helpers/html/header.php') ;
+   require_once('helpers/html/menuLateral.php');?>
         
         <div class="container-gral">
             <div class="nav-search">

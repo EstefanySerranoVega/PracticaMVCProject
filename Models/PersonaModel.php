@@ -147,7 +147,7 @@ class PersonaModel extends Model implements IModel{
         $this->idPersona = $array['ID_PERSONA'];
         $this->nombrePersona = $array['NOMBRE_PERSONA'];
         $this->paternoPersona = $array['PATERNO_PERSONA'];
-        $this->maternoPersona = $array['MATERMO_PERSONA'];
+        $this->maternoPersona = $array['MATERNO_PERSONA'];
         $this->telefonoPersona = $array['TELEFONO_PERSONA'];
         $this->nacPersona = $array['NAC_PERSONA'];
         $this->estado = $array['ESTADO_PERSONA'];

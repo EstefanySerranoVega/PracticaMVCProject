@@ -1,4 +1,5 @@
-<?php require_once('config/config.php');?>
+<?php require_once('config/config.php');
+require_once('helpers/html/require.php');?>
     <link rel="stylesheet" href="<?php echo constant('URL_RAIZ').STYLE; ?>header.css">
     <script src="https://kit.fontawesome.com/11ba4104c1.js" crossorigin="anonymous"></script>
     <div id="header" class="header">

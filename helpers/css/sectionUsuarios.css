@@ -12,6 +12,10 @@
       color: #000;
   }
   
+  .section-usuarios {
+      background: #fff;
+  }
+  
   .container {
       width: 100%;
       display: flex;
@@ -130,7 +134,7 @@
   .header-table {
       width: 100%;
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
       height: 2rem;
       margin: 0.5rem 0;
       border-radius: 0.8rem;
@@ -147,7 +151,7 @@
   .row-table {
       width: 98%;
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
       background: #f2f2f288;
       height: 4rem;
       border-radius: 0.8rem;

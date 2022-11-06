@@ -17,3 +17,100 @@
     width: 90%;
     background: orange;
 }
+
+.container-my_profile {
+    width: 98%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0.8rem;
+}
+
+.avatar {
+    width: 40%;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    padding: 0.5rem;
+    background: #fff;
+}
+
+.option-avatar {
+    background: #f2f2fc;
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.8rem;
+}
+
+.option-avatar .icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 0.6rem;
+    background: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.option-avatar .icon svg {
+    width: 2.7rem;
+}
+
+.icon {
+    width: 90%;
+}
+
+.icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info-my_profile {
+    padding: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 55%;
+    background: pink;
+    border-radius: 0.8rem;
+}
+
+.info-my_profile form {
+    padding: 0.5rem;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.info-my_profile form label {
+    width: 90%;
+}
+
+.info-my_profile form .input-text {
+    width: 90%;
+    border-radius: 0.6rem;
+    border: none;
+    padding: 0 0.5rem;
+    height: 1.8rem;
+}
+
+.label-date,
+.label-role {
+    width: 40%;
+    background: red;
+}
+
+.btn-save {
+    border: none;
+    background: #f2f2f2;
+    padding: 0.8rem;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    margin: 0.5rem;
+}

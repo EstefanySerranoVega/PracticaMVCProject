@@ -17,7 +17,6 @@ require_once('Clases/sessionController.php');
 require_once('libreries/App.php');
 require_once('libreries/Controllers.php');
 require_once('libreries/Model.php');
-require_once('libreries/messages.php');
 
 
 $app = new App();

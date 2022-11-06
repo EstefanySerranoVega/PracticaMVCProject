@@ -7,7 +7,7 @@ parent::__construct();
 
     }
 function render(){
-$this->view->render('admin/section/category');
+$this->view->render('admin/section/Dashboard/category');
 
 }
 

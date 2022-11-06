@@ -1,5 +1,6 @@
 <?php 
 require_once('Clases/HomeModel.php');
+require_once('helpers/html/require.php');
 ?>
 
 <!DOCTYPE html>
@@ -10,6 +11,7 @@ require_once('Clases/HomeModel.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Propuesta Ecommerce</title>
+
     <link rel="stylesheet" href="<?php echo URL_RAIZ.STYLE;?>home.css">
 
 </head>
@@ -26,8 +28,8 @@ require_once('Clases/HomeModel.php');
             </div>
 
             <div class="info-producto_hero">
-                <h1 class="title-hero_home">TITULO PUBLICIDAD DEL PRODUCTO!</h1>
-                <p class="text-hero" id="text-hero_home">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, expedita! Hic, ullam quasi! Illo, cumque laudantium? Mollitia corporis praesentium consequatur, tenetur ut quia molestiae molestias commodi ratione facere et?
+                <h1 id="title-hero_home"class="title-hero_home">TITULO PUBLICIDAD DEL PRODUCTO!</h1>
+                <p class="text-hero" id="text-hero_home" class="text-hero_home">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, expedita! Hic, ullam quasi! Illo, cumque laudantium? Mollitia corporis praesentium consequatur, tenetur ut quia molestiae molestias commodi ratione facere et?
                         Ducimus?
                 </p>
                 <button class="btn-hero_home">Ver producto</button>
@@ -61,7 +63,7 @@ require_once('Clases/HomeModel.php');
                  <a href="<?php echo URL_RAIZ;?>viewProducto?id=<?php echo $producto[$i]['id']?>" class="">
                     <div class="image-producto">
                         <img src="<?php echo URL_RAIZ.IMG.$producto[$i]['imagen'];?>" alt="" name="img-producto" id="img-producto" class="img-producto">
-                        <input type="text" name="id-producto" id="id-producto" value="<?php echo $producto[$i]['id']?>">
+                        <input type="hidden" name="id-producto" id="id-producto" value="<?php echo $producto[$i]['id']?>">
                          </div>
                     </a>
                 <div class="info-productos">
@@ -101,6 +103,7 @@ require_once('Clases/HomeModel.php');
               <a href="<?php echo URL_RAIZ;?>viewProducto?id=<?php echo $producto[$i]['id']?>" class="">
                     <div class="image-producto">
                         <img src="<?php echo URL_RAIZ.IMG.$producto[$i]['imagen'];?>" alt="" name="img-producto" id="img-producto" class="img-producto">
+                   <input type="hidden" name="id-producto" id="id-producto" value="<?php echo $producto[$i]['id']?>" >
                     </div>
                     </a>
                 <div class="info-productos">

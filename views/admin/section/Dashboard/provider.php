@@ -14,29 +14,13 @@ $prov = $proveedor->getAll();
 </head>
 <body>
 <?php
-   require_once('views/admin/section/header.php') ;
-   require_once('views/admin/section/menuLateral.php') ;?>
+   require_once('helpers/html/header.php') ;
+   require_once('helpers/html/menuLateral.php');?>
    
    <div class="container-gral">
-            <div class="nav-search">
-                <div class="section-search">
-                    <div class="search">
-                        <input type="search" name="input-search" id="input-search">
-                    </div>
-                    <div class="btn-filter">
-                        <button>FILTER</button>
-                    </div>
-                </div>
-                <div class="btn-new">
-                    <a href="<?php echo URL_RAIZ;?>sectionProvider/addProvider">
-                    <button>
-                        <div class="icon-btn">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
-                        </div>NUEVA CATEGORIA
-                    </button>
-                    </a>
-                </div>
-            </div>
+
+   <?php 
+require_once('helpers/html/menuDashboard.php'); ?>
             <div class="table-container">
                 <div class="table-grid">
                     <div class="header-table">
@@ -80,23 +64,19 @@ $prov = $proveedor->getAll();
                 </div>
             </div>
         <aside class="aside">
-            <div class="provider">
                 <div class="section-provider">
-                        <div class="proveedor">
                             
-                    <h2>NUEVO PROVEEDOR:</h2>
                     <form action="<?php echo constant('URL_RAIZ');?>Dashboard/newProveedor" method = "post">
                             
+                    <h2>NUEVO PROVEEDOR:</h2>
                     <label for="prov">Empresa proveedor:</label>
                     <input type="text" name="empresaProveedor" id="empresaProveedor">    
                     <label for="email">Correo proveedor:</label>
                     <input type="email" name="correoProveedor" id="correoProveedor">
                     <input type="submit" value="GUARDAR" class="button">  
                     </form> 
-                        </div>
                     </div>
 
-                </div>
             </aside>
         </div>
 

@@ -7,7 +7,7 @@ Class sectionClientes extends SessionController{
     }
 
 public function render(){
-    $this->view->render('admin/section/clientes');
+    $this->view->render('admin/section/Dashboard/clientes');
 }
 
 }

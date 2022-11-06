@@ -95,6 +95,11 @@
         height: 70%;
         border-radius: 0.8rem;
         background: orange;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
     }
     
     section {
@@ -110,46 +115,41 @@
     .title-section_ultimos {
         text-align: center;
         width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
         padding: 1rem;
-    }
-    
-    .section-productos_destacados,
-    .section-productos_ultimos {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-around;
+    }
+    
+    .section-productos_destacados,
+    .section-productos_ultimos {
         width: 100%;
-        padding: 1rem;
+        padding: 0 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 2rem;
     }
     
     .card-producto {
-        width: 22%;
         height: 23rem;
         background: #f2f2f2;
         border-radius: 1rem;
-        margin: 1rem;
         padding: 0.8rem;
     }
     
     .image-producto {
         width: 98%;
         height: 60%;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-around;
         border-radius: 1rem;
-        overflow: hidden;
+        box-sizing: border-box;
     }
     
-    .image-producto .img-producto {
+    .image-producto img {
+        object-fit: contain;
+        object-position: center center;
+        width: 100%;
         height: 100%;
-        border-radius: 0.8rem;
     }
     
     .info-producto {

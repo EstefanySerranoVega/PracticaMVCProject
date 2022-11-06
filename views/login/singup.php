@@ -1,5 +1,6 @@
 <?php
 
+require_once('helpers/html/require.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
