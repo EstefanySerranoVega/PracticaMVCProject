@@ -32,25 +32,12 @@ $provider=[];
             </select>
             <label for="cod" id="codigoProducto">Codigo: </label>
             <input type="text" name="codigoProducto" id="codigoProducto">
-            <label for="selectProv" id="selectProv">Proveedor: </label>
-            <select name="provider" id="provider">
-                <?php   
-                  for($i=0; $i<count($p);$i++){
-                   ?>
-              <option value="<?php echo $p[$i]['ID_PROVEEDOR']; ?>">
-                <?php  echo $p[$i]['EMPRESA_PROVEEDOR'];  ?>
-                 </option>
-               <?php 
-               }
-                ?>
-        
-            </select>
-            <label for="cant" id="cant">Cantidad Producto: </label>
-            <input type="number" name="cantidadProducto" id="cantidadProducto">
-            <label for="precio" id="precio">Precio de Adquisición: </label>
-            <input type="number" name="precioA" id="precioA">
-            <label for="precio" id="precio">Precio de venta: </label>
-            <input type="number" name="precioVenta" id="precioVenta">
+            <label for="marca" id="marca">Marca: </label>
+            <input type="text" name="marca" id="marca">
+            <label for="industria" id="industria">Industria:</label>
+            <input type="text" name="industria" id="industria">
+            <label for="descripcion" id="descripcion">Descripcion: </label>
+            <textarea name="descripcion" id="descripcion" cols="30" rows="10"></textarea>
             <input type="file" name="imgProducto" id="imgProducto">
             <input type="submit" value="GUARDAR" class="button">  
         </form>

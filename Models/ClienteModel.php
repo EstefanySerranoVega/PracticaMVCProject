@@ -3,6 +3,7 @@ Class ClienteModel extends Model implements IModel {
     private $idCliente;
     private $persona;
     private $correoCliente;
+    private $direccion;
     private $creacionCliente;
     private $estadoCliente;
 
@@ -21,12 +22,14 @@ Class ClienteModel extends Model implements IModel {
                     NULL,
                     :persona,
                     :correo,
+                    :direccion,
                     :estado,
                     :creacion)');
 
             $arrayData = array(
                 'persona'=>$this->persona,
                 'correo' => $this->correoCliente,
+                'direccion' => $this->direccion,
                 'estado' => $this->estadoCliente,
                 'creacion' => $this->creacionCliente);
                 
@@ -108,10 +111,13 @@ Class ClienteModel extends Model implements IModel {
         try{
             $query = $this->prepare(
                 'UPDATE `cliente` SET
-                correo_cliente = :correo
+                CORREO_CLIENTE = :correo
+                DIRECCION_CLIENTE = :direccion
+
                 WHERE  id_cliente = :id' );
             $query->execute([
                 'correo' => $this->correoCliente,
+                'direccion' => $this->direccion,
                 'id' => $this->getId()]);
 
             return true;
@@ -123,6 +129,7 @@ Class ClienteModel extends Model implements IModel {
         $this->idCliente = $array['ID_CLIENTE'];
         $this->persona = $array['ID_PERSONA'];
         $this->correoCliente = $array['CORREO_CLIENTE'];
+        $this->direccion = $array['DIRECCION_CLIENTE'];
         $this->creacionCliente = $array['CREACION_CLIENTE'];
         $this->estadoCliente = $array['ESTADO_CLIENTE'];
     }//fin from
@@ -131,27 +138,29 @@ Class ClienteModel extends Model implements IModel {
     public function setId($id){ 
         $this->idCliente = $id; }
     public function setCorreo($correo){
-        $this->correoCliente = $correo; } 
+        $this->correoCliente = $correo; }
+    public function setDirecioon($direccion){ 
+        $this->direccion = $direccion;} 
     public function setCreacion($creacion){
         $this->creacionCliente = $creacion;  } 
     public function setEstado($estado){
         $this->estadoCliente = $estado;} 
-        public function setPersona($persona){
-            $this->persona = $persona;}
+    public function setPersona($persona){
+        $this->persona = $persona;}
 
 //GETTERS
         public function getId(){
         return $this->idCliente;}
-        public function getNombre(){
+        public function getCorreo(){
         return $this->correoCliente;}
+        public function getDireccion(){
+            return $this->direccion;}
         public function getCreacion(){
         return $this->creacionCliente;}
         public function getEstado(){
-            return $this->estadoCliente;
-        }
+            return $this->estadoCliente;}
         public function getPersona(){
-            return $this->persona;
-        }
+            return $this->persona; }
 
 }
 ?>

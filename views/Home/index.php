@@ -58,28 +58,28 @@ require_once('helpers/html/require.php');
                     $producto = $productos->getAllProductos();
                     for($i=0;$i<count($producto);$i++){
                         //<?php echo URL_RAIZ;carrito/addCarrito?>
-                 <form action="<?php echo URL_RAIZ;?>carrito/addCarrito?id=<?php echo $producto[$i]['id']?>"  id="card_producto" class="card-producto" method="post">
+                 <form action="<?php echo URL_RAIZ;?>carrito/addCarrito?id=<?php echo $producto[$i]['id_ap']?>"  id="card_producto" class="card-producto" method="post">
   
-                 <a href="<?php echo URL_RAIZ;?>viewProducto?id=<?php echo $producto[$i]['id']?>" class="">
+                 <a href="<?php echo URL_RAIZ;?>viewProducto?id=<?php echo $producto[$i]['id_ap']?>" class="">
                     <div class="image-producto">
-                        <img src="<?php echo URL_RAIZ.IMG.$producto[$i]['imagen'];?>" alt="" name="img-producto" id="img-producto" class="img-producto">
-                        <input type="hidden" name="id-producto" id="id-producto" value="<?php echo $producto[$i]['id']?>">
+                        <img src="<?php echo URL_RAIZ.IMG.$producto[$i]['img_producto'];?>" alt="" name="img-producto" id="img-producto" class="img-producto">
+                        <input type="hidden" name="id-producto" id="id-producto" value="<?php echo $producto[$i]['id_producto']?>">
                          </div>
                     </a>
                 <div class="info-productos">
 
                 <div class="name-producto info-text">
-                   <input type="text" name="nombre-producto" id="nombre-producto" value="<?php echo $producto[$i]['name']?>" readonly>
-                   <input type="text" name="categoria-producto" id="categoria-producto" value="<?php echo $producto[$i]['cat']; ?>"readonly> 
+                   <input type="text" name="nombre-producto" id="nombre-producto" value="<?php echo $producto[$i]['nombre_producto']?>" readonly>
+                   <input type="text" name="categoria-producto" id="categoria-producto" value="<?php echo $producto[$i]['categoria_producto']; ?>"readonly> 
                 </div>
                         <div class="cod-producto info-text">
                             <label for="codigo" name="codigo">Codigo:</label>
-                            <input type="text" name="codigo-producto" id="codigo-producto" value="<?php echo $producto[$i]['codigo']; ?>"readonly>
+                            <input type="text" name="codigo-producto" id="codigo-producto" value="<?php echo $producto[$i]['codigo_producto']; ?>"readonly>
   
                         </div>
                         <div class="precio-producto info-text">
                             <label for="precio">Precio:</label>
-                        <input type="text" name="precio-producto" id="precio-producto" value="<?php echo $producto[$i]['precio'].'.bs';?>"readonly>
+                        <input type="text" name="precio-producto" id="precio-producto" value="<?php echo $producto[$i]['precio_producto'].'.bs';?>"readonly>
                        </div>  
                 </div>
                         <input type="submit" value="AGREGAR AL CARRITO" class="btn-addCarrito" id="btn-addCarrito" name="btn-addCarrito">
@@ -92,39 +92,37 @@ require_once('helpers/html/require.php');
                     <h1>Ultimos productos</h1>
                 </div>
                 <div class="section-productos_ultimos">
-                    
                 <?php
                     $productos = new HomeModel();
                     $producto = $productos->getAllProductos();
-                    $items =[];
-                    for($i=0;$i<count($producto);$i++){?>
-                        
-              <form action="<?php echo URL_RAIZ;?>carrito/addProducto" class="card-producto" method="post">
-              <a href="<?php echo URL_RAIZ;?>viewProducto?id=<?php echo $producto[$i]['id']?>" class="">
+                    for($i=0;$i<count($producto);$i++){
+                        //<?php echo URL_RAIZ;carrito/addCarrito?>
+                 <form action="<?php echo URL_RAIZ;?>carrito/addCarrito?id=<?php echo $producto[$i]['id_ap']?>"  id="card_producto" class="card-producto" method="post">
+  
+                 <a href="<?php echo URL_RAIZ;?>viewProducto?id=<?php echo $producto[$i]['id_ap']?>" class="">
                     <div class="image-producto">
-                        <img src="<?php echo URL_RAIZ.IMG.$producto[$i]['imagen'];?>" alt="" name="img-producto" id="img-producto" class="img-producto">
-                   <input type="hidden" name="id-producto" id="id-producto" value="<?php echo $producto[$i]['id']?>" >
-                    </div>
+                        <img src="<?php echo URL_RAIZ.IMG.$producto[$i]['img_producto'];?>" alt="" name="img-producto" id="img-producto" class="img-producto">
+                        <input type="hidden" name="id-producto" id="id-producto" value="<?php echo $producto[$i]['id_producto']?>">
+                         </div>
                     </a>
                 <div class="info-productos">
 
                 <div class="name-producto info-text">
-                   <input type="text" name="nombre-producto" id="nombre-producto" value="<?php echo $producto[$i]['name']?>" readonly>
-                   <input type="text" name="categoria-producto" id="categoria-producto" value="<?php echo $producto[$i]['cat']; ?>"readonly> 
+                   <input type="text" name="nombre-producto" id="nombre-producto" value="<?php echo $producto[$i]['nombre_producto']?>" readonly>
+                   <input type="text" name="categoria-producto" id="categoria-producto" value="<?php echo $producto[$i]['categoria_producto']; ?>"readonly> 
                 </div>
                         <div class="cod-producto info-text">
                             <label for="codigo" name="codigo">Codigo:</label>
-                            <input type="text" name="codigo-producto" id="codigo-producto" value="<?php echo $producto[$i]['codigo']; ?>"readonly>
+                            <input type="text" name="codigo-producto" id="codigo-producto" value="<?php echo $producto[$i]['codigo_producto']; ?>"readonly>
   
                         </div>
                         <div class="precio-producto info-text">
                             <label for="precio">Precio:</label>
-                        <input type="text" name="precio-producto" id="precio-producto" value="<?php echo $producto[$i]['precio'].'.bs';?>"readonly>
-
-                        </div>  </div>
+                        <input type="text" name="precio-producto" id="precio-producto" value="<?php echo $producto[$i]['precio_producto'].'.bs';?>"readonly>
+                       </div>  
+                </div>
                         <input type="submit" value="AGREGAR AL CARRITO" class="btn-addCarrito" id="btn-addCarrito" name="btn-addCarrito">
-                 
-              </form>
+                 </form>
                 <?php }  ?>
                 </div>
             </section>

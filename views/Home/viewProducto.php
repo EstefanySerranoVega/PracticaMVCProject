@@ -8,6 +8,7 @@ if(isset($_GET['id'])){
     $ps = $producto->getSimilarProductos();
 }else{
     error_log('no existe');
+    
 }
 
 ?>
@@ -28,22 +29,21 @@ if(isset($_GET['id'])){
 <div class="container">
     <div class="section-select_producto">
         <div class="img-producto_select">
-            <img src="<?php echo URL_RAIZ.IMG.$p['imagen'] ?>" alt="" class="img">
-            
+            <img src="<?php echo URL_RAIZ.IMG.$p[0]['img']; ?>" alt="" class="img">
         </div>
         <div class="info-producto_select">
             <form action="<?php echo URL_RAIZ;?>carrito/addCarrito" method="post">
-            <input type="hidden" name="categoria-producto" id="categoria-producto" value ="<?php echo $p['categoria']?>" readonly>
+            <input type="hidden" name="categoria-producto" id="categoria-producto" value ="<?php echo $p[0]['id_categoria'];?>" readonly>
             <input type="hidden" name="id-producto" id="id-producto" value="<?php echo $p['id'];?>">
-            <input type="text" name="nombre-producto" id="nombre-producto" class="name-select" value="<?php echo $p['name'] ?>" readonly>
+            <input type="text" name="nombre-producto" id="nombre-producto" class="name-select" value="<?php echo $p[0]['nombre'] ?>" readonly>
             <label for="codigo">Codigo:</label>
-            <input type="text" name="codigo-producto" id="codigo-producto" value="<?php echo $p['codigo'] ?>" readonly> 
+            <input type="text" name="codigo-producto" id="codigo-producto" value="<?php echo $p[0]['codigo'] ?>" readonly> 
             <label for="desc">Precio de venta: por unidad</label>
-            <input type="text" name="precio-producto" id="precio-producto" value="<?php echo $p['precio'].'Bs';?>" readonly>
+            <input type="text" name="precio-producto" id="precio-producto" value="<?php echo $p[0]['precio'].'Bs';?>" readonly>
                 <label for="cantidad">Cantidad:</label>
                 <input type="number" name="cantidad-producto" id="cantidad-producto" value="1">
                 <input type="submit" class="btn-selectProducto" value="AGREGAR AL CARRITO">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus nemo reiciendis ut totam recusandae quibusdam vitae quas, quasi fugiat. Asperiores nulla sint delectus quasi facilis, voluptatum fuga error quam vero!</p>
+                <p><?php echo $p[0]['descripcion'] ?></p>
             </form>
         </div>
     </div>
@@ -59,7 +59,7 @@ if(isset($_GET['id'])){
               <form action="<?php echo URL_RAIZ;?>carrito/addProducto" class="card-producto" method="post">
                 <a href="<?php echo URL_RAIZ;?>viewProducto?id=<?php echo $ps[$i]['id']?>" class="link-card" >
                     <div class="image-producto">
-                        <img src="<?php echo URL_RAIZ.IMG.$ps[$i]['imagen'];?>" alt="" name="img-producto" id="img-producto" class="img-producto">
+                        <img src="<?php echo URL_RAIZ.IMG.$ps[$i]['img'];?>" alt="" name="img-producto" id="img-producto" class="img-producto">
                     </div>
                     </a>
                 <div class="info-productos">

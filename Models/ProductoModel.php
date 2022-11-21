@@ -4,10 +4,11 @@ Class ProductoModel Extends Model implements IModel {
     private $idProducto;
     private $categoria;
     private $nombreProducto;
-    private $codigoProducto;
-    private $cantidadProducto;
     private $imgProducto;
-    private $precioProducto;
+    private $marca;
+    private $industria;
+    private $codigoProducto;
+    private $descripcion;
     private $estado;
 
 
@@ -25,18 +26,20 @@ Class ProductoModel Extends Model implements IModel {
                     NULL,
                     :categoria,
                     :nombre,
-                    :codigo,
-                    :cantidad,
                     :img,
-                    :precio,
+                    :marca,
+                    :industria,
+                    :codigo,
+                    :descripcion,
                     :estado)');
              $arrayData= array(
                 'categoria' => $this->categoria,
                 'nombre' => $this->nombreProducto,
-                'codigo' => $this->codigoProducto,
-                'cantidad' => $this->cantidadProducto,
                 'img' => $this->imgProducto,
-                'precio' => $this->precioProducto,
+                'marca' => $this->marca,
+                'industria' => $this->industria,
+                'codigo' => $this->codigoProducto,
+                'descripcion' => $this->descripcion,
                 'estado' =>$this->estado);
 
             $query->execute($arrayData);
@@ -124,20 +127,22 @@ public function update(){
             'UPDATE `producto` SET
              categoria_producto = :categoria,
              nombre_producto = :nombre,
-             codigo_producto = :codigo,
-             cantidad_producto = :cantidad,
              img_producto = :img,
-             precio_venta_producto = :precio
+             marca_producto = :marca,
+             industria_producto = :industria,
+             codigo_producto = :codigo,
+             descripcion_producto = :descipcion
              WHERE estado_producto = "AC"
              AND id_producto = :id');
         
         $arrayData= array([
             'categoria' => $this->categoriaProducto,
             'nombre' => $this->nombreProducto,
-            'codigo' => $this->codigoProducto,
-            'cantidad' => $this->cantidadProducto,
             'img' => $this->imgProducto,
-            'precio' => $this->precioProducto,
+            'marca' => $this->marca,
+            'industria' => $this->industria,
+            'codigo' => $this->codigoProducto,
+            'descripcion' => $this->descripcion,
             'id' => $this->getId() ]);
             
         $query->execute($arrayData);
@@ -152,10 +157,11 @@ public function from($array){
     $this->idProducto = $array['ID_PRODUCTO'];
     $this->categoria = $array['ID_CATEGORIA'];
     $this->nombreProducto = $array['NOMBRE_PRODUCTO'];
-    $this->codigoProducto = $array['CODIGO_PRODUCTO'];
-    $this->cantidadProducto = $array['CANTIDAD_PRODUCTO'];
     $this->imgProducto = $array['IMG_PRODUCTO'];
-    $this->precioProducto = $array['PRECIO_VENTA_PRODUCTO'];
+    $this->marca = $array['MARCA_PRODUCTO'];
+    $this->industria = $array['INDUSTRIA_PRODUCTO'];
+    $this->codigoProducto = $array['CODIGO_PRODUCTO'];
+    $this->descripcion = $array['DESCRIPCION_PRODUCTO'];
     $this->estado = $array['ESTADO_PRODUCTO'];
 }//fin from
 
@@ -169,17 +175,20 @@ public function getCategoria(){
 public function getNombre(){
     return $this->nombreProducto;
 }
-public function getCodigo(){
-    return $this->codigoProducto;
-}
-public function getCantidad(){
-    return $this->cantidadProducto;
-}
 public function getImg(){
     return $this->imgProducto;
 }
-public function getPrecio(){
-    return $this->precioProducto;
+public function getMarca(){
+    return $this->marca;
+}
+public function getIndustria(){
+    return $this->industria;
+}
+public function getCodigo(){
+    return $this->codigoProducto;
+}
+public function getDescripcion(){
+    return $this->descripcion;
 }
 public function getEstado(){
     return $this->estado;
@@ -195,17 +204,20 @@ public function setCategoria($categoria){
 public function setNombre($nombre){
     $this->nombreProducto = $nombre;
 }
-public function setCodigo($codigo){
-    $this->codigoProducto = $codigo;
-}
-public function setCantidad($cantidad){
-    $this->cantidadProducto = $cantidad;
-}
 public function setImg($img){
     $this->imgProducto = $img;
 }
-public function setPrecio($precio){
-    $this->precioProducto = $precio;
+public function setMarca($marca){
+    $this->marca = $marca;
+}
+public function setIndustria($industria){
+    $this->industria = $industria;
+}
+public function setCodigo($codigo){
+    $this->codigoProducto = $codigo;
+}
+public function setDescripcion($descripcion){
+    $this->descripcion = $descripcion;
 }
 public function setEstado($estado){ 
     $this->estado = $estado;

@@ -72,3 +72,7 @@ form input {
     height: 2rem;
     background: red;
 }
+
+textarea {
+    width: 90%;
+}

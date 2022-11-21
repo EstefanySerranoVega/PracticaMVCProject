@@ -3,7 +3,7 @@
 Class ClienteProductoModel Extends Model implements IModel{
     private $idCP;
     private $cliente;
-    private $producto;
+    private $ap;
     private $tipoPago;
     private $cantidadCP;
     private $totalCP;
@@ -22,7 +22,7 @@ Class ClienteProductoModel Extends Model implements IModel{
                 'INSERT INTO `cliente_producto` VALUES (
                     NULL,
                     :cliente,
-                    :producto,
+                    :ap,
                     :tipoPago,
                     :cantidad,
                     :total,
@@ -30,7 +30,7 @@ Class ClienteProductoModel Extends Model implements IModel{
                     :creacion )' );
             $arrayData = array(
                 'cliente'=> $this->cliente,
-                'producto'=>$this->producto,
+                'ap'=>$this->ap,
                 'tipoPago'=> $this->tipoPago,
                 'cantidad'=> $this->cantidad,
                 'estado' => $this->estado,
@@ -55,12 +55,12 @@ Class ClienteProductoModel Extends Model implements IModel{
         try{
             $query = $this->query(
                 'SELECT * FROM `cliente_producto` WHERE estado_cp = "AC"');
-            while($p = $query->fetch()){
-                $item = new ClienteProductoModel();
+            while($item = $query->fetch(PDO::FETCH_ASSOC)){
+                $cp = new ClienteProductoModel();
 
-                $item->from($p);
+                $cp->from($item);
 
-                array_push($items, $p);
+                array_push($items, $item);
             }
             return $items;
         }catch(PDOException $e){
@@ -126,13 +126,14 @@ Class ClienteProductoModel Extends Model implements IModel{
 
 
     public function from($array){
-        $this->idCP = $array[0];
-        $this->cliente = $array[1];
-        $this->producto = $array[2];
-        $this->tipoPago = $array[3];
-        $this->cantidadCP = $array[4];
-        $this->estado = $array[5];
-        $this->creacion = $array[6];
+        $this->idCP = $array['ID_CLIENTE_PRODUCTO'];
+        $this->cliente = $array['ID_CLIENTE'];
+        $this->ap = $array['ID_AP'];
+        $this->tipoPago = $array['ID_TIPO_PAGO'];
+        $this->cantidadCP = $array['CANTIDAD_CP'];
+        $this->totalCP = $array['TOTAL_CP'];
+        $this->estado = $array['ESTADO_CP'];
+        $this->creacion = $array['CREACION_CP'];
 
     }//fin from
 
@@ -144,14 +145,17 @@ public function setId($id){
 public function setCliente($cliente){
     $this->cliente = $cliente;
 }
-public function setProducto($producto){
-    $this->producto = $producto;
+public function setAP($ap){
+    $this->ap = $ap;
 }
 public function setTipoPago($tp){
     $this->tipoPago = $tp;
 }
 public function setCantidad($cantidad){
     $this->cantidadCP = $cantidad;
+}
+public function setTotal($total){
+    $this->totalCP = $total;
 }
 public function setCreacion ($creacion){
     $this->creacionCP = $creacion;
@@ -167,6 +171,7 @@ public function getCliente(){return $this->cliente;}
 public function getProducto(){return $this->producto;}
 public function getTipoPago(){return $this->tipoPago;}
 public function getCantidad(){ return $this->cantidadCP;}
+public function getTotal(){return $this->totalCP;}
 public function getCreacion(){ return $this->creacionCP;}
 public function getEstado(){ return $this->estadoCP;}
 

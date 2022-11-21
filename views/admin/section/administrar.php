@@ -18,7 +18,6 @@
     <div class="option">Editar slider</div>
     <div class="option">Editar seccion de productos</div>
     <div class="option">Editar categorias</div>
-    <div class="option"></div>
 </div>
    </div>
    </div>

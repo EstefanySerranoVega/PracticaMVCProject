@@ -26,7 +26,7 @@ $product = $producto->get($id);
                 echo constant('URL_RAIZ');?>Dashboard/newProducto" method = "post">
               
             <label for="nameProducto">Nombre del Producto: </label>
-            <input type="text" name="nameProducto" id="nameProducto">
+            <input type="text" name="nameProducto" id="nameProducto" placeholder="<?php echo $product['NOMBRE_PRODUCTO'] ?>">
             <label for="selectCat" id="selectCat">Categoria: </label>
             
             <select name="category" id="category">
@@ -42,27 +42,14 @@ $product = $producto->get($id);
         
             </select>
             <label for="cod" id="codigoProducto">Codigo: </label>
-            <input type="text" name="codigoProducto" id="codigoProducto" value="<?php echo $product['CODIGO_PRODUCTO']?>">
-            <label for="selectProv" id="selectProv">Proveedor: </label>
-            <select name="provider" id="provider">
-                <?php   
-                  for($i=0; $i<count($p);$i++){
-                   ?>
-              <option value="<?php echo $p[$i]['ID_PROVEEDOR']; ?>">
-                <?php  echo $p[$i]['EMPRESA_PROVEEDOR'];  ?>
-                 </option>
-               <?php 
-               }
-                ?>
-        
-            </select>
-            <label for="cant" id="cant">Cantidad Producto: </label>
-            <input type="number" name="cantidadProducto" id="cantidadProducto" >
-            <label for="precio" id="precio">Precio de Adquisición: </label>
-            <input type="number" name="precioA" id="precioA">
-            <label for="precio" id="precio">Precio de venta: </label>
-            <input type="number" name="precioVenta" id="precioVenta" value="">
-            <img src="<?php ?>" alt="">
+            <input type="text" name="codigoProducto" id="codigoProducto" placeholder="<?php echo $product['CODIGO_PRODUCTO']?>" value="">
+            <label for="marca" id="marca">Marca: </label>
+            <input type="text" name="marca" id="marca" placeholder="<?php echo $product['MARCA_PRODUCTO']?>">
+            <label for="industria" id="industria">Industria:</label>
+            <input type="text" name="industria" id="industria" placeholder="<?php echo $product['INDUSTRIA_PRODUCTO']?>">
+            <label for="descripcion" id="descripcion">Descripcion:</label>
+            <input type="text" name="descripcion" id="descripcion" placeholder="<?php echo $product['DESCRIPCION_PRODUCTO']?>">
+            <img src="<?php echo $product['IMG_PRODUCTO']?>" alt="">
             <input type="file" name="imgProducto" id="imgProducto">
             <input type="submit" value="GUARDAR" class="button">  
         </form>

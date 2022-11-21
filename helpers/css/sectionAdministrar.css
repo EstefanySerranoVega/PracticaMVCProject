@@ -13,3 +13,17 @@
 .option-administracion {
     background: white;
 }
+
+.option-section_administrar {
+    background: red;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    gap: 1rem;
+    padding: 1rem 2rem;
+}
+
+.option-section_administrar .option {
+    background: greenyellow;
+    padding: 1rem;
+    border-radius: 0.6rem;
+}
