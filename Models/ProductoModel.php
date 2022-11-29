@@ -125,25 +125,24 @@ public function update(){
     try{
         $query = $this->prepare(
             'UPDATE `producto` SET
-             categoria_producto = :categoria,
+             id_categoria = :categoria,
              nombre_producto = :nombre,
              img_producto = :img,
              marca_producto = :marca,
              industria_producto = :industria,
              codigo_producto = :codigo,
-             descripcion_producto = :descipcion
+             descripcion_producto = :descripcion
              WHERE estado_producto = "AC"
              AND id_producto = :id');
-        
-        $arrayData= array([
-            'categoria' => $this->categoriaProducto,
+        $arrayData= array(
+            'categoria' => $this->categoria,
             'nombre' => $this->nombreProducto,
             'img' => $this->imgProducto,
             'marca' => $this->marca,
             'industria' => $this->industria,
             'codigo' => $this->codigoProducto,
             'descripcion' => $this->descripcion,
-            'id' => $this->getId() ]);
+            'id' => $this->idProducto );
             
         $query->execute($arrayData);
 
@@ -231,7 +230,7 @@ public function exist($codigo)
                 'SELECT * FROM `producto`
             WHERE codigo_producto = :name
             AND estado_producto = "AC" ' );
-            $query->execute(['codigo' => $codigo]);
+            $query->execute(['name' => $codigo]);
 
           if($query->rowCount()){
             error_log('ProductoModel::exist()->rowCount => true');

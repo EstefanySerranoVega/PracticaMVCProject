@@ -117,10 +117,13 @@ Class ProveedorModel Extends Model implements IModel{
                 correo_proveedor = :correo
                 WHERE estado_proveedor = "AC"
                 AND id_proveedor = :id' );
+                error_log($this->empresaProveedor);
+                error_log($this->correoProveedor);
+                error_log($this->idProveedor);
             $query->execute([
                 'empresa' => $this->empresaProveedor,
                 'correo' => $this->correoProveedor,
-                'id' => $this->getId() ]);
+                'id' => $this->idProveedor ]);
             
             return true;
         }catch(PDOException $e){

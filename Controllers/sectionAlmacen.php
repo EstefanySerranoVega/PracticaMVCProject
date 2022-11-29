@@ -1,13 +1,13 @@
 <?php
 
-Class sectionShoppin extends SessionController{
+Class sectionAlmacen extends SessionController{
 
     function __construct(){
         parent::__construct();
     }
 
     public function render(){
-        $this->view->render('admin/section/shoppins');
+        $this->view->render('admin/section/Almacen');
     }
 
 }

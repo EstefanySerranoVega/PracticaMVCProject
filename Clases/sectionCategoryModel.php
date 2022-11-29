@@ -26,6 +26,20 @@ parent::__construct();
 
             return $items;
     }
+    public function getNameCategory($id){
+        $items = []; 
+
+        $query = $this->query(
+            'SELECT id_categoria, nombre_categoria
+            FROM categoria WHERE id_categoria = '.$id.'
+            AND estado_categoria = "AC"');
+        $query->execute();
+        while($item = $query->fetch(PDO::FETCH_ASSOC)){
+            array_push($items,$item);
+        }
+
+        return $items;
+    }
 }
 
 

@@ -117,7 +117,7 @@ public function update(){
             'nombre' => $this->nombreCategoria,
             'creacion' => $this->creacion,
             'estado' => $this->estado,
-            'id' => $this->getId()
+            'id' => $this->idCategoria
         ]);
 
         return true;

@@ -131,28 +131,95 @@ button .icon-btn {
     margin: 0.5rem 1rem;
 }
 
-.table-shopping {
+.table-container {
+    width: 100%;
+    padding: 1rem;
+}
+
+.table-grid {
+    width: 95%;
+    display: grid;
+    grid-template-columns: auto;
+    border-radius: 0.8rem;
+}
+
+.header-table {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 13% 25% 15% 10% 10% 15% 12%;
+    height: 2rem;
+    margin: 0.5rem 0;
+    border-radius: 0.8rem;
+}
+
+.body-table {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.row-table {
+    width: 98%;
+    display: grid;
+    grid-template-columns: 13% 25% 15% 10% 10% 15% 12%;
+    background: #f2f2f288;
+    height: 4rem;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    margin: 0.3rem 0;
+    transition: all 400ms;
+}
+
+.cell-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.cell-table {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    border-left: 3px solid #0005;
+}
+
+.row-table:hover {
+    background: #f2f2f2;
+}
+
+.icons-table {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-items: center;
 }
 
-.header-table {
-    padding: 0.5rem;
-    width: 98%;
-    height: 3rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    background: #fff5;
-    margin: 0.5rem 0;
+.icon-action {
+    width: 3rem;
+    height: 2.5rem;
+    border-radius: 0.8rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    transition: all 400ms;
 }
 
-.body-table {
-    padding: 0.5rem;
-    width: 98%;
-    height: 3rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    background: #fff5;
+.icon-action:hover {
+    background: #49adfe;
+}
+
+.icon-action:hover svg {
+    fill: #fff;
+}
+
+.icon-action svg {
+    width: 1.2rem;
+    fill: #0008;
+    transition: all 400ms;
 }

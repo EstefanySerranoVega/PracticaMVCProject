@@ -120,7 +120,7 @@ class PersonaModel extends Model implements IModel{
         try{
             $query = $this->prepare(
                 'UPDATE `persona` SET
-                nombre_persona = :nombre
+                nombre_persona = :nombre,
                 paterno_persona = :paterno,
                 materno_persona = :materno,
                 telefono_persona = :telefono,
@@ -134,7 +134,7 @@ class PersonaModel extends Model implements IModel{
                 'materno' => $this->maternoPersona,
                 'telefono' => $this->telefonoPersona,
                 'nacimiento' => $this->nacPersona,
-                'id' => $this->getId()]);
+                'id' => $this->idPersona]);
 
             return true;
         }catch(PDOException $e){

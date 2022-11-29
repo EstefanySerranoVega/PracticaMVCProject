@@ -119,7 +119,7 @@ class UserModel extends Model implements IModel{
                 AND id_usuario = :id ' );
             $query->execute([
                 'nameUser' =>$this->nameUser,
-                'id' => $this->getId()  ]);
+                'id' => $this->idUser]);
 
             return true;
         }catch(PDOException $e){

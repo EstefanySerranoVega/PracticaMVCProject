@@ -1,8 +1,15 @@
          /*FORMULARIO CATEGORIA*/
          
+         .category {
+             display: flex;
+             flex-wrap: wrap;
+             align-items: center;
+             justify-content: center;
+         }
+         
          .categoria {
              width: 20rem;
-             background: #fff5;
+             background: rgba(253, 224, 117, 0.333);
              padding: 1rem 0.5rem;
              border-radius: 2rem;
          }

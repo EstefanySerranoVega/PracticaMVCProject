@@ -9,7 +9,7 @@ Class sectionProvider extends sessionController{
         $this->view->render('admin/section/Dashboard/provider');
     }
     public function updateItem(){
-        $this->view->render('admin/section/Forms/updateProvider');
+        $this->view->render('admin/section/update/provider');
     }
     public function deleteItem(){
         if($this->existGET(['id'])){

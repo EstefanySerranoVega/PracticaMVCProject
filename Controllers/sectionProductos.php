@@ -29,6 +29,10 @@ public function deleteItem(){
     
     }
 
+    public function addLote(){
+        $this->view->render('admin/section/Forms/addLoteProductos');
+    }
+
 
 
 }

@@ -26,10 +26,7 @@ public function deleteItem(){
 
 }
 public function updateItem(){
-    
-    $this->view->render('admin/section/Forms/updateCategory');
-    
-
+    $this->view->render('admin/section/update/category');
 }
 
 }

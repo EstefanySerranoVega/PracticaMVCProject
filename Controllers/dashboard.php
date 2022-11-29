@@ -53,18 +53,17 @@ public function newProducto(){
     
 
     if($this->existPOST(['nameProducto',
-        'category','codigoProducto','provider',
-        'cantidadProducto','precioA',
-        'precioVenta','imgProducto'])){
+        'category','codigoProducto','marca',
+        'industria','descripcion',
+        'imgProducto'])){
 
 
             $nameProducto = $this->getPOST('nameProducto');
             $catProducto = $this->getPOST('category');
             $codProducto = $this->getPOST('codigoProducto');
-            $provider = $this->getPOST('provider');
-            $cantProducto = $this->getPOST('cantidadProducto');
-            $precioUPP = $this->getPOST('precioA');
-            $precioProducto = $this->getPOST('precioVenta');
+            $marca = $this->getPOST('marca');
+            $industria = $this->getPOST('industria');
+            $descripcion = $this->getPOST('descripcion');
             $imgProducto = $this->getPOST('imgProducto');
 
            // $proveedor;
@@ -72,10 +71,9 @@ public function newProducto(){
             if($nameProducto = '' || empty($nameProducto)
             || $catProducto = '' || empty($catProducto)
             || $codProducto = '' || empty($codProducto)
-            || $provider ='' || empty($provider)
-            || $cantProducto = '' || empty($cantProducto)
-            || $precioUPP ='' || empty($precioUPP)
-            || $precioProducto = '' || empty($precioProducto)
+            || $marca ='' || empty($marca)
+            || $industria = '' || empty($industria)
+            || $descripcion ='' || empty($descripcion)
             ){
             error_log('ingrese todos los valores solicitados, por producto');
         $this->redirect('dashboard');    
@@ -84,23 +82,22 @@ public function newProducto(){
             $nameProducto = $this->getPOST('nameProducto');
             $catProducto = $this->getPOST('category');
             $codProducto = $this->getPOST('codigoProducto');
-            $provider = $this->getPOST('provider');
-            $cantProducto = $this->getPOST('cantidadProducto');
-            $precioUPP = $this->getPOST('precioA');
-            $precioProducto = $this->getPOST('precioVenta');
+            $marca = $this->getPOST('marca');
+            $industria = $this->getPOST('industria');
+            $descripcion = $this->getPOST('descripcion');
             $imgProducto = $this->getPOST('imgProducto');
 
         require_once('Models/ProductoModel.php');
        // require_once('Models/ProveedorModel.php');
-        require_once('Models/UsuarioProductoProveedorModel.php');
-            
+        
         $producto = new ProductoModel();
         $producto->setCategoria($catProducto);
         $producto->setNombre($nameProducto);
         $producto->setCodigo($codProducto);
+        $producto->setMarca($marca);
+        $producto->setIndustria($industria);
+        $producto->setDescripcion($descripcion);
         $producto->setImg($imgProducto);
-        $producto->setCantidad($cantProducto);
-        $producto->setPrecio($precioProducto);
         $producto->setEstado('AC');
         
                 if($producto->exist($codProducto)){
@@ -110,25 +107,13 @@ public function newProducto(){
                     //$proveedor = new ProveedorModel();
                     //if($proveedor->save()){
                     //}
-                    $upp = new UsuarioProductoProveedorModel();
-                    $upp->setUsuario($_SESSION['idUser']);
-                    $upp->setProducto($producto->getId());
-                    $upp->setProveedor($provider);
-                    $upp->setAlmacen(1);
-                    $upp->setEstado('AC');
-                    $upp->setPrecio($precioUPP);
-                    $upp->setIngreso(Date('Y-m-d H:i:s'));
-                    $upp->setCreacion(Date('Y-m-d H:i:s'));
-                    $upp->save();
                     error_log('producto guardado');
                     $this->redirect('dashboard');  
                 }else{
                     error_log('ha ocurrido un error');
                     $this->redirect('dashboard');  
                 }
-
             }
-
     }else{
         error_log('error, revise el nombre del form');
         $this->redirect('dashboard');  
@@ -149,7 +134,120 @@ if($this->existPOST(['empresaProveedor', 'correoProveedor'])){
 
 }
 }
+public function updateProducto(){
+    if($this->existPOST(['id','nameProducto','category',
+    'codigoProducto','marca','industria','descripcion', 'imgProducto'])){
+        error_log('success');
+        
+        $id = $this->getPOST('id');
+        $nameProducto = $this->getPOST('nameProducto');
+        $catProducto = $this->getPOST('category');
+        $codProducto = $this->getPOST('codigoProducto');
+        $marca = $this->getPOST('marca');
+        $industria = $this->getPOST('industria');
+        $descripcion = $this->getPOST('descripcion');
+        $imgProducto = $this->getPOST('imgProducto');
 
+       // $proveedor;
+       //$user = $this->getUser();$almacen;
+        if( $id = '' || empty($id)
+        ||    $nameProducto = '' || empty($nameProducto)
+        || $catProducto = '' || empty($catProducto)
+        || $codProducto = '' || empty($codProducto)
+        || $marca ='' || empty($marca)
+        || $industria = '' || empty($industria)
+        || $descripcion ='' || empty($descripcion)
+        ){
+        error_log('ingrese todos los valores solicitados, por producto');
+    $this->redirect('sectionProductos');    
+    }else{
+        
+        $id = $this->getPOST('id');
+        $nameProducto = $this->getPOST('nameProducto');
+        $catProducto = $this->getPOST('category');
+        $codProducto = $this->getPOST('codigoProducto');
+        $marca = $this->getPOST('marca');
+        $industria = $this->getPOST('industria');
+        $descripcion = $this->getPOST('descripcion');
+        $imgProducto = $this->getPOST('imgProducto');
+
+    require_once('Models/ProductoModel.php');
+        error_log('id: '.$id);
+        error_log('categoria: '.$catProducto);
+        error_log('nombre: '.$nameProducto);
+        error_log('codigo: '.$codProducto);
+        error_log('marca: '.$marca);
+        error_log('industria: '.$industria);
+        error_log('img: '.$imgProducto);
+        error_log('descripcion: '.$descripcion);
+    $producto = new ProductoModel();
+    $producto->setId($id);
+    $producto->setCategoria($catProducto);
+    $producto->setNombre($nameProducto);
+    $producto->setCodigo($codProducto);
+    $producto->setMarca($marca);
+    $producto->setIndustria($industria);
+    $producto->setDescripcion($descripcion);
+    $producto->setImg($imgProducto);
+    $producto->setEstado('AC');
+    
+           if($producto->update()){
+                //$proveedor = new ProveedorModel();
+                //if($proveedor->save()){
+                //}
+                error_log('producto Actualizado');
+                $this->redirect('sectionProductos');  
+            }else{
+                error_log('ha ocurrido un error');
+                $this->redirect('sectionProductos');  
+            }
+        }
+    }else{
+        error_log('no se encontraron los post');
+    }
+}
+
+public function updateProveedor(){
+    if($this->existPOST(['id','empresaProveedor','correoProveedor'])){
+        $id = $this->getPOST('id');
+        $empresa = $this->getPOST('empresaProveedor');
+        $correo = $this->getPOST('correoProveedor');
+
+        if($id = '' || empty($id)
+        || $empresa = '' || empty($empresa)
+        || $correo = '' || empty($correo)){
+            error_log('introduzca todos los datos');
+        }else{
+            require_once('Models/ProveedorModel.php');
+            $id = $this->getPOST('id');
+            $empresa = $this->getPOST('empresaProveedor');
+            $correo = $this->getPOST('correoProveedor');
+
+            $proveedor = new ProveedorModel();
+            $proveedor->setId($id);
+            $proveedor->setEmpresa($empresa);
+            $proveedor->setCorreo($correo);
+            if($proveedor->update()){
+                error_log('actualizado correctamente');
+                $this->redirect('sectionProvider'); 
+            }else{
+                error_log('error al actualizar');
+                $this->redirect('sectionProvider'); 
+            }
+
+        }
+    }else{
+        error_log('no se encontro el POST');
+    }
+}
+public function updateCategoria(){
+    if($this->existPOST(['id','nombreCategoria'])){
+        $id = $this->getPOST('id');
+    }else{
+        error_log('no se ha encontrado el POST');
+}
+
+}
 }
 
 ?>

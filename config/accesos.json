@@ -76,7 +76,7 @@
         "role": "admin"
     }, {
 
-        "site": "sectionShoppin",
+        "site": "sectionAlmacen",
         "access": "private",
         "role": "admin"
     }, {

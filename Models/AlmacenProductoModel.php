@@ -174,7 +174,21 @@ public function getForProducto($id){
         error_log('ERROR::AlmacenProducto::getForProducto => '.$e);
     }
 }
+public function countProducto($id){
+    $items = [];
+    try{
+        $query = $this->query(
+            'SELECT ID_PRODUCTO FROM almacen_producto where id_producto ='.$id);
+        
+            $query->execute();
+       $cant = $query->rowCount();  
+    error_log('cantidad: '.$cant);
+            return $cant;      
+    
+    }catch(PDOException $e){
+        error_log('ERROR::AlmacenProducto->countProducto()=>'.$e);
+    }
 
-
+}
 }
 ?>

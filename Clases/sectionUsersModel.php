@@ -13,8 +13,16 @@ Class sectionUsersModel extends Model{
     
 
         $items = [];
-        $query = $this->prepare(
-            'SELECT user.id_usuario, per.nombre_persona, per.paterno_persona,per.materno_persona, per.telefono_persona, user.nombre_usuario, rol.nombre_roles, user.estado_usuario
+        $query = $this->query(
+            'SELECT user.id_usuario as id,
+             per.nombre_persona,
+              per.paterno_persona,
+              per.materno_persona, 
+              per.telefono_persona,
+              per.nac_persona as nacimiento,
+               user.nombre_usuario,
+                rol.nombre_roles, 
+                user.estado_usuario
             FROM contrasenia cont
             INNER JOIN usuario user
             ON user.ID_USUARIO= cont.ID_USUARIO
@@ -29,6 +37,38 @@ Class sectionUsersModel extends Model{
         }
     
         
+
+    return $items;
+    }
+    public function getUserById($id){    
+        error_log('id: '.$id);
+        $items = [];
+        $query = $this->query(
+            'SELECT user.id_usuario as id_user,
+            per.id_persona as id_p,
+            per.id_persona as id_persona,
+             per.nombre_persona as name,
+              per.paterno_persona as paterno,
+              per.materno_persona as materno,
+               per.telefono_persona as telefono, 
+              per.nac_persona as nacimiento,
+               user.nombre_usuario as username,
+                rol.nombre_roles as rol, 
+                user.estado_usuario
+            FROM contrasenia cont
+            INNER JOIN usuario user
+            ON user.ID_USUARIO= cont.ID_USUARIO
+            INNER JOIN persona per
+            ON per.ID_PERSONA = user.ID_PERSONA
+            INNER JOIN roles rol
+            ON rol.NOMBRE_ROLES != "cliente"
+            WHERE user.id_usuario = '.$id.'
+            AND user.estado_usuario = "AC"');
+        $query->execute();
+        while($item = $query->fetch(PDO::FETCH_ASSOC)){
+            array_push($items,$item);
+
+        }
 
     return $items;
     }
