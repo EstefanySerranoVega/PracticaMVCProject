@@ -1,16 +1,13 @@
 <?php
-if($_GET['id']){
-    $id = $_GET['id'];
-    echo 'el id es: '.$id;
-    require_once('Clases/sectionAlmacenModel.php');
-    $almacen = new sectionAlmacenModel();
-    $p =$almacen->getItem($id);
+
     require_once('Models/ProveedorModel.php');
     $proveedor = new ProveedorModel();
     $pr = $proveedor->getAll();
-}else{
-    echo 'no se encontró el item';
-}
+    require_once('Models/ProductoModel.php');
+    $producto = new ProductoModel();
+    $p = $producto->getAll();
+
+echo 'Ingresar nuevo lote, ahre';
 
 ?><!DOCTYPE html>
 <html lang="en">
@@ -25,13 +22,18 @@ if($_GET['id']){
     <div class="container">
         <form action="<?php echo URL_RAIZ;?>sectionAlmacen/AddLote" method="POST">
             <input type="hidden" name="id" id="id" value="<?php echo $p[0]['id_producto'];?>" readonly>
-           
-            <label for="codigo">CODIGO:</label>
-            <input type="text" name="codigo" id="codigo" value="<?php echo $p[0]['codigo'];?>" readonly>
-            <label for="producto">PRODUCTO:</label>
-            <input type="text" name="producto" id="producto" value="<?php echo $p[0]['producto'];?>" readonly>
-            <label for="categoria">CATEGORIA:</label>
-            <input type="text" name="categoria" id="categoria" value="<?php echo $p[0]['name_cat'];?>" readonly>
+           <label for="producto">SELECCIONE UN PRODUCTO:</label>
+            <select name="id" id="id">
+            <?php   
+                  for($i=0; $i<count($p);$i++){
+                   ?>
+                <option value="<?php echo $p[$i]['ID_PRODUCTO'];?>">
+                <?php echo $p[$i]['NOMBRE_PRODUCTO'];?>
+                 </option>
+               <?php 
+               }
+                ?>
+            </select>
             <label for="proveedor">PROVEEDOR:</label>
             <select name="proveedor" id="proveedor">
             <?php   

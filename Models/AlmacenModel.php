@@ -181,6 +181,7 @@ public function exist($a){
 }//fin almacen exist
 
 
+
 }
 
 ?>

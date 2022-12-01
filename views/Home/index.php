@@ -1,6 +1,7 @@
 <?php 
 require_once('Clases/HomeModel.php');
 require_once('helpers/html/require.php');
+//require_once();
 ?>
 
 <!DOCTYPE html>
@@ -10,10 +11,10 @@ require_once('helpers/html/require.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Propuesta Ecommerce</title>
+    <title>Ecommerce</title>
 
     <link rel="stylesheet" href="<?php echo URL_RAIZ.STYLE;?>home.css">
-
+<script src="<?php echo URL_RAIZ.SCRIPT.'slider.js';?>"></script></script>
 </head>
 
 <body>
@@ -97,9 +98,9 @@ require_once('helpers/html/require.php');
                     $producto = $productos->getAllProductos();
                     for($i=0;$i<count($producto);$i++){
                         //<?php echo URL_RAIZ;carrito/addCarrito?>
-                 <form action="<?php echo URL_RAIZ;?>carrito/addCarrito?id=<?php echo $producto[$i]['id_ap']?>"  id="card_producto" class="card-producto" method="post">
+                 <form action="<?php echo URL_RAIZ;?>carrito/addCarrito?id=<?php echo $producto[$i]['id_p']?>"  id="card_producto" class="card-producto" method="post">
   
-                 <a href="<?php echo URL_RAIZ;?>viewProducto?id=<?php echo $producto[$i]['id_ap']?>" class="">
+                 <a href="<?php echo URL_RAIZ;?>viewProducto?id=<?php echo $producto[$i]['id_p']?>" class="">
                     <div class="image-producto">
                         <img src="<?php echo URL_RAIZ.IMG.$producto[$i]['img_producto'];?>" alt="" name="img-producto" id="img-producto" class="img-producto">
                         <input type="hidden" name="id-producto" id="id-producto" value="<?php echo $producto[$i]['id_producto']?>">

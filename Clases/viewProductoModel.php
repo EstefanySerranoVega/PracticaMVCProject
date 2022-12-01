@@ -33,7 +33,8 @@ public function getCurrentProduct($id){
     almacen_producto.pventa_ap as precio FROM `almacen_producto`
     inner join producto
     on producto.id_producto = almacen_producto.ID_PRODUCTO
-    WHERE producto.estado_producto = "AC" AND producto.id_producto = '.$id);
+    WHERE producto.estado_producto = "AC"
+         AND producto.id_producto = '.$id);
     $query->execute();
 
     $producto = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -60,7 +61,8 @@ error_log('categoria '.$this->categoria);
     almacen_producto.pventa_ap as precio FROM `almacen_producto`
     inner join producto
     on producto.id_producto = almacen_producto.ID_PRODUCTO
-    WHERE producto.estado_producto = "AC" AND producto.id_categoria = '.$this->categoria);
+    WHERE producto.estado_producto = "AC"
+     AND producto.id_categoria = '.$this->categoria);
     $query->execute();
 
     while($item = $query->fetch(PDO::FETCH_ASSOC)){

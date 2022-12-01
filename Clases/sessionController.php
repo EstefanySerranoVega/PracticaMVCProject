@@ -34,6 +34,7 @@ public function getUserId(){
 public function init(){
         error_log('SesionController::init()');
                 $this->session = new Session();
+                $this->session->setCurrentIdAlmacen(1);
             
                 $json = $this->getJSONFileConfig();
                 $this->sites = $json['sites'];
@@ -60,6 +61,7 @@ public function validateSesion(){
         $this->rolUser = $this->session->getCurrentRol();
                 error_log("sessionController::validateSession(): username:" . $this->username . " - role: " . $this->rolUser);
                 $rol = $this->session->getCurrentRol();
+
             
                 //si es publica
                 if($this->isPublic()){

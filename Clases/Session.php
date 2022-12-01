@@ -4,7 +4,7 @@ Class Session {
     private $idUser = 'idUser';
     private $rol = 'rol';
     private $idRol = 'idRol';
-    private $idAlmacen = 'rol';
+    private $idAlmacen = 'almacen';
 function __construct(){
     if(session_status()==PHP_SESSION_NONE){
         session_start();

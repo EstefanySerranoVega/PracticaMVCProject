@@ -30,7 +30,8 @@ private $category;
     almacen_producto.PVENTA_AP as precio_producto FROM `almacen_producto`
     inner join producto
     on producto.id_producto = almacen_producto.ID_PRODUCTO
-    WHERE producto.estado_producto = "AC"');
+    WHERE producto.estado_producto = "AC"
+    GROUP BY producto.codigo_producto');
     $query->execute();
     
     while($item = $query->fetch(PDO::FETCH_ASSOC)){

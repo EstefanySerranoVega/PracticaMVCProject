@@ -44,9 +44,8 @@ Class AlmacenProductoModel extends model implements IModel{
                 'ingreso' => $this->ingreso,
                 'estado' => $this->estado
             );
-
             $query->execute($arrayData);
-            $id = $this->query("SELECT MAX(ID_AP) AS id FROM ALMACEN_PRODUCTOS");
+            $id = $this->query("SELECT MAX(ID_AP) AS id FROM ALMACEN_PRODUCTO");
             if ($row = $id->fetchAll()) {
                 $this->idAP = $row[0][0];
                 }
@@ -98,7 +97,7 @@ public function delete($id){}//fin delete($id)
 public function update(){}//fin update
 
 public function from($array = []){
-     $this->idAP = $array['ID_AP'];;
+     $this->idAP = $array['ID_AP'];
      $this->almacen = $array['ID_ALMACEN'];
      $this->producto = $array['ID_PRODUCTO'];
      $this->pventa = $array['PVENTA_AP'];

@@ -57,7 +57,7 @@ if(isset($_GET['id'])){
             for($i=0;$i<count($ps);$i++){?>
                         
               <form action="<?php echo URL_RAIZ;?>carrito/addProducto" class="card-producto" method="post">
-                <a href="<?php echo URL_RAIZ;?>viewProducto?id=<?php echo $ps[$i]['id']?>" class="link-card" >
+                <a href="<?php echo URL_RAIZ;?>viewProducto?id=<?php echo $ps[$i]['id_producto']?>" class="link-card" >
                     <div class="image-producto">
                         <img src="<?php echo URL_RAIZ.IMG.$ps[$i]['img'];?>" alt="" name="img-producto" id="img-producto" class="img-producto">
                     </div>
