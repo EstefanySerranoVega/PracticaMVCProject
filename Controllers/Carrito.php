@@ -80,6 +80,17 @@ if($this->existGET(['item'])){
 }
     
 }
+public function send(){
+    
+    if($_SESSION['idUser'] != ''){
+        echo "<script> alert('la sesion está iniciada, comprar producto');</script>"; 
+        error_log($_SESSION['idUser'] );
+        $this->view->render('Home/Pagar');
+    }else{
+        echo "<script> alert('inicie sesion para comprar');</script>";
+        $this->view->render('login/index'); }
+}
+
 }
 
 ?>

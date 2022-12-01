@@ -31,7 +31,7 @@ $lista = $carrito->listProducts();
     $n = 0;
            foreach($_SESSION['carrito'] as $index=>$item){
            // var_dump(count($_SESSION['carrito']));
-           var_dump($index);
+           //var_dump($index);
             ?>
             <form action="">
                 <?php
@@ -73,8 +73,9 @@ $lista = $carrito->listProducts();
             <div class="header-summary">
                 <h2>Summary</h2>
             </div>
-            <form action="">
+            <form action="<?php echo URL_RAIZ;?>Carrito/send" method="post">
                 <div class="header-form_summary">
+                <input type="hidden" name="carrito" id="carrito" value="<?php echo $_SESSION['carrito']?>">   
                 <label for="num-items">Total de productos seleccionados:</label>
                 <label for="total-items"><?php  echo $n;?> items</label>
                 </div>
@@ -82,6 +83,8 @@ $lista = $carrito->listProducts();
                 <label for="total-price" class="total-price">PRECIO TOTAL</label>
                 <label for="total-shop" class="total-shop"> <?php 
                 echo $total;?>.bs</label>
+                <input type="hidden" name="total" id="total" value="<?php echo $total;?>">
+                
 
                 </div>
                 <input type="submit" value="COMPRAR AHORA!" class="btn-checkout">

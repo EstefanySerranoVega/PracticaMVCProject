@@ -34,6 +34,11 @@
         "site": "carrito",
         "access": "public",
         "role": ""
+    },{
+
+        "site": "pagar",
+        "access": "private",
+        "role": "cliente"
     }, {
 
         "site": "admin",
