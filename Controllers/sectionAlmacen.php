@@ -9,6 +9,9 @@ Class sectionAlmacen extends SessionController{
     public function render(){
         $this->view->render('admin/section/Almacen');
     }
+    public function addItem(){
+        $this->view->render('admin/section/Forms/AddLoteProductos');
+    }
 
 }
 

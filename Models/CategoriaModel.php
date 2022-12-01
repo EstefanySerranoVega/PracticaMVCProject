@@ -109,14 +109,10 @@ public function update(){
     try{
         $query = $this->prepare(
             'UPDATE `categoria` SET
-            nombre_categoria = :nombre,
-            creacion_categoria = :creacion,
-            estado_categoria = :estado
+            nombre_categoria = :nombre
             WHERE id_categoria = :id ' );
         $query->execute([
             'nombre' => $this->nombreCategoria,
-            'creacion' => $this->creacion,
-            'estado' => $this->estado,
             'id' => $this->idCategoria
         ]);
 

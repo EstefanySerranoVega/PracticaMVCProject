@@ -243,8 +243,34 @@ public function updateProveedor(){
 public function updateCategoria(){
     if($this->existPOST(['id','nombreCategoria'])){
         $id = $this->getPOST('id');
+        $nombre = $this->getPOST('nombreCategoria');
+
+        if($id = '' || empty($id)
+        || $nombre = '' || empty($nombre)){
+            error_log('Ingrese todos los datos solicitados');
+            $this->redirect('sectionCategory');
+        }else{
+            
+        $id = $this->getPOST('id');
+        $nombre = $this->getPOST('nombreCategoria');
+
+        require_once('Models/CategoriaModel.php');
+        $categoria = new CategoriaModel();
+
+        $categoria->setNombre($nombre);
+        $categoria->setId($id);
+
+        if($categoria->update()){
+            error_log('Actualizacion de categoria exitosa');
+            $this->redirect('sectionCategory');
+        }else{
+            error_log('no se pudo modificar la categoria');
+            $this->redirect('sectionCategory');
+        }
+        }
     }else{
         error_log('no se ha encontrado el POST');
+        $this->redirect('sectionCategory');
 }
 
 }
