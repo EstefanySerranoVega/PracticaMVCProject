@@ -20,11 +20,12 @@ public function currentProducto(){
 
 }
 public function getCurrentProduct($id){
-    $query = $this->query(
+    $query = $this->prepare(
         'SELECT almacen_producto.id_ap as id_ap,
     producto.id_producto as id_producto,
     producto.nombre_producto as nombre, 
-    producto.id_categoria as categoria,
+    producto.id_categoria as id_categoria,
+    categoria.nombre_categoria as categoria,
     producto.codigo_producto as codigo,
     producto.img_producto as img,
     producto.industria_producto as industria,
@@ -33,13 +34,15 @@ public function getCurrentProduct($id){
     almacen_producto.pventa_ap as precio FROM `almacen_producto`
     inner join producto
     on producto.id_producto = almacen_producto.ID_PRODUCTO
+    INNER JOIN categoria 
+    ON categoria.id_categoria = producto.id_categoria
     WHERE producto.estado_producto = "AC"
          AND producto.id_producto = '.$id);
     $query->execute();
 
     $producto = $query->fetchAll(PDO::FETCH_ASSOC);
 
-    $this->categoria = $producto[0]['categoria'];
+    $this->categoria = $producto[0]['id_categoria'];
 error_log('categoria '.$this->categoria);
       // $this->getSimilarProductos($this->categoria);
         return $producto;  
@@ -48,7 +51,7 @@ error_log('categoria '.$this->categoria);
     error_log('cargando productos similares');
     error_log('id buscado: '.$this->categoria);
     $items = [];
-    $query = $this->query(
+    $query = $this->prepare(
         'SELECT almacen_producto.id_ap as id_ap,
     producto.id_producto as id_producto,
     producto.nombre_producto as nombre, 

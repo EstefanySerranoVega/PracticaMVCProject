@@ -34,11 +34,67 @@
         "site": "carrito",
         "access": "public",
         "role": ""
-    },{
+    }, {
 
         "site": "pagar",
         "access": "private",
         "role": "cliente"
+    }, {
+
+        "site": "admin",
+        "access": "private",
+        "role": "colaborador"
+    }, {
+
+        "site": "dashboard",
+        "access": "private",
+        "role": "colaborador"
+    }, {
+
+        "site": "sectionProductos",
+        "access": "private",
+        "role": "colaborador"
+    }, {
+
+        "site": "profile",
+        "access": "private",
+        "role": "colaborador"
+    }, {
+
+        "site": "settins",
+        "access": "private",
+        "role": "colaborador"
+    }, {
+
+        "site": "sectionClientes",
+        "access": "private",
+        "role": "colaborador"
+    }, {
+
+        "site": "sectionUsers",
+        "access": "private",
+        "role": "colaborador"
+    }, {
+
+        "site": "sectionAlmacen",
+        "access": "private",
+        "role": "colaborador"
+    }, {
+        "site": "sectionCategory",
+        "access": "private",
+        "role": "colaborador"
+    }, {
+        "site": "sectionProvider",
+        "access": "private",
+        "role": "colaborador"
+    }, {
+        "site": "sectionVenta",
+        "access": "private",
+        "role": "colaborador"
+    }, {
+        "site": "sectionAdministrar",
+        "access": "private",
+        "role": "colaborador"
     }, {
 
         "site": "admin",

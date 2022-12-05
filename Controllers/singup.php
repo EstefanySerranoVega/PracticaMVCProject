@@ -26,12 +26,14 @@ function newUser(){
         ['nombrePersona','paternoPersona',
         'maternoPersona','telefonoPersona',
         'nacPersona','username',
-        'password'])){ 
+        'password','correo','direccion'])){ 
 
             $nombrePersona = $this->getPOST('nombrePersona');
             $paternoPersona = $this->getPOST('paternoPersona');
             $maternoPersona = $this->getPOST('maternoPersona');
             $telefonoPersona = $this->getPOST('telefonoPersona');
+            $correo = $this->getPOST('emailCliente');
+            $direccion = $this->getPOST('direccion');
             $nacPersona = $this->getPOST('nacPersona');
             $username  = $this->getPOST('username');
             $password = $this->getPOST('password');
@@ -65,6 +67,7 @@ function newUser(){
             $persona->setMaterno($maternoPersona);
             $persona->setTelefono($telefonoPersona);
             $persona->setNacimiento($nacPersona);
+
             $persona->setEstado('AC');
             $persona->setCreacion(Date('Y-m-d H:i:s'));
             
@@ -79,11 +82,12 @@ function newUser(){
             }else if( $persona->save() ){
             
                 $usuario->setPersona($persona->getId());
-                //$usuario->setPersona(23);
-                $usuario->setRoles(2);
+                $usuario->setRoles(3);
                 $usuario->setNombre($username);
+                $usuario->setProfile('avatar1.PNG');
                 $usuario->setEstado('AC');
                 $usuario->setCreacion(Date('Y-m-d H:i:s'));
+                
     
     if($usuario->save()){
         
@@ -123,7 +127,7 @@ function newCliente(){
         ['nombrePersona','paternoPersona',
         'maternoPersona','telefonoPersona',
         'nacPersona','username',
-        'password','emailCliente'])){ 
+        'password','emailCliente','direccion'])){ 
 
             $nombrePersona = $this->getPOST('nombrePersona');
             $paternoPersona = $this->getPOST('paternoPersona');
@@ -133,6 +137,8 @@ function newCliente(){
             $username  = $this->getPOST('username');
             $password = $this->getPOST('password');
             $correo = $this->getPOST('emailCliente');
+            $direccion = $this->getPOST('direccion');
+
             error_log('singup::newUser()=>existPOST()-> true ');
            
 
@@ -157,6 +163,7 @@ function newCliente(){
             $username  = $this->getPOST('username');
             $password = $this->getPOST('password');
             $correo = $this->getPOST('emailCliente');
+            $direccion = $this->getPOST('direccion');
             
             error_log('personaModel create ');
             $persona = new PersonaModel();
@@ -182,6 +189,7 @@ function newCliente(){
                 error_log('id persona es: '.$persona->getId());
                 $cliente->setPersona($persona->getId());
                 $cliente->setCorreo($correo);
+                $cliente->setDireccion($direccion);
                 $cliente->setCreacion(Date('Y-m-d H:i:s'));
                 $cliente->setEstado('AC');
                
@@ -191,6 +199,7 @@ function newCliente(){
                         //$usuario->setPersona(23);
                         $usuario->setRoles(1);
                         $usuario->setNombre($username);
+                        $usuario->setProfile('avatar1.PNG');
                         $usuario->setEstado('AC');
                         $usuario->setCreacion(Date('Y-m-d H:i:s'));
             

@@ -5,8 +5,8 @@ Class ClienteProductoModel Extends Model implements IModel{
     private $cliente;
     private $ap;
     private $tipoPago;
-    private $cantidadCP;
-    private $totalCP;
+    private $cantidad;
+    private $total;
     private $estado;
     private $creacion;
 
@@ -25,6 +25,7 @@ Class ClienteProductoModel Extends Model implements IModel{
                     :ap,
                     :tipoPago,
                     :cantidad,
+                    :precio,
                     :total,
                     :estado,
                     :creacion )' );
@@ -33,6 +34,8 @@ Class ClienteProductoModel Extends Model implements IModel{
                 'ap'=>$this->ap,
                 'tipoPago'=> $this->tipoPago,
                 'cantidad'=> $this->cantidad,
+                'precio' => $this->precio,
+                'total' => $this->total,
                 'estado' => $this->estado,
                 'creacion' =>$this->creacion);
 
@@ -115,7 +118,7 @@ Class ClienteProductoModel Extends Model implements IModel{
                 WHERE id_cliente_producto =:id
                 AND estado_cp = "AC" ' );
             $query->execute([
-                'cantidad' => $this->cantidadCP,
+                'cantidad' => $this->cantidad,
                 'id' => $this->getId() ]);
 
             return true;
@@ -130,8 +133,9 @@ Class ClienteProductoModel Extends Model implements IModel{
         $this->cliente = $array['ID_CLIENTE'];
         $this->ap = $array['ID_AP'];
         $this->tipoPago = $array['ID_TIPO_PAGO'];
-        $this->cantidadCP = $array['CANTIDAD_CP'];
-        $this->totalCP = $array['TOTAL_CP'];
+        $this->cantidad = $array['CANTIDAD_CP'];
+        $this->precio = $array['PRECIO_CP'];
+        $this->total = $array['TOTAL_CP'];
         $this->estado = $array['ESTADO_CP'];
         $this->creacion = $array['CREACION_CP'];
 
@@ -152,16 +156,19 @@ public function setTipoPago($tp){
     $this->tipoPago = $tp;
 }
 public function setCantidad($cantidad){
-    $this->cantidadCP = $cantidad;
+    $this->cantidad = $cantidad;
+}
+public function setPrecio($precio){
+    $this->precio = $precio;
 }
 public function setTotal($total){
-    $this->totalCP = $total;
+    $this->total = $total;
 }
 public function setCreacion ($creacion){
-    $this->creacionCP = $creacion;
+    $this->creacion = $creacion;
 }
 public function setEstado($estado){
-    $this->estadoCP = $estado;
+    $this->estado = $estado;
 }
 
 //GETTERS
@@ -170,10 +177,11 @@ public function getId(){return $this->idCP;}
 public function getCliente(){return $this->cliente;}
 public function getProducto(){return $this->producto;}
 public function getTipoPago(){return $this->tipoPago;}
-public function getCantidad(){ return $this->cantidadCP;}
-public function getTotal(){return $this->totalCP;}
-public function getCreacion(){ return $this->creacionCP;}
-public function getEstado(){ return $this->estadoCP;}
+public function getCantidad(){ return $this->cantidad;}
+public function getPrecio(){return $this->precio;}
+public function getTotal(){return $this->total;}
+public function getCreacion(){ return $this->creacion;}
+public function getEstado(){ return $this->estado;}
 
 
 }

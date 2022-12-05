@@ -14,7 +14,7 @@ Class ApiCarrito{
     function __construct(){
         if(session_status()==PHP_SESSION_NONE){
             session_start();
-            $_SESSION[$this->carrito] ;
+            $_SESSION[$this->carrito];
         }
         error_log('constructor de api carrito se ejecutó');
 

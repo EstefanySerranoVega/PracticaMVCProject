@@ -42,7 +42,7 @@ Class sectionAlmacenModel extends Model{
 
     public function getItem($id) {
         $items =[] ;
-        $query = $this->query(
+        $query = $this->prepare(
             'SELECT almacen_producto.id_ap as id_ap,
         producto.id_producto as id_producto,
         producto.nombre_producto as producto, 

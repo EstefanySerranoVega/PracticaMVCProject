@@ -21,15 +21,20 @@ private $carrito ;
         if(!isset($_SESSION['carrito'])){
             error_log('carrito vacío');
             error_log('se agregará el primer item: ');
-            if($this->existPOST(['id-producto'])){
-                    
+            if($this->existPOST(['id-ap','id-producto','precio-producto'])){
+                    $ap = $this->getPOST('id-ap');
                     $id = $this->getPOST('id-producto');
+                    $precio = $this->getPOST('precio-producto');
                 $cantidad =1;
+                error_log('is ap: '.$ap);
+                error_log('is id: '.$id);
+                error_log('is precio: '.$precio);
                 $producto= array(
+                    'id_ap' => $ap,
                     'id' => $id,
+                    'precio' => $precio,
                     'cantidad' => $cantidad);
                     $_SESSION['carrito'][0]= $producto;
-                    error_log('item: '.$_SESSION['carrito']);
                  
             
                   }else{
@@ -39,16 +44,19 @@ private $carrito ;
             
             error_log('carrito no está vacío');
             $num = count($_SESSION['carrito']);
-            error_log('carrito tiene: ',count($_SESSION['carrito']));
-            if($this->existPOST([
-                'id-producto'])){
+            error_log('carrito tiene: '.count($_SESSION['carrito']));
+            if($this->existPOST(['id-ap',
+                'id-producto','precio-producto'])){
+                    $ap = $this->getPOST('id-ap');
                     $id = $this->getPOST('id-producto');
+                    $precio = $this->getPOST('precio-producto');
                 $cantidad =1;
                 $producto= array(
+                    'id_ap' => $ap,
                     'id' => $id,
+                    'precio' => $precio,
                     'cantidad' => $cantidad);
                     $_SESSION['carrito'][$num]= $producto;
-                    error_log('item: '.$_SESSION['carrito']);
                 }
   
          }
@@ -83,9 +91,15 @@ if($this->existGET(['item'])){
 public function send(){
     
     if($_SESSION['idUser'] != ''){
-        echo "<script> alert('la sesion está iniciada, comprar producto');</script>"; 
-        error_log($_SESSION['idUser'] );
-        $this->view->render('Home/Pagar');
+        if(!empty($_SESSION['carrito'])){
+            $this->view->render('Home/Pagar');
+        }else{ 
+            echo "<script> alert('El carrito está vacío');</script>"; 
+       
+            $this->view->render('Home/carrito');
+            
+            error_log('el carrito está vacío');
+        }
     }else{
         echo "<script> alert('inicie sesion para comprar');</script>";
         $this->view->render('login/index'); }

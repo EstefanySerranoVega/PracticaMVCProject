@@ -5,6 +5,7 @@ class UserModel extends Model implements IModel{
     private $persona;
     private $roles;
     private $nameUser;
+    private $profile;
     private $estado;
     private $creacion;
 
@@ -24,12 +25,14 @@ class UserModel extends Model implements IModel{
                     :persona,
                     :roles,
                     :nameUser,
+                    :profile,
                     :estado,
                     :creacion)' );
             $arrayData = array(
                     'persona' => $this->persona,
                     'roles' => $this->roles,
                     'nameUser' => $this->nameUser,
+                    'profile' => $this->profile,
                     'estado' => $this->estado,
                     'creacion' => $this->creacion );
             $query->execute($arrayData);
@@ -133,6 +136,7 @@ class UserModel extends Model implements IModel{
         $this->persona = $array['ID_PERSONA'];
         $this->roles = $array['ID_ROLES'];
         $this->nameUser = $array['NOMBRE_USUARIO'];
+        $this->profile = $array['PROFILE_USUARIO'];
         $this->estado = $array['ESTADO_USUARIO'];
         $this->creacion = $array['CREACION_USUARIO'];
     }
@@ -144,6 +148,9 @@ public function setId($id){
 }
 public function setNombre($nombre){
     $this->nameUser = $nombre;
+}
+public function setProfile($profile){
+    $this->profile = $profile;
 }
 public function setEstado($estado){
     $this->estado = $estado;
@@ -164,6 +171,9 @@ public function getId(){
     return $this->idUser;}
 public function getNombre(){
     return $this->nameUser;}
+public function getProfile(){
+    return $this->profile;
+}
 public function getEstado(){
     return $this->estado;}
 public function getCreacion(){

@@ -27,8 +27,9 @@ require_once('helpers/html/require.php');
                 <input type="text" name="paternoPersona" id="paternoPersona" placeholder="Apellido Paterno" >
                 <input type="text" name="maternoPersona" id="maternoPersona" placeholder="Apellido Materno" >
                 <input type="tel" name="telefonoPersona" id="telefonoPersona" placeholder="Telefono" >
-                <input type="email" name="emailCliente" id="emailCliente">
-                <input type="date" name="nacPersona" id="nacPersona" placeholder="Correo">
+                <input type="email" name="emailCliente" id="emailCliente" placeholder="Email">
+                <input type="text" name="direccion" id="direccion" placeholder="Direccion">
+                <input type="date" name="nacPersona" id="nacPersona">
                 <input type="text" name="username" id="nameUser" placeholder="Nombre de usuario">
                 <input type="password" name="password" id="password" placeholder="password">
                 <input type="submit" value="Registrar" name="btn-newPersona" id="btn btn-newPersona" class="btn btn-newPersona">

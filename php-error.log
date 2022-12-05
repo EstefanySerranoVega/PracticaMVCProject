@@ -1,0 +1,107 @@
+[05-Dec-2022 11:12:56 UTC] archivo controller es:Controllers/Carrito.php
+[05-Dec-2022 11:12:56 UTC] constructor de carrito controller se ejecutó
+[05-Dec-2022 11:12:56 UTC] constructor de api carrito se ejecutó
+[05-Dec-2022 11:12:56 UTC] model es: Clases/CarritoModel.php
+[05-Dec-2022 11:12:56 UTC] carrito model se ejecutó
+[05-Dec-2022 11:12:56 UTC] carrito model se ejecutó
+[05-Dec-2022 11:12:56 UTC] render controller carrito se ejecutó
+[05-Dec-2022 11:12:58 UTC] archivo controller es:Controllers/Carrito.php
+[05-Dec-2022 11:12:58 UTC] constructor de carrito controller se ejecutó
+[05-Dec-2022 11:12:58 UTC] constructor de api carrito se ejecutó
+[05-Dec-2022 11:12:58 UTC] model es: Clases/CarritoModel.php
+[05-Dec-2022 11:12:58 UTC] carrito model se ejecutó
+[05-Dec-2022 11:12:58 UTC] 11
+[05-Dec-2022 11:12:58 UTC] total l 3980
+[05-Dec-2022 11:12:58 UTC] total l 39200
+[05-Dec-2022 11:13:34 UTC] archivo controller es:Controllers/Carrito.php
+[05-Dec-2022 11:13:34 UTC] constructor de carrito controller se ejecutó
+[05-Dec-2022 11:13:34 UTC] constructor de api carrito se ejecutó
+[05-Dec-2022 11:13:34 UTC] model es: Clases/CarritoModel.php
+[05-Dec-2022 11:13:34 UTC] carrito model se ejecutó
+[05-Dec-2022 11:13:34 UTC] 11
+[05-Dec-2022 11:13:34 UTC] total l 3980
+[05-Dec-2022 11:13:34 UTC] total l 39200
+[05-Dec-2022 11:14:29 UTC] archivo controller es:Controllers/Carrito.php
+[05-Dec-2022 11:14:29 UTC] constructor de carrito controller se ejecutó
+[05-Dec-2022 11:14:29 UTC] constructor de api carrito se ejecutó
+[05-Dec-2022 11:14:29 UTC] model es: Clases/CarritoModel.php
+[05-Dec-2022 11:14:29 UTC] carrito model se ejecutó
+[05-Dec-2022 11:14:29 UTC] 11
+[05-Dec-2022 11:14:29 UTC] total l 3980
+[05-Dec-2022 11:14:29 UTC] total l 39200
+[05-Dec-2022 11:14:53 UTC] archivo controller es:Controllers/Carrito.php
+[05-Dec-2022 11:14:53 UTC] constructor de carrito controller se ejecutó
+[05-Dec-2022 11:14:53 UTC] constructor de api carrito se ejecutó
+[05-Dec-2022 11:14:53 UTC] model es: Clases/CarritoModel.php
+[05-Dec-2022 11:14:53 UTC] carrito model se ejecutó
+[05-Dec-2022 11:14:53 UTC] 11
+[05-Dec-2022 11:14:53 UTC] total l 3980
+[05-Dec-2022 11:14:53 UTC] total l 39200
+[05-Dec-2022 11:15:16 UTC] archivo controller es:Controllers/Carrito.php
+[05-Dec-2022 11:15:16 UTC] constructor de carrito controller se ejecutó
+[05-Dec-2022 11:15:16 UTC] constructor de api carrito se ejecutó
+[05-Dec-2022 11:15:16 UTC] model es: Clases/CarritoModel.php
+[05-Dec-2022 11:15:16 UTC] carrito model se ejecutó
+[05-Dec-2022 11:15:16 UTC] 11
+[05-Dec-2022 11:15:16 UTC] total l 3980
+[05-Dec-2022 11:15:16 UTC] total l 39200
+[05-Dec-2022 11:15:30 UTC] archivo controller es:Controllers/Carrito.php
+[05-Dec-2022 11:15:30 UTC] constructor de carrito controller se ejecutó
+[05-Dec-2022 11:15:30 UTC] constructor de api carrito se ejecutó
+[05-Dec-2022 11:15:30 UTC] model es: Clases/CarritoModel.php
+[05-Dec-2022 11:15:30 UTC] carrito model se ejecutó
+[05-Dec-2022 11:15:30 UTC] 11
+[05-Dec-2022 11:15:30 UTC] total l 3980
+[05-Dec-2022 11:15:30 UTC] total l 39200
+[05-Dec-2022 11:16:04 UTC] archivo controller es:Controllers/Carrito.php
+[05-Dec-2022 11:16:04 UTC] constructor de carrito controller se ejecutó
+[05-Dec-2022 11:16:04 UTC] constructor de api carrito se ejecutó
+[05-Dec-2022 11:16:04 UTC] model es: Clases/CarritoModel.php
+[05-Dec-2022 11:16:04 UTC] carrito model se ejecutó
+[05-Dec-2022 11:16:04 UTC] 11
+[05-Dec-2022 11:16:04 UTC] total l 3980
+[05-Dec-2022 11:16:04 UTC] total l 39200
+[05-Dec-2022 11:16:36 UTC] archivo controller es:Controllers/Carrito.php
+[05-Dec-2022 11:16:36 UTC] constructor de carrito controller se ejecutó
+[05-Dec-2022 11:16:36 UTC] constructor de api carrito se ejecutó
+[05-Dec-2022 11:16:36 UTC] model es: Clases/CarritoModel.php
+[05-Dec-2022 11:16:36 UTC] carrito model se ejecutó
+[05-Dec-2022 11:16:36 UTC] 11
+[05-Dec-2022 11:16:36 UTC] total l 3980
+[05-Dec-2022 11:16:36 UTC] total l 39200
+[05-Dec-2022 11:17:22 UTC] App::archivoController-> controllers/home.php
+[05-Dec-2022 11:17:22 UTC] model es: Clases/HomeModel.php
+[05-Dec-2022 11:17:24 UTC] archivo controller es:Controllers/carrito.php
+[05-Dec-2022 11:17:24 UTC] constructor de carrito controller se ejecutó
+[05-Dec-2022 11:17:24 UTC] constructor de api carrito se ejecutó
+[05-Dec-2022 11:17:24 UTC] model es: Clases/CarritoModel.php
+[05-Dec-2022 11:17:24 UTC] carrito model se ejecutó
+[05-Dec-2022 11:17:24 UTC] carrito model se ejecutó
+[05-Dec-2022 11:17:24 UTC] render controller carrito se ejecutó
+[05-Dec-2022 11:17:35 UTC] archivo controller es:Controllers/Carrito.php
+[05-Dec-2022 11:17:35 UTC] constructor de carrito controller se ejecutó
+[05-Dec-2022 11:17:35 UTC] constructor de api carrito se ejecutó
+[05-Dec-2022 11:17:35 UTC] model es: Clases/CarritoModel.php
+[05-Dec-2022 11:17:35 UTC] carrito model se ejecutó
+[05-Dec-2022 11:17:35 UTC] 11
+[05-Dec-2022 11:17:35 UTC] total l 3980
+[05-Dec-2022 11:17:35 UTC] total l 39200
+[05-Dec-2022 11:22:34 UTC] App::archivoController-> controllers/home.php
+[05-Dec-2022 11:22:35 UTC] model es: Clases/HomeModel.php
+[05-Dec-2022 11:22:37 UTC] archivo controller es:Controllers/carrito.php
+[05-Dec-2022 11:22:37 UTC] constructor de carrito controller se ejecutó
+[05-Dec-2022 11:22:37 UTC] constructor de api carrito se ejecutó
+[05-Dec-2022 11:22:37 UTC] model es: Clases/CarritoModel.php
+[05-Dec-2022 11:22:37 UTC] carrito model se ejecutó
+[05-Dec-2022 11:22:37 UTC] carrito model se ejecutó
+[05-Dec-2022 11:22:37 UTC] render controller carrito se ejecutó
+[05-Dec-2022 11:22:38 UTC] archivo controller es:Controllers/Carrito.php
+[05-Dec-2022 11:22:38 UTC] constructor de carrito controller se ejecutó
+[05-Dec-2022 11:22:38 UTC] constructor de api carrito se ejecutó
+[05-Dec-2022 11:22:38 UTC] model es: Clases/CarritoModel.php
+[05-Dec-2022 11:22:38 UTC] carrito model se ejecutó
+[05-Dec-2022 11:22:38 UTC] 11
+[05-Dec-2022 11:22:38 UTC] total l 3980
+[05-Dec-2022 11:22:38 UTC] total l 39200
+[05-Dec-2022 11:26:01 UTC] App::archivoController-> controllers/home.php
+[05-Dec-2022 11:26:01 UTC] model es: Clases/HomeModel.php

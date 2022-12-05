@@ -4,8 +4,10 @@ require_once('Clases/viewProductoModel.php');
 if(isset($_GET['id'])){
     $id = $_GET['id'];
     $producto = new viewProductoModel();
+    echo '$id: '.$id;
     $p =$producto->getCurrentProduct($id);
     $ps = $producto->getSimilarProductos();
+    var_dump($p);
 }else{
     error_log('no existe');
     
@@ -34,8 +36,9 @@ if(isset($_GET['id'])){
         <div class="info-producto_select">
             <form action="<?php echo URL_RAIZ;?>carrito/addCarrito" method="post">
             <input type="hidden" name="categoria-producto" id="categoria-producto" value ="<?php echo $p[0]['id_categoria'];?>" readonly>
-            <input type="hidden" name="id-producto" id="id-producto" value="<?php echo $p['id'];?>">
-            <input type="text" name="nombre-producto" id="nombre-producto" class="name-select" value="<?php echo $p[0]['nombre'] ?>" readonly>
+            <input type="hidden" name="id-producto" id="id-producto" value="<?php echo $p[0]['id_producto'];?>">
+            <input type="hidden" name="id-ap" id="id-ap" value="<?php echo $p[0]['id_ap'];?>">
+            <input type="text" name="nombre-producto" id="nombre-producto" class="name-select" value="<?php echo $p[0]['nombre'];?>" readonly>
             <label for="codigo">Codigo:</label>
             <input type="text" name="codigo-producto" id="codigo-producto" value="<?php echo $p[0]['codigo'] ?>" readonly> 
             <label for="desc">Precio de venta: por unidad</label>
@@ -65,6 +68,8 @@ if(isset($_GET['id'])){
                 <div class="info-productos">
 
                 <div class="name-producto info-text">
+                    <input type="hidden" name="id-ap" id="id-ap" value="<?php echo $producto[$i]['id_ap'];?>">
+                  
                    <input type="text" name="nombre-producto" id="nombre-producto"  class="input-text nombre-info_text" value="<?php echo $ps[$i]['name']?>" readonly>
                    <input type="hidden" name="categoria-producto" id="categoria-producto" class="input-text categoria-info_text" value="<?php echo $ps[$i]['categoria']; ?>"readonly> 
                 </div>

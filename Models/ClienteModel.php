@@ -32,7 +32,6 @@ Class ClienteModel extends Model implements IModel {
                 'direccion' => $this->direccion,
                 'estado' => $this->estadoCliente,
                 'creacion' => $this->creacionCliente);
-                
             $query->execute($arrayData);
 
             $id = $this->query("SELECT MAX(id_cliente) AS id FROM cliente");
@@ -139,7 +138,7 @@ Class ClienteModel extends Model implements IModel {
         $this->idCliente = $id; }
     public function setCorreo($correo){
         $this->correoCliente = $correo; }
-    public function setDirecioon($direccion){ 
+    public function setDireccion($direccion){ 
         $this->direccion = $direccion;} 
     public function setCreacion($creacion){
         $this->creacionCliente = $creacion;  } 

@@ -42,14 +42,14 @@ $product = $producto->get($id);
                 ?>
             </select>
             <label for="cod" id="codigoProducto">Codigo: </label>
-            <input type="text" name="codigoProducto" id="codigoProducto" value="<?php echo $product['CODIGO_PRODUCTO']?>" value="">
+            <input type="text" name="codigoProducto" id="codigoProducto" value="<?php echo $product['CODIGO_PRODUCTO'];?>" value="">
             <label for="marca" id="marca">Marca: </label>
-            <input type="text" name="marca" id="marca" value="<?php echo $product['MARCA_PRODUCTO']?>">
+            <input type="text" name="marca" id="marca" value="<?php echo $product['MARCA_PRODUCTO'];?>">
             <label for="industria" id="industria">Industria:</label>
-            <input type="text" name="industria" id="industria" value="<?php echo $product['INDUSTRIA_PRODUCTO']?>">
+            <input type="text" name="industria" id="industria" value="<?php echo $product['INDUSTRIA_PRODUCTO'];?>">
             <label for="descripcion" id="descripcion">Descripcion:</label>
-            <input type="text" name="descripcion" id="descripcion" value="<?php echo $product['DESCRIPCION_PRODUCTO']?>">
-            <img src="<?php echo $product['IMG_PRODUCTO']?>" alt="">
+            <input type="text" name="descripcion" id="descripcion" value="<?php echo $product['DESCRIPCION_PRODUCTO'];?>">
+            <img src="<?php echo URL_RAIZ.IMG. $product['IMG_PRODUCTO'];?>" alt="">
             <input type="file" name="imgProducto" id="imgProducto">
             <input type="submit" value="GUARDAR" class="button">  
         </form>
