@@ -5,6 +5,7 @@ const LIBS ="libreries/";
 const VIEWS ="views/";
 const STYLE = "helpers/css/";
 const SCRIPT = "helpers/js/";
+const JQUERY ="helpers/js/jquery-3.3.1.min.js";
 const IMG = "helpers/img/";
 const AVATAR = "helpers/img/avatar/";
 const ICON = "helpers/icon/";

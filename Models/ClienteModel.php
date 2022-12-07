@@ -83,7 +83,7 @@ Class ClienteModel extends Model implements IModel {
 
             $this->from($cliente);
 
-            return $this;
+            return $cliente;
 
         }catch(PDOException $e){
             error_log('ClienteModel::get() => '.$e);
@@ -125,12 +125,12 @@ Class ClienteModel extends Model implements IModel {
         }
     }//fin update
     public function from($array){
-        $this->idCliente = $array['ID_CLIENTE'];
-        $this->persona = $array['ID_PERSONA'];
-        $this->correoCliente = $array['CORREO_CLIENTE'];
-        $this->direccion = $array['DIRECCION_CLIENTE'];
-        $this->creacionCliente = $array['CREACION_CLIENTE'];
-        $this->estadoCliente = $array['ESTADO_CLIENTE'];
+        $this->idCliente = $array[0]['ID_CLIENTE'];
+        $this->persona = $array[0]['ID_PERSONA'];
+        $this->correoCliente = $array[0]['CORREO_CLIENTE'];
+        $this->direccion = $array[0]['DIRECCION_CLIENTE'];
+        $this->creacionCliente = $array[0]['CREACION_CLIENTE'];
+        $this->estadoCliente = $array[0]['ESTADO_CLIENTE'];
     }//fin from
 
     //SETTERS
@@ -160,6 +160,25 @@ Class ClienteModel extends Model implements IModel {
             return $this->estadoCliente;}
         public function getPersona(){
             return $this->persona; }
+
+            public function getForPersona($id){
+                try{
+                    $query = $this->prepare(
+                        'SELECT * FROM `cliente` WHERE id_persona = :id ');
+                    $query->execute(['id'=>$id]);
+        
+                    $cliente = $query->fetchAll(PDO::FETCH_ASSOC);
+        
+                    $this->from($cliente);
+        
+                    return $cliente;
+        
+                }catch(PDOException $e){
+                    error_log('ClienteModel::get() => '.$e);
+                    return false;
+                }
+
+            }
 
 }
 ?>

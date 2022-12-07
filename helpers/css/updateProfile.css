@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-gral {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-around;
+}
+
+.mi-informacion {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-profile {
+    width: 45%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: space-around;
+    justify-content: stretch;
+    background: pink;
+    padding: 1rem;
+    border-radius: 0.6rem;
+}
+
+.form-information {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-around;
+    background: skyblue;
+    padding: 1rem;
+    border-radius: 0.6rem;
+}
+
+.form-information label {
+    width: 90%;
+    margin: 0.3rem 0;
+}
+
+.form-information input {
+    width: 90%;
+    border-radius: 0.6rem;
+    border: none;
+    padding: 0 0.8rem;
+}
+
+.sub {
+    font-family: 'Roboto', sans-serif;
+}
+
+.mi-informacion .form-update {
+    width: 98%;
+    height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 1rem;
+}
+
+.image {
+    width: 98%;
+    background: greenyellow;
+    height: 80%;
+    border-radius: 0.5rem;
+}
+
+button {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 0.5rem;
+    margin: 1rem;
+    cursor: pointer;
+    transition: all 300ms;
+}
+
+button:hover {
+    background: greenyellow;
+}
+
+.option {
+    margin: 0.5rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background: red;
+}
+
+.img-profile form {
+    width: 100%;
+    height: 100%;
+}

@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+body {
+    width: 100%;
+    background-image: radial-gradient(circle at 35.58% 103.81%, #ee45e4 0, #d53feb 25%, #b53cf2 50%, #8e3cf9 75%, #5540ff 100%);
+}
+
 .container-gral {
     width: 100%;
     display: flex;
@@ -16,9 +21,8 @@
     width: 90%;
     display: flex;
     flex-wrap: wrap;
-    align-items: space-around;
-    justify-content: stretch;
-    background: red;
+    align-items: center;
+    justify-content: center;
 }
 
 .img-profile {
@@ -27,19 +31,120 @@
     flex-wrap: wrap;
     align-items: space-around;
     justify-content: stretch;
-    background: pink;
+    background: rgb(189, 232, 250);
+    border-radius: 0.6rem;
+    padding: 1rem;
+}
+
+img {
+    object-fit: contain;
+    object-position: center center;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
 }
 
 .form-myInformation {
-    width: 46%;
+    width: 40%;
     display: flex;
     flex-wrap: wrap;
-    align-items: space-around;
-    justify-content: stretch;
-    background: green;
+    align-items: stretch;
+    justify-content: space-around;
+    background: rgb(189, 232, 250);
+    border-radius: 0.6rem;
+    padding: 1rem;
 }
 
 .options-cliente {
     width: 100%;
-    background: yellow;
+    background: #f2f2f2;
+    border-radius: 0.6rem;
+}
+
+.form-myInformation label {
+    width: 90%;
+    margin: 0.3rem 0;
+}
+
+.sub {
+    font-family: 'Roboto', sans-serif;
+}
+
+.mi-informacion form {
+    width: 98%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-around;
+    padding: 1rem;
+}
+
+.image {
+    width: 98%;
+    height: 80%;
+    border-radius: 0.5rem;
+}
+
+.image img {
+    object-fit: contain;
+    object-position: center center;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+}
+
+button {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 0.5rem;
+    margin: 1rem;
+}
+
+button:hover {
+    background: greenyellow;
+}
+
+.option {
+    margin: 0.5rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.img-profile form {
+    width: 100%;
+    height: 100%;
+}
+
+.form-update {
+    width: 80%;
+}
+
+.header-historial,
+.body-historial {
+    width: 98%;
+    display: grid;
+    grid-template-columns: 20% 10% 10% 10% 15% 15% 10% 8%;
+    height: 3rem;
+    margin: 0.8rem 0;
+    border-radius: 0.8rem;
+}
+
+.historial-compras {
+    width: 98%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cell-header {
+    text-align: center;
+}
+
+.cell-historial {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    border-left: 3px solid #0005;
 }

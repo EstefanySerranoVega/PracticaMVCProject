@@ -10,6 +10,17 @@
     background: orange;
 }
 
-.option-settins {
+.menu-settins {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+.options-settins {
+    padding: 0.5rem;
+    border-radius: 0.6rem;
+    height: 5rem;
     background: white;
+    margin: 0.8rem;
 }

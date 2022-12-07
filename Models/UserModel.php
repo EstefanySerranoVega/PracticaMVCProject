@@ -87,7 +87,7 @@ class UserModel extends Model implements IModel{
                 
              $this->from($user);
 
-             return $this;
+             return $user;
 
             }catch(PDOException $e){
                 error_log('ERROR::UserModel->get() => '.$e);
@@ -104,7 +104,7 @@ class UserModel extends Model implements IModel{
                 WHERE estado_usuario = "AC"
                 AND id_usuario = :id ' );
                 
-            $query->execute(['id' => $this->getId()  ]);
+            $query->execute(['id' => $id ]);
 
             return true;
         }catch(PDOException $e){
@@ -117,11 +117,13 @@ class UserModel extends Model implements IModel{
         try{
             $query = $this->prepare(
                 'UPDATE `usuario` SET 
-                nombre_usuario = :nameUser
+                nombre_usuario = :nameUser,
+                profile_usuario =:img
                 WHERE estado_usuario = "AC"
                 AND id_usuario = :id ' );
             $query->execute([
                 'nameUser' =>$this->nameUser,
+                'img' => $this->profile,
                 'id' => $this->idUser]);
 
             return true;
@@ -132,13 +134,13 @@ class UserModel extends Model implements IModel{
     }//fin update
 
     public function from($array){
-        $this->idUser = $array['ID_USUARIO'];
-        $this->persona = $array['ID_PERSONA'];
-        $this->roles = $array['ID_ROLES'];
-        $this->nameUser = $array['NOMBRE_USUARIO'];
-        $this->profile = $array['PROFILE_USUARIO'];
-        $this->estado = $array['ESTADO_USUARIO'];
-        $this->creacion = $array['CREACION_USUARIO'];
+        $this->idUser = $array[0]['ID_USUARIO'];
+        $this->persona = $array[0]['ID_PERSONA'];
+        $this->roles = $array[0]['ID_ROLES'];
+        $this->nameUser = $array[0]['NOMBRE_USUARIO'];
+        $this->profile = $array[0]['PROFILE_USUARIO'];
+        $this->estado = $array[0]['ESTADO_USUARIO'];
+        $this->creacion = $array[0]['CREACION_USUARIO'];
     }
   
 

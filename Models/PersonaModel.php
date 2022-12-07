@@ -93,7 +93,7 @@ class PersonaModel extends Model implements IModel{
 
             $this->from($persona);
 
-            return $this;
+            return $persona;
         }catch(PDOException $e){
             error_log('PersonaModel::get()=> '.$e);
             return false;

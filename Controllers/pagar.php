@@ -120,7 +120,7 @@ Class Pagar extends SessionController{
     }
     public function cancelar(){
         echo "<script> alert('pago cancelado');</script>";
-        $this->view->render('Home/cancelar');
+        $this->redirect('home');
           
     }
 

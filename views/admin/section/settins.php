@@ -13,11 +13,41 @@
    require_once('helpers/html/menuLateral.php');?>
 
 <div class="container-gral">
-    <div class="menu-settings">
-        <div class="option new-cliwntw">CREAR NUEVO USUARIO CLIENTE</div>
-        <div class="option new-user">CREAR NUEVO USUARIO COLABORADOR</div>
-        <div class="option new-admin">CREAR NUEVO USUARIO ADMINISTRADOR</div>
-        <div class="option"></div>
+    <div class="menu-settins">
+        <a href="<?php echo URL_RAIZ;?>settins/cliente">   
+             <div class="options-settins new-cliente">
+            <div class="icon">
+            </div>
+            CREAR NUEVO USUARIO CLIENTE
+        </div>
+    </a>
+        <a href="<?php echo URL_RAIZ;?>settins/usuario?r=3">
+        <div class="options-settins new-user">
+        <div class="icon">
+</div>
+CREAR NUEVO USUARIO COLABORADOR</div>
+</a>
+<a href="<?php echo URL_RAIZ;?>settins/admin?r=2"> 
+    <div class="options-settins new-admin">
+        <div class="icon">
+    </div>
+    CREAR NUEVO USUARIO ADMINISTRADOR</div>
+</a>
+        <a href="">
+        <div class="options-settins">
+            PRODUCTOS ELIMINADOS
+        </div>
+    </a>
+    <a href="">
+        <div class="options-settins">
+            CATEGORIAS ELIMINADAS
+        </div>
+    </a>
+    <a href="">
+        <div class="options-settins">
+            PROVEEDORES ELIMINADOS
+        </div>
+    </a>
     </div>
    </div>
    </div>

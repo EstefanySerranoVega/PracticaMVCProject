@@ -26,17 +26,16 @@ function newUser(){
         ['nombrePersona','paternoPersona',
         'maternoPersona','telefonoPersona',
         'nacPersona','username',
-        'password','correo','direccion'])){ 
+        'password','rol'])){ 
 
             $nombrePersona = $this->getPOST('nombrePersona');
             $paternoPersona = $this->getPOST('paternoPersona');
             $maternoPersona = $this->getPOST('maternoPersona');
             $telefonoPersona = $this->getPOST('telefonoPersona');
-            $correo = $this->getPOST('emailCliente');
-            $direccion = $this->getPOST('direccion');
             $nacPersona = $this->getPOST('nacPersona');
             $username  = $this->getPOST('username');
             $password = $this->getPOST('password');
+            $rol = $this->getPOST('rol');
             error_log('singup::newUser()=>existPOST()-> true ');
            
 
@@ -59,6 +58,7 @@ function newUser(){
             $nacPersona = $this->getPOST('nacPersona');
             $username  = $this->getPOST('username');
             $password = $this->getPOST('password');
+            $rol = $this->getPOST('rol');
             
             error_log('personaModel create ');
             $persona = new PersonaModel();
@@ -82,7 +82,7 @@ function newUser(){
             }else if( $persona->save() ){
             
                 $usuario->setPersona($persona->getId());
-                $usuario->setRoles(3);
+                $usuario->setRoles($rol);
                 $usuario->setNombre($username);
                 $usuario->setProfile('avatar1.PNG');
                 $usuario->setEstado('AC');
@@ -99,6 +99,7 @@ function newUser(){
         $contrasenia->setModificacion(Date('Y-m-d H:i:s'));
         $contrasenia->setCreacion(Date('Y-m-d H:i:s'));
         if($contrasenia->save()){
+            $this->render('dashboard');
         error_log('save contrasenia is true');
         }
     } 

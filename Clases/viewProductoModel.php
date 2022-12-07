@@ -53,20 +53,21 @@ error_log('categoria '.$this->categoria);
     $items = [];
     $query = $this->prepare(
         'SELECT almacen_producto.id_ap as id_ap,
-    producto.id_producto as id_producto,
-    producto.nombre_producto as nombre, 
-    producto.id_categoria as categoria,
-    producto.codigo_producto as codigo,
-    producto.img_producto as img,
-    producto.industria_producto as industria,
-    producto.marca_producto as marca,
-    producto.descripcion_producto as descripcion,
-    almacen_producto.pventa_ap as precio FROM `almacen_producto`
+        producto.id_producto as id_producto,
+        producto.nombre_producto as nombre_producto, 
+        producto.id_categoria as categoria_producto,
+        producto.codigo_producto as codigo_producto,
+        producto.IMG_PRODUCTO as img_producto,
+        producto.industria_producto as industria_producto,
+        producto.marca_producto as marca_producto,
+        producto.DESCRIPCION_PRODUCTO as descripcion_producto,
+        almacen_producto.PVENTA_AP as precio_producto FROM `almacen_producto`
     inner join producto
     on producto.id_producto = almacen_producto.ID_PRODUCTO
     WHERE producto.estado_producto = "AC"
-     AND producto.id_categoria = '.$this->categoria);
-    $query->execute();
+     AND producto.id_categoria = :categoria
+     GROUP BY(producto.ID_PRODUCTO)');
+    $query->execute(['categoria'=>$this->categoria]);
 
     while($item = $query->fetch(PDO::FETCH_ASSOC)){
         array_push($items,$item);

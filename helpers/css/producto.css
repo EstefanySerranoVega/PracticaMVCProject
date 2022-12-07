@@ -27,26 +27,42 @@ button {
 
 .section-select_producto {
     width: 100%;
+    height: 60vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: stretch;
 }
 
+.info-select {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0.8rem 0;
+}
+
 .img-producto_select {
     width: 45%;
+    height: 100%;
     background: #f2f2f2;
     border-radius: 1rem 0 0 1rem;
     padding: 1rem;
 }
 
 .img-producto_select img {
-    width: 95%;
+    object-fit: contain;
+    object-position: center center;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
 }
 
 .info-producto_select {
     width: 45%;
-    background: orange;
+    height: 100%;
+    background: rgb(169, 248, 255);
     border-radius: 0 1rem 1rem 0rem;
 }
 
@@ -61,20 +77,6 @@ button {
 
 .name-select {
     font-size: 2rem;
-}
-
-form label {
-    width: 100%;
-    height: 2rem;
-    margin: 0.5rem;
-}
-
-form input {
-    width: 100%;
-    margin: 0.5rem;
-    background: none;
-    border: none;
-    outline: none;
 }
 
 .btn-selectProducto {
@@ -101,7 +103,6 @@ form input {
 }
 
 .section-similar_products {
-    width: 100vw;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 1rem;
@@ -113,9 +114,9 @@ form input {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    border-radius: 1rem;
-    overflow: hidden;
+    border-radius: 0.6rem;
     background: #f2f2f2;
+    padding: 0.6rem;
 }
 
 .card-producto .image-producto {
@@ -130,9 +131,12 @@ form input {
     overflow: hidden;
 }
 
-.image-producto .img-producto {
+.image-producto img {
+    object-fit: contain;
+    object-position: center center;
     width: 100%;
     height: 100%;
+    border-radius: 1rem;
 }
 
 .cad-producto form {
@@ -149,14 +153,17 @@ form input {
     border-radius: 0.8rem;
 }
 
-.btn-addCarrito {
-    background: #5fb3ff;
+button {
+    background: orange;
     padding: 0.8rem;
     border-radius: 0.8rem;
+    border: none;
+    transition: all 300ms;
 }
 
-.btn-addCarrito:hover {
+button:hover {
     cursor: pointer;
+    background: #5fb2ffe0;
 }
 
 .info-text {
@@ -166,18 +173,6 @@ form input {
     justify-content: space-around;
     align-items: center;
     font-size: 1.2em;
-}
-
-.info-text label {
-    width: auto;
-}
-
-.name-producto {
-    width: 95%;
-}
-
-.nombre-info_text {
-    width: 100%;
 }
 
 .categoria-info_text {
@@ -191,4 +186,41 @@ form input {
 .input-text {
     width: auto;
     font-size: 1em;
+}
+
+
+/*texto del producto*/
+
+.producto-name {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.sub {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.text {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    margin: 0.5rem 0;
+    padding: 0.8rem;
+}
+
+.info-productos {
+    width: 100%;
+}
+
+.product {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    text-align: center;
 }

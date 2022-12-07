@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+body {
+    width: 100%;
+    background-image: radial-gradient(circle at 35.58% 103.81%, #ee45e4 0, #d53feb 25%, #b53cf2 50%, #8e3cf9 75%, #5540ff 100%);
+}
+
 .container {
     width: 100%;
     display: flex;
@@ -15,13 +20,119 @@
     width: 20%;
 }
 
+.category {
+    width: 90%;
+    height: 4rem;
+    border-radius: 0.6rem;
+    margin: 1rem;
+    background: orange;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
 .section-productos_store {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.icon-cat {
+    width: 1.8rem;
+    height: 1.8rem;
+    background: red;
+    border-radius: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 0.3rem;
+}
+
+.action {
+    padding: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    background: yellow;
+    border-radius: 0.6rem;
+}
+
+.icon-cat svg {
+    width: 1.2rem;
+    fill: #0008;
+    transition: all 400ms;
+}
+
+svg:hover {
+    fill: #000;
+}
+
+.false .icon-cat svg {
+    width: 1rem;
+    fill: #0008;
+    transition: all 400ms;
+}
+
+.section-productos {
+    width: 100%;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+}
+
+.card-producto {
+    background: #f2f2f2;
+    border-radius: 0.6rem;
+    padding: 0.8rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-producto {
+    width: 98%;
+    height: 60%;
+    border-radius: 1rem;
+    box-sizing: border-box;
+}
+
+.image-producto img {
+    object-fit: contain;
+    object-position: center center;
+    width: 100%;
+    height: 100%;
+}
+
+.info-productos {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-text {
+    margin: 0.5rem;
     width: 80%;
 }
 
 .btn-addCarrito {
-    padding: 0.8rem;
-    border-radius: 0.8rem;
-    background: yellow;
     border: none;
+    border-radius: 1rem;
+    padding: 0.8rem;
+    background: rgb(241, 173, 15);
+    transition: all 400ms;
+    cursor: pointer;
+    margin: 1rem;
+}
+
+.btn-addCarrito:hover {
+    background: rgb(113, 215, 255);
 }

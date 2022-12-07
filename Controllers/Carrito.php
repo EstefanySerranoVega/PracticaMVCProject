@@ -51,13 +51,38 @@ private $carrito ;
                     $ap = $this->getPOST('id-ap');
                     $id = $this->getPOST('id-producto');
                     $precio = $this->getPOST('precio-producto');
-                $cantidad =1;
-                $producto= array(
-                    'id_ap' => $ap,
-                    'id' => $id,
-                    'precio' => $precio,
-                    'cantidad' => $cantidad);
-                    $_SESSION['carrito'][$num]= $producto;
+                $cantidad =1; 
+            error_log('is id: '.$id);
+                foreach($_SESSION['carrito'] as $index=>$item){
+                    for($i=0;$i<$num;$i++){
+                        if($item['id']== $id){
+                        error_log('ya existe el id: '.$id);
+                        error_log('existen: '.$item['cantidad']);
+                        error_log('index: '.$index);
+                        $cant = $item['cantidad'] + $cantidad;
+                        error_log('cant: '.$cant);
+                        $producto= array(
+                           'id_ap' => $ap,
+                           'id' => $id,
+                           'precio' => $precio,
+                           'cantidad' => $cant);
+                           $_SESSION['carrito'][$index]= $producto;
+                       // unset($_SESSION['carrito'][$index]);
+                       // echo "<script> alert('producto eliminado');</script>";
+                        
+                    $this->view->render('Home/carrito');
+                       }else{
+                   $producto= array(
+                       'id_ap' => $ap,
+                       'id' => $id,
+                       'precio' => $precio,
+                       'cantidad' => $cantidad);
+                       $_SESSION['carrito'][$num]= $producto;
+                   }
+                }
+                    
+                     
+                 }
                 }
   
          }
@@ -98,7 +123,7 @@ public function send(){
             echo "<script> alert('El carrito está vacío');</script>"; 
        
             $this->view->render('Home/carrito');
-            
+        
             error_log('el carrito está vacío');
         }
     }else{

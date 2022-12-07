@@ -36,6 +36,11 @@
         "role": ""
     }, {
 
+        "site": "MyProfile",
+        "access": "private",
+        "role": "cliente"
+    }, {
+
         "site": "pagar",
         "access": "private",
         "role": "cliente"
@@ -48,58 +53,58 @@
 
         "site": "admin",
         "access": "private",
-        "role": "colaborador"
+        "role": "Colaborador"
     }, {
 
         "site": "dashboard",
         "access": "private",
-        "role": "colaborador"
+        "role": "Colaborador"
     }, {
 
         "site": "sectionProductos",
         "access": "private",
-        "role": "colaborador"
+        "role": "Colaborador"
     }, {
 
         "site": "MyProfile",
         "access": "private",
-        "role": "colaborador"
+        "role": "Colaborador"
     }, {
 
         "site": "settins",
         "access": "private",
-        "role": "colaborador"
+        "role": "Colaborador"
     }, {
 
         "site": "sectionClientes",
         "access": "private",
-        "role": "colaborador"
+        "role": "Colaborador"
     }, {
 
         "site": "sectionUsers",
         "access": "private",
-        "role": "colaborador"
+        "role": "Colaborador"
     }, {
 
         "site": "sectionAlmacen",
         "access": "private",
-        "role": "colaborador"
+        "role": "Colaborador"
     }, {
         "site": "sectionCategory",
         "access": "private",
-        "role": "colaborador"
+        "role": "Colaborador"
     }, {
         "site": "sectionProvider",
         "access": "private",
-        "role": "colaborador"
+        "role": "Colaborador"
     }, {
         "site": "sectionVenta",
         "access": "private",
-        "role": "colaborador"
+        "role": "Colaborador"
     }, {
         "site": "sectionAdministrar",
         "access": "private",
-        "role": "colaborador"
+        "role": "Colaborador"
     }, {
 
         "site": "admin",

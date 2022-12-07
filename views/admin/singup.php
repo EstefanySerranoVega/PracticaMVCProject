@@ -1,5 +1,8 @@
 <?php
-
+if($_GET['r']){
+    $rol = $_GET['r'];
+}else{
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,13 +18,13 @@
     <div class="container-gral">
         <div class="singup">
             <form action="<?php
-            echo constant('URL_RAIZ');?>singup/newCliente" method="POST">
+            echo constant('URL_RAIZ');?>singup/newUser" method="POST">
                <div class="header-form">
                <h2>Registrarse</h2>
                 <p>¿Tienes una cuenta? <a href="<?php echo constant('URL_RAIZ'); ?>login"  >Iniciar Sesion</a> </p> 
                </div>
             <div class="content-form">
-                
+                <input type="hidden" name="rol" id="rol" value="<?php echo $rol;?>">
                <label for="nombrePersona">Escriba su nombre</label>
                 <input type="text"  name="nombrePersona" id="nombrePersona" placeholder="Nombre" >
                 <input type="text" name="paternoPersona" id="paternoPersona" placeholder="Apellido Paterno" >

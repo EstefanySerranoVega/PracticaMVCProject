@@ -35,9 +35,10 @@ public function getAllClientes(){
         INNER JOIN cliente cl
         ON cl.id_persona = per.id_persona 
         INNER JOIN roles rol
-        ON rol.NOMBRE_ROLES ="cliente"'
-    );
+        ON rol.NOMBRE_ROLES ="cliente"' );
+
     $query->execute();
+    
     while($item = $query->fetch(PDO::FETCH_ASSOC)){
         array_push($items,$item);
     }
