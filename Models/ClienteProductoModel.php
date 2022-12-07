@@ -6,6 +6,7 @@ Class ClienteProductoModel Extends Model implements IModel{
     private $ap;
     private $tipoPago;
     private $cantidad;
+    private $precio;
     private $total;
     private $estado;
     private $creacion;
@@ -97,7 +98,7 @@ Class ClienteProductoModel Extends Model implements IModel{
     public function delete($id){
         try{
             $query = $this->prepare(
-                'UPDATE `cliente_persona` SET
+                'UPDATE `cliente_producto` SET
                 estado_cp = "DC"
                 WHERE id_cliente_producto =:id
                 AND estado_cp = "AC" ' );

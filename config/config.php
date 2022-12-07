@@ -10,6 +10,8 @@ const AVATAR = "helpers/img/avatar/";
 const ICON = "helpers/icon/";
 const CONTROLLER = "Controllers/";
 const REQUIRE_STYLE = "helpers/html/require.php";
+const CLIENTE_ID ="AdUb7uH_jgsrdw_Fn5_utV3-olNzXsyM5Xng4HLBNoGATf5oRNuZQzOzfwhPXBMQ2jQ-R7luw5dfyWgO";
+const MONEDA = "BO";
 
 //const HOST = 'localhost';
 define('HOST','3306');

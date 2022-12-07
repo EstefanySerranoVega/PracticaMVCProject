@@ -41,6 +41,11 @@
         "role": "cliente"
     }, {
 
+        "site": "cancelar",
+        "access": "private",
+        "role": "cliente"
+    }, {
+
         "site": "admin",
         "access": "private",
         "role": "colaborador"
@@ -56,7 +61,7 @@
         "role": "colaborador"
     }, {
 
-        "site": "profile",
+        "site": "MyProfile",
         "access": "private",
         "role": "colaborador"
     }, {

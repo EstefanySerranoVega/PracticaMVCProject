@@ -1,38 +1,27 @@
-<h1>Ejemplo <small>Formulario de pago</small></h1>
+<?php
+require_once('Models/AlmacenProductoModel.php');
+require_once('Clases/pagarModel.php');
+$pagar = new pagarModel();
+$p = $pagar->getDataUser();
+var_dump($p);
+?>
 
-<!-- Para cambiar al entorno de producción usar: https://www.paypal.com/cgi-bin/webscr -->
-<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" id="form_pay">
-
-    <!-- Valores requeridos -->
-    <input type="hidden" name="business" value="sb-j7fah15266486@business.example.com">
-    <input type="hidden" name="cmd" value="_xclick">
-
-    <label for="item_name" class="form-label">Nombre del Producto:</label>
-    <input type="text" name="item_name" id="" value="" required=""><br>
-
-    <label for="amount" class="form-label">Precio:</label>
-    <input type="text" name="amount" id="" value="13.00" required=""><br>
-
-    <input type="hidden" name="currency_code" value="EUR">
-
-    <label for="quantity" class="form-label">Cantidad:</label>
-    <input type="text" name="quantity" id="" value="2" required=""><br>
-
-    <!-- Valores opcionales -->
-    <!-- En el siguiente enlace puedes encontrar una lista completa de Variables HTML para pagos estándar de PayPal. -->
-    <!-- https://developer.paypal.com/docs/paypal-payments-standard/integration-guide/Appx-websitestandard-htmlvariables/ -->
-
-    <input type="hidden" name="item_number" value="1">
-    <!-- <input type="hidden" name="invoice" value="0012"> -->
-
-    <input type="hidden" name="lc" value="es_ES">
-    <input type="hidden" name="no_shipping" value="1">
-    <input type="hidden" name="image_url" value="https://picsum.photos/150/150">
-    <input type="hidden" name="return" value="<?php URL_RAIZ; ?>">
-    <input type="hidden" name="cancel_return" value="<?php URL_RAIZ; ?>">
-
-    <hr>
-
-    <button type="submit">Pagar ahora con Paypal!</button>
-
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    recibo
+    <form action="" class="form-recibo">
+        <h1>Detalles de venta</h1>
+        <label for="producto">Producto</label>
+        <input type="text" name="producto">
+        <a href="<?php echo URL_RAIZ;?>">Volver al home</a>
+        <a href="<?php echo URL_RAIZ;?>venta/envio">Coordinar envío</a>
+    </form>
+</body>
+</html>

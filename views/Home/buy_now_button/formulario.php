@@ -18,7 +18,13 @@ $almacen = new sectionAlmacenModel();
 </head>
 <body>
 <div class="container-gral">
-    <form action="<?php echo URL_RAIZ;?>pagar/procesar" method="post" class="pagar" id="form_pagar">
+
+
+<h1>Ejemplo <small>Formulario de pago</small></h1>
+
+
+<!-- Para cambiar al entorno de producción usar: https://www.paypal.com/cgi-bin/webscr -->
+<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" id="form_pay">
     <h1> <small>Datos del usuario</small></h1>
  <input type="text" name="total" id="total" value="<?php echo $d;?>">
         <label for="nombre">NOMBRE:</label>
@@ -34,19 +40,11 @@ $almacen = new sectionAlmacenModel();
         <label for="direccion">DIRECCION:</label>
         <input type="text" name="direccion" id="dieccion" value="<?php echo $p[0]['direccion'];?>">
         <p>Verifique que sus datos sean correctos para procesar el pago y el envío</p>
-        <input type="submit" value="PAGAR AHORA!">
-    </form>
-    <h1>Ejemplo <small>Formulario de pago</small></h1>
-
-<!-- Para cambiar al entorno de producción usar: https://www.paypal.com/cgi-bin/webscr -->
-<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" id="form_pay">
+    
     <?php
-        
     $total = 0;
     $n = 0;
            foreach($_SESSION['carrito'] as $index=>$item){
-           // var_dump(count($_SESSION['carrito']));
-           //var_dump($index);
             ?>
                 <?php
                 require_once('Clases/sectionAlmacenModel.php');
@@ -64,39 +62,37 @@ $almacen = new sectionAlmacenModel();
                 $n++;
                 $total =  $total + $item['cantidad'] * $p[0]['precio_v'];
                 } ?>
+    
     <!-- Valores requeridos -->
-    <input type="hidden" name="business" value="estefanysv57@gmail.com">
+    <input type="hidden" name="business" value="sb-x1y0c21745031@business.example.com">
     <input type="hidden" name="cmd" value="_xclick">
 
-    <label for="item_name" class="form-label">Nombre del Producto:</label>
+    <label for="item_name" class="form-label">item_name</label>
     <input type="text" name="item_name" id="" value="productos" required=""><br>
 
-    <label for="amount" class="form-label">Precio:</label>
+    <label for="amount" class="form-label">amount</label>
     <input type="text" name="amount" id="" value="<?php echo $d;?>" required=""><br>
 
-    <input type="hidden" name="currency_code" value="EUR">
+    <input type="hidden" name="currency_code" value="USD">
 
-    <label for="quantity" class="form-label">Cantidad:</label>
+    <label for="quantity" class="form-label">quantity</label>
     <input type="text" name="quantity" id="" value="1" required=""><br>
 
     <!-- Valores opcionales -->
     <!-- En el siguiente enlace puedes encontrar una lista completa de Variables HTML para pagos estándar de PayPal. -->
     <!-- https://developer.paypal.com/docs/paypal-payments-standard/integration-guide/Appx-websitestandard-htmlvariables/ -->
-<!--
+
     <input type="hidden" name="item_number" value="1">
-     <input type="hidden" name="invoice" value="0012"> -->
+   <!-- <input type="hidden" name="invoice" value="0012">  -->
 
     <input type="hidden" name="lc" value="es_ES">
-    <input type="hidden" name="no_shipping" value="1">
-    <input type="hidden" name="return" value="<?php URL_RAIZ; ?>receptor">
-    <input type="hidden" name="cancel_return" value="<?php URL_RAIZ; ?>">
+    <input type="hidden" name="no_shipping" value="0">
+   <!-- <input type="hidden" name="image_url" value="https://picsum.photos/150/150"> -->
+    <input type="hidden" name="return" value="<?= URL_RAIZ;?>pagar/success">
+    <input type="hidden" name="cancel_return" value="<?= URL_RAIZ; ?>pagar/cancelar">
 
     <hr>
 
     <button type="submit">Pagar ahora con Paypal!</button>
 
 </form>
-</div>
-
-</body>
-</html>

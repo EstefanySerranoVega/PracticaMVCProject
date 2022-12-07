@@ -124,12 +124,14 @@ public function initialize($user){
         $this->userId = $user[0][0];
         $this->rolUser = $user[0][4];
         $this->idRol = $user[0][3];
+        error_log($this->idRol);
         error_log("sessionController::initilize(): user: ".$this->username);
         error_log("sessionController::initilize(): id: ".$this->userId);
         error_log("sessionController::initilize(): rol: ".$this->rolUser);
         $this->session->setCurrentUser($this->username);
         $this->session->setCurrentIdUser($this->userId);
         $this->session->setCurrentRol($this->rolUser);
+        $this->session->setCurrentIdRol($this->idRol);
         $this->authorizeAccess($this->rolUser);
 }
 
@@ -228,7 +230,9 @@ public function logout(){
         error_log('SessionController::logout->execute');
         $this->session->closeSesion();
 }
-
+public function exist(){
+        
+}
 }
 
 ?>

@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-gral {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-around;
+}
+
+.mi-informacion {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: space-around;
+    justify-content: stretch;
+    background: red;
+}
+
+.img-profile {
+    width: 46%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: space-around;
+    justify-content: stretch;
+    background: pink;
+}
+
+.form-myInformation {
+    width: 46%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: space-around;
+    justify-content: stretch;
+    background: green;
+}
+
+.options-cliente {
+    width: 100%;
+    background: yellow;
+}

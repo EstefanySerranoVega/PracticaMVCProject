@@ -4,10 +4,8 @@ require_once('Clases/viewProductoModel.php');
 if(isset($_GET['id'])){
     $id = $_GET['id'];
     $producto = new viewProductoModel();
-    echo '$id: '.$id;
     $p =$producto->getCurrentProduct($id);
     $ps = $producto->getSimilarProductos();
-    var_dump($p);
 }else{
     error_log('no existe');
     

@@ -107,7 +107,7 @@ form {
     width: 2.8rem;
     height: 2.8rem;
     border-radius: 100%;
-    background: red;
+    background: rgb(214, 137, 255);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

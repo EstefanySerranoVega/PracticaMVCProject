@@ -19,7 +19,10 @@ Class ApiCarrito{
         error_log('constructor de api carrito se ejecutó');
 
     }
+    public function status(){
+        return isset($_SESSION[$this->carrito]);
 
+    }
     public function setCurrentProducto($producto){
         $_SESSION[$this->carrito][$this->count] = $producto;
         

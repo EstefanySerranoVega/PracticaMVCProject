@@ -95,7 +95,8 @@ $lista = $carrito->listProducts();
                 </div>
                 <input type="submit" value="COMPRAR AHORA!" class="btn-checkout">
             </form>
-        <?php }else{
+        <?php 
+        }else{
             echo 'carrito vacío';
         }?>
         </div>

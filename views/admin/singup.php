@@ -43,7 +43,7 @@
             </form>
         </div>
         <div class="portada-singup">
-<img src="<?php echo URL_RAIZ.IMG;?>tec-1.png" alt="">
+            <img src="<?php echo URL_RAIZ.IMG;?>tec-1.png" alt="">
         </div>
     </div>
 </body>

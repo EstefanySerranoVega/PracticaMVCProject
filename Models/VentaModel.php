@@ -4,6 +4,7 @@ Class VentaModel extends Model implements IModel{
 
     private $idVenta;
     private $clienteProducto;
+    private $transaccion;
     private $fechaVenta;
     private $estado;
 
@@ -19,11 +20,13 @@ Class VentaModel extends Model implements IModel{
                 'INSERT INTO `venta` VALUES(
                 NULL,
                 :cp,
+                :transaccion,
                 :fecha,
                 :estado )' );
                 
             $arrayData =array(
                 'cp' => $this->clienteProducto,
+                'transaccion' => $this->transaccion,
                 'fecha' => $this->fechaVenta,
                 'estado' => $this->estado);
 
@@ -91,10 +94,11 @@ Class VentaModel extends Model implements IModel{
     public function update(){}//fin update
 
     public function from($array){
-        $this->idVenta = $array[0];
-        $this->clienteProducto = $array[1];
-        $this->fechaVenta = $array[2];
-        $this->estado = $array[3];
+        $this->idVenta = $array['ID_VENTA'];
+        $this->clienteProducto = $array['ID_CLIENTE_PRODUCTO'];
+        $this->transaccion = $array['NRO_TRANSACCION'];
+        $this->fechaVenta = $array['FECHA_VENTA'];
+        $this->estado = $array['ESTADO_VENTA'];
     }//fin from
 
 //SETTERS
@@ -103,6 +107,9 @@ public function setId($id){
 }
 public function setCP($cp){
     $this->clienteProducto = $cp;
+}
+public function setTransaccion($id){
+    $this->transaccion = $id;
 }
 public function setFecha($fecha){
     $this->fechaVenta = $fecha;
@@ -119,6 +126,9 @@ public function getId(){
 public function getCP(){
      return $this->clienteProducto;
 }
+public function getTransaccion(){
+    return $this->transaccion;
+}
 public function getFecha(){
     return $this->fechaVenta ;
 }
@@ -126,7 +136,6 @@ public function getEstado(){
     return $this->estado;
 }
 
-//function select producto mas vendido
 
 }
 

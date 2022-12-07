@@ -92,7 +92,20 @@ try{
 }
 }//fin get
 
-public function delete($id){}//fin delete($id)
+public function delete($id){
+    try{
+    $query = $this->prepare(
+        'UPDATE `almacen_producto` SET
+        estado_ap = "DC"
+        WHERE id_ap =:id
+        AND estado_ap = "AC" ' );
+    $query->execute(['id' => $id ]);
+
+    return true;
+}catch(PDOException $e){
+    return false;
+}
+}//fin delete($id)
 
 public function update(){}//fin update
 
@@ -188,6 +201,41 @@ public function countProducto($id){
         error_log('ERROR::AlmacenProducto->countProducto()=>'.$e);
     }
 
+}
+public function updateCantidad(){
+    try{
+        $query = $this->prepare(
+            'UPDATE `almacen_producto` SET
+            cantidad_ap = :cantidad
+            WHERE id_producto = :producto');
+        $arrayData= array(
+            'cantidad' => $this->cantidad,
+            'producto' => $this->producto);
+        $query->execute($arrayData);
+
+        return true;
+    }catch(PDOException $e){
+        error_log('AlmacenProductoModel()->updateCantidad()=> '.$e);
+    }
+
+}
+public function getProductoAndDate($id){
+    try{
+        $query = $this->prepare(
+            'SELECT MAX(INGRESO_AP) AS fecha,
+            ID_AP, ID_PRODUCTO, LOTE_AP,CANTIDAD_AP, PVENTA_AP
+            FROM almacen_producto
+            WHERE id_producto = :id
+            AND ESTADO_AP="AC"');
+        $query->execute(['id' => $id]);
+    
+        $ap = $query->fetchAll(PDO::FETCH_ASSOC);
+        $ap;
+    
+        return $ap;
+    }catch(PDOException $e){
+        error_log('ERROR::AlmacenProducto::getForProducto => '.$e);
+    }
 }
 }
 ?>

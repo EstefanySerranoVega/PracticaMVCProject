@@ -15,6 +15,7 @@ private $carrito ;
         $this->view->render('Home/carrito',[]);
         error_log('render controller carrito se ejecutó');
     }
+ 
 
     public function addCarrito(){
 
@@ -77,7 +78,7 @@ if($this->existGET(['item'])){
        if($item['id']== $id){
         error_log('se eliminará el item: '.$id);
         unset($_SESSION['carrito'][$index]);
-        echo "<script> alert('producto eliminado');</script>";
+       // echo "<script> alert('producto eliminado');</script>";
         
     $this->view->render('Home/carrito');
        }
@@ -92,7 +93,7 @@ public function send(){
     
     if($_SESSION['idUser'] != ''){
         if(!empty($_SESSION['carrito'])){
-            $this->view->render('Home/Pagar');
+            $this->view->render('Home/buy_now_button/formulario');
         }else{ 
             echo "<script> alert('El carrito está vacío');</script>"; 
        

@@ -79,3 +79,8 @@ menu {
     justify-content: space-around;
     align-items: center;
 }
+
+.addCart {
+    background: red;
+    fill: yellow;
+}

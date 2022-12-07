@@ -13,7 +13,12 @@
    require_once('helpers/html/menuLateral.php');?>
 
 <div class="container-gral">
-    SETTINS
+    <div class="menu-settings">
+        <div class="option new-cliwntw">CREAR NUEVO USUARIO CLIENTE</div>
+        <div class="option new-user">CREAR NUEVO USUARIO COLABORADOR</div>
+        <div class="option new-admin">CREAR NUEVO USUARIO ADMINISTRADOR</div>
+        <div class="option"></div>
+    </div>
    </div>
    </div>
 </body>
