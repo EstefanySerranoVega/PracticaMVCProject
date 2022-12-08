@@ -23,7 +23,9 @@ public function deleteItem(){
         error_log('eliminar id: '.$id);
         $producto = new ProductoModel();
         $producto->delete($id);
+        $this->view->render('admin/section/productos');
     }else{
+        $this->view->render('admin/section/productos');
         error_log('el id del producto no ha sido encontrado');
     }
     

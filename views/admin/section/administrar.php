@@ -2,6 +2,10 @@
     require_once('Models/ProductoModel.php');
     $producto = new ProductoModel();
     $p = $producto->getAll();
+    
+require_once('Clases/sectionAdministrarModel.php');
+$slider = new sectionAdministrarModel();
+$sl = $slider->getDataSlider();
 
 ?>
 
@@ -20,17 +24,12 @@
    require_once('helpers/html/menuLateral.php');?>
 
 <div class="container-gral">
-
-<div class="option-section_administrar">
-    <div class="option">Editar slider</div>
-    <div class="option">Editar seccion de productos</div>
-    <div class="option">Editar categorias</div>
-</div>
 <div class="container-administrar">
     <div class="container-editar_slider">
-        <div class="producto-slider">
-<div class="select-producto">
-<label for="producto">SELECCIONE UN PRODUCTO:</label>
+<div class="container-img">
+    <div class="header-img">
+        <form action="<?php echo URL_RAIZ;?>sectionAdministrar/UpdateImg" method="post" class="form-update_img">
+            <label for="image">Cambiar producto:</label>
             <select name="id" id="id">
             <?php   
                   for($i=0; $i<count($p);$i++){
@@ -42,20 +41,33 @@
                }
                 ?>
             </select>
- 
-</div>
-<div class="img-producto">
+            <button type="submit">GUARDAR</button>
+        </form>
+    </div>
+    <div class="img-producto">
     
-<img src="<?php echo $p[$i]['IMG_PRODUCTO']?>" alt="imagen del producto seleccionado">
+<img src="<?php echo URL_RAIZ.IMG.$sl[0]['img']?>" alt="imagen del producto seleccionado">
 </div>
-        </div>
-        <div class="texto-slider">
-            <label for="title">Escriba el Encabezado del Slider</label>
-            <input type="text" name="title" id="slider">
-            <label for="texto">Escriba el texto del Slider</label>
-            <textarea name="txt-slider" id="txt-slider" cols="30" rows="10">
-
-            </textarea>
+</div>
+        <div class="descripcion-slider">
+            <div class="titulo-slider">
+            <h1><?php echo $sl[0]['titulo']?></h1>
+            <form action="<?php echo URL_RAIZ;?>sectionAdministrar/UpdateTitulo" method="post" class="form-update_titulo">
+                <label for="titulo">Escriba un título nuevo:</label>
+                <input type="text" name="titulo" id="titulo">
+            <button type="submit">GUARDAR</button>
+            </form>
+            </div>
+            <div class="texto-slider">
+            <p><?php echo $sl[0]['texto']?></p>
+            <form action="<?php echo URL_RAIZ;?>sectionAdministrar/UpdateTexto" method="post" class="form-update_texto">
+                <label for="texto">Escriba una descripcion nueva:</label>
+                <textarea type="text" name="texto" id="texto" cols="30" rows="10">
+                    
+                </textarea>
+            <button type="submit">GUARDAR</button>
+            </form>
+            </div>
         </div>
     </div>
 </div>

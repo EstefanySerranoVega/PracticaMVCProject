@@ -9,7 +9,10 @@ Class store extends Controllers{
     public function render(){
         $this->view->render('Home/store',[]);
     }
+public function cat(){
+    $this->view->render('Home/Filter/default',[]);
 
+}
 
 
 }

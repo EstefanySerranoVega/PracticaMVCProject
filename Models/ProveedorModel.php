@@ -84,7 +84,7 @@ Class ProveedorModel Extends Model implements IModel{
 
             $this->from($proveedor);
 
-            return $this;
+            return $proveedor;
 
         }catch(PDOException $e){
             error_log('ProveedorModel::get()=> '.$e);

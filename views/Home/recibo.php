@@ -28,36 +28,44 @@ if($_GET['txn_id']){
 
     <div class="recibo">
         <div class="recibo-header">
-<h1>RECIBO:<small> <?php echo $r[0]['transaccion']?> </small></h1>
+<h1>RECIBO: <small> #<?php echo $r[0]['transaccion']?> </small></h1>
 
         </div>
         <div class="data-user">
-            <div class="data">
-            <label  class="sub" for="fecha">Fecha de Compra:</label>
-            <label for="fecha"><?php echo $r[0]['fecha']?></label>
-        </div>
-            <div class="data"> 
+            <div class="text">
+         
+         <div class="data"> 
             <label  class="sub" for="cliente">Cliente:</label>
             <label for="cliente"><?php echo $r[0]['nombre'].' '.$r[0]['paterno'].' '.$r[0]['materno'];?></label>
            </div>
-            <div class="data">
+           <div class="data">
            <label class="sub"  for="telefono">Telefono:</label>
             <label for="telefono"><?php echo $r[0]['telefono']?></label>
         </div>
+            </div>
+            
+            <div class="text">
         
         <div class="data">
 
 <label  class="sub" for="correo">Correo:</label>
 <label for="correo"><?php echo $r[0]['correo']?></label>
 </div>
+<div class="data">
+            <label  class="sub" for="fecha">Fecha Compra:</label>
+            <label for="fecha"><?php echo $r[0]['fecha']?></label>
         </div>
+</div>
+        </div>
+        
+       <h2>Productos:</h2>
+
+
+        <div class="recibo-container">
         <?php
         $total =0;
         for($i=0;$i<count($r);$i++) {
             ?>
-
-       
-        <div class="recibo-container">
             <div class="img">
                 <img src="<?php echo URL_RAIZ.IMG.$r[$i]['img'];?>" alt="">
             </div>
@@ -76,7 +84,7 @@ if($_GET['txn_id']){
         </div>
                 <div class="data">
             <label class="sub"  for="total">Total:</label>
-            <label for="total"><?php echo $r[$i]['total'];?>Bs.</label>
+            <label for="total"><?php echo $r[$i]['total'];?>.Bs</label>
         </div>
             </div>
             
@@ -85,11 +93,13 @@ if($_GET['txn_id']){
     $total = $total +$r[$i]['total'];    
     }
         ?>
-        <div class="total">
+         
+    </div>
+    <div class="total">
             
-        <h2>Total:<small> <?php echo $total;?>Bs.</small></h2> 
-      
-        </div>  </div>
+            <h2>Total:<small> <?php echo $total;?>Bs.</small></h2> 
+          
+            </div>
         <div class="button">
             <a href="<?php echo URL_RAIZ;?>profile/MyProfile">REGRESAR</a>
         </div>

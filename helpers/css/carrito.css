@@ -80,18 +80,26 @@ form .item {
 .button-back {
     display: flex;
     flex-wrap: wrap;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
     border-radius: 0.8rem;
-    width: 100%;
 }
 
-.icon-back {
+.icon-back,
+.icon-delete {
     padding: 0.5rem 1rem;
     border-radius: 0.8rem;
     margin: 0.8rem;
     transition: all 400ms;
     cursor: pointer;
+}
+
+.button-delete {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.8rem;
 }
 
 .icon-back:hover {
@@ -148,4 +156,13 @@ form .item {
     background: white;
     border: none;
     cursor: pointer;
+}
+
+.footer-options {
+    width: 95%;
+    height: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
 }

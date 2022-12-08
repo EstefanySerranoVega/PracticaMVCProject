@@ -76,7 +76,7 @@ if(isset($_GET['id'])){
             for($i=0;$i<count($ps);$i++){
                 ;?>
                         
-              <form action="<?php echo URL_RAIZ;?>carrito/addProducto" class="card-producto" method="post">
+              <form action="<?php echo URL_RAIZ;?>carrito/addCarrito?id=<?php echo $ps[$i]['id_ap'];?>" class="card-producto" method="post">
                 <a href="<?php echo URL_RAIZ;?>viewProducto?id=<?php echo $ps[$i]['id_producto']?>" class="link-card" >
                     <div class="image-producto">
                         <img src="<?php echo URL_RAIZ.IMG.$ps[$i]['img_producto'];?>" alt="" name="img-producto" id="img-producto" class="img-producto">
@@ -86,6 +86,7 @@ if(isset($_GET['id'])){
                 <div class="name-producto info-text">
                     <label for="producto" class="product" ><?php echo $ps[$i]['nombre_producto'];?></label>
                     <input type="hidden" name="id-ap" id="id-ap" value="<?php echo $ps[$i]['id_ap'];?>">
+                    <input type="hidden" name="id-producto" id="id-producto" value="<?php echo $ps[$i]['id_producto'];?>">
                    <input type="hidden" name="nombre-producto" id="nombre-producto" value="<?php echo $ps[$i]['nombre_producto'];?>" readonly>
                    <input type="hidden" name="categoria-producto" id="categoria-producto" value="<?php echo $ps[$i]['categoria_producto']; ?>"readonly> 
                 </div>

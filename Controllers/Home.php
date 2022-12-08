@@ -21,7 +21,14 @@ Class Home Extends controllers{
 
   
     }
-    //public function reder(){}
+    public function search(){
+        error_log('search funciona');
+        $this->view->render('Home/Filter/search');
+    }
+    public function category(){
+        error_log('search funciona');
+        $this->view->render('Home/Filter/categoria');
+    }
 
  
 }

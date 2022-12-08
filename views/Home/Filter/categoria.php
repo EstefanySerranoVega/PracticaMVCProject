@@ -49,7 +49,7 @@ $sl = $slider->getDataSlider();
                 $items =[];
                 for($i=0;$i<count($cat);$i++){;?>
                    
-                <a href="<?php echo URL_RAIZ;?>home/category?cat=<?php echo $cat[$i]['id']?>"  class="category">
+                <a href="<?php echo URL_RAIZ;?>home/category" class="category">
                 <div class="category">
                     <h2> <?php  echo $cat[$i]['name']; ?></h2>
                     </div>
@@ -57,16 +57,23 @@ $sl = $slider->getDataSlider();
            
             </div>
             <section class="section-destacados">
-                <div class="title-section_destacados">
-                    <h1>Productos destacados</h1>
+                <?php
+                  if($_GET['cat']){
+                    $p = $_GET['cat'];
+                    ?>
+                     <div class="title-section_destacados">
+                    <h1>Productos de la categoria </h1>
                 </div>
                 <div class="section-productos_destacados">
                 <?php
+               
                     $productos = new HomeModel();
-                    $producto = $productos->getAllProductos();
+                    $producto = $productos->getFilterCategory($p);
+                    //var_dump($producto);
+                   
                     for($i=0;$i<count($producto);$i++){
                         //<?php echo URL_RAIZ;carrito/addCarrito?>
-                 <form action="<?php echo URL_RAIZ;?>carrito/addCarrito?id=<?php echo $producto[$i]['id_ap'];?>"  id="card_producto" class="card-producto" method="post">
+                  <form action="<?php echo URL_RAIZ;?>carrito/addCarrito?id=<?php echo $producto[$i]['id_ap'];?>"  id="card_producto" class="card-producto" method="post">
   
                  <a href="<?php echo URL_RAIZ;?>viewProducto?id=<?php echo $producto[$i]['id_producto'];?>" class="">
                     <div class="image-producto">
@@ -98,6 +105,11 @@ $sl = $slider->getDataSlider();
                  </form>
                 <?php }  ?>
                 </div>
+                <?php }else{
+                    echo '<h1>No se encontraron productos </h1>';
+                }
+                ?>
+               
             </section>
             <section class="section-ultimos">
                 <div class="title-section_ultimos">

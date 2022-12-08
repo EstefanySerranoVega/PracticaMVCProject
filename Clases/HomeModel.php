@@ -55,6 +55,7 @@ private $category;
         return $items;
 
     }
+    
     public function getAllDestacados(){
         $items = [];
         
@@ -80,10 +81,66 @@ private $category;
         while($item = $query->fetch(PDO::FETCH_ASSOC)){
             array_push($items,$item);
         }
-    
-    
-            return $items;}
+            return $items;
+        }
 
+
+public function getSearch($parametro){
+    $p = "%".$parametro."%";
+    $items = [];
+    
+    $query = $this->prepare(
+        "SELECT almacen_producto.id_ap as id_ap,
+        producto.id_producto as id_producto,
+        producto.nombre_producto as nombre_producto, 
+        producto.id_categoria as categoria_producto,
+        producto.codigo_producto as codigo_producto,
+        producto.IMG_PRODUCTO as img_producto,
+        producto.industria_producto as industria_producto,
+        producto.marca_producto as marca_producto,
+        producto.DESCRIPCION_PRODUCTO as descripcion_producto,
+        almacen_producto.cantidad_ap as cantidad,
+        almacen_producto.PVENTA_AP as precio_producto FROM `almacen_producto`
+        inner join producto
+        on producto.id_producto = almacen_producto.ID_PRODUCTO
+        WHERE producto.estado_producto = 'AC'
+        AND producto.nombre_producto  LIKE :parametro");
+    $query->execute(['parametro'=>$p]);
+    
+    while($item = $query->fetch(PDO::FETCH_ASSOC)){
+        array_push($items,$item);
+    }
+        return $items;
+
+}
+public function getFilterCategory($cat){
+    $items = [];
+    
+    $query = $this->prepare(
+        'SELECT almacen_producto.id_ap as id_ap,
+    producto.id_producto as id_producto,
+    producto.nombre_producto as nombre_producto, 
+    producto.id_categoria as categoria_producto,
+    producto.codigo_producto as codigo_producto,
+    producto.IMG_PRODUCTO as img_producto,
+    producto.industria_producto as industria_producto,
+    producto.marca_producto as marca_producto,
+    producto.DESCRIPCION_PRODUCTO as descripcion_producto,
+    almacen_producto.PVENTA_AP as precio_producto FROM `almacen_producto`
+    inner join producto
+    on producto.id_producto = almacen_producto.ID_PRODUCTO
+    WHERE producto.estado_producto = "AC"
+    AND producto.id_categoria = :cat
+    GROUP BY producto.codigo_producto');
+    $query->execute(['cat'=>$cat]);
+    
+    while($item = $query->fetch(PDO::FETCH_ASSOC)){
+        array_push($items,$item);
+    }
+
+
+        return $items;
+    }
 
 }
 

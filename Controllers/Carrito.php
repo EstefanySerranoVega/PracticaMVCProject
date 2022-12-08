@@ -52,15 +52,12 @@ private $carrito ;
                     $id = $this->getPOST('id-producto');
                     $precio = $this->getPOST('precio-producto');
                 $cantidad =1; 
-            error_log('is id: '.$id);
+                
                 foreach($_SESSION['carrito'] as $index=>$item){
                     for($i=0;$i<$num;$i++){
                         if($item['id']== $id){
-                        error_log('ya existe el id: '.$id);
-                        error_log('existen: '.$item['cantidad']);
-                        error_log('index: '.$index);
+                            
                         $cant = $item['cantidad'] + $cantidad;
-                        error_log('cant: '.$cant);
                         $producto= array(
                            'id_ap' => $ap,
                            'id' => $id,
@@ -110,7 +107,7 @@ if($this->existGET(['item'])){
         
     }
 }else{
-    $this->view->render('Home/carrito');
+    $this->view->render('Home/home');
 }
     
 }
@@ -129,6 +126,11 @@ public function send(){
     }else{
         echo "<script> alert('inicie sesion para comprar');</script>";
         $this->view->render('login/index'); }
+}
+public function delete(){
+    
+    unset($_SESSION['carrito']);
+    $this->view->render('Home/carrito');
 }
 
 }

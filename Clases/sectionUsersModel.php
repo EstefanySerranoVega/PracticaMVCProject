@@ -15,21 +15,22 @@ Class sectionUsersModel extends Model{
         $items = [];
         $query = $this->query(
             'SELECT user.id_usuario as id,
-             per.nombre_persona,
-              per.paterno_persona,
-              per.materno_persona, 
-              per.telefono_persona,
-              per.nac_persona as nacimiento,
-               user.nombre_usuario,
-                rol.nombre_roles, 
-                user.estado_usuario
-            FROM contrasenia cont
-            INNER JOIN usuario user
-            ON user.ID_USUARIO= cont.ID_USUARIO
-            INNER JOIN persona per
-            ON per.ID_PERSONA = user.ID_PERSONA
-            INNER JOIN roles rol
-            ON rol.NOMBRE_ROLES !="cliente"'
+            per.nombre_persona,
+             per.paterno_persona,
+             per.materno_persona, 
+             per.telefono_persona,
+             per.nac_persona as nacimiento,
+              user.nombre_usuario,
+               rol.nombre_roles, 
+               user.estado_usuario
+           FROM contrasenia cont
+           INNER JOIN usuario user
+           ON user.ID_USUARIO= cont.ID_USUARIO
+           INNER JOIN persona per
+           ON per.ID_PERSONA = user.ID_PERSONA
+           INNER JOIN roles rol
+           ON rol.id_roles = user.id_roles
+WHERE rol.nombre_roles !="cliente"'
         );
         $query->execute();
         while($item = $query->fetch(PDO::FETCH_ASSOC)){

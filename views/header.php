@@ -13,7 +13,9 @@ require_once('helpers/html/require.php');?>
   <div id="header" class="header">
         <div class="logo"></div>
         <div class="buscador">
-            <input type="search" name="search" id="search" class="search-input">
+            <form action="<?php echo URL_RAIZ;?>home/search" id="tbus" name="tbus" method="get">
+            <input type="search" name="search" id="search" class="search">
+        </form>
         </div>
         <menu>
         <ul>

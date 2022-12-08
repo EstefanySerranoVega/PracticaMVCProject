@@ -5,6 +5,7 @@ require_once('Clases/sectionAdministrarModel.php');
 $slider = new sectionAdministrarModel();
 $sl = $slider->getDataSlider();
 //require_once();
+
 ?>
 
 <!DOCTYPE html>
@@ -26,44 +27,24 @@ $sl = $slider->getDataSlider();
   require_once('views/header.php'); ?>
         
     <div class="container-gral">
-        <div  class="hero" >
-            <div class="img-producto_hero">
-                <img src="<?php echo URL_RAIZ.IMG.$sl[0]['img'];?>" alt="">
-            </div>
 
-            <div class="info-producto_hero">
-                <h1 id="title-hero_home"class="title-hero_home"><?php echo $sl[0]['titulo'];?></h1>
-                <p class="text-hero" id="text-hero_home" class="text-hero_home">
-                <?php echo $sl[0]['texto'];?> </p>
-                <a href="<?php echo URL_RAIZ;?>viewProducto?id=<?php echo $sl[0]['id_p'];?>">
-                <button type="submit" class="btn-hero_home">Ver producto</button>
-            </a>
-           
-            </div>
-        </div>
         <div class="container">
-            <div class="section-category">
-                <?php
-                $category	 = new HomeModel();
-                $cat = $category->getAllCategory();
-                $items =[];
-                for($i=0;$i<count($cat);$i++){;?>
-                   
-                <a href="<?php echo URL_RAIZ;?>home/category?cat=<?php echo $cat[$i]['id']?>"  class="category">
-                <div class="category">
-                    <h2> <?php  echo $cat[$i]['name']; ?></h2>
-                    </div>
-                </a>  <?php }?>
-           
-            </div>
+
             <section class="section-destacados">
                 <div class="title-section_destacados">
-                    <h1>Productos destacados</h1>
+                    <h1>Resultados de Busqueda</h1>
                 </div>
                 <div class="section-productos_destacados">
                 <?php
+                 if($_GET['search']){
+                    $p = $_GET['search'];
+                }else{
+                    echo 'no hay parametro de busqueda ';
+                }
                     $productos = new HomeModel();
-                    $producto = $productos->getAllProductos();
+                    $producto = $productos->getSearch($p);
+                    //var_dump($producto);
+                   
                     for($i=0;$i<count($producto);$i++){
                         //<?php echo URL_RAIZ;carrito/addCarrito?>
                  <form action="<?php echo URL_RAIZ;?>carrito/addCarrito?id=<?php echo $producto[$i]['id_ap'];?>"  id="card_producto" class="card-producto" method="post">

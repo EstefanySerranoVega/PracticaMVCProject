@@ -174,7 +174,7 @@ public function getAllLimit($n){
         $query = $this->query(
             'SELECT * FROM categoria
             WHERE estado_categoria = "AC"
-            ORDER BY nombre_categoria
+            ORDER BY nombre_categoria ASC
             LIMIT '.$n );
         //$query->execute(['n'=> $n]);
 

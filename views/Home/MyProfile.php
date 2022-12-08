@@ -28,7 +28,7 @@ $p = $profile->getDataCliente($id);
     <div class="container-gral">
         
     <div class="mi-informacion">
-        <form action="">
+        <form action="<?php echo URL_RAIZ;?>profile/updateCliente">
         <div class="img-profile">
                
                <div class="image">
@@ -52,9 +52,12 @@ $p = $profile->getDataCliente($id);
             <label for=""><?php echo $p[0]['telefono']?></label>
             <label class="sub" for="direccion">Direccion:</label>
             <label for=""><?php echo $p[0]['direccion']?></label>
-         <button type="submit" class="btn-editar" id="btn-editar">
-        <a href="<?php echo URL_RAIZ;?>profile/updateCliente">EDITAR MI INFORMACION</a>    
-        </button>
+            <a href="<?php echo URL_RAIZ;?>profile/updateCliente">
+            <button type="submit" class="btn-editar" id="btn-editar">
+      EDITAR MI INFORMACION
+        </button></a>    
+        
+          
             </div>
 </form>
 
