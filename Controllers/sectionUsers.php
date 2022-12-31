@@ -26,6 +26,7 @@ if($this->existPOST(['id','idP','nombre','paterno','materno','telefono','usernam
     $telefono = $this->getPOST('telefono');
     $username = $this->getPOST('username');
     $nacimiento = $this->getPOST('nacimiento');
+    $profile = $this->getPOST('img');
     if($id ='' || empty($id)
     ||$idP ='' || empty($idP)
     || $name = '' || empty($name)
@@ -45,11 +46,13 @@ if($this->existPOST(['id','idP','nombre','paterno','materno','telefono','usernam
     $telefono = $this->getPOST('telefono');
     $username = $this->getPOST('username');
     $nacimiento = $this->getPOST('nacimiento');
+    $profile = $this->getPOST('img');
 
     require_once('Models/UserModel.php');
     $user = new userModel();
     $user->setId($id);
     $user->setNombre($username);
+    $user->setProfile($profile);
     if($user->update()){
         require_once('Models/PersonaModel.php');
         error_log('id es: '.$idP);

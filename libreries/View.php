@@ -9,12 +9,14 @@ private $d;
        // $this->render();
     }
     public function render($nombre, $data = []){
+        error_log('la vista es: '.$nombre);
         $this->d = $data;
-        $this->handleMessages();
+        $this->handleMessages($this->d);
         require 'views/' . $nombre . '.php' ;
     }
 
-public function handleMessages(){
+public function handleMessages($params = []){
+    error_log('handle messages funciona y params es: '.count($params));
     if(isset($_GET['success']) && isset($_GET['error'])){
         error_log('View::handleMessages()=> success and error => true');
     }else if(isset($_GET['success'])){

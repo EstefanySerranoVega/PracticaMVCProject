@@ -4,9 +4,11 @@ Class SliderModel extends Model implements IModel{
     
 private $idSlider;
 private $producto;
+private $user;
 private $titulo;
 private $texto;
 private $estado;
+private $creacion;
 
     public function __construct(){
         parent::__construct();
@@ -17,19 +19,23 @@ private $estado;
             'INSERT INTO `slider` VALUES(
                 NULL,
                 :producto,
+                :usuario,
                 :titulo,
                 :texto,
-                :estado )' );
+                :estado,
+                :creacion )' );
                 
         $arrayData=  array(
             'producto' => $this->producto,
+            'usuario' => $this->user,
             'titulo' => $this->titulo,
             'texto' => $this->texto,
-            'estado' => $this->estado);
+            'estado' => $this->estado,
+            'creacion' => $this->creacion);
 
         
         $query->execute($arrayData);
-        $id = $this->query("SELECT MAX(id_slider) AS id FROM proveedor");
+        $id = $this->query("SELECT MAX(id_slider) AS id FROM slider");
         
         if ($row = $id->fetchAll()) {
         $this->idProveedor = $row[0][0];
@@ -122,17 +128,21 @@ public function update(){
 public function from($array = []){
     $this->idSlider = $array['ID_SLIDER'];
     $this->producto = $array['ID_PRODUCTO'];
-         $this->titulo = $array['TITULO_SLIDER'];
-        $this->texto = $array['TEXTO_SLIDER'];
-        $this->estado = $array['ESTADO_SLIDER'];
+    $this->user = $array['ID_USUARIO'];
+    $this->titulo = $array['TITULO_SLIDER'];
+    $this->texto = $array['TEXTO_SLIDER'];
+    $this->estado = $array['ESTADO_SLIDER'];
+    $this->creacion = $array['CREACION_SLIDER'];
 }
 
 //SETTERS
 public function setId($id){ $this->idSlider = $id;}
 public function setProducto($producto){ $this->producto = $producto;}
+public function setUsuario($usuario){ $this->user = $usuario;}
 public function setTitulo($titulo){ $this->titulo = $titulo;}
 public function setTexto($texto){ $this->texto = $texto;} 
 public function setEstado($estado){$this->estado =$estado;}
+public function setCreacion($fecha){ $this->creacion = $fecha;}
 
 //GETTERS
 public function getId(){
@@ -140,6 +150,9 @@ public function getId(){
 }
 public function getProducto(){
     return $this->producto;
+}
+public function getUsuario(){
+    return $this->user;
 }
 public function getTitulo(){
     return $this->titulo;
@@ -150,6 +163,10 @@ public function getTexto(){
 public function getEstado(){
     return $this->estado;
 }
+public function getCreacion(){
+    return $this->creacion;
+}
+
 public function updateProducto(){
     try{
         $query = $this->prepare(

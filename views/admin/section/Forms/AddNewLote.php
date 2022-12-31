@@ -21,7 +21,6 @@ echo 'Ingresar nuevo lote, ahre';
 <body>
     <div class="container">
         <form action="<?php echo URL_RAIZ;?>sectionAlmacen/AddLote" method="POST">
-            <input type="hidden" name="id" id="id" value="<?php echo $p[0]['id_producto'];?>" readonly>
            <label for="producto">SELECCIONE UN PRODUCTO:</label>
             <select name="id" id="id">
             <?php   

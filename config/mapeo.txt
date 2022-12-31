@@ -1,0 +1,146 @@
+PROYECTO_01
+
+1.	TABLA ACCESOS
+ID_ACCESOS int(11) primary key
+NOMBRE_ACCESOS varchar(80)
+CREACION_ACCESOS datetime
+ESTADO_ACCESOS varchar(10)
+
+
+2.  TABLA ALMACEN
+ID_ALMACEN int(11) primary key
+NOMBRE_ALMACEN varchar(80)
+CREACION_ALMACEN datetime
+ESTADO_ALMACEN varchar(10)
+
+
+3. TABLA CATEGORIA 
+ID_CATEGORIA int(11) primary key
+NOMBRE_CATEGORIA varchar(80)
+CREACION_CATEGORIA datetime
+ESTADO_CATEGORIA varchar(10)
+
+
+4.  TABLA CLIENTE
+ID_CLIENTE int(11) primary key
+ID_PERSONA int(11) foreign key
+CORREO_CLIENTE varchar(50)
+DIRECCION_CLIENTE varchar(250)
+ESTADO_CLIENTE varchar(10)
+CREACION_CLIENTE datetime
+
+5.  TABLA CLIENTE_PRODUCTO
+ID_CLIENTE_PRODUCTO int(11) primary key
+ID_CLIENTE int(11) foreign key
+ID_PRODUCTO int(11) foreign key
+ID_TIPO_PAGO int(11) foreign key
+CANTIDAD_CP int(11)
+TOTAL_CP int(11)
+ESTADO_CP varchar(10)
+CREACION_CP datetime
+
+6.	TABLA CONTRASEÑA
+ID_CONTRASENIA int(11) primary key
+ID_USUARIO int(11) foreign key 
+NOMBRE_CONTRASENIA varchar(255)
+ESTADO_CONTRASENIA varchar(10)
+MODIFICACION_CONTRASENIA datetime
+CREACION_CONTRASENIA datetime
+
+7.	PERSONA
+ID_PERSONA int(11) primary key
+NOMBRE_PERSONA varchar(30)
+PATERNO_PERSONA varchar(30)
+MATERNO_PERSONA varchar(30)
+TELEFONO_PERSONA varchar(12)
+NAC_PERSONA date
+ESTADO_PERSONA varchar(20)
+CREACION_PERSONA varchar(20)
+
+8.	TABLA PRODUCTO
+ID_PRODUCTO int(11) primary key
+ID_CATEGORIA int(11) foreign key
+NOMBRE_PRODUCTO varchar(120)
+IMG_PRODUCTO varchar(250)
+MARCA_PRODUCTO varchar(120)
+INDUSTRIA_PRODUCTO varchar(80)
+CODIGO_PRODUCTO varchar(80)
+DESCRIPCION_PRODUCTO varchar(250)
+ESTADO_PRODUCTO varchar(10) 
+
+9.	TABLA PROVEEDOR
+ID_PROVEEDOR int(11) primary key
+EMPRESA_PROVEEDOR varchar(80)
+CORREO_PROVEEDOR varchar(50)
+ESTADO_PROVEEDOR varchar(10)
+CREACION_PROVEEDOR datetime
+
+10.	TABLA ROL
+ID_ROL int(11) primary key
+ID_ACCESOS int(11) fireign key
+NOMBRE_ROL varchar(80)
+CREACION_ROL datetime
+ESTADO_ROL varchar(10)
+
+
+11. 	TABLA SUCURSAL
+ID_SUCURSAL int(11) primary key
+ID_ALMACEN int(11) foreign key
+NOMBRE_SUCURSAL varchar(80)
+DIRECCION_SUCURSAL varchar(180)
+ESTADO_SUCURSAL varchar(10)
+CREACION_SUCURSAL datetime
+
+12. 	TABLA TIPO PAGO
+ID_TIPO_PAGO int(11) primary key 
+NOMBRE_TIPO_PAGO varchar(30)
+CRECION_TIPO_PAGO datetime
+ESTADO_TIPO_PAGO varchar(10) 
+
+13. 	TABLA USUARIO
+ID_USUARIO int(11) primary key
+ID_PERSONA int(11) foreign key
+ID_ROL int(11) foreign key
+NOMBRE_USUARIO varchar(30)
+PROFILE_USUARIO varchar(250)
+ESTADO_USUARIO varchar(10)
+CREACION_USUARIO datetime
+
+
+14.	ALMACEN_PRODUCTO
+ID_AP int(11) primary key,
+ID_USUARIO_AP int foreign key,
+ID_PRODUCTO_AP int foreign key,
+ID_PROVEEDOR_AP int foreign key,
+ID_ALMACEN_AP int foreign key,
+PVENTA_AP,
+PCOMPRA_AP,
+LOTE_AP varchar(12),
+CANTIDAD_AP,
+INGRESO_AP datetime,
+ESTADO_AP
+
+15. TABLA VENTA
+ID_VENTA int(11) primary key
+ID_CLIENTE_PRODUCTO int(11) foreign key
+FECHA_VENTA datetime
+TOTAL_VENTA int
+ESTADO_VENTA varchar(10)
+
+16. TABLA SLIDER
+ID_SLIDER int(11) primary key,
+ID_PRODUCTO int foreign key,
+ID_USUARIO int foreign key,
+TITULO_SLIDER varchar(180),
+TEXTO_SLIDER  text NOT NULL,
+ESTADO_SLIDER varchar(20)  NOT NULL,
+CREACION_SLIDER datetime NOT NULL DEFAULT CURRENT_TIEMSTAMP,
+PRIMARY KEY(`ID_SLIDER`),
+KEY `FK_ID_PRODUCTO` (`ID_PRODUCTO`),
+KEY `FK_ID_USUARIO` (`ID_USUARIO`)
+) ENGINE = InnoDB;
+
+
+
+
+

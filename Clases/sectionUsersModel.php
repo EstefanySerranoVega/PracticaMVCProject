@@ -13,7 +13,7 @@ Class sectionUsersModel extends Model{
     
 
         $items = [];
-        $query = $this->query(
+        $query = $this->prepare(
             'SELECT user.id_usuario as id,
             per.nombre_persona,
              per.paterno_persona,
@@ -21,6 +21,7 @@ Class sectionUsersModel extends Model{
              per.telefono_persona,
              per.nac_persona as nacimiento,
               user.nombre_usuario,
+              user.profile_usuario as img,
                rol.nombre_roles, 
                user.estado_usuario
            FROM contrasenia cont
@@ -54,6 +55,7 @@ WHERE rol.nombre_roles !="cliente"'
                per.telefono_persona as telefono, 
               per.nac_persona as nacimiento,
                user.nombre_usuario as username,
+              user.profile_usuario as img,
                 rol.nombre_roles as rol, 
                 user.estado_usuario
             FROM contrasenia cont

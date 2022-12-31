@@ -38,17 +38,17 @@
 
         "site": "MyProfile",
         "access": "private",
-        "role": "cliente"
+        "role": "CLIENTE"
     }, {
 
         "site": "pagar",
         "access": "private",
-        "role": "cliente"
+        "role": "CLIENTE"
     }, {
 
         "site": "cancelar",
         "access": "private",
-        "role": "cliente"
+        "role": "CLIENTE"
     }, {
 
         "site": "admin",
@@ -172,6 +172,7 @@
         "user": "home",
         "admin": "admin",
         "cliente": "home",
+        "CLIENTE": "home",
         "": "login"
     }
 

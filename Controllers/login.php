@@ -30,6 +30,7 @@ Class Login Extends SessionController{
 
             if($user != NULL){
                 error_log('Login::authenticate() passed');
+                
                 $this->initialize($user);
             }else{
                 error_log('Login::authenticate() error params authenticate');

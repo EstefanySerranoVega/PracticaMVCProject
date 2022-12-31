@@ -14,7 +14,8 @@ public function update(){
 }
 
 public function updateItem(){
-    if($this->existPOST(['id','idP','nombre','paterno','materno','telefono','username','nacimiento','correo', 'direccion'])){
+    if($this->existPOST(['cliente','id','idP','nombre','paterno','materno','telefono','username','nacimiento','correo', 'direccion','img'])){
+        $idc = $this->getPOST('cliente');
         $id = $this->getPOST('id');
         $idP = $this->getPOST('idP');
         $name = $this->getPOST('nombre');
@@ -25,6 +26,8 @@ public function updateItem(){
         $nacimiento = $this->getPOST('nacimiento');
         $correo = $this->getPOST('correo');
         $direccion = $this->getPOST('direccion');
+        $profile = $this->getPOST('img');
+
         if($id ='' || empty($id)
         ||$idP ='' || empty($idP)
         || $name = '' || empty($name)
@@ -37,7 +40,7 @@ public function updateItem(){
         || $direccion = '' || empty($direccion)){
             error_log('Complete todos los datos');
         }else{
-            
+            $idc = $this->getPOST('cliente');   
         $id = $this->getPOST('id');
         $idP = $this->getPOST('idP');
         $name = $this->getPOST('nombre');
@@ -48,31 +51,33 @@ public function updateItem(){
         $nacimiento = $this->getPOST('nacimiento');
         $correo = $this->getPOST('correo');
         $direccion = $this->getPOST('direccion');
-    
+     $profile = $this->getPOST('img');
+
         require_once('Models/UserModel.php');
         $user = new userModel();
         $user->setId($id);
         $user->setNombre($username);
+        $user->setProfile($profile);
         if($user->update()){
             require_once('Models/PersonaModel.php');
-            error_log('id es: '.$idP);
-            error_log('name es: '.$name);
-            error_log('materno es: '.$materno);
-            error_log('paterno es: '.$paterno);
-            error_log('telefono es: '.$telefono);
-            error_log('nacimiento es: '.$nacimiento);
-            $persona = new personaModel();
+       $persona = new personaModel();
             $persona->setId($idP);
             $persona->setNombre($name);
             $persona->setPaterno($paterno);
             $persona->setMaterno($materno);
             $persona->setTelefono($telefono);
             $persona->setNacimiento($nacimiento);
-            $persona->update();
-            
+            if($persona->update()){
+                error_log('update cliente');
+            $cliente = new clienteModel();
+            $cliente->setId($idc);
+            $cliente->setCorreo($correo);
+            $cliente->setDireccion($direccion);
+            $cliente->update();
+
             $this->view->render('admin/section/Dashboard/clientes');
         }
-            
+    }
         }
     
     }else{

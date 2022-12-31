@@ -16,6 +16,7 @@ Class sectionAlmacen extends SessionController{
         $this->view->render('admin/section/Forms/AddNewLote');
     }
     public function AddLote(){
+        error_log('function addLote en ejecución');
         if($this->existPOST(['id','precio','precioVenta','cantidad','proveedor'])){
             
             $id = $this->getPOST('id');
@@ -40,7 +41,8 @@ Class sectionAlmacen extends SessionController{
                 require_once('Models/AlmacenProductoModel.php');
                 
                 $ap = new AlmacenProductoModel();
-
+                error_log('se creo el objeto almacenProductoModel');
+                error_log('contar el producto con el id: '.$id);
                 $l = $ap->countProducto($id);
                if($l<10){
                 $l++;

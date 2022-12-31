@@ -86,7 +86,6 @@
 
 .info-update .form-update {
     width: 98%;
-    background: green;
     padding: 0.8rem;
     display: flex;
     flex-wrap: wrap;
@@ -150,4 +149,12 @@
     height: 78%;
     background: yellowgreen;
     border-radius: 0.6rem;
+}
+
+img {
+    object-fit: contain;
+    object-position: center center;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
 }

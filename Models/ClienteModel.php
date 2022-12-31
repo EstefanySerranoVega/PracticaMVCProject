@@ -110,14 +110,14 @@ Class ClienteModel extends Model implements IModel {
         try{
             $query = $this->prepare(
                 'UPDATE `cliente` SET
-                CORREO_CLIENTE = :correo
+                CORREO_CLIENTE = :correo,
                 DIRECCION_CLIENTE = :direccion
-
-                WHERE  id_cliente = :id' );
+                WHERE  id_cliente = :id
+                AND estado_cliente = "AC"' );
             $query->execute([
                 'correo' => $this->correoCliente,
                 'direccion' => $this->direccion,
-                'id' => $this->getId()]);
+                'id' => $this->idCliente]);
 
             return true;
         }catch(PDOException $e){

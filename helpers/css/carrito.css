@@ -68,7 +68,13 @@ form .item {
     border: none;
     overflow: hidden;
 }
-
+.item .img-item  img {
+    object-fit: contain;
+    object-position: center center;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+}
 .icon-delete {
     cursor: pointer;
 }

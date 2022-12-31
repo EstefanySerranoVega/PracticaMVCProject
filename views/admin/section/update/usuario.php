@@ -21,7 +21,7 @@ $u = $user->getUserById($id);
     <div class="container">
         <div class="usuario">
         <div class="option-form">
-    <a href="<?php echo URL_RAIZ; ?>sectionProductos">  
+    <a href="<?php echo URL_RAIZ; ?>sectionUsers">  
                 <div class="icon-back icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
@@ -59,14 +59,15 @@ $u = $user->getUserById($id);
             <div class="data">
                 <label for="nacimiento">Nacimiento:</label>
 
-<input type="text" name="nacimiento" id="nacimiento" value="<?php echo $u[0]['nacimiento'];?>" readonly>
+<input type="text" name="nacimiento" id="nacimiento" value="<?php echo $u[0]['nacimiento'];?>" >
 
 </div>
         <div class="data">
-            <label for="nacimiento">Nacimiento:</label>
+            <label for="nacimiento">Usename:</label>
+            <input type="hidden" name="img" id="img" value="<?php echo $u[0]['img'];?>">
 
-<input type="text" name="nacimiento" id="nacimiento" value="<?php echo $u[0]['nacimiento'];?>" readonly>
-</div> <input type="submit" value="ACTUALIZAR">
+<input type="text" name="username" id="username" value="<?php echo $u[0]['username'];?>" >
+</div> <button type="submit" class="button">ACTUALIZAR </button>
         </form>
         </div>
  

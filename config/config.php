@@ -17,7 +17,7 @@ const MONEDA = "BO";
 //const HOST = 'localhost';
 define('HOST','3306');
 define('USER','root');
-define('PASSWORD','123');
-define('DB','bd_proyecto_01');
+define('PASSWORD','');
+define('DB','proyecto_01');
 define('CHARSET','utf8');
 ?>

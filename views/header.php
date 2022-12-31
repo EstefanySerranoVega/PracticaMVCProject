@@ -8,10 +8,14 @@ $c = new ApiCarrito();
 $x = $c->status();
 require_once('helpers/html/require.php');?>
     <link rel="stylesheet" href="<?php echo URL_RAIZ.STYLE; ?>header.css">
-    <script src="https://kit.fontawesome.com/11ba4104c1.js" crossorigin="anonymous"></script>
     
+    <link rel="stylesheet" href="<?php echo URL_RAIZ.STYLE;?>footer.css">
+    <script src="https://kit.fontawesome.com/11ba4104c1.js" crossorigin="anonymous"></script>
+    <script src="<?php echo URL_RAIZ.SCRIPT;?>jquery-3.3.1.min.js"></script>
   <div id="header" class="header">
-        <div class="logo"></div>
+        <div class="logo">
+            <h2>Shopping</h2>
+        </div>
         <div class="buscador">
             <form action="<?php echo URL_RAIZ;?>home/search" id="tbus" name="tbus" method="get">
             <input type="search" name="search" id="search" class="search">
@@ -107,3 +111,7 @@ require_once('helpers/html/require.php');?>
         </ul>
     </menu>
     </div>
+    <?php
+    
+require_once('helpers/html/require.php');
+    ?>

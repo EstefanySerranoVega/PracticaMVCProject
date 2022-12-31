@@ -1,6 +1,5 @@
 <?php 
 require_once('Clases/HomeModel.php');
-require_once('helpers/html/require.php');
 require_once('Clases/sectionAdministrarModel.php');
 $slider = new sectionAdministrarModel();
 $sl = $slider->getDataSlider();
@@ -16,7 +15,8 @@ $sl = $slider->getDataSlider();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecommerce</title>
 
-    <link rel="stylesheet" href="<?php echo URL_RAIZ.STYLE;?>home.css">
+    <link rel="stylesheet" href="<?php 
+    echo URL_RAIZ.STYLE;?>home.css">
 <script src="<?php echo URL_RAIZ.SCRIPT.'slider.js';?>"></script></script>
 </head>
 
@@ -36,7 +36,7 @@ $sl = $slider->getDataSlider();
                 <p class="text-hero" id="text-hero_home" class="text-hero_home">
                 <?php echo $sl[0]['texto'];?> </p>
                 <a href="<?php echo URL_RAIZ;?>viewProducto?id=<?php echo $sl[0]['id_p'];?>">
-                <button type="submit" class="btn-hero_home">Ver producto</button>
+                <button type="submit" class="btn-hero_home" >Ver producto</button>
             </a>
            
             </div>
@@ -76,8 +76,7 @@ $sl = $slider->getDataSlider();
                     </a>
                 <div class="info-productos">
                 <div class="name-producto info-text">
-                    <label for="producto">Producto:</label>
-                    <label for="producto"><?php echo $producto[$i]['nombre_producto'];?></label>
+                   <label for="producto"><h4><?php echo $producto[$i]['nombre_producto'];?></h4></label>
                     <input type="hidden" name="id-ap" id="id-ap" value="<?php echo $producto[$i]['id_ap'];?>">
                    <input type="hidden" name="nombre-producto" id="nombre-producto" value="<?php echo $producto[$i]['nombre_producto'];?>" readonly>
                    <input type="hidden" name="categoria-producto" id="categoria-producto" value="<?php echo $producto[$i]['categoria_producto']; ?>"readonly> 
@@ -89,14 +88,57 @@ $sl = $slider->getDataSlider();
   
                         </div>
                         <div class="precio-producto info-text">
-                            <label for="precio">Precio:</label>
-                            <label for="precio"><?php echo $producto[$i]['precio_producto'].'.Bs';?></label>
+                            <label for="precio">Bs.-<?php echo number_format($producto[$i]['precio_producto'],2);?></label>
                         <input type="hidden" name="precio-producto" id="precio-producto" value="<?php echo $producto[$i]['precio_producto'];?>"readonly>
                        </div>  
                 </div>
                 <button type="submit"  class="btn-addCarrito" id="btn-addCarrito" name="btn-addCarrito">AGREGAR AL CARRITO</button>
                  </form>
                 <?php }  ?>
+                </div>
+            </section>
+            <section class="section-categories">
+                <div class="banner-category first-category">
+                    <a href="">
+                    <div class="img">
+            <img src="<?php echo URL_RAIZ.IMG;?>aq.jpg" alt="">
+            </div> 
+            <div class="text">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim quas facere quisquam voluptate debitis praesentium deleniti doloribus temporibus ab vero?
+
+                </p>
+                <button>Ver más</button>
+            </div>
+                    </a>
+       
+            </div>
+                <div class="banner-category second-category">
+            <a href="">
+            <div class="img">
+            <img src="<?php echo URL_RAIZ.IMG;?>microfono.webp" alt="">
+            </div> 
+            <div class="text">
+                <p>Lorem Enim quas facere quisquam praesentium deleniti doloribus temporibus ab vero?
+                    
+                </p>
+                
+                <button>Ver más</button>
+            </div>
+            </a>
+                </div>
+                <div class="banner-category third-category">
+                <a href="">
+                <div class="img">
+            <img src="<?php echo URL_RAIZ.IMG;?>sandberg.jpg" alt="">
+            </div> 
+            <div class="text">
+                <p>Lorem ipsum dolor adipisicing elit.voluptate debitis praesentium deleniti doloribus temporibus ab vero?
+                    
+                </p>
+                
+                <button>Ver más</button>
+            </div>
+                </a>
                 </div>
             </section>
             <section class="section-ultimos">
@@ -120,8 +162,7 @@ $sl = $slider->getDataSlider();
                     <div class="info-productos">
 
 <div class="name-producto info-text">
-    <label for="producto">Producto:</label>
-    <label for="producto"><?php echo $producto[$i]['nombre_producto'];?></label>
+    <label for="producto"><h4><?php echo $producto[$i]['nombre_producto'];?></h4></label>
     <input type="hidden" name="id-ap" id="id-ap" value="<?php echo $producto[$i]['id_ap'];?>">
    <input type="hidden" name="nombre-producto" id="nombre-producto" value="<?php echo $producto[$i]['nombre_producto'];?>" readonly>
    <input type="hidden" name="categoria-producto" id="categoria-producto" value="<?php echo $producto[$i]['categoria_producto']; ?>"readonly> 
@@ -133,8 +174,7 @@ $sl = $slider->getDataSlider();
 
         </div>
         <div class="precio-producto info-text">
-            <label for="precio">Precio:</label>
-            <label for="precio"><?php echo $producto[$i]['precio_producto'].'.Bs';?></label>
+            <label for="precio">Bs.-<?php echo number_format($producto[$i]['precio_producto'],2);?></label>
         <input type="hidden" name="precio-producto" id="precio-producto" value="<?php echo $producto[$i]['precio_producto'];?>"readonly>
        </div>  
 </div>
@@ -146,9 +186,13 @@ $sl = $slider->getDataSlider();
             </div>
          
         </div>
-        <footer class="footer">
-        </footer>
-    </div>
+        <?php
+        
+        require_once('views/footer.php');
+        ?>
 </body>
 
 </html>
+<?php 
+require_once('helpers/html/require.php');
+?>

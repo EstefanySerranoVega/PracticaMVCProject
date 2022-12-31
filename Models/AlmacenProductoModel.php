@@ -21,28 +21,40 @@ Class AlmacenProductoModel extends model implements IModel{
             $query = $this->prepare(
                 'INSERT INTO `ALMACEN_PRODUCTO` VALUES(
                     NULL,
-                    :almacen,
+                    :usuario,
                     :producto,
-                    :compra,
+                    :proveedor,
+                    :almacen,
                     :venta,
+                    :compra,
                     :lote,
                     :cantidad,
-                    :proveedor,
-                    :usuario,
                     :ingreso,
                     :estado
                 )');
             $arrayData = array(
-                'almacen' => $this->almacen,
+                'usuario' => $this->usuario,
                 'producto' => $this->producto,
-                'compra' => $this->pcompra,
+                'proveedor' => $this->proveedor,
+                'almacen' => $this->almacen,
                 'venta' => $this->pventa,
+                'compra' => $this->pcompra,
                 'lote' => $this->lote,
                 'cantidad' => $this->cantidad,
-                'proveedor' => $this->proveedor,
-                'usuario' => $this->usuario,
                 'ingreso' => $this->ingreso,
                 'estado' => $this->estado
+            );
+            error_log(
+                ' usuario: '.$this->usuario.
+                ' producto: '.$this->producto.
+                ' proveedor: '.$this->proveedor.
+                ' almacen: '. $this->almacen.
+                ' venta: '.$this->pventa.
+                ' compra: '. $this->pcompra.
+                ' lote: '.$this->lote.
+                ' cantidad: '.$this->cantidad.
+                ' ingreso: '.$this->ingreso.
+                ' estado: '.$this->estado
             );
             $query->execute($arrayData);
             $id = $this->query("SELECT MAX(ID_AP) AS id FROM ALMACEN_PRODUCTO");
@@ -111,14 +123,14 @@ public function update(){}//fin update
 
 public function from($array = []){
      $this->idAP = $array['ID_AP'];
-     $this->almacen = $array['ID_ALMACEN'];
-     $this->producto = $array['ID_PRODUCTO'];
+     $this->usuario = $array['ID_USUARIO_AP'];
+     $this->producto = $array['ID_PRODUCTO_AP'];
+     $this->proveedor = $array['ID_PROVEEDOR_AP'];
+     $this->almacen = $array['ID_ALMACEN_AP'];
      $this->pventa = $array['PVENTA_AP'];
      $this->pcompra = $array['PCOMPRA_AP'];
      $this->lote = $array['LOTE_AP'];
      $this->cantidad = $array['CANTIDAD_AP'];
-     $this->proveedor = $array['ID_PROVEEDOR_AP'];
-     $this->usuario = $array['ID_USUARIO_AP'];
      $this->ingreso = $array['INGRESO_AP'];
      $this->estado = $array['ESTADO_AP'];
 }//fin from
@@ -190,7 +202,7 @@ public function countProducto($id){
     $items = [];
     try{
         $query = $this->query(
-            'SELECT ID_PRODUCTO FROM almacen_producto where id_producto ='.$id);
+            'SELECT ID_PRODUCTO_AP FROM almacen_producto where ID_PRODUCTO_AP ='.$id);
         
             $query->execute();
        $cant = $query->rowCount();  
@@ -207,7 +219,7 @@ public function updateCantidad(){
         $query = $this->prepare(
             'UPDATE `almacen_producto` SET
             cantidad_ap = :cantidad
-            WHERE id_producto = :producto');
+            WHERE id_producto_ap = :producto');
         $arrayData= array(
             'cantidad' => $this->cantidad,
             'producto' => $this->producto);
@@ -223,9 +235,9 @@ public function getProductoAndDate($id){
     try{
         $query = $this->prepare(
             'SELECT MAX(INGRESO_AP) AS fecha,
-            ID_AP, ID_PRODUCTO, LOTE_AP,CANTIDAD_AP, PVENTA_AP
+            ID_AP, ID_PRODUCTO_AP, LOTE_AP,CANTIDAD_AP, PVENTA_AP
             FROM almacen_producto
-            WHERE id_producto = :id
+            WHERE id_producto_Ap = :id
             AND ESTADO_AP="AC"');
         $query->execute(['id' => $id]);
     

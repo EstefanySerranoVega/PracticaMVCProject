@@ -24,6 +24,13 @@ $sl = $slider->getDataSlider();
    require_once('helpers/html/menuLateral.php');?>
 
 <div class="container-gral">
+    <div class="options-section_administrar">
+        <div class="option">nuevo slider</div>
+        <div class="option">ver seccion publicidad</div>
+        <div class="option">nueva sección de publicidad</div>
+        <div class="option">ver seccion publicidad</div>
+
+    </div>
 <div class="container-administrar">
     <div class="container-editar_slider">
 <div class="container-img">
@@ -73,5 +80,22 @@ $sl = $slider->getDataSlider();
 </div>
    </div>
    </div>
+   <!--
+   
+   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="text/javascript">
+    $('.form-update_titulo').submit(function(e){
+        e.preventDefault();
+        Swal.fire({
+    position: 'center',
+    icon: 'success',
+    title: 'El titulo del slider ha sido actualizado exitosamente',
+    showConfirmButton: false,
+    timer: 1500
+});
+
+    });
+</script> 
+   !-->
 </body>
 </html>

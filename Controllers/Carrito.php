@@ -64,16 +64,19 @@ private $carrito ;
                            'precio' => $precio,
                            'cantidad' => $cant);
                            $_SESSION['carrito'][$index]= $producto;
+                           error_log('67::carrito controller');
                        // unset($_SESSION['carrito'][$index]);
                        // echo "<script> alert('producto eliminado');</script>";
                         
-                    $this->view->render('Home/carrito');
+                    //$this->view->render('Home/carrito');
+        $this->redirect('carrito');
                        }else{
                    $producto= array(
                        'id_ap' => $ap,
                        'id' => $id,
                        'precio' => $precio,
                        'cantidad' => $cantidad);
+                       error_log('78::carrito controller');
                        $_SESSION['carrito'][$num]= $producto;
                    }
                 }
@@ -102,12 +105,13 @@ if($this->existGET(['item'])){
         unset($_SESSION['carrito'][$index]);
        // echo "<script> alert('producto eliminado');</script>";
         
-    $this->view->render('Home/carrito');
+    //$this->view->render('Home/carrito');
        }
         
     }
 }else{
-    $this->view->render('Home/home');
+    //$this->view->render('Home/home');
+        $this->redirect('carrito');
 }
     
 }

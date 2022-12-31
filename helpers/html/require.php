@@ -1,5 +1,4 @@
 <?php
-
 /*
 - Importación de tipografía utilizada en éste proyecto
 */
@@ -13,5 +12,5 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital@1&display=swap" rel="stylesheet">
-
+<script src="<?php echo URL_RAIZ.SCRIPT;?>jquery-3.3.1.min.js"></script>
 

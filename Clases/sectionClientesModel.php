@@ -24,9 +24,10 @@ public function getAllClientes(){
         per.materno_persona,
         per.telefono_persona,
         user.nombre_usuario,
+        user.profile_usuario as img,
         rol.nombre_roles,
         cl.correo_cliente,
-        cl.direccion_cliente
+        cl.direccion_cliente 
         FROM contrasenia cont
         INNER JOIN usuario user
         ON user.ID_USUARIO= cont.ID_USUARIO
@@ -62,6 +63,7 @@ public function getAllClientes(){
             cl.correo_cliente as correo,
             cl.direccion_cliente as direccion,
             user.nombre_usuario as username,
+            user.profile_usuario as img,
             rol.nombre_roles as rol, 
             user.estado_usuario
             FROM contrasenia cont

@@ -1,7 +1,4 @@
-<?php
 
-require_once('helpers/html/require.php');
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +23,7 @@ require_once('helpers/html/require.php');
                 <input type="text" name="username" id="username" placeholder="Nombre de usuario">
                 <label for="name">Contraseña: </label>
                <input type="password" name="password" id="password" placeholder="Contraseña">
-                <input type="submit" value="INGRESAR" id="btn-login" class="btn-login">
+                <input type="submit" value="INGRESAR" id="btn-login" class="btn-login" onclick="confirm()">
            
             </div>
             <div class="header-form">
@@ -42,3 +39,4 @@ require_once('helpers/html/require.php');
     </div>
 </body>
 </html>
+<?php require_once('helpers/html/require.php');?>

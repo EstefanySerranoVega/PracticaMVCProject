@@ -70,8 +70,12 @@ Class Controllers {
         if(empty($params)){
             error_log('params is empty '.$params);
             $params = '?'.$params;
+            
         }
-        error_log('Controllers::redirect()=> ruta: '.$ruta.' params: '.$params);
+        
+        //$this->view->handleMessages($data);
+        //error_log('Controllers::redirect()=> ruta: '.$ruta.' params: '.$params);
+        //$this->view->render($ruta,$params);
         header('Location: '.CONSTANT('URL_RAIZ').$ruta.'/'.$params);
     }
 

@@ -200,6 +200,7 @@ private function isAuthorized($rol){
 
 public function authorizeAccess($rol){
         error_log('authorizedAccess rol es: '.$rol);
+     
         switch($rol){
                 case 'Colaborador':
                         error_log('rol es: user');

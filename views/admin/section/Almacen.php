@@ -2,10 +2,6 @@
 require_once('Clases/sectionProductosModel.php');
 require_once('Models/AlmacenProductoModel.php');
 
-$productos = new sectionAlmacenModel(); 
-$producto = $productos->getAllProductos();
-$p = new AlmacenProductoModel();
-$p->countProducto(2);
 ?>
 
 <!DOCTYPE html>
@@ -43,20 +39,8 @@ $p->countProducto(2);
                 </div>
             </div>
             <div class="container-shopping">
-                <div class="options-shopping">
-                    
-                <div class="option ultimos-ingresos">
-                    Ultimos productos ingresados
-                </div>
-                <div class="option filter-lotes">
-                    Ver por Lotes
-                </div> <div class="option ultimos-ingresos">
-                    Ultimos productos ingresados
-                </div>
-                <div class="option agotados">
-                    productos agotados
-                </div>
-                </div>
+              
+        
                 <div class="table-container">
                 <div class="table-grid">
                     <div class="header-table">
@@ -71,6 +55,14 @@ $p->countProducto(2);
                     
                     <div class="body-table">
                     <?php
+                    $productos = new sectionAlmacenModel(); 
+                    $producto = $productos->getAllProductos();
+                    if(!empty($producto)){}else{
+                        echo 'no hay productos';
+                    }
+                    $p = new AlmacenProductoModel();
+                    $p->countProducto(2);
+
               $res = [];
               for($i=0;$i<count($producto[0]);$i++){
                 ?>

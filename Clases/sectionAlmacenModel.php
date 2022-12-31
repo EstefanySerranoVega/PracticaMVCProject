@@ -25,7 +25,7 @@ Class sectionAlmacenModel extends Model{
         proveedor.empresa_proveedor as name_proveedor,
         SUM(almacen_producto.cantidad_Ap) as cantidad FROM `almacen_producto`
         inner join producto
-        on producto.id_producto = almacen_producto.ID_PRODUCTO
+        on producto.id_producto = almacen_producto.id_producto_ap
         inner join categoria
         on producto.id_categoria = categoria.ID_CATEGORIA
         inner join proveedor
@@ -57,9 +57,9 @@ Class sectionAlmacenModel extends Model{
         almacen_producto.pventa_ap as precio_v,
         almacen_producto.id_proveedor_ap as proveedor,
         proveedor.empresa_proveedor as name_proveedor,
-        almacen_producto.cantidad_Ap as cantidad FROM `almacen_producto`
+        almacen_producto.cantidad_ap as cantidad FROM `almacen_producto`
         inner join producto
-        on producto.id_producto = almacen_producto.ID_PRODUCTO
+        on producto.id_producto = almacen_producto.ID_PRODUCTO_AP
         inner join categoria
         on producto.id_categoria = categoria.ID_CATEGORIA
         inner join proveedor

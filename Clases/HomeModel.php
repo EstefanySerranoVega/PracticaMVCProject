@@ -29,7 +29,7 @@ private $category;
     producto.DESCRIPCION_PRODUCTO as descripcion_producto,
     almacen_producto.PVENTA_AP as precio_producto FROM `almacen_producto`
     inner join producto
-    on producto.id_producto = almacen_producto.ID_PRODUCTO
+    on producto.id_producto = almacen_producto.id_producto_ap
     WHERE producto.estado_producto = "AC"
     GROUP BY producto.codigo_producto');
     $query->execute();
@@ -72,10 +72,10 @@ private $category;
         almacen_producto.cantidad_ap as cantidad,
         almacen_producto.PVENTA_AP as precio_producto FROM `almacen_producto`
         inner join producto
-        on producto.id_producto = almacen_producto.ID_PRODUCTO
+        on producto.id_producto = almacen_producto.ID_PRODUCTO_AP
         WHERE producto.estado_producto = "AC"
         GROUP BY producto.codigo_producto
-    ORDER BY (almacen_producto.ingreso_ap) DESC LIMIT 12');
+    ORDER BY (almacen_producto.ingreso_ap) DESC LIMIT 10');
         $query->execute();
         
         while($item = $query->fetch(PDO::FETCH_ASSOC)){
@@ -102,7 +102,7 @@ public function getSearch($parametro){
         almacen_producto.cantidad_ap as cantidad,
         almacen_producto.PVENTA_AP as precio_producto FROM `almacen_producto`
         inner join producto
-        on producto.id_producto = almacen_producto.ID_PRODUCTO
+        on producto.id_producto = almacen_producto.ID_PRODUCTO_AP
         WHERE producto.estado_producto = 'AC'
         AND producto.nombre_producto  LIKE :parametro");
     $query->execute(['parametro'=>$p]);
@@ -128,7 +128,7 @@ public function getFilterCategory($cat){
     producto.DESCRIPCION_PRODUCTO as descripcion_producto,
     almacen_producto.PVENTA_AP as precio_producto FROM `almacen_producto`
     inner join producto
-    on producto.id_producto = almacen_producto.ID_PRODUCTO
+    on producto.id_producto = almacen_producto.ID_PRODUCTO_AP
     WHERE producto.estado_producto = "AC"
     AND producto.id_categoria = :cat
     GROUP BY producto.codigo_producto');

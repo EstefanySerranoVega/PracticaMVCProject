@@ -39,9 +39,6 @@ require_once('helpers/html/require.php');
                 </div>
             </a>
             </div>
-            <?php 
-            if($_SESSION['idRol']==2){
-                ?>
                    <div class="option option-compras">
                 <a href="<?php echo URL_RAIZ;?>sectionAlmacen">
                 <div class="icon option-compras">
@@ -52,10 +49,7 @@ require_once('helpers/html/require.php');
                 </div>
             </a>
             </div>
-            <?php
-        }else{
-            }
-            ?>
+           
          
             <div class="option option-ventas">
                 <a href="<?php echo URL_RAIZ;?>sectionVenta">
